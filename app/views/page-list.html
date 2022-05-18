@@ -1,0 +1,77 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Buy an NHS HRT Prescription Prepaid Certificate
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+  {{ breadcrumb({
+    href: "/",
+    text: "Home"
+  }) }}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+       Alpha Prototype Pages
+      </h1>
+
+      {{ warningCallout({
+        "heading": "Prototype Code only",
+        "HTML": "<p>Do not use this code in any production code or production services. It does not adhere to development standards.</p> "
+      }) }}
+      
+      
+     
+
+      
+
+      <h3 class="app-side-nav__heading">HRT PPC page by page Iteration 1</h3>
+<p>
+  <h3>Verification pages </h3>
+ 1) <a href="/search-page"> Start</a>, Buy an NHS HRT PPC
+</p>
+
+<p>
+ 2) <a href="/page-list"> D.O.B.</a>, Verification.
+</p>
+      <h3>Payment Pages </h3>  
+      <h3>Check your answers pages </h3> 
+      <h3>End pages </h3>
+      <h3>Error pages </h3>
+
+      <h3>Service error pages </h3>
+
+      <h3>Journeys for usabilty testing</h3>
+
+      
+     
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
