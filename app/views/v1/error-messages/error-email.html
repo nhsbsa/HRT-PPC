@@ -1,0 +1,92 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your email address? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+  <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="nhsuk-error-summary__body">
+    
+    <ul class="nhsuk-list nhsuk-error-summary__list">
+      <li>
+        <a href="#example-error-1">Email address is required</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is your email address?
+        </h1>
+      </legend>
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <br>
+      <div class="nhsuk-form-group nhsuk-form-group--error">
+        <span class="nhsuk-error-message" id="example-error-error">
+          <span class="nhsuk-u-visually-hidden">Error:</span> Email address is required
+        </span>
+        <label class="nhsuk-label" for="two-thirds">
+         
+        </label>
+        <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="two-thirds" name="two-thirds" type="text">
+      </div>
+
+      
+      
+
+      
+
+      
+
+        
+        
+
+        <form action="check-your-answers">
+        <button class="nhsuk-button" type="submit">
+          Next
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+     
+    </div>  
+
+  </div>
+{% endblock %}

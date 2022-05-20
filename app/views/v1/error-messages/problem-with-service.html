@@ -1,0 +1,53 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  There is a problem with the service - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Sorry, there is a problem with the service
+        </h1>
+      </legend>
+      <br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        Your payment has been successful, but we're unable to show your certificate details due to a technical issue.<br><br>
+        You don't need to pay for prescriptions from today.<br><br>
+        You can still collect prescriptions from today without your certificate details, the pharmacist should tick 'Evidence not seen' on the back of your prescription.<br><br>
+        We'll be able to send your certificate details to you if you contact us on 0300 330 1341 or use our <a href="">contact form</a>. You'll need to wait 24 hours before contacting us.
+      </p>
+      
+      <!-- End of content -->
+    </div>  
+  </div>
+{% endblock %}

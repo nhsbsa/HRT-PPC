@@ -1,0 +1,87 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS HRT prescription prepayment card
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Buy an NHS Hormone Replacement Therapy Prescription Prepayment Certificate (HRT PPC)
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p class="nhsuk-lede-text">
+       
+      </p>
+      
+      <p>
+        Save money on NHS HRT prescriptions by prepaying for them.<br><br>
+        You can pay a set price for prescriptions for 12 months, no matter how many you need.<br><br>
+        A prescription costs £9.35 per item, but prepaying for an unlimited number of HRT prescriptions is:
+      </p>
+
+      <ul class="list list-bullet">
+        <li>One time payment of £18.70 for 12 months</li>
+      </ul>
+
+      <h3 class="heading-medium">How it works</h2>
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
+          They are also costly to the NHS and the environment.</p>
+        </div>
+
+        
+        <p>
+          <strong style="font-weight: normal;">
+          We can send your certificate details by email, or you can print them at the end of the service.
+          <br>
+          <br>
+          Show your certificate details when you collect your HRT prescription. You can collect prescriptions straight away.
+          </strong>
+        </p>
+
+        <form action="dob">
+        <button class="nhsuk-button" type="submit">
+          Buy now
+        </button>
+      </form>
+
+        <h3 class="heading-small">
+          Other ways to buy
+        </h3>
+        <p>The Quickest way to buy a certificate is online. If you can't, there are <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">other ways to buy</a> one.</p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

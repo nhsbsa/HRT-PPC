@@ -1,0 +1,54 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Your payment has been cancelled - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Your payment has been cancelled
+        </h1>
+      </legend>
+      <br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        We have not taken any money out of your account<br><br>
+        If you want to try again, you will have to <a href="start">return to the start</a><br><br>
+        If you need help, contact us:<br><br>
+        <strong>Phone: </strong>0300 330 1341 (this call will be charged at a local rate)<br><br>
+        Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm.<br><br>
+        Alternatively, <a href="">use our contact form (opens in a new tab)</a>
+      </p>
+      <!-- End of content -->
+    </div>  
+  </div>
+{% endblock %}

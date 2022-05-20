@@ -1,0 +1,50 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Page not found - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Page not found
+        </h1>
+      </legend>
+      <br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        The page you are trying to request could not be found<br><br>
+        If you require assistance in completing this form please call our Customer Contact Section on 0300 330 1341<br>
+      </p>
+      <!-- End of content -->
+    </div>  
+  </div>
+{% endblock %}

@@ -1,0 +1,101 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Select your address? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <div class="nhsuk-form-group">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            Select your address
+          </h1>
+        </legend>
+        <fieldset class="nhsuk-fieldset">
+          <div class="nhsuk-radios">
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                1 Newcastle Road, NE12AB
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                2 Newcastle Road, NE12AB
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                3 Newcastle Road, NE12AB
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                4 Newcastle Road, NE12AB
+              </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                5 Newcastle Road, NE12AB
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      
+      </div>
+      
+
+      <p><a href="what-is-your-address">Enter address manually</a></p>
+
+        <form action="chosen-what-is-your-address">
+        <button class="nhsuk-button" type="submit" href="chosen-what-is-your-address">
+          Next
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
