@@ -20,6 +20,16 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 {% endblock %}
 
 <!-- For adding page content -->
@@ -45,6 +55,16 @@
             </h1>
           </legend>
 
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Reminder:
+              </span>
+            </h3>
+            <p>This is a HRT PPC which only covers <a href="">these drugs.</a> If you require drugs outside of HRT then a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">standard PPC</a> may be more beneficial for you.</p>
+          </div>
+
           <div class="nhsuk-inset-text">
             <span class="nhsuk-u-visually-hidden">Information: </span>
             <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
@@ -60,33 +80,50 @@
             </ul>
           </p>
 
-          
-    
+
+
           <div class="nhsuk-radios nhsuk-radios--conditional">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="email" name="contact" type="radio" value="email">
-              <label class="nhsuk-label nhsuk-radios__label" for="email">
-                Yes
+              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Email me my certificate details
               </label>
             </div>
       
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
       
               <div class="nhsuk-form-group">
-                <p>We'll send you your new certificate by email, and a reminder one month before your renewal date.</p>
-        
+               <p> We'll send you your new certificate by email, and a reminder one month before your renewal date.</p>
               </div>
       
             </div>
       
+            
+      
+            
+      
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="print" name="contact" type="radio" value="no">
-              <label class="nhsuk-label nhsuk-radios__label" for="email-2">
-                No
+              <input class="nhsuk-radios__input" id="email" name="contact" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                I do not want my certificate details emailed to me
               </label>
             </div>
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+      
+              <div class="nhsuk-form-group">
+               <p>You can print your certificate at the end of the service.<br> If you choose this option, you will not receive a reminder one month before your PPC renewal date. </p>
+              </div>
+      
+            </div>
+      
+          
+      
           </div>
+
+          
+    
+        
         
         </fieldset>
       

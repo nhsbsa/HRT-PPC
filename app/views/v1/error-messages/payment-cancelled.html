@@ -20,6 +20,16 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 {% endblock %}
 
 <!-- For adding page content -->
@@ -42,11 +52,11 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       <p>
         We have not taken any money out of your account<br><br>
-        If you want to try again, you will have to <a href="start">return to the start</a><br><br>
+        If you want to try again, you will have to <a href="/v1/start">return to the start</a><br><br>
         If you need help, contact us:<br><br>
         <strong>Phone: </strong>0300 330 1341 (this call will be charged at a local rate)<br><br>
         Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm.<br><br>
-        Alternatively, <a href="">use our contact form (opens in a new tab)</a>
+        Alternatively, <a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">use our contact form (opens in a new tab)</a>
       </p>
       <!-- End of content -->
     </div>  

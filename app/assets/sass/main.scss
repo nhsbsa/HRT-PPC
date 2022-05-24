@@ -1,5 +1,8 @@
 // Import NHS.UK frontend library
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
+@import "node_modules/govuk-frontend/govuk/all";
+@import "govuk-frontend-4.1.0.min.css";
+
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
@@ -15,4 +18,32 @@
     color: white;
     padding: 20px;
     margin: 30px 0;
-  }
+}
+
+
+.govuk-phase-banner__text 
+{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.govuk-phase-banner__content {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    color: #0b0c0c;
+    display: table;
+    margin: 0;
+}
+
+.govuk-template {
+    background-color: #f3f2f1;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+  

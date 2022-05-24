@@ -15,18 +15,32 @@
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
 
+
 {% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
 {% endblock %}
+
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
   <div class="nhsuk-grid-row">
+    
 
     <div class="nhsuk-grid-column-two-thirds">
 
@@ -40,6 +54,18 @@
       <p class="nhsuk-lede-text">
        
       </p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information:
+          </span>
+        </h3>
+        <p>This PPC only covers Hormone Replacement Therapy drugs. If you require prescription drugs outside of HRT then a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">standard PPC</a> may be more beneficial for you.</a></p>
+      </div>
+
+
       
       <p>
         Save money on NHS HRT prescriptions by prepaying for them.<br><br>
