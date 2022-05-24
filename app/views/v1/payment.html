@@ -162,13 +162,13 @@
             value=""
             name="cvc"
             class="govuk-input govuk-input--width-3 cvc"
-            maxlength="4"
+            maxlength="3"
             autocomplete="cc-csc"/>
             <img src="/images/security-code.png" height="30px"  class="generic-cvc" alt="The last 3 digits on the back of the card"/>
            
           </div>
           <hr>
-            <div class="govuk-!-width-three-quarters govuk-!-padding-top-4 govuk-!-margin-top-8 pay-!-border-top">
+            <div class="govuk-!-width-three-quarters">
                 <fieldset class="govuk-fieldset" aria-describedby="address-hint">
                   <legend>
                     <h3>Billing address</h3>
@@ -501,14 +501,38 @@
                   </div>
               </fieldset>
             </div> 
+            <br>
             <div class="form-group" style="margin-top:20px">
               <a href="payment-confirmed" class="govuk-button">
                 Proceed to payment
               </a>
-              
+              <br>
             
               <p class="navigation"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
             </div>
+
+
+            <details class="nhsuk-details nhsuk-expander">
+              <summary class="nhsuk-details__summary">
+                <span class="nhsuk-details__summary-text">
+                  Errors and flags
+                </span>
+              </summary>
+              <div class="nhsuk-details__text">
+                <h4>Kickout pages</h4>
+                <ul>
+                  <li><a href="error-messages/payment-declined-gov">Payment has been declined</a></li>
+                  
+              
+                </ul>
+                <h4>Error messages</h4>
+                <ul>
+                  <li><a href="">Empty fields error</a></li>
+                  
+              
+                </ul>
+              </div>
+            </details>
         </form>
       </div>
     </div>

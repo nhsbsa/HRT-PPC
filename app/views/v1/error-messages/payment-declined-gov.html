@@ -10,84 +10,19 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
-      <h2>Confirm your payment</h2>
+      <h2>Your payment has been declined</h2>
+      <p>No money has been taken from your account. Contact your bank for more details.</p>
       
-      <div class="payment-summary-wrap">
-        <div class="payment-summary">
-          <h2 class="nhsuk-heading-l">Payment summary</h2>
-            <p id="payment-description" class="nhsk-body" style="font-size:19px;">
-              12 Months single payment
-            </p>
-            
-            <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
-              Total amount:
-              
-            </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£18.70</span>
-        </div>
-
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Card number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              ●●●●●●●●●●●●1111
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Expiry date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              01/25
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name on card
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Jane Doe
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Billing address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              1 Newcastle Street<br>Newcastle<br>NE12AB
-            </dd>
-          </div>
-        </dl>
+      
 
         
             <div class="form-group" style="margin-top:20px">
-              <a href="confirmation-organ" class="govuk-button">
-                Confirm payment
+              <a href="/hrt-ppc/app/views/v1/error-messages/payment-declined" class="govuk-button">
+                Continue
               </a>
               
             
-              <p class="navigation"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
-              <details class="nhsuk-details nhsuk-expander">
-                <summary class="nhsuk-details__summary">
-                  <span class="nhsuk-details__summary-text">
-                    Errors and flags
-                  </span>
-                </summary>
-                <div class="nhsuk-details__text">
-                  <h4>Kickout pages</h4>
-                  <ul>
-                    <li><a href="error-messages/payment-provider-error">NHS - Our payment provider is temporarily unavailable</a></li>
-                    
-                
-                  </ul>
-                  
-                    
-                
-                  </ul>
-                </div>
-              </details>
+              
             </div>
         </form>
       </div>
