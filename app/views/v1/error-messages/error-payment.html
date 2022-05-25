@@ -10,6 +10,37 @@
   <div class="grid-row">
     <div class="column-two-thirds">
 
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="">Card number is required</a>
+            </li>
+            <li>
+              <a href="">Expiry date is required</a>
+            </li>
+            <li>
+              <a href="">Name on card is required</a>
+            </li>
+            <li>
+              <a href="">Card security code is required</a>
+            </li>
+            <li>
+              <a href="">Building number or name and street is required</a>
+            </li>
+            <li>
+              <a href="">Town or city is required</a>
+            </li>
+            <li>
+              <a href="">Postcode is required</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <h1>Enter card details</h1>
       
       <div class="payment-summary-wrap">
@@ -25,9 +56,10 @@
             </p>
             <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">£18.70</span>
         </div>
-
+        
+        <div class="govuk-form-group--error">
         <form id="card-details" style="margin-top:20px;">
-          <div class="govuk-form-group card-no-group" data-validation="cardNo">
+          <div class="govuk-form-group card-no-group " data-validation="cardNo">
             <label id="card-no-lbl" for="card-no" class="govuk-label govuk-label--l govuk-!-width-three-quarters">
               <h3>
                 Card number
@@ -71,22 +103,27 @@
            
           </div>
           <div>
+            <p id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Card details is required
+            </p>
             <input id="card-no"
                 type="text"
                 inputmode="numeric"
                 pattern="[0-9]*"
                 name="cardNo"
                 maxlength="26"
-                class="govuk-input govuk-!-width-three-quarters"
+                class="govuk-input govuk-!-width-three-quarters govuk-input--error"
                 value=""
               />
 
-          </div> <br>
+          </div>
+        </div>
+          <br>
 
           
           
 
-          <div class="govuk-form-group govuk-clearfix govuk-!-margin-bottom-7  expiry-date" data-validation="expiryMonth">
+          <div class="govuk-form-group govuk-clearfix govuk-!-margin-bottom-7  expiry-date govuk-form-group--error" data-validation="expiryMonth">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-date-hint">
               <legend>
                 <div class="govuk-label govuk-label--l" id="expiry-date-lbl" for="expiry-month">
@@ -95,8 +132,12 @@
               </legend>
               <span class="govuk-hint" id="expiry-date-hint" style="font-size:19px !important;">
                 For example, 10/23</span>
+                <p id="passport-issued-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Expiry date is required
+                </p>
               <div class="govuk-date-input__item govuk-date-input__item--month govuk-date-input__item--with-separator">
                 <label class="govuk-label govuk-date-input__label" for="expiry-month" style="font-size: 19px;">Month</label>
+                
                 <input
                   id="expiry-month"
                   type="text"
@@ -104,7 +145,7 @@
                   pattern="[0-9]*"
                   name="expiryMonth"
                   value=""
-                  class="govuk-input govuk-date-input__input govuk-input--width-3"
+                  class="govuk-input govuk-date-input__input govuk-input--width-3 govuk-input--error"
                   minlength="1"
                   maxlength="2"
                   autocomplete="cc-exp-month"/>
@@ -121,34 +162,42 @@
                   value=""
                   minlength="2"
                   maxlength="4"
-                  class="govuk-input govuk-date-input__input govuk-input--width-3"
+                  class="govuk-input govuk-date-input__input govuk-input--width-3 govuk-input--error"
                   autocomplete="cc-exp-year"
                   data-required
                 />
               </div>
             </fieldset>
           </div>
-          <div class="govuk-form-group" data-validation="cardholderName">
+
+          <div class="govuk-form-group govuk-form-group--error" data-validation="cardholderName">
             <h3>
               Name on card
             </h3>
+            <p id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Name on card is required
+            </p>
             <input id="cardholder-name"
               type="text"
               name="cardholderName"
               maxlength="200"
-              class="govuk-input govuk-!-width-three-quarters"
+              class="govuk-input govuk-!-width-three-quarters govuk-input--error"
               value=""
               autocomplete="cc-name"/>
           </div>
-          <div class="govuk-form-group cvc govuk-clearfix" data-validation="cvc">
+          <div class="govuk-form-group cvc govuk-clearfix govuk-form-group--error" data-validation="cvc">
             <label id="cvc-lbl" for="cvc" class="govuk-label govuk-label--l">
               <h3>Card security code</h3>
+              
                 
               
               <span class="govuk-hint govuk-!-margin-bottom-2">
                 <span class="generic-cvc" style="font-size: 19px;">
                   The last 3 digits on the back of the card
                 </span>
+                <p id="passport-issued-error" class="govuk-error-message">
+                  <span class="govuk-visually-hidden">Error:</span> Card security code is required
+                </p>
               </span>
             </label>
 
@@ -161,7 +210,7 @@
             pattern="[0-9]*"
             value=""
             name="cvc"
-            class="govuk-input govuk-input--width-3 cvc"
+            class="govuk-input govuk-input--width-3 cvc govuk-input--error"
             maxlength="3"
             autocomplete="cc-csc"/>
             
@@ -169,7 +218,7 @@
           </div>
           
           <hr>
-            <div class="govuk-!-width-three-quarters">
+            <div class="govuk-!-width-three-quarters govuk-form-group--error">
                 <fieldset class="govuk-fieldset" aria-describedby="address-hint">
                   <legend>
                     <h3>Billing address</h3>
@@ -446,13 +495,16 @@
                         data-original-label="Building number or name and street" style="font-size:19px;">
                             Building number or name and street
                       </span>
+                      <p id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Building number or name and street is required
+                      </p>
 
                     </label>
                     <input id="address-line-1"
                       type="text"
                       name="addressLine1"
                       maxlength="100"
-                      class="govuk-input"
+                      class="govuk-input govuk-input--error"
                       value=""
                       autocomplete="billing address-line1"/>
                         <input id="address-line-2"
@@ -473,12 +525,15 @@
                     data-original-label="Town or city" style="font-size:19px;">
                         Town or city
                       </span>
+                      <p id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Town or city is required
+                      </p>
                     </label>
                     <input id="address-city"
                       type="text"
                       name="addressCity"
                       maxlength="100"
-                      class="govuk-input govuk-!-width-three-quarters"
+                      class="govuk-input govuk-!-width-three-quarters govuk-input--error"
                       value=""
                       autocomplete="billing address-level2"/>
                   </div>
@@ -490,13 +545,16 @@
                         data-original-label="Postcode">
                         Postcode
                       </span>
+                      <p id="passport-issued-error" class="govuk-error-message">
+                        <span class="govuk-visually-hidden">Error:</span> Postcode is required
+                      </p>
 
                     </label>
                     <input id="address-postcode"
                       type="text"
                       name="addressPostcode"
                       maxlength="10"
-                      class="govuk-input govuk-!-width-one-quarter"
+                      class="govuk-input govuk-!-width-one-quarter govuk-input--error"
                       value=""
                       autocomplete="billing postal-code"/>
                   </div>
@@ -504,7 +562,7 @@
             </div> 
             <br>
             <div class="form-group" style="margin-top:20px">
-              <a href="payment-confirmed" class="govuk-button">
+              <a href="" class="govuk-button">
                 Proceed to payment
               </a>
               <br>
@@ -528,7 +586,7 @@
                 </ul>
                 <h4>Error messages</h4>
                 <ul>
-                  <li><a href="error-messages/error-payment">Empty fields error</a></li>
+                  <li><a href="">Empty fields error</a></li>
                   
               
                 </ul>

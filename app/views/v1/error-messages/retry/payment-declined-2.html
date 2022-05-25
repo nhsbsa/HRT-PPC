@@ -8,12 +8,13 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  You are entitled to free prescriptions - HRT PPC
+  Your payment has been declined - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
-{% block beforeContent %}{
+{% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -42,19 +43,38 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You are entitled to free prescriptions
+          Your payment has been declined
         </h1>
-      </legend><br>
+      </legend>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       <p>
-        You are entitled to free prescriptions. You do not need to buy a prescription prepayment certificate.
+        No money has been taken from your account.<br><br>
+        You have 1 more attempts to try and make the payment again.<br><br>
+        You may need to use a different debit or credit card.
       </p>
       
       
+      
 
-      <p><a href="https://www.nhsbsa.nhs.uk/">Return to NHS Business Services home</a></p>
+      
+
+      
+
+        
+        
+
+        <form action="/v1/error-messages/payment-declined-retry">
+        <button class="nhsuk-button" type="submit">
+          Try payment again
+        </button>
+      </form><br>
+
+      <p>If you need help, contact us:<br><br>
+      <strong>Phone: </strong> 0300 330 1341 (this call will be charged at a local rate)<br><br>
+    Lines are open Monday to Friday 8am to 6pm, and Saturday 9am to 3pm<br><br>
+  Alternatively, <a href=>use our contact form (opens in a new tab)</a></p>
 
       <!-- End of content -->
 
