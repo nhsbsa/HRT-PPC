@@ -3,7 +3,41 @@
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
+<style>
+#nhsuk-cookie-banner .nhsuk-success-banner {
+    background-color: #007f3b;
+    color: #fff;
+    padding: 8px 0 8px 0;
+    position: relative;
+}
 
+#nhsuk-cookie-banner .nhsuk-success-banner p {
+    margin: 0;
+}
+
+#nhsuk-cookie-banner {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Frutiger W01,Arial,Sans-serif;
+    color: azure;
+}
+
+
+
+#nhsuk-cookie-banner p {
+    padding: 0px;
+    font-size: 16px;
+}
+
+#nhsuk-cookie-banner p {
+    margin-bottom: 16px;
+    display: block;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+</style>
 <!-- Extends the layout from /docs/views/template.html -->
 {% extends "template.html" %}
 
@@ -20,8 +54,11 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-
-
+  <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display: block;">
+    <div class="nhsuk-width-container">
+      <p id="nhsuk-success-banner__message">You can change your cookie settings at any time using our <a href="v1/cookies/choose-cookies" style="color:#ffffff;">cookies page</a>.</p>
+    </div>
+  </div>
   {{ header({
     "service": {
         "name": "Buy an NHS HRT Prescription Prepaid Certificate (HRT PPC)",
