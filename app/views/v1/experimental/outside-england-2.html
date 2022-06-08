@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your email address? - HRT PPC
+  Contact us - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -40,45 +39,48 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
+      
+
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your email address?
+          Your address is not in England
         </h1>
       </legend>
-      <!-- Add content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      
-      <p>This will be the email address where you will receive your HRT PPC and your reminder 1 month before it expires.</p>
-      
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="two-thirds">
-         
-        </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information:
+          </span>
+        </h3>
+        <p>    
+          If you live near the border of England, our postcode filter may have incorrectly placed your address outside of England.<br><br> If you think this applies to you, <a href="manual-address">enter your address manually here.</a> 
+         </p>
       </div>
 
-      
-      
 
       
 
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        You must live in England to prepay for prescriptions.<br><br>
+        The postcode you provided suggests you live somewhere else.<br><br>
+        If you incorrectly entered your address, <a href="javascript:history.go(-1)">
+          return to the previous page
+          </a></p>
       
+          
 
-        
-        
 
-        <form action="check-your-answers">
-        <button class="nhsuk-button" type="submit">
-          Next
-        </button>
-      </form>
 
-      <p><a href="start">Cancel</a></p>
+
+      
 
       <!-- End of content -->
 
-     
     </div>  
 
   </div>

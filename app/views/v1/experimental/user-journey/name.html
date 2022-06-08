@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your email address? - HRT PPC
+  What is your name? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -43,22 +43,27 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your email address?
+          What is your name?
         </h1>
       </legend>
+
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        Your first name and last name should match what is printed on your prescriptions.
+      </p>
       
-      <p>This will be the email address where you will receive your HRT PPC and your reminder 1 month before it expires.</p>
-      
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="two-thirds">
-         
+      <div class="nhsuk-form-group" style="width: 300px;">
+        <label class="nhsuk-label" for="example">
+          First name
         </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
+        <input class="nhsuk-input" id="example" name="example" type="text">
+
+        <label class="nhsuk-label" for="example">
+          Last name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
       </div>
-
-      
       
 
       
@@ -68,7 +73,7 @@
         
         
 
-        <form action="check-your-answers">
+        <form action="/v1/experimental/postcode">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
@@ -78,7 +83,6 @@
 
       <!-- End of content -->
 
-     
     </div>  
 
   </div>
