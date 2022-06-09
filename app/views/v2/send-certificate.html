@@ -1,0 +1,146 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  How to receive your PPC - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <form action="copy2021-handler" method="get" class="form">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Do you wish to be emailed your HRT prepayment certificate details?
+            </h1>
+          </legend>
+
+          <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+              <span role="text">
+                <span class="nhsuk-u-visually-hidden">Important: </span>
+                Reminder:
+              </span>
+            </h3>
+            <p>This is an HRT PPC which only covers <a href="">certain drugs.</a> If you require drugs outside of HRT then a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">standard PPC</a> may be more beneficial for you.</p>
+          </div>
+
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
+            They are also costly to the NHS and the environment.</p>
+            </div>
+          <p>Receiving your HRT certificate details by email is the most convenient way to access your certificate. You will recieve an email 1 month before expiry which can help you avoid any future costs or fines.</p>
+          <p>If you choose to receive your details by email you will get a:
+            <ul>
+              <li>certificate number</li>
+              <li>start date</li>
+              <li>end date</li>
+              <li>an email reminder one month before your renewal date</li>
+            </ul>
+          </p>
+
+
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Email me my certificate details
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+      
+              <div class="nhsuk-form-group">
+               <p> We'll send you your new certificate by email, and a convenient reminder one month before your renewal date.<br><br>You will also be able to print your certificate at the end of the service</p>
+              </div>
+      
+            </div>
+      
+            
+      
+            
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email" name="contact" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                I do not want my certificate details emailed to me
+              </label>
+            </div>
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+      
+              <div class="nhsuk-form-group">
+               <p>If you choose this option, you will receive a postal reminder one month before your PPC renewal date. 
+                 <br><br>This can often be delayed, therefore we recommend choosing the email service.<br><br>
+                You can print your certificate at the end of the service. </p>
+              </div>
+      
+            </div>
+      
+          
+      
+          </div>
+
+          
+    
+        
+        
+        </fieldset>
+      
+      </div>
+      
+        <button class="nhsuk-button" type="submit">
+          Next
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

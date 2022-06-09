@@ -1,0 +1,164 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-confirm.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Confirmation of PPC - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <div class="nhsuk-card nhsuk-card--confirmation nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          
+          <h1 class="nhsuk-card__title nhsuk-u-margin-bottom-4">
+            <span id="done-tick>">✔</span>
+            Done
+          </h1>
+          <p class="nhsuk-u-font-size-24">
+            You have prepaid for 12 months of prescriptions.
+          </p>
+        </div>
+      </div>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>You won't receive a certificate in the post - keep your details safe.</strong><br><br>
+        If a pharmacist asks for evidence that you have prepaid, you must show them your certificate details.</p>
+      </div>
+
+      
+      <dl class="nhsuk-summary-list">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate for:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Jane Doe
+          </dd>
+      
+          
+      
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Certificate number
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1000000001234
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Starts on:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1 January 2022
+          </dd>
+        </div>
+      
+        <div class="nhsuk-summary-list__row">
+          <dt class="nhsuk-summary-list__key">
+            Ends on:
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            1 January 2023
+          </dd>  
+        </div>
+      
+      </dl>
+
+      <p>We have sent your certificate details to <strong>Jane.doe@nhs.net.</strong> You can also print this page.</p>
+
+      <h3>Print your certificate</h3>
+
+      <style>
+        .notice {
+          position: relative;
+          font-size: large;
+        }
+        .notice .icon {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -17px;
+        }
+        .printer-icon {
+          width: 40px;
+          height: 37px;
+          background-image: url(/images/print_icon.png);
+        }
+      </style>
+
+      <div class="noprint">
+        <div class="notice">
+          <i class="icon printer-icon">
+              <span class="visually-hidden"></span>
+          </i>
+          <span style="margin-left:60px;"><a href="javascript:window.print();">Print certificate</a></span>
+        </div>
+      </div>
+      <br><br>
+
+      <h3>Collecting prescriptions</h3>
+      <p>Tick box 'F' on the back of your prescription. <strong>TBC</strong><br><br>
+      Pharmacy staff ask for prepayment details. If you do not have them with you, they tick 'Evidence not seen' on the prescription. They will not charge you<br><br>
+     We prevent fraud by matching certificate details on our database with prescriptions.</p>
+
+     <div class="noprint">
+        <h3 class="heading-medium">Feedback</h3>
+        <p><a href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">What did you think of this service?</a> (Takes 30 seconds)</p>
+
+        <h3 class="heading-medium">Contact us</h3>
+        <p><a href="https://nhsbsa-live.powerappsportals.com/contact-us/">Contact us</a> if you have any queries about your prescription prepayment certificate.</p>
+        
+
+
+      </div>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
