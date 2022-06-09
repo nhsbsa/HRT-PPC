@@ -1,5 +1,6 @@
+
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-cookies-2.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -14,6 +15,8 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
+
 
 
 {% endblock %}
@@ -105,7 +108,7 @@
           </strong>
         </p>
 
-        <form action="dob">
+        <form action="/v1/experimental/user-journey/dob">
         <button class="nhsuk-button" type="submit">
           Buy now
         </button>

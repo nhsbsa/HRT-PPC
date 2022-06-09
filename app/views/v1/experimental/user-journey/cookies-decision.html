@@ -1,6 +1,45 @@
 
+<style>
+ <style>
+#nhsuk-cookie-banner .nhsuk-success-banner {
+    background-color: #007f3b;
+    color: #fff;
+    padding: 8px 0 8px 0;
+    position: relative;
+}
+
+#nhsuk-cookie-banner .nhsuk-success-banner p {
+    margin: 0;
+}
+
+#nhsuk-cookie-banner {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Frutiger W01,Arial,Sans-serif;
+    color: azure;
+}
+
+
+
+#nhsuk-cookie-banner p {
+    padding: 0px;
+    font-size: 16px;
+}
+
+#nhsuk-cookie-banner p {
+    margin-bottom: 16px;
+    display: block;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+</style>
+</style>
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-cookies.html' %}
+{% extends 'layout-cookies-1.html' %}
+
+
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -108,7 +147,7 @@
           </strong>
         </p>
 
-        <form action="/v1/dob">
+        <form action="/v1/experimental/user-journey/dob">
         <button class="nhsuk-button" type="submit">
           Buy now
         </button>

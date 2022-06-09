@@ -1,0 +1,102 @@
+<!-- 
+  This is the main layout where you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Extends the layout from /docs/views/template.html -->
+{% extends "template.html" %}
+
+<!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+{% block headCSS %}
+  <link href="/css/main.css" rel="stylesheet">
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  NHS HRT Prepayment Certificate
+{% endblock %}
+
+<!-- Edit the header -->
+<!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
+{% block header %}
+<div id="nhsuk-cookie-banner" data-nosnippet="true">
+  <div class="nhsuk-cookie-banner" id="cookiebanner">
+    <div class="nhsuk-width-container"> 
+      <br>
+        <h2>Cookies on the NHS website</h2> 
+        <p>We've put some small files called cookies on your device to make our site work.</p>
+        <p>We'd also like to use analytics cookies. These send information about how our site is used to services called Adobe Analytics, Hotjar and Google Analytics. We use this information to improve our site.</p>
+        <p>Let us know if this is OK. We'll use a cookie to save your choice. You can <a id="nhsuk-cookie-banner__link" href="/v1/cookies/choose-cookies" tabindex="1">read more about our cookies</a> before you choose.</p>
+        <form action="/v1/experimental/user-journey/cookies-decision">
+            <button class="nhsuk-button"  href="/v1/experimental/user-journey/cookies-decision" tabindex="2">I'm OK with analytics cookies</button>&nbsp;&nbsp;&nbsp;
+        
+            <button class="nhsuk-button" href="/v1/experimental/user-journey/cookies-decision" tabindex="3">Do not use analytics cookies</button>
+          </form>
+    </div>
+  </div>
+
+  <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display:none;">
+    <div class="nhsuk-width-container">
+      <p id="nhsuk-success-banner__message">You can change your cookie settings at any time using our <a href="/our-policies/cookies-policy/">cookies page</a>.</p>
+    </div>
+  </div>
+</div>
+
+  {{ header({
+    "service": {
+        "name": "Buy an NHS HRT Prescription Prepaid Certificate (HRT PPC)",
+        "href": "/"
+      },
+      "showNav": "false",
+      "showSearch": "false"
+    })
+  }}
+{% endblock %}
+
+{% block outerContent %}
+<!--<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>-->
+{% endblock %}
+
+
+
+<!-- Edit the footer -->
+<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
+{% block footer %}
+ 
+  
+{% endblock %}
+
+{% block bodyEnd %}
+  {% block scripts %}
+    <!-- Custom JavaScript files can be added to this file -->
+    {% include "includes/scripts.html" %}
+    <!-- For adding page specific JavsScript -->
+    {% block pageScripts %}{% endblock %}
+    <footer role="contentinfo">
+      <div class="nhsuk-footer" id="nhsuk-footer">
+        <div class="nhsuk-width-container">
+          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
+          <ul class="nhsuk-footer__list">
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/accessibility-statement-buy-nhs-prescription-prepayment-certificate">Accessibility statement</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="/v1/cookies/nhsbsa-cookies">Cookies</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/privacy/prescription-prepayment-certificate-privacy-notice">Privacy policy</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions">Terms and conditions</a></li>
+          </ul>
+    
+          <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
+        </div>
+      </div>
+    </footer>
+  {% endblock %}
+{% endblock %}
