@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your name? - HRT PPC
+  Contact us - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -43,44 +42,31 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your name?
+          Your address is not in England
         </h1>
-      </legend>
+      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Your first name and last name should match what is printed on your prescriptions.
-      </p>
-      
-      <div class="nhsuk-form-group" style="width: 300px;">
-        <label class="nhsuk-label" for="example">
-          First name
-        </label>
-        <input class="nhsuk-input" id="example" name="example" type="text">
+    
 
-        <label class="nhsuk-label" for="example">
-          Last name
-        </label>
-        <input class="nhsuk-input" id="example" name="example" type="text">
+      
+        <p>
+          You must live in England to prepay for prescriptions.<br><br>
+          The postcode you provided suggests you live somewhere else.
+          </p>
+          
+          
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>  
+            If you need further help with this contact us on:<br><br>
+          <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/">online form</a><br>
+          <strong>Telephone:</strong> 0300 330 1341<br><br>
+          Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.
+          
+        </p>
       </div>
-      
-
-      
-
-      
-
-        
-        
-
-        <form action="/v1/experimental/user-journey/postcode">
-        <button class="nhsuk-button" type="submit">
-          Next
-        </button>
-      </form>
-
-      <p><a href="start">Cancel</a></p>
-
       <!-- End of content -->
 
     </div>  

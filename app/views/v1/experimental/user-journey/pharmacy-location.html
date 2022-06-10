@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your name? - HRT PPC
+  Contact us - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -35,35 +34,32 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your name?
+          Where do you collect your prescription?
         </h1>
       </legend>
 
+      <div class="nhsuk-hint" id="contact-hint">
+        The postcode you entered may not be inside England. <br><br>In order to ensure you are eligible for the HRT PPC, enter the postcode of the pharmacy where you normally pick up your prescription.
+      </div>
+
+      
+
+  
+
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Your first name and last name should match what is printed on your prescriptions.
-      </p>
-      
-      <div class="nhsuk-form-group" style="width: 300px;">
-        <label class="nhsuk-label" for="example">
-          First name
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-10">
+          Postcode
         </label>
-        <input class="nhsuk-input" id="example" name="example" type="text">
-
-        <label class="nhsuk-label" for="example">
-          Last name
-        </label>
-        <input class="nhsuk-input" id="example" name="example" type="text">
+        
+        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
       </div>
+
+      <p><a href="manual-pharmacy">Enter address manually</a></p>
       
 
       
@@ -73,13 +69,18 @@
         
         
 
-        <form action="/v1/experimental/user-journey/postcode">
+        <form action="what-is-your-pharmacy">
         <button class="nhsuk-button" type="submit">
-          Next
+          Find address
         </button>
       </form>
+      
+          
 
-      <p><a href="start">Cancel</a></p>
+
+
+
+      
 
       <!-- End of content -->
 
