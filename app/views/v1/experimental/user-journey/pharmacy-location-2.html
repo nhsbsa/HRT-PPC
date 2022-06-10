@@ -55,21 +55,54 @@
         <label class="nhsuk-label" for="input-width-10">
           <strong>Postcode</strong>
         </label>
-        
-        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
-      </div>
+        <p>TD152AB &nbsp; &nbsp;<a href="/v1/experimental/user-journey/pharmacy-location">Change</a> </p>
 
-      <form action="pharmacy-location-2">
+      
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Select an address
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1"> </option>
+          <option value="1">Lloyds Pharmacy, 1 Long Road, Berwick, TD152AB</option>
+          <option value="2">The Spar, 2 Long Road, Berwick, TD152AB</option>
+          <option value="3">Argos , 3 Long Road, Berwick, TD152AB</option>
+          <option value="4">Aldi, 4 Long Road, Berwick, TD152AB</option>
+          <option value="5">5 Long Road, Berwick, TD152AB</option>
+          <option value="6">6 Long Road, Berwick, TD152AB</option>
+          <option value="7">7 Long Road, Berwick, TD152AB</option>
+        </select>
+      </div>
+      <br>
+
+      <p><a href="/v1/experimental/user-journey/manual-pharmacy">The address is not listed</a></p>
+      
+      <form action="/v1/nhs-number">
         <button class="nhsuk-button" type="submit">
-          Find address
+          Next
         </button>
       </form>
       <p><a href="start">Cancel</a></p>
+      
 
-      
-      
-      
-      
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            <li><a href="/v1/experimental/what-is-your-address">Postcode is inside England</a></li>
+            <li><a href="/v1/experimental/user-journey/outside-england">Postcode is outside England</a></li>
+            <li><a href="/v1/experimental/user-journey/continue-warning">Continue with warning</a></li>
+            
+        
+          </ul>
+        </div>
+      </details>
 
       
 

@@ -44,7 +44,7 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your address?
+          Do you know your NHS number?
         </h1>
       </legend>
 
@@ -63,31 +63,76 @@
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <h3>Postcode</h3>
-      <div class="nhsuk-hint" id="contact-hint">The address you give should match what is printed on your prescriptions.</div>
-      <p>NE12AB &nbsp; <a href="postcode">Change</a></p>
-      
-
-      
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="select-1">
-          Select an address
-        </label>
-        <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="1">1 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="2">2 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="3">3 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="4">4 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="5">5 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="6">6 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="7">7 Newcastle Road, Newcastle, NE12AB</option>
-        </select>
-      </div>
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
       
+      
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Yes
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+      
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="email">
+                  NHS number
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+              </div>
+      
+            </div>
+      
+            
+      
+            
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-3" name="contact" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+                No
+              </label>
+            </div>
+      
+          
+      
+          </div>
+        </fieldset>
+      
+      </div>
+        
+      
+        
+      
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Where to find your NHS number
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+          <p>It is usually on any letter or document you have received from the NHS, such as:</p>
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+            <li>maternity notes</li>
+            <li>the NHS app</li>
+          </ul>
+          <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/">How to find your NHS number</a>
+      
+        </div>
+      </details>
+     
 
-      <p><a href="manual-address">My address is not listed</a></p>
-
-        <form action="/v1/nhs-number">
+        <form action="send-certificate">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
