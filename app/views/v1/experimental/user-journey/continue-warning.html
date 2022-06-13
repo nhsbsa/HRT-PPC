@@ -8,12 +8,13 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Contact us - HRT PPC
+  Do you want to continue? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -39,11 +40,11 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-      
-
       <!-- Change the page heading -->
-      
 
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
       <div class="nhsuk-warning-callout">
         <h3 class="nhsuk-warning-callout__label">
           <span role="text">
@@ -52,29 +53,31 @@
           </span>
         </h3>
         <p>    
-          The postcode you provided have been identified as being outside of England. If you live outside of England, you may be entitled to free prescriptions.<br><br>
+          The postcode you provided may be outside of England. If you live outside of England, you may be entitled to free prescriptions.<br><br>
           Check if you're eligible <a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start">here</a> before purchasing a HRT PPC</a> 
          </p>
       </div>
-
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Do you want to continue?
-        </h1>
-      </legend><br>
-
-      <!-- Add content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <form action="continue-handler" method="get" class="form">
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-          
-      
-      
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Do you want to continue?
+            </h1>
+          </legend>
+
+         
+
+         
+
+
+
           <div class="nhsuk-radios nhsuk-radios--conditional">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                 Yes
               </label>
@@ -87,34 +90,31 @@
             
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-3" name="contact" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
                 No
               </label>
             </div>
+           
       
           
       
           </div>
+
+          
+    
+        
+        
         </fieldset>
       
       </div>
-        
-        <form action="send-certificate">
+      
         <button class="nhsuk-button" type="submit">
           Next
         </button>
       </form>
 
       <p><a href="start">Cancel</a></p>
-
-      
-          
-
-
-
-
-      
 
       <!-- End of content -->
 

@@ -13,6 +13,14 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/continue-handler/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('/v1/nhs-number');
+   } else {
+     res.redirect('/v1/start');
+   }
+  });
+
   
 
 
