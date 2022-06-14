@@ -79,14 +79,34 @@
 
       <p><a href="manual-address">My address is not listed</a></p>
 
-        <form action="/v1/experimental/user-journey/pharmacy-location">
+        <form action="/v1/nhs-number">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
       </form>
 
       <p><a href="start">Cancel</a></p>
-
+      
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            
+            <li><a href="/v1/experimental/user-journey/pharmacy-location">Address is on the border of England - Enter pharmacy location</a></li>
+            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
+        
+          </ul>
+         
+          
+        
+          </ul>
+        </div>
+      </details>
       <!-- End of content -->
 
     </div>  
