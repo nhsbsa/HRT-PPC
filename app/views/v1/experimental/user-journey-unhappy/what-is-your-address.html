@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your postcode? - HRT PPC
+  What is your address? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -41,45 +41,52 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page heading -->
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          What is your postcode?
-        </h1>
-      </legend>
+
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <div class="nhsuk-hint" id="contact-hint">
-        The address you choose should match what is printed on your prescriptions.
-      </div>
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is your address?
+          </h1>
+        </legend>
+        <p>The address you give should match what is printed on your prescriptions.</p>
+      
+      
+      
+      </fieldset>
+      <p><strong>Postcode</strong></p>
+      <p>NE12AB &nbsp; <a href="postcode">Change</a></p>
+      
+
       
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-10">
-          Postcode
+        <label class="nhsuk-label" for="select-1">
+          Select an address
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">1 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="2">2 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="3">3 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="4">4 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="5">5 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="6">6 Newcastle Road, Newcastle, NE12AB</option>
+          <option value="7">7 Newcastle Road, Newcastle, NE12AB</option>
+        </select>
       </div>
-
-      <p><a href="/v1/experimental/manual-address">Enter address manually</a></p>
       
 
-      
+      <p><a href="manual-address">My address is not listed</a></p>
 
-      
-
-        
-        
-
-        <form action="/v1/experimental/user-journey-unhappy/what-is-your-address">
+        <form action="/v1/experimental/user-journey-unhappy/pharmacy-location">
         <button class="nhsuk-button" type="submit">
-          Find address
+          Next
         </button>
       </form>
 
-      <p><a href="">Cancel</a></p>
-
-      <!-- End of content -->
-
+      <p><a href="start">Cancel</a></p>
+      
       <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
@@ -89,19 +96,18 @@
         <div class="nhsuk-details__text">
           <h4>Kickout pages</h4>
           <ul>
-            <li><a href="/v1/kickout/outside-england">Postcode is outside England</a></li>
-            <li><a href="/v1/experimental/outside-england-2">Postcode is on the border of England</a></li>
+            
+            <li><a href="/v1/experimental/user-journey/pharmacy-location">Address is on the border of England - Enter pharmacy location</a></li>
             <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
         
           </ul>
-          <h4>Error messages</h4>
-          <ul>
-            <li><a href="/v1/error-messages/error-postcode">Empty postcode field</a></li>
+         
           
         
           </ul>
         </div>
       </details>
+      <!-- End of content -->
 
     </div>  
 
