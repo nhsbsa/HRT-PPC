@@ -1,0 +1,113 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your address? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+          <h1 class="nhsuk-fieldset__heading">
+            What is the address of your pharmacy?
+          </h1>
+        </legend>
+        <p>The address of the pharmacy should be located inside England.</p>
+      
+      
+      
+      </fieldset>
+      <h3>Postcode</h3>
+      <p>TD152AB &nbsp; <a href="postcode">Change</a></p>
+      
+
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Select an address
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">Lloyds Pharmacy, 1 Long Road, Berwick, TD152AB</option>
+          <option value="2">The Spar, 2 Long Road, Berwick, TD152AB</option>
+          <option value="3">Argos , 3 Long Road, Berwick, TD152AB</option>
+          <option value="4">Aldi, 4 Long Road, Berwick, TD152AB</option>
+          <option value="5">5 Long Road, Berwick, TD152AB</option>
+          <option value="6">6 Long Road, Berwick, TD152AB</option>
+          <option value="7">7 Long Road, Berwick, TD152AB</option>
+        </select>
+      </div>
+      
+
+      <p><a href="/v1/experimental/user-journey/manual-pharmacy">The address is not listed</a></p>
+
+        <form action="/v1/experimental/what-is-your-address">
+        <button class="nhsuk-button" type="submit">
+          Next
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            <li><a href="/v1/experimental/what-is-your-address">Postcode is inside England</a></li>
+            <li><a href="/v1/experimental/user-journey/outside-england">Postcode is outside England</a></li>
+            <li><a href="/v1/experimental/user-journey/continue-warning">Continue with warning</a></li>
+            
+        
+          </ul>
+        </div>
+      </details>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
