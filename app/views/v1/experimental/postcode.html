@@ -43,21 +43,24 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your postcode?
+          What is your address?
         </h1>
       </legend>
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>The address you choose should match what is printed on your prescriptions.</p>
+      
+      <p>
+        The address you give should match what is printed on your prescriptions.
+      </p>
       
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="input-width-10">
-          Postcode
+          <strong>Postcode</strong>
         </label>
         <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
       </div>
 
-      <p><a href="manual-address">Enter address manually</a></p>
+      <p><a href="/v1/experimental/manual-address">Enter address manually</a></p>
       
 
       
@@ -67,7 +70,7 @@
         
         
 
-        <form action="what-is-your-address">
+        <form action="/v1/experimental/user-journey-unhappy/what-is-your-address">
         <button class="nhsuk-button" type="submit">
           Find address
         </button>

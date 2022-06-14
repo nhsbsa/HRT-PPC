@@ -1,0 +1,101 @@
+<!--<style>
+element.style {
+}
+@media (max-width: 53.75em)
+.main_header {
+    padding: 0rem 2rem;
+}
+.main_header {
+    padding: 0rem 1.5rem;
+    margin-bottom: 6rem;
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+user agent stylesheet
+header {
+    display: block;
+}
+body {
+    margin: 0;
+    font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+    font-size: 160%;
+    line-height: 1.42857;
+    color: #555;
+    background-color: #fbfbfb;
+}
+html {
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    box-sizing: border-box;
+    font-size: 10px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+.light-green .main_header:after {
+    background-image: url(../../images/sweeps/headerBanner_light-green.png);
+}
+.main_header:after {
+    content: '';
+    position: absolute;
+    top: 85%;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: -1;
+    background-image: url(../../images/sweeps/headerBanner_corporate.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+</style>-->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <header id="main-header" class="main_header">
+      <div class="container">
+        <div class="header-row">
+          
+    <div class="header-logo site-logo">
+    <a href="" title="NHSBSA: Home" rel="home" class="site-logo-link">
+      <img src="/themes/custom/nhsbsa/images/NHSBSA.svg" width="356px" height="77px" alt="Return to NHS Business Services Authority logo" class="site-logo-image  ">
+      <span class="sr-only">NHSBSA </span>
+    </a>
+  </div>
+  
+
+        </div>
+      </div>
+    </header>
+
+<body>
+  
+<div class="container">
+  
+</div>
+
+<script>
+</script>
+
+</body>
+</html>

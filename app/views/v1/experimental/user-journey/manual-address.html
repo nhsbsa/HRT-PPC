@@ -53,31 +53,38 @@
         </legend>
         <p>The address you give should match what is printed on your prescriptions.</p>
       
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-line-1">
+            Address line 1 <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
+          </label>
+          <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
+        </div>
       
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-line-2">
+            Address line 2<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
+          </label>
+          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
+        </div>
+      
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-town">
+            Town or city
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
+        </div>
+      
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="address-postcode">
+            Postcode
+          </label>
+          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
+        </div>
       
       </fieldset>
-      <p><strong>Postcode</strong></p>
-      <p>NE12AB &nbsp; <a href="postcode">Change</a></p>
       
 
-      
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="select-1">
-          Select an address
-        </label>
-        <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="1">1 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="2">2 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="3">3 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="4">4 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="5">5 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="6">6 Newcastle Road, Newcastle, NE12AB</option>
-          <option value="7">7 Newcastle Road, Newcastle, NE12AB</option>
-        </select>
-      </div>
-      
-
-      <p><a href="manual-address">My address is not listed</a></p>
+      <p><a href="postcode">Find my address for me</a></p>
 
         <form action="/v1/nhs-number">
         <button class="nhsuk-button" type="submit">
@@ -86,27 +93,7 @@
       </form>
 
       <p><a href="start">Cancel</a></p>
-      
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Errors and flags
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h4>Kickout pages</h4>
-          <ul>
-            
-            <li><a href="/v1/experimental/user-journey/pharmacy-location">Address is on the border of England - Enter pharmacy location</a></li>
-            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
-        
-          </ul>
-         
-          
-        
-          </ul>
-        </div>
-      </details>
+
       <!-- End of content -->
 
     </div>  
