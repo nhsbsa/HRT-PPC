@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your postcode? - HRT PPC
+  What is your email address? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -43,24 +43,22 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your address?
+          What is your email address?
         </h1>
       </legend>
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <p>
-        The address you give should match what is printed on your prescriptions.
-      </p>
+      <p>This will be the email address where you will receive your HRT PPC and your reminder 1 month before it expires.</p>
       
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-10">
-          <strong>Postcode</strong>
+        <label class="nhsuk-label" for="two-thirds">
+         
         </label>
-        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
       </div>
 
-      <p><a href="/v1/experimental/manual-address">Enter address manually</a></p>
+      
       
 
       
@@ -70,39 +68,17 @@
         
         
 
-        <form action="/v1/experimental/user-journey-unhappy/what-is-your-address">
+        <form action="check-your-answers">
         <button class="nhsuk-button" type="submit">
-          Find address
+          Next
         </button>
       </form>
 
-      <p><a href="">Cancel</a></p>
+      <p><a href="start">Cancel</a></p>
 
       <!-- End of content -->
 
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Errors and flags
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h4>Kickout pages</h4>
-          <ul>
-            <li><a href="/v1/kickout/outside-england">Postcode is outside England</a></li>
-            <li><a href="/v1/experimental/outside-england-2">Postcode is on the border of England</a></li>
-            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
-        
-          </ul>
-          <h4>Error messages</h4>
-          <ul>
-            <li><a href="/v1/error-messages/error-postcode">Empty postcode field</a></li>
-          
-        
-          </ul>
-        </div>
-      </details>
-
+     
     </div>  
 
   </div>

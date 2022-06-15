@@ -48,53 +48,65 @@
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
-            What is the address of your pharmacy?
+            What is your address?
           </h1>
         </legend>
-        <div class="nhsuk-hint" id="contact-hint">The address you give should be where you collect your prescriptions and must be inside England.</div>
-
+        <p>The address you give should match what is printed on your prescriptions.</p>
       
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-line-1">
-            Address line 1 <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
-          </label>
-          <input class="nhsuk-input" id="address-line-1" name="address-line-1" type="text">
-        </div>
       
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-line-2">
-            Address line 2<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
-          </label>
-          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
-        </div>
-      
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-town">
-            Town or city
-          </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="address-town" name="address-town" type="text">
-        </div>
-      
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="address-postcode">
-            Postcode
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text">
-        </div>
       
       </fieldset>
+      <p><strong>Postcode</strong></p>
+      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
       
 
-      <p><a href="postcode">Find the address for me</a></p>
+      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="select-1">
+          Select an address
+        </label>
+        <select class="nhsuk-select" id="select-1" name="select-1">
+          <option value="1">1 Test Road, Town, NE1 OLD</option>
+          <option value="2">2 Test Road, Town, NE1 OLD</option>
+          <option value="3">3 Test Road, Town, NE1 OLD</option>
+          <option value="4">4 Test Road, Town, NE1 OLD</option>
+          <option value="5">5 Test Road, Town, NE1 OLD</option>
+          <option value="6">6 Test Road, Town, NE1 OLD</option>
+          <option value="7">7 Test Road, Town, NE1 OLD</option>
+        </select>
+      </div>
+      
 
-        <form action="/v1/experimental/user-journey-unhappy/continue-warning">
+      <p><a href="manual-address">My address is not listed</a></p>
+
+        <form action="nhs-number">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
       </form>
 
       <p><a href="start">Cancel</a></p>
-
+      
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            
+            <li><a href="/v1/experimental/user-journey/pharmacy-location">Address is on the border of England - Enter pharmacy location</a></li>
+            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
+        
+          </ul>
+         
+          
+        
+          </ul>
+        </div>
+      </details>
       <!-- End of content -->
 
     </div>  
