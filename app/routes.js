@@ -17,7 +17,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.continue === "yes")  {
      res.redirect('/v1/experimental/nhs-number');
    } else {
-     res.redirect('/v1/start');
+     res.redirect('/v1/experimental/user-journey/outside-england');
    }
   });
 
