@@ -51,17 +51,47 @@
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <form action="inside-england" method="get" class="form">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="input-width-10">
-          <strong>Postcode</strong>
-        </label>
-        
-        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+
+        <fieldset class="nhsuk-fieldset">
+          
+      
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="england" name="country" type="radio" value="england">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                England
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="scotland" name="country" type="radio" value="scotland">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                Scotland
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="wales" name="country" type="radio" value="wales">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Wales
+              </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="northern" name="country" type="radio" value="northern">
+              <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                Northern Ireland
+              </label>
+            </div>
+      
+          </div>
+        </fieldset>
+      
       </div>
 
-      <form action="pharmacy-location-2">
+      
         <button class="nhsuk-button" type="submit">
-          Find address
+          Next
         </button>
       </form>
       <p><a href="start">Cancel</a></p>

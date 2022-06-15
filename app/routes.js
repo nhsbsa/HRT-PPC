@@ -21,6 +21,16 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/inside-england/, function (req, res) {
+    if (req.query.country === "england")  {
+     res.redirect('/v1/experimental/user-journey/nhs-number');
+   } else {
+     res.redirect('/v1/experimental/user-journey-unhappy/continue-warning');
+   }
+  });
+
+  
+
   
 
 
