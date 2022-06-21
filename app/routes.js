@@ -32,7 +32,7 @@ router.get(/copy2021-handler/, function (req, res) {
   router.get(/choose-ppc/, function (req, res) {
   if (req.query.cert === "ppc")  {
     res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
-  } else { 
+  } else if (req.query.cert === "hrt-ppc")  { 
     res.redirect('/v1/experimental/user-journey/start');
   }
  });
