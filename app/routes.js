@@ -29,11 +29,12 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
-  
-
-  
-
-
-
+  router.get(/choose-ppc/, function (req, res) {
+  if (req.query.cert === "ppc")  {
+    res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
+  } else { 
+    res.redirect('/v1/experimental/user-journey/start');
+  }
+ });
 
 module.exports = router;
