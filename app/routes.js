@@ -29,12 +29,20 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
-  router.get(/choose-ppc/, function (req, res) {
-  if (req.query.cert === "ppc")  {
-    res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
-  } else if (req.query.cert === "hrt-ppc")  { 
-    res.redirect('/v1/experimental/user-journey/start');
-  }
- });
+  router.get(/ppc-handler/, function (req, res) {
+    if (req.query.certificate === "ppc")  {
+     res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
+   } else {
+     res.redirect('/v1/experimental/user-journey/start');
+   }
+  });
+
+  //router.get(/choose-ppc/, function (req, res) {
+  //if (req.query.cert === "ppc")  {
+    //res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
+  //} else if (req.query.cert === "hrt-ppc")  { 
+    //res.redirect('/v1/experimental/user-journey/start');
+  //}
+ //});
 
 module.exports = router;
