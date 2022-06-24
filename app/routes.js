@@ -9,7 +9,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.contact === "email")  {
      res.redirect('email');
    } else {
-     res.redirect('check-your-answers');
+     res.redirect('/v1/experimental/check-your-answers-post');
    }
   });
 
