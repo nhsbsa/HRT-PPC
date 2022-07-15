@@ -1,0 +1,135 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Drugs covered by the HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+  
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Drugs which will be covered by the HRT PPC
+        </h1>
+      </legend>
+      <br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+     
+      <p>Not all drugs will be covered by the HRT PPC so it is important to check that the drugs you require will be eligible before purchasing the certificate.</p>
+      
+    <h2>List of drugs</h2>
+    <p>
+      Bedol<br>
+Bijuve  <br>
+Blissel  <br>
+Climen <br>
+Clinorette <br>
+Conjugated oestrogen  <br>
+Conjugated oestrogen / medroxyprogesterone (low dose)<br>
+Conjugated oestrogens with medroxyprogesterone<br>
+Elleste Duet   <br>
+Elleste Duet Conti  <br>
+Elleste Solo<br>
+Estraderm  <br>
+Estradiol  <br>
+Estradiol and estriol with progestogen<br>
+Estradiol hemihydrate  <br>
+Estradiol hemihydrate / dydrogesterone   <br>
+Estradiol hemihydrate / levonorgestrel  <br>
+Estradiol hemihydrate / norethisterone acetate <br>
+Estradiol hemihydrate / progesterone <br>
+Estradiol vaginal tablets (generic) <br>
+Estradiol valerate  <br>
+Estradiol valerate / medroxyprogesterone  <br> 
+Estradiol valerate / medroxyprogesterone acetate  <br>
+Estradiol with cyproterone acetate<br>
+Estradiol with dydrogesterone<br>
+Estradiol with levonorgestrel<br>
+Estradiol with medroxyprogesterone<br>
+Estradiol with norethisterone<br>
+Estradiol with progesterone<br>
+Estradiol with progestogen<br>
+Estradot  <br>
+E-string vaginal delivery system  <br>
+Estriol  <br>
+Estriol cream (generic)<br>  
+Ethinylestradiol<br>
+Evorel   <br>
+Evorel Conti <br>  
+Evorel Sequi  <br>
+Femoston  <br>
+Femoston Conti<br>   
+FemSeven Mono  <br>
+FemSeven Sequi <br>
+FemSeven Conti<br>
+Imvaggis pessary <br>
+Indivina  <br>
+Kliofem  <br>
+Kliovance  <br>
+Lenzetto transdermal spray <br>
+Levonorgestrel   <br>
+Livial  <br>
+Mirena Intrauterine device  <br>
+Novofem   <br>
+Nuvelle TS patches<br>
+Oestrogel   <br>
+Oestrogens conjugated with progestogen<br>
+Ovestin cream  <br>
+Premarin   <br>
+Premique Low Dose  <br>
+Progesterone  <br> 
+Progynova  <br> 
+Progynova TS<br>  
+Sandrena   <br>
+Tibolone <br>
+Tibolone (generic) <br>
+Tridestra  <br>
+Trisequens  <br>
+Utrogestan  <br>
+Vagifem vaginal tablets <br>
+Vagirux vaginal tablets <br>
+Zumenon<br>
+
+
+    </p>
+    <!-- End of content -->
+    </div>  
+  </div>
+{% endblock %}
