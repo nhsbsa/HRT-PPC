@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your postcode? - HRT PPC
+  Contact us - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -35,72 +34,58 @@
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
-
-  <div class="nhsuk-grid-row">
-
-    <div class="nhsuk-grid-column-two-thirds">
-
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your address?
+          Where do you collect your prescription?
         </h1>
       </legend>
+
+      <p>
+        The postcode you entered may not be inside England. <br><br>In order to ensure you are eligible for the HRT PPC, enter the postcode of the pharmacy where you normally pick up your prescription.
+      </p>
+
+      
+
+  
+
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      
-      <p>
-        The address you give should match what is printed on your prescriptions. This helps healthcare staff and service providers identify you and match your details correctly.
-      </p>
-      
       <div class="nhsuk-form-group">
         <label class="nhsuk-label" for="input-width-10">
           <strong>Postcode</strong>
         </label>
+        
         <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
       </div>
 
-      <p><a href="manual-address">Enter address manually</a></p>
-      
-
-      
-
-      
-
-        
-        
-
-        <form action="what-is-your-address">
+      <form action="pharmacy-location-2">
         <button class="nhsuk-button" type="submit">
           Find address
         </button>
       </form>
+      <p><a href="start">Cancel</a></p>
 
-      <p><a href="">Cancel</a></p>
+      
+      
+      
+      
 
-      <!-- End of content 
+      
 
-      <details class="nhsuk-details nhsuk-expander">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Errors and flags
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <h4>Kickout pages</h4>
-          <ul>
-            <li><a href="/v1/kickout/outside-england">Postcode is outside England</a></li>
-            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
         
-          </ul>
-          <h4>Error messages</h4>
-          <ul>
-            <li><a href="/v1/error-messages/error-postcode">Empty postcode field</a></li>
+        
+
+        
+      
           
-        
-          </ul>
-        </div>
-      </details>-->
+
+
+
+
+      
+
+      <!-- End of content -->
 
     </div>  
 

@@ -48,16 +48,16 @@
       <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
           <h1 class="nhsuk-fieldset__heading">
-            What is your address?
+            What is the address of your pharmacy?
           </h1>
         </legend>
-        <p>The address you give should match what is printed on your prescriptions.</p>
+        <p>The address of the pharmacy should be located inside England.</p>
       
       
       
       </fieldset>
-      <p><strong>Postcode</strong></p>
-      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
+      <h3>Postcode</h3>
+      <p>TD152AB &nbsp; <a href="postcode">Change</a></p>
       
 
       
@@ -66,28 +66,28 @@
           Select an address
         </label>
         <select class="nhsuk-select" id="select-1" name="select-1">
-          <option value="1">1 Test Road, Town, NE1 OLD</option>
-          <option value="2">2 Test Road, Town, NE1 OLD</option>
-          <option value="3">3 Test Road, Town, NE1 OLD</option>
-          <option value="4">4 Test Road, Town, NE1 OLD</option>
-          <option value="5">5 Test Road, Town, NE1 OLD</option>
-          <option value="6">6 Test Road, Town, NE1 OLD</option>
-          <option value="7">7 Test Road, Town, NE1 OLD</option>
+          <option value="1">Lloyds Pharmacy, 1 Long Road, Berwick, TD152AB</option>
+          <option value="2">The Spar, 2 Long Road, Berwick, TD152AB</option>
+          <option value="3">Argos , 3 Long Road, Berwick, TD152AB</option>
+          <option value="4">Aldi, 4 Long Road, Berwick, TD152AB</option>
+          <option value="5">5 Long Road, Berwick, TD152AB</option>
+          <option value="6">6 Long Road, Berwick, TD152AB</option>
+          <option value="7">7 Long Road, Berwick, TD152AB</option>
         </select>
       </div>
       
 
-      <p><a href="manual-address">My address is not listed</a></p>
+      <p><a href="/v1/experimental/user-journey/manual-pharmacy">The address is not listed</a></p>
 
-        <form action="nhs-number">
+        <form action="/v1/experimental/what-is-your-address">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
       </form>
 
       <p><a href="start">Cancel</a></p>
-      
-      <!--<details class="nhsuk-details nhsuk-expander">
+
+      <details class="nhsuk-details nhsuk-expander">
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
             Errors and flags
@@ -96,17 +96,15 @@
         <div class="nhsuk-details__text">
           <h4>Kickout pages</h4>
           <ul>
+            <li><a href="/v1/experimental/what-is-your-address">Postcode is inside England</a></li>
+            <li><a href="/v1/experimental/user-journey/outside-england">Postcode is outside England</a></li>
+            <li><a href="/v1/experimental/user-journey/continue-warning">Continue with warning</a></li>
             
-            <li><a href="/v1/experimental/user-journey-unhappy/pharmacy-location">Address is on the border of England - Enter pharmacy location</a></li>
-            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
-        
-          </ul>
-         
-          
         
           </ul>
         </div>
-      </details>-->
+      </details>
+
       <!-- End of content -->
 
     </div>  

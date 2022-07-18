@@ -21,6 +21,14 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/continue-postcode/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('/v2/start');
+   } else {
+     res.redirect('/v2/outside-england');
+   }
+  });
+
   router.get(/inside-england/, function (req, res) {
     if (req.query.country === "england")  {
      res.redirect('/v1/experimental/user-journey/nhs-number');
@@ -29,11 +37,27 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/postcode-handler/, function (req, res) {
+    if (req.query.location === "england")  {
+     res.redirect('/v2/start');
+   } else {
+     res.redirect('/v2/continue-warning');
+  }
+  });
+
   router.get(/ppc-handler/, function (req, res) {
     if (req.query.certificate === "ppc")  {
      res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
    } else {
-     res.redirect('/v1/experimental/user-journey/start');
+     res.redirect('/v2/postcode-checker');
+   }
+  });
+
+  router.get(/copy-handler/, function (req, res) {
+    if (req.query.contact === "email")  {
+     res.redirect('email');
+   } else {
+     res.redirect('check-your-answers-post');
    }
   });
 

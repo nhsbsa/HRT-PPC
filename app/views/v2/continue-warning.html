@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  What is your NHS number? - HRT PPC
+  Do you want to continue? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -45,89 +45,70 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information:
+          </span>
+        </h3>
+        <p>    
+          If you live outside of England, you may be entitled to free prescriptions.<br><br>
+          Before buying an HRT PPC, check if you're entitled to free NHS prescriptions and other help with health costs using our<a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start"> eligibility checker.</a>
+         </p>
+      </div>
       
+      <form action="continue-postcode" method="get" class="form">
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Do you know your NHS number?
+              Do you want to continue?
             </h1>
           </legend>
 
-          <p>Your NHS number is unique to you. It helps healthcare staff and service providers identify you correctly and match your details to your health records.
+         
 
-            
-            </p>
-      
-          
-            <div class="nhsuk-hint" id="contact-hint">
-              Your NHS number is a 10 digit number, like 485 777 3456.
-            </div>
+         
+
+
+
           <div class="nhsuk-radios nhsuk-radios--conditional">
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+              <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                 Yes
               </label>
             </div>
       
-            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-      
-              <div class="nhsuk-form-group">
-                <label class="nhsuk-label" for="email">
-                  NHS number
-                </label>
-                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
-              </div>
-      
-            </div>
+            
       
             
       
             
       
             <div class="nhsuk-radios__item">
-              <input class="nhsuk-radios__input" id="contact-3" name="contact" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
-              <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
                 No
               </label>
             </div>
+           
       
           
       
           </div>
+
+          
+    
+        
+        
         </fieldset>
       
       </div>
-        
       
-        <p>If you do not know your NHS number, <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/">click here</a> to find out where to find it.</p>
-      
-      <!--<details class="nhsuk-details">
-        <summary class="nhsuk-details__summary">
-          <span class="nhsuk-details__summary-text">
-            Where to find your NHS number
-          </span>
-        </summary>
-        <div class="nhsuk-details__text">
-          <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
-          <p>It is usually on any letter or document you have received from the NHS, such as:</p>
-          <ul>
-            <li>prescriptions</li>
-            <li>test results</li>
-            <li>appointment letters</li>
-            <li>maternity notes</li>
-            <li>the NHS app</li>
-          </ul>
-          
-      
-        </div>
-      </details>-->
-     
-
-        <form action="send-certificate">
         <button class="nhsuk-button" type="submit">
           Next
         </button>
