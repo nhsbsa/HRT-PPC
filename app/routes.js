@@ -15,7 +15,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/continue-handler/, function (req, res) {
     if (req.query.continue === "yes")  {
-     res.redirect('/v1/experimental/nhs-number');
+     res.redirect('/v2/dob');
    } else {
      res.redirect('/v1/experimental/user-journey/outside-england');
    }
@@ -31,7 +31,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/inside-england/, function (req, res) {
     if (req.query.country === "england")  {
-     res.redirect('/v1/experimental/user-journey/nhs-number');
+     res.redirect('/v2/dob?');
    } else {
      res.redirect('/v1/experimental/user-journey-unhappy/continue-warning');
    }
@@ -49,7 +49,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.certificate === "ppc")  {
      res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
    } else {
-     res.redirect('/v2/postcode-checker');
+     res.redirect('/v2/start')
    }
   });
 
