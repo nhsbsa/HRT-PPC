@@ -23,7 +23,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/continue-postcode/, function (req, res) {
     if (req.query.continue === "yes")  {
-     res.redirect('/v2/start');
+     res.redirect('/v2/dob');
    } else {
      res.redirect('/v2/outside-england');
    }
