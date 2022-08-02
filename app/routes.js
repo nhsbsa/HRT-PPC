@@ -39,7 +39,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/postcode-handler/, function (req, res) {
     if (req.query.location === "england")  {
-     res.redirect('/v2/start');
+     res.redirect('/v2/dob');
    } else {
      res.redirect('/v2/continue-warning');
   }
