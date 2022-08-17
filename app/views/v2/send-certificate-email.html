@@ -45,18 +45,15 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <form action="copy-handler" method="get" class="form">
+      <form action="copy-email" method="get" class="form">
       <div class="nhsuk-form-group">
 
-
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Your HRT PPC certificate
+              Would you like to get your prepayment certificate by email?
             </h1>
           </legend>
-
-
-       
 
           <!--<div class="nhsuk-warning-callout">
             <h3 class="nhsuk-warning-callout__label">
@@ -69,27 +66,15 @@
           </div>-->
 
           
-          <!--<p>The most convenient way to receive your HRT certificate details is by email.</p>-->
-          
-            
-          
-          <p>You will get an HRT PPC certificate number, a start and end date at the end of the service.</p>
-              
-          
-            <p>You will also be able to:</p>
+          <p>The quickest way to receive your HRT PPC certificate is by email.</p>
+          <p>If you choose to receive your details by email you will get:
             <ul>
-              <li>print a copy</li>
-              <li>save as a PDF</li>
-              <li>screenshot your certificate details</li>
-              
+              <li>an HRT PPC certificate number</li>
+              <li>a start date</li>
+              <li>an end date</li>
+              <li>an email reminder one month before your renewal date</li>
             </ul>
-           
-              <h3>
-                Do you also want to receive your certificate by email?
-              </h3>
-            
-          
-          <p>You can also receive it by email which is the quickest way to receive your HRT certificate details.  </p>
+          </p>
 
 
 
@@ -105,16 +90,12 @@
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
       
               <div class="nhsuk-form-group">
-               <p> We'll email your certificate to you within 10 hours.<br><br> You can also take a screenshot of the certificate after the payment screen, or print or save it as a PDF.<br><br> We will also send you an an email reminder one month before your renewal date.</p> 
-               
-                <label class="nhsuk-label" for="email">
-                  Email address
-                </label>
-                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
-              
+               <p> We'll email your certificate to you within 10 hours.<br><br> You can also take a screenshot of the certificate after the payment screen, or print or save it as a PDF. </p> 
               </div>
-
-              
+              <label class="nhsuk-label" for="email">
+                Email address
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
       
             </div>
       
@@ -125,13 +106,13 @@
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="email" name="contact" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
               <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-                I do not want my certificate emailed to me
+                I will print or save my certificate at the end of the service
               </label>
             </div>
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
       
               <div class="nhsuk-form-group">
-                <p>You can take a screenshot of your certificate after the payment screen, or save it as a PDF.  </p>
+                <p>You can also take a screenshot of your certificate after the payment screen, or save it as a PDF.  </p>
                 <p>You will receive a letter 1 month before your HRT PPC certificate needs to be renewed, to help you avoid any future fines. The letter may be delayed by up to 10 working days. </p>
                 
               </div>
@@ -155,9 +136,12 @@
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>Call us on 0300 330 1341 if you would like your HRT PPC posted to you.</p>
-                <p>Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.</p>
-                <p><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers">Find out about call charges.</a></p>
+          <p>If you would like your HRT PPC posted to you, you can contact us: </p>
+                
+                  <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
+                <strong>Telephone:</strong> 0300 330 1341<br>
+                Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.<br><br>
+                <p><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a></p>
       
         </div>
       </details>

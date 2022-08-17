@@ -8,12 +8,13 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Page not found - HRT PPC
+  Contact us - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 
 {% endblock %}
 
@@ -43,30 +44,47 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Page not found
+          Contact us
         </h1>
-      </legend>
-      <br>
+      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       <p>
-        The page you are trying to request could not be found.
-       
-      </p>
-      <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>  
-            If you need further help completing this form, you can contact us:<br><br>
-            <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a>.<br><br>
-          <strong>Telephone:</strong> 0300 330 1341<br>
-          Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.
-          
-        </p>
+        Our records show you may already be receiving help with NHS health costs. Please return once your current certificate has expired.<br>
+
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="https://services.nhsbsa.nhs.uk/check-my-nhs-exemption/start">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Find out when your certificate expires</span>
+          </a>
+        </div>
+
+
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>  
+          If you need further help completing this form, you can contact us:<br><br>
+          <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
+        <strong>Telephone:</strong> 0300 330 1341<br>
+        Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.
         
-      </div>
+      </p>
+      
+    </div>
+        
+      </p>
+      
+      
+
       <p><a href="https://www.nhsbsa.nhs.uk/">Return to NHS Business Services home</a></p>
+
       <!-- End of content -->
+
     </div>  
+
   </div>
 {% endblock %}

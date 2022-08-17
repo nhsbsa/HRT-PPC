@@ -61,6 +61,14 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/copy-email/, function (req, res) {
+    if (req.query.contact === "email")  {
+     res.redirect('check-your-answers');
+   } else {
+     res.redirect('check-your-answers-post');
+   }
+  });
+
   //router.get(/choose-ppc/, function (req, res) {
   //if (req.query.cert === "ppc")  {
     //res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
