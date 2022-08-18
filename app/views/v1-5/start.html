@@ -1,0 +1,161 @@
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-cookies-2.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS HRT prescription prepayment card
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Buy an NHS Hormone Replacement Therapy Prescription Prepayment Certificate (HRT PPC)
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p class="nhsuk-lede-text">
+       
+      </p>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information:
+          </span>
+        </h3>
+        <p>This PPC only covers licensed Hormone Replacement Therapy (HRT) treatments. <br><br>If you require prescription drugs outside of HRT then a standard <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs"> Prescription Prepayment Certificate (PPC)</a> may be more beneficial for you.</a></p>
+      </div>
+
+
+      
+      <p>
+        Save money on NHS HRT prescriptions by prepaying for them.<br><br>
+        You can pay a set price for prescriptions for 12 months, no matter how many you need over the course of the year.<br><br>
+        A prescription costs £9.35 per item, but prepaying for an unlimited number of HRT prescriptions is:
+      </p>
+
+      <ul class="list list-bullet">
+        <li>one time payment of £18.70 for 12 months</li>
+      </ul>
+      <p>You are not able to claim a refund for your HRT PPC in the future.</p>
+
+
+      <p></p>
+      
+
+      <div class="nhsuk-action-link">
+        <a class="nhsuk-action-link__link" href="">
+          <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+          </svg>
+          <span class="nhsuk-action-link__text">Check here to find out if your HRT drugs are covered by the HRT PPC </span>
+        </a>
+      </div>
+      
+      
+      
+
+      
+      <h3 class="heading-medium">How it works</h3>
+        <!--<div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
+          They are also costly to the NHS and the environment.</p>
+        </div>-->
+
+        
+        <p>
+      
+          Show your certificate details when you collect your HRT prescription. <br>
+          <br>Your HRT PPC certificate will start on the day you buy it – so if you buy it today it will be valid from today's date. This means you can collect your HRT prescriptions straight away.
+          <p>The prescriptions must be licensed for the treatment of menopause to qualify.</p>
+          <p>You can use your HRT PPC certificate in any registered pharmacy within the UK.</p>
+        </p>
+
+        <h3 class="heading-medium">Ways to receive your certificate</h3>
+      <ul class="list list-bullet">
+        
+        <li>print a copy</li>
+        <li>save a pdf copy to your device</li>
+        <li>take a screenshot of the certificate</li>
+      </ul>  
+
+      <p>You are unable to receive your certificate by post through this service.<br><br>The quickest way to buy one is online. If you require a postal certificate, there are other ways to buy one. </p>
+      
+     
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to use your HRT PPC
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>
+      
+            Show your certificate details to your pharmacist when you collect your HRT prescription. <br>
+            <br>Your HRT PPC will start on the day you buy it – so if you buy it today it will be valid from today's date. This means you can collect your HRT prescriptions straight away. <strong>TBC</strong>
+            
+            <br><br>You can use your HRT PPC in any pharmacy within the UK.
+          </p>
+      
+        </div>
+      </details>
+
+        <form action="postcode-checker">
+        <button class="nhsuk-button" type="submit">
+          Buy now
+        </button>
+      </form>
+
+        
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

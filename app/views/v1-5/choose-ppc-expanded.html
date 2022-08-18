@@ -1,0 +1,92 @@
+ {% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Which PPC do you need?
+{% endblock %}
+
+{% block outerContent %}
+  
+{% endblock %}
+
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <form action="ppc-v2" method="get" class="form">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Which Prescription Prepayment Certificate (PPC) do you require?
+            </h1>
+          </legend>
+          
+          
+          <p>You may be eligible for help with your health costs. Use our <a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank" >eligibility checker</a> before purchasing a PPC to see if you can get your prescriptions for free.</p>
+
+          <div class="nhsuk-hint" id="contact-hint">
+            Select the PPC which covers the prescriptions you need
+          </div>
+
+          
+
+          
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <p></p>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-1" name="certificate" type="radio" value="ppc" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Standard PPC
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                    This certificate covers all your NHS prescriptions for a set price. You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.
+                  </div>
+            </div>
+            <br>
+            
+            
+            
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contat-2" name="certificate" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                Hormone Replacement Therapy (HRT) PPC
+              </label>
+              <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
+                <p>This certificate covers only Hormone Replacement Therapy drugs. The prescriptions must be licensed for the treatment of menopause to qualify.</p>
+                  <ul class="list list-bullet">
+                   
+                  </ul>
+                  <p>Find out <a href="/drugs">here</a> if your HRT prescriptions are covered by the HRT PPC.</p>
+                
+              </div>
+            </div>
+ 
+      
+          
+      
+          </div>
+
+          
+    
+        
+        
+        </fieldset>
+      
+      </div>
+      
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+  
+
+  </div>
+</div>
+
+{% endblock %}

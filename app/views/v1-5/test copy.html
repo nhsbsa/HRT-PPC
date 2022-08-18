@@ -1,0 +1,541 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-bsa.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your date of birth? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="page">
+  <header id="main-header" class="main_header">
+ <div class="container">
+   <div class="header-row">
+     
+<div class="header-logo site-logo">
+<a href="/#" title="NHSBSA: Home" rel="home" class="site-logo-link">
+ <img src="/themes/custom/nhsbsa/images/NHSBSA.svg" width="356px" height="77px" alt="Return to NHS Business Services Authority logo" class="site-logo-image  ">
+ <span class="sr-only">NHSBSA </span>
+</a>
+</div>
+
+
+   </div>
+ </div>
+</header>
+
+<main id="main-content" class="main_body"> 
+           
+         <div class="content-header sm-mt-40 mt-20">
+   <div class="container">
+     <div class="row is-just-between sm-is-direction-row is-direction-column ie-text-right">
+                                 <div class="column sm-is-none is-auto ie-is-inline-block ie-is-8 ie-text-left">
+                             <div class="service-name-wrapper">
+               <a href="/nhs-help-health-costs" class="service-name"> NHS Help with Health Costs</a>
+             </div>
+                           <button class="js-search-toggle search-toggle show-from-sm ie-is-hidden"><span class="sr-only">Toggle search</span>
+           </button>
+         </div>
+                                             <div class="column sm-is-none is-auto search-column ie-is-inline-block ie-is-4">
+           <div class="js-search-controller search-controller">
+             <div class="js-search-container" style="display: block;">
+               <div class="views-exposed-form bef-exposed-form content_page" data-drupal-selector="views-exposed-form-search-search-block" id="block-exposedformsearchsearch-block" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ <div class="search-block-form searchBar">
+<form block="block-exposedformsearchsearch-block" action="/search" method="get" id="views-exposed-form-search-search-block" accept-charset="UTF-8">
+<div class="js-form-item form-item js-form-type-textfield form-item-aggregated-field js-form-item-aggregated-field">
+ <label for="edit-aggregated-field">Search</label>
+   <input placeholder="Search the NHSBSA website" data-drupal-selector="edit-aggregated-field" type="text" id="edit-aggregated-field" name="aggregated_field" value="" size="30" maxlength="128" class="form-text">
+
+   </div>
+<div data-drupal-selector="edit-actions" class="form-actions js-form-wrapper form-wrapper" id="edit-actions"><div class="submit-controller">
+<button role="button" data-drupal-selector="edit-submit-search" type="submit" id="edit-submit-search" value="Search" class="button js-form-submit form-submit"><span class="submit-inner">Search</span></button>
+
+</div>
+</div>
+
+
+</form>
+</div>
+
+</div>
+
+             </div>
+           </div>
+         </div>
+                 </div>
+
+                           <div class="row md-mb-40 mb-20 md-mt--10">
+         <div class="column is-12">
+           <div id="block-custommenu" class="content_page" title="" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs" tmp_title="">
+
+
+ 
+       <nav class="service-nav hide-from-md" id="navigation">
+<ul block="block-custommenu" class="nav">
+               <li class="nav-item menu-item--collapsed">
+   <a href="/check-if-youre-eligible-help" data-drupal-link-system-path="node/5851" title="" tabindex="0" tmp_title="">Check if you're eligible for help</a>
+         </li>
+           <li class="nav-item nav-item--expanded menu-item--active-trail">
+   <a href="/help-nhs-prescription-costs" data-drupal-link-system-path="node/874" title="" tabindex="0" tmp_title="">Help with NHS prescription costs</a><button class="nav-button nav-button-down" tabindex="0"><span class="sr-only">Dropdown Button</span></button>
+                         <ul class="nav service-nav-dropdown ">
+<div class="nav-bar-close" tabindex="0">X</div>
+               <li class="nav-item menu-item--collapsed">
+   <a href="/help-nhs-prescription-costs/free-nhs-prescriptions" data-drupal-link-system-path="node/873" title="" tabindex="0" tmp_title="">Free NHS prescriptions</a>
+         </li>
+           <li class="nav-item nav-item--expanded menu-item--active-trail">
+   <a href="/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs" data-drupal-link-system-path="node/8010" class="is-active" title="" tabindex="0" tmp_title="">Prescription prepayment certificates</a><button class="nav-button nav-button-down" tabindex="-1"><span class="sr-only">Dropdown Button</span></button>
+         </li>
+           <li class="nav-item">
+   <a href="/help-nhs-prescription-costs/electronic-prescriptions" data-drupal-link-system-path="node/4852" title="Go to undefined" tabindex="0">Electronic prescriptions</a>
+         </li>
+           <li class="nav-item menu-item--collapsed">
+   <a href="/help-nhs-prescription-costs/real-time-exemption-checking" data-drupal-link-system-path="node/7171" title="Go to undefined" tabindex="0">Real Time Exemption Checking</a>
+         </li>
+           <li class="nav-item">
+   <a href="/help-nhs-prescription-costs/nhs-prescription-charges-news" data-drupal-link-system-path="node/777" title="Go to undefined" tabindex="0">NHS prescription charges news</a>
+         </li>
+       </ul>
+ 
+         </li>
+           <li class="nav-item nav-item--expanded">
+   <a href="/help-nhs-dental-costs" data-drupal-link-system-path="node/1210" title="" tabindex="0" tmp_title="">Help with NHS dental costs</a><button class="nav-button nav-button-down" tabindex="0"><span class="sr-only">Dropdown Button</span></button>
+                         <ul class="nav service-nav-dropdown ">
+<div class="nav-bar-close" tabindex="0">X</div>
+               <li class="nav-item">
+   <a href="/help-nhs-dental-costs/free-nhs-dental-treatment" data-drupal-link-system-path="node/1211" title="" tabindex="0" tmp_title="">Free NHS dental treatment</a>
+         </li>
+           <li class="nav-item">
+   <a href="/help-nhs-dental-costs/replacement-dental-appliances" data-drupal-link-system-path="node/1214" title="" tabindex="0" tmp_title="">Replacement dental appliances</a>
+         </li>
+           <li class="nav-item">
+   <a href="/help-nhs-dental-costs/nhs-dental-charges-news" data-drupal-link-system-path="node/1331" title="Go to undefined" tabindex="0">NHS dental charges news</a>
+         </li>
+       </ul>
+ 
+         </li>
+           <li class="nav-item nav-item--expanded">
+   <a href="/help-travel-eye-care-wigs-and-fabric-support-costs" data-drupal-link-system-path="node/1206" title="" tabindex="0" tmp_title="">Help with travel, eye care, wigs and fabric support costs</a><button class="nav-button nav-button-down" tabindex="0"><span class="sr-only">Dropdown Button</span></button>
+                         <ul class="nav service-nav-dropdown ">
+<div class="nav-bar-close" tabindex="0">X</div>
+               <li class="nav-item">
+   <a href="/help-travel-eye-care-wigs-and-fabric-support-costs/travel-receive-nhs-treatment" data-drupal-link-system-path="node/1207" title="" tabindex="0" tmp_title="">Travel to receive NHS treatment</a>
+         </li>
+           <li class="nav-item">
+   <a href="/help-travel-eye-care-wigs-and-fabric-support-costs/sight-tests-glasses-and-contact-lenses" data-drupal-link-system-path="node/1208" title="" tabindex="0" tmp_title="">Sight tests, glasses and contact lenses</a>
+         </li>
+           <li class="nav-item">
+   <a href="/help-travel-eye-care-wigs-and-fabric-support-costs/wigs-and-fabric-supports" data-drupal-link-system-path="node/1209" title="" tabindex="0" tmp_title="">Wigs and fabric supports</a>
+         </li>
+       </ul>
+ 
+         </li>
+           <li class="nav-item nav-item--expanded">
+   <a href="/nhs-low-income-scheme" data-drupal-link-system-path="node/1203" title="" tabindex="0" tmp_title="">NHS Low Income Scheme</a><button class="nav-button nav-button-down" tabindex="0"><span class="sr-only">Dropdown Button</span></button>
+                         <ul class="nav service-nav-dropdown ">
+<div class="nav-bar-close" tabindex="0">X</div>
+               <li class="nav-item">
+   <a href="/nhs-low-income-scheme/hc2-certificates-full-help-health-costs" data-drupal-link-system-path="node/1204" title="Go to undefined" tabindex="0">HC2 certificates (full help with health costs)</a>
+         </li>
+           <li class="nav-item">
+   <a href="/nhs-low-income-scheme/hc3-certificates-limited-help-health-costs" data-drupal-link-system-path="node/1205" title="Go to undefined" tabindex="0">HC3 certificates (limited help with health costs)</a>
+         </li>
+       </ul>
+ 
+         </li>
+           <li class="nav-item nav-item--expanded">
+   <a href="/exemption-certificates" data-drupal-link-system-path="node/1199" title="" tabindex="0" tmp_title="">Exemption certificates</a><button class="nav-button nav-button-down" tabindex="0"><span class="sr-only">Dropdown Button</span></button>
+                         <ul class="nav service-nav-dropdown ">
+<div class="nav-bar-close" tabindex="0">X</div>
+               <li class="nav-item">
+   <a href="/exemption-certificates/medical-exemption-certificates" data-drupal-link-system-path="node/1200" title="Go to undefined" tabindex="0">Medical exemption certificates</a>
+         </li>
+           <li class="nav-item menu-item--collapsed">
+   <a href="/exemption-certificates/maternity-exemption-certificates" data-drupal-link-system-path="node/1201" title="Go to undefined" tabindex="0">Maternity exemption certificates</a>
+         </li>
+           <li class="nav-item">
+   <a href="/exemption-certificates/nhs-tax-credit-exemption-certificates" data-drupal-link-system-path="node/1202" title="Go to undefined" tabindex="0">NHS tax credit exemption certificates</a>
+         </li>
+           <li class="nav-item">
+   <a href="/exemption-certificates/exemption-certificates-news" data-drupal-link-system-path="node/1736" title="Go to undefined" tabindex="0">Exemption certificates news</a>
+         </li>
+       </ul>
+ 
+         </li>
+       </ul>
+</nav>
+ 
+
+
+</div>
+
+           <nav class="service-nav-mobile show-from-md ie-is-hidden">
+             
+
+             <button type="button" name="toggleMobileNav" class="menu-toggle js-menu-toggle">NHS Prescription Prepayment Certificates (PPCs)</button>
+           </nav>
+         </div>
+       </div>
+             </div>
+ </div>
+
+     <div class="contextual-tabs">
+   
+ </div>
+
+   <div class="content-row">
+ <div class="container tablet-mb-65 mb-25">
+   <div class="row mt--15">
+     <div class="column is-block lg-is-8 is-12 ie-is-8">
+       <div data-drupal-messages-fallback="" class="hidden"></div>
+<div id="block-pagetitle" class="content_page" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ 
+<h1>NHS Prescription Prepayment Certificates (PPCs)</h1>
+
+
+</div>
+<article data-history-node-id="8010" role="article" about="/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs">
+
+
+
+
+
+<div>
+
+       <div class="field field--name-body field--type-text-with-summary field--label-hidden field__item"><p style="margin-bottom:11px">A PPC could save you money if you pay for your NHS prescriptions.</p>
+
+<p style="margin-bottom:11px">The certificate covers all your NHS prescriptions for a set price. You will save money if you need more than 3 items in 3 months, or 11 items in 12 months.</p>
+
+<p style="margin-bottom:11px">The prescription charge in England is £9.35&nbsp;per item. A PPC costs:</p>
+
+<ul><li>£30.25 for 3 months</li>
+<li>£108.10 for 12 months</li>
+</ul><p>Before buying a PPC, check if you’re entitled to free NHS prescriptions and other help with health costs using our&nbsp;<a href="/check-if-youre-eligible-help">eligibility checker</a>.</p>
+
+<p><a class="ckbtn" href="https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/" title="Go to Buy a PPC">Buy a PPC</a></p>
+
+<h2>How much you can save</h2>
+
+<div class="responsive_table"><table style="border:undefined"><thead><tr><th style="width:277px">Number of prescribed medicines you need each month</th>
+ <th style="width:203px">Saving with a 12 month PPC</th>
+ <th style="width:223px">Saving with a 3 month PPC</th>
+</tr></thead><tbody><tr><td style="width:277px">2</td>
+ <td style="width:203px">More than £116 a year</td>
+ <td style="width:223px">More than £25 in 3 months</td>
+</tr><tr><td style="width:277px">3</td>
+ <td style="width:203px">More than £228 a year</td>
+ <td style="width:223px">More than £53 in 3 months</td>
+</tr><tr><td style="width:277px">4</td>
+ <td style="width:203px">More than £340 a year</td>
+ <td style="width:223px">More than £81 in 3 months</td>
+</tr></tbody></table></div><h2>Check your PPC is valid&nbsp;</h2>
+
+<p><a href="https://services.nhsbsa.nhs.uk/check-my-nhs-exemption/start">Check that your PPC is valid before claiming free NHS prescriptions</a>.</p>
+
+<h2>Get a digital PPC</h2>
+
+<p>You can receive your PPC instantly by email. <a href="/contact-nhs-help-health-costs">Contact us to switch to a digital PPC</a>.</p>
+
+<h2>How you can&nbsp;buy</h2>
+
+<p>You can buy a&nbsp;PPC:</p>
+
+<ul><li>online</li>
+<li>with a <a href="/sites/default/files/2022-03/Registered%20Pharmacies%202022-03-01.pdf">registered pharmacy</a></li>
+</ul><p>If you need extra help call us on 0300 330 1341.</p>
+
+<div class="expander-wrap">
+<div class="expander" tabindex="0">
+<h2>Ways you can pay</h2>
+</div>
+
+<div class="expander-content">
+<p>You can pay for a PPC in the following ways:</p>
+
+<ul><li>In 10 monthly instalments by Direct Debit. This option is only available for a 12-month PPC. It is&nbsp;not available at pharmacies.</li>
+<li>In full by card payment.</li>
+<li>In full at&nbsp;a pharmacy.</li>
+</ul></div>
+</div>
+
+<div class="expander-wrap">
+<div class="expander" tabindex="0">
+<h2>Claiming refunds</h2>
+</div>
+
+<div class="expander-content">
+<h3>NHS prescription charges</h3>
+
+<p>You may get an NHS prescription charge refund if:</p>
+
+<ul><li>you get an NHS refund form (FP57) when you pay for your NHS prescription - you cannot&nbsp;get one later</li>
+<li>your PPC covers the date you paid for your NHS prescription</li>
+</ul><p>The FP57 tells you how to claim.</p>
+
+<p>You need to apply for a refund within 3 months of paying the prescription charge.</p>
+
+<h3>PPC fees</h3>
+
+<p>If you become entitled to free NHS prescriptions while your PPC is valid. You may be entitled to a refund. Read the <a href="/sites/default/files/2022-04/HC11%20%28V17%29%20online%2004.2022.pdf">HC11 booklet (PDF: 169KB)</a> for details of refund arrangements. <a href="/contact-nhs-help-health-costs">Contact us</a>&nbsp;to claim a refund.</p>
+</div>
+</div>
+
+<div class="expander-wrap">
+<div class="expander" tabindex="0">
+<h2>How to report a change or error</h2>
+</div>
+
+<div class="expander-content">
+<p>It is important that your details are correct and are kept up to date.</p>
+
+<p>If you change your name, you need a new certificate. Return this certificate to us with a copy of your marriage certificate, civil partnership certificate, deed poll, passport, or decree absolute.</p>
+
+<p><a href="/contact-us">Contact us</a>&nbsp;if you change address or notice any errors on your certificate.</p>
+
+<p>In the event of the certificate holder’s death, let us know and return the PPC so we can stop a renewal reminder being sent. In certain circumstances, a refund may be due.</p>
+</div>
+</div>
+
+<div class="expander-wrap">
+<div class="expander" tabindex="0">
+<h2>How to replace your PPC</h2>
+</div>
+
+<div class="expander-content">
+<p>If you lose or damage your certificate, <a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs" title="Contact us">contact us</a>. We can send you a replacement.</p>
+
+<p>You can switch to a digital certificate and get your PPC by email. Or you’ll receive your paper certificate within 10 working days.</p>
+</div>
+</div>
+</div>
+ 
+</div>
+
+</article>
+<div id="block-contentsubchildrenblock" class="content_page" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ <div class="row"><div class="column sm-is-6 is-12 ie-is-6"><div class="childBlock"><div class="childBlock-block"><h3 class="childBlock-title"><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs/pharmacy-sales-nhs-prescription-prepayment-certificate-ppc" title="Go to Pharmacy sales - NHS Prescription Prepayment Certificate (PPC)" class="childBlock-link">Pharmacy sales - NHS Prescription Prepayment Certificate (PPC)</a></h3><p></p></div></div></div><div class="column sm-is-6 is-12 ie-is-6"><div class="childBlock"><div class="childBlock-block"><h3 class="childBlock-title"><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions" title="Go to Terms and conditions for buying a prescription prepayment certificate (PPC)" class="childBlock-link">Terms and conditions for buying a prescription prepayment certificate (PPC)</a></h3><p>The terms and conditions of using the prescription prepayment certificate service.</p></div></div></div></div>
+</div>
+<div id="block-socialsharinglinks" class="content_page" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ <div class="js-shareThisPage share-this-page"><button class="js-shareThisPageButton share-this-page-button">Share this page</button>
+<div class="js-shareLinksWrapper" style="display: none;">
+   <div class="share-links-wrapper">
+
+       <!-- Sharingbutton Facebook -->
+       <a class="share--link" href="https://facebook.com/sharer/sharer.php?u=https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs" target="_blank" aria-label="" title="Share on facebook!">
+           <span class="share--link-span share--link-facebook" aria-role="Share this on Facebook"></span>
+           <span class="share--link-text sr-only" aria-hidden="true" title="Share this on Facebook">Share on facebook</span>
+       </a>
+
+       <!-- Sharingbutton Twitter -->
+       <a class="share--link" href="https://twitter.com/intent/tweet/?text=NHS Prescription Prepayment Certificates (PPCs)&amp;url=https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs" target="_blank" aria-label="" title="Share on Twitter!">
+           <span class="share--link-span share--link-twitter" aria-role="Share this on Facebook"></span>
+           <span class="share--link-text sr-only" aria-hidden="true" title="Share this on Facebook">Share on Twitter</span>
+       </a>
+
+       <!-- Sharingbutton LinkedIn -->
+       <a class="share--link" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs&amp;title=NHS Prescription Prepayment Certificates (PPCs)&amp;summary=NHS Prescription Prepayment Certificates (PPCs)&amp;source=https://https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs" target="_blank" aria-label="" title="Share on LinkedIn!">
+           <span class="share--link-span share--link-linkedin" aria-role="Share this on Facebook"></span>
+           <span class="share--link-text sr-only" aria-hidden="true" title="Share this on Facebook">Share on LinkedIn</span>
+       </a>
+
+   </div>
+</div>
+</div>
+</div>
+
+
+     </div>
+                                                 <div class="column is-block is-normal lg-is-4 is-12 ie-is-4">
+                   <div class="row is-direction-column">
+                       <div class="column is-block is-normal is-12 ie-is-12 hide-from-md">
+   <nav class="breadcrumb sidebar-nav" role="navigation" aria-labelledby="system-breadcrumb">
+<h2 id="system-breadcrumb" class="visually-hidden">Breadcrumb</h2>
+<ul>
+         <li class="menu-item level-0 menu-item--expanded">
+                 <a href="/help-nhs-prescription-costs">Help with NHS prescription costs </a>
+             </li>
+         <li class=" menu-item active menu-item--expanded level-1">
+                 <a href="/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs">Prescription prepayment certificates</a>
+             </li>
+         <li class="menu-item-child">
+                 <a href="/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs/pharmacy-sales-nhs-prescription-prepayment-certificate-ppc">Pharmacy sales - NHS Prescription Prepayment Certificate (PPC)</a>
+             </li>
+         <li class="menu-item-child">
+                 <a href="/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions">Terms and conditions</a>
+             </li>
+     </ul>
+</nav>
+
+
+</div>
+
+<div class="column is-normal is-12 ie-is-12"><div class="sidebar-link-block"><a href="/node/5851" title="Go to Check if you're able to get help to pay NHS charges" class="sidebar-link-block-button">Check if you're able to get help to pay NHS charges</a></div></div><div class="column is-normal is-12 ie-is-12"><div class="social-links-block has-2-items"><span>Follow us</span><ul class="social-list"><li><a href="https://www.facebook.com/NHSBSAHelpWithHealthCosts" title="Go to NHS Help with Health Costs Facebook" target="_blank">NHS Help with Health Costs Facebook</a></li><li><a href="https://twitter.com/nhshealthcosts" title="Go to NHS Help with Health Costs Twitter" target="_blank">NHS Help with Health Costs Twitter</a></li></ul></div></div><div class="column is-normal is-12 ie-is-12"><div class="question-block"><h3>Got a question?</h3><ul class="link-list" data-eqcss-0-0-parent=""><li data-eqcss-0-0=""><a href="https://faq.nhsbsa.nhs.uk/knowledgebase/category/?id=CAT-01004&amp;parentid=" target="_blank" title="Go to Visit our knowledge base" class="is-external">Visit our knowledge base</a></li><li data-eqcss-0-0-next=""><a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/" target="_blank" title="Go to Check if you could get help to pay for NHS costs" class="is-external">Check if you could get help to pay for NHS costs</a></li><li><a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start-exempt" target="_blank" title="Go to Check if your certificate is valid" class="is-external">Check if your certificate is valid</a></li><li><a href="/contact-nhs-help-health-costs" title="Go to Contact us">Contact us</a></li><li><a href="/advice-other-languages" title="Go to Advice in other languages">Advice in other languages</a></li></ul></div></div>
+
+
+                   </div>
+                 </div>
+                               </div>
+ </div>
+</div>
+
+         <div id="block-relatedblock" class="content_page" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ <div class="flexible-content-row"><div class="container tablet-pt-45 pt-25 table-pb-45 pb-25 has-border-top-large"><div class="flexible-content-row-content row"><div class="column sm-is-4 is-12 ie-is-4"><div class="resource-link-block"><h3>Resources for dispensers</h3><ul class="document-list"><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-09/Free%20prescriptions%20booklet%20%28V3%29%2009.2018.pdf" title="Go to Free prescriptions guide for patients">Free prescriptions guide for patients <span class="size">(156.83kB)</span></a></li><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-03/Free%20prescriptions%20poster%202018%20%28V1%29.pdf" title="Go to Free prescriptions poster">Free prescriptions poster <span class="size">(3.61MB)</span></a></li><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-04/Free%20prescriptions%20factsheet%20for%20dispensers%202018%20%28V2%29%2004.2018.pdf" title="Go to Free prescriptions factsheet for dispensers">Free prescriptions factsheet for dispensers <span class="size">(166.88kB)</span></a></li><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-07/Free%20Prescriptions%20guide%20A4%20Easy%20Read%20WEB%2006.18_0.pdf" title="Go to Free prescriptions guide - Easy Read - 06.18">Free prescriptions guide - Easy Read - 06.18 <span class="size">(6.49MB)</span></a></li><li class="powerpoint">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-06/Free%20prescriptions%20waiting%20room%20slides.pptx" title="Go to Free prescriptions guide for waiting room screens">Free prescriptions guide for waiting room screens <span class="size">(470.72kB)</span></a></li><li class="powerpoint">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2018-06/Free%20prescriptions%20poster%20-%20for%20waiting%20room%20screens.pptx" title="Go to Free prescriptions poster for waiting room screens">Free prescriptions poster for waiting room screens <span class="size">(210.69kB)</span></a></li></ul></div></div><div class="column sm-is-4 is-12 ie-is-4"><div class="resource-link-block"><h3>England: Help with health costs guides</h3><ul class="document-list"><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2022-04/HC11%20%28V17%29%20online%2004.2022.pdf" title="Go to HC11">HC11 <span class="size">(168.95kB)</span></a></li><li class="pdf">
+           <a href="https://www.nhsbsa.nhs.uk/sites/default/files/2022-04/HC12%20%28V16%29%20online%2004.2022.pdf" title="Go to HC12">HC12 <span class="size">(91.41kB)</span></a></li></ul></div></div></div></div></div>
+</div>
+<div id="block-relatedblock-2" class="content_page" title="NHS Prescription Prepayment Certificates (PPCs)" url="www.nhsbsa.nhs.uk%2Fhelp-nhs-prescription-costs%2Fnhs-prescription-prepayment-certificates-ppcs">
+
+
+ 
+</div>
+<div class="service-area-footer bg-white mr--15 ml--15 pl-20 pr-20 tablet-pt-50 pt-15 tablet-pb-50 pb-15">
+<div class="container tablet-pb-60 pb-25">
+     <div block="block-service-footer-blocks">  <div class="row view view-service-footer-v1 view-id-service_footer_v1 view-display-id-block_1 js-view-dom-id-0c2ce3b64ad3465bd3372a0ac6aab2dffb6a02654f46153fb13caf2f138e7865">
+   <div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+<div class="serviceFooterBlock">
+ <h2 class="serviceFooterBlock-title"><a href="/universal-credit-toolkit">Universal Credit toolkit</a></h2>
+ <p>Resources for GPs, pharmacies, dental practices and support organisations </p>
+</div>
+</div>
+<div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+<div class="serviceFooterBlock">
+ <h2 class="serviceFooterBlock-title"><a href="/contact-us/surveys-and-research">Surveys and research</a></h2>
+ <p>Help us to review and develop our services by sharing your views</p>
+</div>
+</div>
+<div class="column tablet-is-4 sm-is-6 is-12 ie-is-4">
+<div class="serviceFooterBlock">
+ <h2 class="serviceFooterBlock-title"><a href="/advice-other-languages">Advice in other languages</a></h2>
+ <p>How to access information on help with NHS health costs in other languages</p>
+</div>
+</div>
+
+</div>
+</div>
+
+ </div>
+</div>
+
+
+
+<div class="site-back-to-top-wrapper show-from-md ie-is-hidden">
+ <a href="#top" class="site-back-to-top">Back to top</a>
+</div>
+
+</main>  
+
+  <footer id="main-footer" class="main_footer">
+ <div class="footer-wrap">
+   <div class="container">
+     <div class="footer-row footer-primary-row">
+                     
+<div class="header-supporting">
+<nav role="navigation" aria-labelledby="block-footerprimary-menu" id="block-footerprimary" class="section_page" title="NHS Bursary students" url="www.nhsbsa.nhs.uk%2Fnhs-bursary-students">
+       
+<h2 class="visually-hidden" id="block-footerprimary-menu">Footer primary </h2>
+
+
+         
+         <ul class="primary-footer-nav">
+         <li class="primary-footer-nav-item">
+   <a href="/welcome" title="Go to the homepage of our website" data-drupal-link-system-path="node/18">NHSBSA Home</a>
+         </li>
+     <li class="primary-footer-nav-item">
+   <a href="/sitemap" title="View the sitemap for the NHSBSA website" data-drupal-link-system-path="sitemap">Sitemap</a>
+         </li>
+     <li class="primary-footer-nav-item">
+   <a href="/contact-us" title="Find the contact details for each of our services" data-drupal-link-system-path="node/735">Contact us</a>
+         </li>
+     <li class="primary-footer-nav-item">
+   <a href="/what-we-do/work-us" title="Recruitment" data-drupal-link-system-path="node/610">Work with us</a>
+         </li>
+     <li class="primary-footer-nav-item">
+   <a href="/our-response-coronavirus-covid-19" title="How we're supporting government and the NHS" data-drupal-link-system-path="node/7873">Our response to coronavirus (COVID-19)</a>
+         </li>
+   </ul>
+
+
+
+ </nav>
+</div>
+
+                   <div class="footer-logo site-logo">
+         <a href="/" title="Home" class="site-logo-link">
+           <img src="/themes/custom/nhsbsa/images/NHSBSA.svg" width="329px" height="71px" alt="NHS Business Services Authority logo" class="site-logo-image">
+         </a>
+       </div>
+     </div>
+   </div>
+   <div class="footer-row footer-secondary-row">
+     <div class="container">
+                     
+<div class="header-supporting">
+<nav role="navigation" aria-labelledby="block-footersecondary-menu" id="block-footersecondary" class="section_page" title="NHS Bursary students" url="www.nhsbsa.nhs.uk%2Fnhs-bursary-students">
+       
+<h2 class="visually-hidden" id="block-footersecondary-menu">Footer secondary</h2>
+
+
+         
+         <ul class="secondary-footer-nav">
+         <li class="secondary-footer-nav-item">
+   <a href="/our-policies/privacy" title="Find our privacy policy " data-drupal-link-system-path="node/732">Privacy</a>
+         </li>
+     <li class="secondary-footer-nav-item">
+   <a href="/our-policies/cookies" title="Find out more about cookies" data-drupal-link-system-path="node/727">Cookies</a>
+         </li>
+     <li class="secondary-footer-nav-item">
+   <a href="/accessibility-statement-nhs-business-services-authority-website" title="Accessibility statement for the NHSBSA website" data-drupal-link-system-path="node/887">Accessibility statement</a>
+         </li>
+     <li class="secondary-footer-nav-item">
+   <a href="/our-policies/terms-and-conditions" title="The terms and conditions of our website" data-drupal-link-system-path="node/888">Terms and conditions</a>
+         </li>
+     <li class="secondary-footer-nav-item">
+   <a href="/contact-us/freedom-information" title="Freedom of Information" data-drupal-link-system-path="node/726">Freedom of Information</a>
+         </li>
+   </ul>
+
+
+
+ </nav>
+</div>
+
+                 </div>
+   </div>
+ </div>
+</footer>
+</div>
+{% endblock %}

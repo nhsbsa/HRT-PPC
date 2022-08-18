@@ -1,0 +1,235 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-confirm.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Confirmation of PPC - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <div class="nhsuk-card nhsuk-card--confirmation nhsuk-u-margin-bottom-4">
+        <div class="nhsuk-card__content">
+          
+          <h1 class="nhsuk-card__title nhsuk-u-margin-bottom-4">
+            <span id="done-tick>"><img src="/images/done-tick.png"></span>
+            Done
+          </h1>
+          <p class="nhsuk-u-font-size-24">
+            You have prepaid for 12 months of HRT prescriptions.
+          </p>
+          <p>We have emailed your HRT PPC certificate to you.</p>
+          <p>Scroll down to see your certificate details.</p>
+        </div>
+      </div>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>You requested your HRT Prescription Prepayment Certificate (HRT PPC) to be emailed, so you wont receive a certificate in the post.</strong><br><br>
+        If a pharmacist asks for evidence that you have prepaid, you must show them your HRT prepayment certificate details.</p>
+      </div>
+
+      <p>You can take a screenshot of the HRT PPC certificate, snap a photo and save it onto your mobile device, save it as a PDF, or print out a copy for evidence. </p>
+
+
+      
+      <div style="background-color: #005EB8; border-radius: 10px;">
+        <div style="float:left;">
+          <img src="/images/nhs-logo.png" style="height: 50px; padding:10px;">
+        </div>
+
+        <div style="padding-top: 7px;">
+          <strong style="font-size:x-large; color:white; padding: 10px; float:;">Your HRT Prescription Prepaid Certificate</strong>  
+        </div>
+        
+        <dl class="nhsuk-summary-list" style="color: white; padding: 10px ;">
+          
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key" >
+              Certificate for
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              Jane Doe
+            </dd>
+        
+            
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Certificate number
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1000000001234
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Starts on
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1 January 2022
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Ends on
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1 January 2023
+            </dd>  
+          </div>
+        
+        </dl>
+      </div>
+
+
+      
+      
+
+      <p>We have sent your certificate details to <strong>Jane.doe@nhs.net.</strong> You can also print this page.</p>
+
+      <h3>Print your certificate</h3>
+
+      <style>
+        .notice {
+          position: relative;
+          font-size: large;
+        }
+        .notice .icon {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -17px;
+        }
+        .printer-icon {
+          width: 40px;
+          height: 37px;
+          background-image: url(/images/print_icon.png);
+        }
+      </style>
+
+      <div class="noprint">
+        <div class="notice">
+          <i class="icon printer-icon">
+              <span class="visually-hidden"></span>
+          </i>
+          <span style="margin-left:60px;"><a href="javascript:window.print();">Print or save certificate as a PDF</a></span>
+        </div>
+      </div>
+      
+      <style>
+        .pdf {
+          position: relative;
+          font-size: large;
+        }
+        .pdf .pdficon {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -17px;
+        }
+        .pdf-icon {
+          width: 40px;
+          height: 37px;
+          background-image: url(/images/pdf.png);
+        }
+      </style>
+      
+      
+
+
+
+
+
+
+
+      <!--<img id="organ-donation__img" class="od-image"
+            src="/images/pdf.png" style="height: 40px"
+            alt="Organ Donation" />
+    
+            <span style="">&nbsp;&nbsp;<a href="/images/PPC.pdf">Save as a PDF</a></span>-->
+            
+        
+      
+      <br><br>
+
+      <h3>Collecting prescriptions</h3>
+      <p>Tick box 'F' on the back of your prescription. <strong>TBC</strong><br><br>
+      Pharmacy staff ask for prepayment details. If you do not have them with you, they tick 'Evidence not seen' on the prescription. They will not charge you.
+      Ask your pharmacist for help if you don't have evidence of your HRT PPC with you.<br><br>
+     We prevent fraud by matching certificate details on our database with prescriptions. You are at risk of receiving a fine if you can not prove your HRT exemption if asked at a later date.</p>
+
+     <div class="noprint">
+        <h3 class="heading-medium">Feedback</h3>
+        <p><a href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">What did you think of this service?</a> (Takes 30 seconds.)</p>
+
+        <h3 class="heading-medium">Contact us</h3>
+        <p><a href="https://nhsbsa-live.powerappsportals.com/contact-us/">Contact us</a> if you have any queries about your prescription prepayment certificate.</p>
+      
+      </div>
+      <!--<hr>
+      <h3>Please join the NHS Organ Donation Register</h3>
+      <p>Organ donation is the act of giving an organ to save or improve the life of someone who needs a transplant.</p>
+      <p>Organ donation laws have changed - <a href="https://www.organdonation.nhs.uk/uk-laws/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">find out how the laws affect the country you live in and what your choices are on the Organ Donation website (opens in a new tab).</a></p>
+      <p>If you needed an organ transplant, would you have one? If so, please help others.</p>
+      <p>Tell your family about your organ donation decision.</p>
+
+      <form action="https://www.organdonation.nhs.uk/register-your-decision/">
+      <button class="nhsuk-button" type="submit" href="https://www.organdonation.nhs.uk/register-your-decision/">
+        Register to donate
+      </button>
+</form>
+<p>(Opens on the NHS Organ Donor website in a new tab)</p>
+
+<img id="organ-donation__img" class="od-image"
+            src="/images/organ-donation.png"
+            alt="Organ Donation" />
+            <br><br>
+
+      End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

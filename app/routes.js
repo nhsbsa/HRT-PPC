@@ -29,6 +29,15 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/continue-v1/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('dob');
+   } else {
+     res.redirect('outside-england');
+   }
+  });
+
+
   router.get(/inside-england/, function (req, res) {
     if (req.query.country === "england")  {
      res.redirect('/v2/dob?');
@@ -45,11 +54,27 @@ router.get(/copy2021-handler/, function (req, res) {
   }
   });
 
+  router.get(/postcode-v1/, function (req, res) {
+    if (req.query.location === "england")  {
+     res.redirect('dob');
+   } else {
+     res.redirect('continue-warning');
+  }
+  });
+
   router.get(/ppc-handler/, function (req, res) {
     if (req.query.certificate === "ppc")  {
      res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
    } else {
      res.redirect('/v2/start')
+   }
+  });
+
+  router.get(/ppc-v2/, function (req, res) {
+    if (req.query.certificate === "ppc")  {
+     res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');
+   } else {
+     res.redirect('start')
    }
   });
 
