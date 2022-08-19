@@ -1,45 +1,6 @@
 
-<style>
- <style>
-#nhsuk-cookie-banner .nhsuk-success-banner {
-    background-color: #007f3b;
-    color: #fff;
-    padding: 8px 0 8px 0;
-    position: relative;
-}
-
-#nhsuk-cookie-banner .nhsuk-success-banner p {
-    margin: 0;
-}
-
-#nhsuk-cookie-banner {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    font-family: Frutiger W01,Arial,Sans-serif;
-    color: azure;
-}
-
-
-
-#nhsuk-cookie-banner p {
-    padding: 0px;
-    font-size: 16px;
-}
-
-#nhsuk-cookie-banner p {
-    margin-bottom: 16px;
-    display: block;
-    margin-top: 0;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-</style>
-</style>
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-cookies-1.html' %}
-
-
+{% extends 'layout-cookies-2.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -48,7 +9,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Buy an NHS HRT prescription prepayment card
+  Buy an NHS HRT prescription prepayment certificate
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -63,23 +24,6 @@
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
 {% block outerContent %}
-
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-{% endblock %}
-
-
-<!-- For adding page content -->
-<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
 
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
@@ -126,7 +70,7 @@
               <path d="M0 0h24v24H0z" fill="none"></path>
               <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
             </svg>
-            <span class="nhsuk-action-link__text">Find out if your HRT medication is covered by the HRT PPC before you continue</span>
+            <span class="nhsuk-action-link__text">Find out if your HRT medication is covered by the HRT PPC before you continue. </span>
           </a>
         </div>
       </div>
@@ -141,7 +85,8 @@ You can buy an HRT PPC for £18.70 (the cost of two prescriptions). <br><br>This
       </p>
 
       
-      
+      <h3>Refunds</h3>
+      <p>Once you have bought an HRT PPC you cannot claim a refund.</p>
 
 
       <p></p>
@@ -171,9 +116,29 @@ You can buy an HRT PPC for £18.70 (the cost of two prescriptions). <br><br>This
         <li>printing a copy</li>
         <li>saving a PDF copy to your device</li>
         <li>taking a screenshot of the certificate</li>
-      </ul>  
+      </ul> 
+      <p>You cannot receive your certificate by post through this online service.</p>
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            If you would like your HRT PPC posted, you can contact us:
+          </span>
+        </summary>
+        
+        <div class="nhsuk-details__text">
+          
+          <p>
+          <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
+          <strong>Telephone:</strong> 0300 330 1341<br>
+          Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
+          <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
 
-      <p>You cannot get a certificate by post through this online service. If you require a postal certificate there are other ways to buy one <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank" >here</a>. </p>
+          </p>
+      
+        </div>
+      </details>
+
+      
 
       <!--<details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -192,10 +157,9 @@ You can buy an HRT PPC for £18.70 (the cost of two prescriptions). <br><br>This
       
         </div>
       </details>-->
-      <h3>Important information</h3>
-      <p>Once you have bought an HRT PPC you cannot claim a refund.</p>
 
-        <form action="/v3/postcode-checker">
+
+        <form action="postcode-checker">
         <button class="nhsuk-button" type="submit">
           Buy now
         </button>
