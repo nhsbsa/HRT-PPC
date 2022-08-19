@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Your payment has been declined - HRT PPC
+  What is your postcode? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -43,19 +43,24 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Your payment has been declined
+          What is your address?
         </h1>
       </legend>
-
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
       <p>
-        No money has been taken from your account.<br><br>
-        You have 2 more attempts to try and make the payment again.<br><br>
-        You may need to use a different debit or credit card.
+        The address you give should match what is printed on your prescriptions. This helps us match your details correctly.
       </p>
       
-      
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="input-width-10">
+          Postcode
+        </label>
+        <input class="nhsuk-input nhsuk-input--width-10" id="input-width-10" name="test-width-10" type="text">
+      </div>
+
+      <p><a href="manual-address">Enter address manually</a></p>
       
 
       
@@ -65,26 +70,37 @@
         
         
 
-        <form action="payment-declined-2">
+        <form action="what-is-your-address">
         <button class="nhsuk-button" type="submit">
-          Try payment again
+          Find address
         </button>
       </form>
 
-      <div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p>  
-        If you need further help, you can contact us:<br><br>
-      <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
-      <strong>Telephone:</strong> 0300 330 1341<br>
-      Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
-      <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
-    </p>
-    
-  </div>
-  <p><a href="https://www.nhsbsa.nhs.uk/">Return to NHS Business Services home</a></p>
+      <p><a href="start">Cancel</a></p>
 
-      <!-- End of content -->
+      <!-- End of content 
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            <li><a href="/v1/kickout/outside-england">Postcode is outside England</a></li>
+            <li><a href="/v1/kickout/contact-us">Information matches existing HwHc recipient</a></li>
+        
+          </ul>
+          <h4>Error messages</h4>
+          <ul>
+            <li><a href="/v1/error-messages/error-postcode">Empty postcode field</a></li>
+          
+        
+          </ul>
+        </div>
+      </details>-->
 
     </div>  
 
