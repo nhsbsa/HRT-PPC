@@ -205,7 +205,7 @@ Buy an NHS HRT Prescription Prepaid Certificate
           
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Where do you collect your prescriptions?</td>
-            <td class="nhsuk-table__cell "><a href="v3/postcode-checker">Collect prescriptions inside/outside england.</a></td>
+            <td class="nhsuk-table__cell "><a href="v3/where-you-collect">Collect prescriptions inside/outside england.</a></td>
             <td class="nhsuk-table__cell">JIRA</td>
           </tr>
         </tbody>
@@ -442,16 +442,8 @@ Buy an NHS HRT Prescription Prepaid Certificate
             <td class="nhsuk-table__cell "><a href="v1/error-messages/payment-declined-gov">Your payment has been declined</a></td>
             <td class="nhsuk-table__cell">JIRA</td>
           </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">DOB error</td>
-            <td class="nhsuk-table__cell "><a href="v1/error-messages/error-dob">Empty date of birth field</a></td>
-            <td class="nhsuk-table__cell">JIRA</td>
-          </tr>
-          <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">Name error</td>
-            <td class="nhsuk-table__cell "><a href="v1/error-messages/error-name">Empty name fields</a></td>
-            <td class="nhsuk-table__cell">JIRA</td>
-          </tr>
+          
+          
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Postcode error</td>
             <td class="nhsuk-table__cell "><a href="v1/error-messages/error-postcode">Empty postcode field</a></td>
@@ -468,10 +460,21 @@ Buy an NHS HRT Prescription Prepaid Certificate
             <td class="nhsuk-table__cell">JIRA</td>
           </tr>
           <tr role="row" class="nhsuk-table__row">
-            <td class="nhsuk-table__cell">NHS number error </td>
-            <td class="nhsuk-table__cell "><a href="v1/error-messages/error-nhs-number">Empty NHS number fields</a></td>
+            <td class="nhsuk-table__cell">NHS number error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/error-nhs-number">Empty NHS number fields</a></td>
             <td class="nhsuk-table__cell">JIRA</td>
           </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number error </td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/error-incorrect-nhs-number">NHS number isn't correct</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">NHS number error </td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/nhs-number-error">Radio button not selected</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          
           <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">Certificate receive not selected </td>
             <td class="nhsuk-table__cell "><a href="v1/error-messages/error-send-certificate">Empty method of receiving certificate</a></td>
@@ -487,7 +490,99 @@ Buy an NHS HRT Prescription Prepaid Certificate
             <td class="nhsuk-table__cell "><a href="v1/error-messages/error-email">Empty email address field</a></td>
             <td class="nhsuk-table__cell">JIRA</td>
           </tr>-->
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">In what country do you collect your prescription</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/where-you-collect-error">Country/radio button not selected</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-error">All fields blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-day-error">Day field is blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-month-error">Month field is blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-year-error">Year field is blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-day-year-error">Day and year fields are blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-month-year-error">Month and year fields are blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-day-month-error">Day and month fields are blank</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-real-error">Date of birth doesn't exist (e.g. 13th month)</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Date of birth</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/dob-past-error">Date of birth is today or in the future</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v1/error-messages/error-name">Empty name fields</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-string-error">Both name fields have invalid characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-fn-string-error">First name fields have invalid characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-ln-string-error">Last name fields have invalid characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
          
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-length-error">Both name fields have too many characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-fn-length-error">First name has too many characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Name error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/name-ln-length-error">Last name has too many characters</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">Cookies error</td>
+            <td class="nhsuk-table__cell "><a href="v3/error-messages/choose-cookines-error">Select cookies decision</a></td>
+            <td class="nhsuk-table__cell">JIRA</td>
+          </tr>
         </tbody>
       </table>
 

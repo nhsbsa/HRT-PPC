@@ -1,6 +1,6 @@
 
 <style>
- <style>
+
 #nhsuk-cookie-banner .nhsuk-success-banner {
     background-color: #007f3b;
     color: #fff;
@@ -34,7 +34,6 @@
     line-height: 1.5;
 }
 
-</style>
 </style>
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-cookies-1.html' %}
@@ -79,19 +78,7 @@
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
-{% block content %}
 
-<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>
-{% endblock %}
 
 
 <!-- For adding page content -->
@@ -195,7 +182,7 @@ You can buy an HRT PPC for £18.70 (the cost of two prescriptions). <br><br>This
       <h3>Important information</h3>
       <p>Once you have bought an HRT PPC you cannot claim a refund.</p>
 
-        <form action="/v3/postcode-checker">
+        <form action="/v3/where-you-collect">
         <button class="nhsuk-button" type="submit">
           Buy now
         </button>
