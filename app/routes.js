@@ -73,7 +73,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.location === "england")  {
      res.redirect('dob');
    } else {
-     res.redirect('continue-warning');
+     res.redirect('do-you-want-to-continue');
   }
   });
 
