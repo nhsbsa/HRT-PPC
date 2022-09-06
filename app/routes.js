@@ -108,6 +108,14 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/handler-email/, function (req, res) {
+    if (req.query.contact === "email")  {
+     res.redirect('check-your-answers');
+   } else {
+     res.redirect('check-your-answers-post');
+   }
+  });
+
   router.get(/copy-email/, function (req, res) {
     if (req.query.contact === "email")  {
      res.redirect('check-your-answers');
