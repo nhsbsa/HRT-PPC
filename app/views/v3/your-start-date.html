@@ -107,10 +107,13 @@
                     </div>
                   </div>-->
                   <div class="nhsuk-form-group">
-                    <input class="nhsuk-input" type="date" name="date" min="20/10/2022" max="20/12/2022">
-
+                    <p>Select the date when you will start collecting your HRT medication. <br><br>You can only select todays date, or a date in the next 30 days.</p>
+                    
+                    <input class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-11-20" max="2022-12-20">
+                    
                   </div>
-          
+
+              
                 </div>
           
                 <div class="nhsuk-radios__item">
@@ -123,16 +126,10 @@
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
           
                   <div class="nhsuk-form-group">
-                    <div class="nhsuk-form-group">
-                      <label class="nhsuk-label" for="select-1">
-                        Label text goes here
-                      </label>
-                      <select class="nhsuk-select" id="select-1" name="select-1">
-                        <option value="1">NHS.UK frontend option 1</option>
-                        <option value="2" selected>NHS.UK frontend option 2</option>
-                        <option value="3" disabled>NHS.UK frontend option 3</option>
-                      </select>
-                    </div>
+                    <p>Select the date that you first collected your HRT prescriptions.<br><br> You can only select a date within the last 30 days.
+                    </p>
+                    <input class="nhsuk-input" type="date" id="datemin" value="2022-11-19" name="datemin" min="2022-10-20" max="2022-11-19">
+                    
                   </div>
           
                 </div>
