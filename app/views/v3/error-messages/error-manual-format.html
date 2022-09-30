@@ -48,13 +48,13 @@
         <div class="nhsuk-error-summary__body">
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#address-line-1">Address line 1 is required</a>
+              <a href="#address-line-1">Address line 1 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.</a>
             </li>
             <li>
-              <a href="#address-town">Town or city is required</a>
+              <a href="address-line-2">Address line 2 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.</a>
             </li>
             <li>
-              <a href="#address-postcode">Postcode is required</a>
+              <a href="#address-town">Town or city must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.</a>
             </li>
           </ul>
         </div>
@@ -76,16 +76,19 @@
             Address line 1 <span class="nhsuk-u-visually-hidden">line 1 of 2</span>
           </label>
           <span class="nhsuk-error-message" id="last-name-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Address line 1 is required
+            <span class="nhsuk-u-visually-hidden">Error:</span> Address line must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
           </span>
-          <input class="nhsuk-input nhsuk-input--error" id="address-line-1" name="address-line-1" type="text">
+          <input class="nhsuk-input nhsuk-input--error" id="address-line-1" name="address-line-1" type="text" value="sdajhfg;;s;a';s@££$^^£&£">
         </div>
       
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="address-line-2">
             Address line 2 (Optional)<span class="nhsuk-u-visually-hidden">Building and street line 2 of 2</span>
           </label>
-          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text">
+          <span class="nhsuk-error-message" id="last-name-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> Address line 2 must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
+          </span>
+          <input class="nhsuk-input" id="address-line-2" name="address-line-2" type="text" value="sdajhfg;;s;a';s@££$^^£&£">
         </div>
       
         <div class="nhsuk-form-group nhsuk-form-group--error">
@@ -93,9 +96,9 @@
             Town or city
           </label>
           <span class="nhsuk-error-message" id="last-name-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Town or city is required
+            <span class="nhsuk-u-visually-hidden">Error:</span> Town must only include numbers, letters a to z, hyphens, spaces, apostrophes and full stops.
           </span>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="address-town" name="address-town" type="text">
+          <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="address-town" name="address-town" type="text" value="sdajhfg;;s;a';s@££$^^£&£">
         </div>
       
         
@@ -104,10 +107,8 @@
           <label class="nhsuk-label" for="address-postcode">
             Postcode
           </label>
-          <span class="nhsuk-error-message" id="last-name-error">
-            <span class="nhsuk-u-visually-hidden">Error:</span> Postcode is required
-          </span>
-          <input class="nhsuk-input nhsuk-input--width-10 nhsuk-input--error" id="address-postcode" name="address-postcode" type="text">
+          
+          <input class="nhsuk-input nhsuk-input--width-10" id="address-postcode" name="address-postcode" type="text" value="AA1 1AA">
         </div>
       
       </fieldset>
