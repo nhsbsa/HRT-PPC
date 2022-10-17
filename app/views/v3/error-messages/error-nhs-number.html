@@ -76,15 +76,21 @@
             </h1>
           </legend>
 
-          <p>Your NHS number can help us match your details correctly.<br><br>
+          <p>Your NHS number can help us match your details correctly.</p>
 
-            If you do not know your NHS number, <a href="">use our online find your NHS number service</a>.</p>
+            <p> <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/" target="_blank">Use our online service</a> if you do not know your NHS number.</p>
+            </p>
+
+            
+          
+          
       
-      
-          <div class="nhsuk-radios nhsuk-radios--conditional">
+          
             <div class="nhsuk-hint" id="contact-hint">
-              Your NHS number is a 10 digit number, like 485 777 3456.
+              This is a 10 digit number, like 485 777 3456.
             </div>
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+      
             <div class="nhsuk-radios__item">
               <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false" checked>
               <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
@@ -94,15 +100,14 @@
       
             <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
       
-              <div class="nhsuk-form-group ">
-                
+              <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="email">
                   NHS number
                 </label>
                 <span class="nhsuk-error-message" id="example-error">
                   <span class="nhsuk-u-visually-hidden">Error:</span> NHS number is required
                 </span>
-                <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text" for="nhs-number-error">
+                <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text">
               </div>
       
             </div>
