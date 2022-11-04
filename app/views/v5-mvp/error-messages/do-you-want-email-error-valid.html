@@ -49,7 +49,7 @@
           
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#email">Select yes if you want to get your certificate by email</a>
+              <a href="#email">Enter an email address in the correct format, like name@example.com</a>
             </li>
           </ul>
         </div>
@@ -112,11 +112,9 @@
     
               <div class="nhsuk-radios nhsuk-radios--conditional">
                 
-    <span class="nhsuk-error-message" id="dob-day-error-error">
-      <span class="nhsuk-u-visually-hidden">Error:</span> Select yes if you want to get your certificate by email
-    </span>
+    
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false" checked>
                   <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                    Yes
                   </label>
@@ -125,11 +123,13 @@
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
           
                   <div class="nhsuk-form-group">
-                   
+                    <span class="nhsuk-error-message" id="dob-day-error-error">
+                      <span class="nhsuk-u-visually-hidden">Error:</span> Enter an email address in the correct format, like name@example.com
+                    </span>
                     <label class="nhsuk-label" for="email">
                       Email address
                     </label>
-                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text" value="test@test@.com@">
                   
                   </div>
     

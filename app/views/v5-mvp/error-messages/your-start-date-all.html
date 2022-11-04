@@ -45,7 +45,21 @@ When do you want your HRT PPC to start? - HRT PPC
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      
+      <div class="nhsuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="nhsuk-error-summary__body">
+          
+          <ul class="nhsuk-list nhsuk-error-summary__list">
+            <li>
+              <a href="#example">Enter your start date</a>
+              
+            </li>
+           
+          </ul>
+        </div>
+      </div>
       <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
@@ -62,7 +76,7 @@ When do you want your HRT PPC to start? - HRT PPC
 
 
             
-          <div class="nhsuk-form-group">
+          <div class="nhsuk-form-group nhsuk-form-group--error">
 
             
           
@@ -73,7 +87,7 @@ When do you want your HRT PPC to start? - HRT PPC
               <div class="nhsuk-radios nhsuk-radios--conditional">
           
                 <div class="nhsuk-radios__item">
-                  <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                  <input class="nhsuk-radios__input " id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false" checked>
                   <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                     <strong>To cover prescriptions I'll collect today or later</strong>
                   </label>
@@ -87,6 +101,9 @@ When do you want your HRT PPC to start? - HRT PPC
                       <div class="nhsuk-hint" id="example-hint">
                         For example, 15 12 2022
                       </div>
+                      <span class="nhsuk-error-message" id="dob-day-error-error">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> You must enter a start date
+                      </span>
                   
                       <div class="nhsuk-date-input" id="example">
                         <div class="nhsuk-date-input__item">
@@ -94,7 +111,7 @@ When do you want your HRT PPC to start? - HRT PPC
                             <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                               Day
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-day" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
                           </div>
                         </div>
                         <div class="nhsuk-date-input__item">
@@ -102,7 +119,7 @@ When do you want your HRT PPC to start? - HRT PPC
                             <label class="nhsuk-label nhsuk-date-input__label" for="example-month">
                               Month
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-month" name="example-month" type="text" pattern="[0-9]*" inputmode="numeric" value="">
                           </div>
                         </div>
                         <div class="nhsuk-date-input__item">
@@ -110,7 +127,7 @@ When do you want your HRT PPC to start? - HRT PPC
                             <label class="nhsuk-label nhsuk-date-input__label" for="example-year">
                               Year
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4 nhsuk-input--error" id="example-year" name="example-year" type="text" pattern="[0-9]*" inputmode="numeric" value="">
                           </div>
                         </div>
                       </div>
