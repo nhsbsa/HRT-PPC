@@ -124,6 +124,26 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+
+  router.get(/medicine-covered/, function (req, res) {
+    if (req.query.contact === "medicine")  {
+     res.redirect('where-you-collect');
+   } else {
+     res.redirect('email');
+   }
+  });
+
+
+  router.get(/medicine-continue/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('where-you-collect');
+   } else {
+     res.redirect('outside-england');
+   }
+  });
+
+
+
   //router.get(/choose-ppc/, function (req, res) {
   //if (req.query.cert === "ppc")  {
     //res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');

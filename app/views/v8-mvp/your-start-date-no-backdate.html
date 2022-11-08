@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,13 +8,12 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Existing certificate found - HRT PPC
+  What is your NHS number? - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
-
 
 {% endblock %}
 
@@ -42,36 +41,56 @@
     <div class="nhsuk-grid-column-two-thirds">
 
       <!-- Change the page heading -->
-      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
-        <h1 class="nhsuk-fieldset__heading">
-          Existing NHS exemption certificate found
-        </h1>
-      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      <p>
-        Our records show you currently hold an NHS exemption certificate for HRT medicine. This means you currently receive your HRT medicine free of charge and so do not need an HRT PPC.<br><br> Return to this online service when your current certificate expires on 1st January 2023.
+      
+      
+      <div class="nhsuk-form-group">
 
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              When do you want your HRT prepayment certificate to start?
+            </h1>
+          </legend>
+
+
+
+
+
+          <p>
+            Choose a date within the next 30 days when you will collect your next prescription. If you already have a certificate, choose a date after this expires. 
+          </p>
+          <label class="nhsuk-label" for="input-width-10">
+            Your start date
+          </label>
+                    
+                    <input style="width:200px;" class="nhsuk-input" type="date" id="datemin" value="2022-11-20" name="datemin" min="2022-11-20" max="2022-12-20">
+            
+          
+          
+      
+          
+            
+        </fieldset>
+      
+      </div>
+      
         
-
-        <div class="nhsuk-inset-text">
-          <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>  
-          If you need further help, you can contact us:<br><br>
-        <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
-        <strong>Telephone:</strong> 0300 330 1341<br>
-        Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
-        <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
-      </p>
       
-    </div>
         
-      </p>
       
       
+     
 
-      <p><a href="https://www.nhsbsa.nhs.uk/">Go to NHS Business Services home</a></p>
+        <form action="do-you-want-email">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
 
       <!-- End of content -->
 
