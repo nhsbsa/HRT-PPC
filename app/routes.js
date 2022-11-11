@@ -138,7 +138,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.continue === "yes")  {
      res.redirect('where-you-collect');
    } else {
-     res.redirect('outside-england');
+     res.redirect('medicine-not-covered');
    }
   });
 
