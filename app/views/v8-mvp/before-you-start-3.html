@@ -1,0 +1,478 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your date of birth? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Is your medicine covered by an HRT PPC?
+        </h1>
+        
+      </legend>
+      <p>If you use an HRT PPC to collect medicines that are not covered, you could be at risk of receiving a <a href="https://www.nhsbsa.nhs.uk/penalty-charges-explained" target="_blank">penalty charge</a>.</p>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <!--<div class="nhsuk-card">
+        <div class="nhsuk-card__content">
+          <h3 class="nhsuk-card__heading">
+            Not all HRT medicines are covered by an HRT PPC
+      
+          </h3>
+          <p class="nhsuk-card__description">You must <a href="/drugs" target="_blank">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+        </div>
+      </div>-->
+
+      <!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="nhsuk-card__heading">
+            Not all medicine is covered by the HRT PPC
+      
+          </h3>
+          <p>You must <a href="drugs">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+        </div>
+      </div>-->
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Check if the medication you need is covered by the HRT PPC
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <div class="nhsuk-grid-column-full">
+
+            <p><a href="#a">A</a> - <a href="#b">B</a> - <a href="#c">C</a> - <a href="#d">D</a> - <a href="#e">E</a> - <a href="#f">F</a> - <a href="#g">G</a> - <a href="#h">H</a> - <a href="#i">I</a> - <a href="#j">J</a> - <a href="#k">K</a> - <a href="#l">L</a> - <a href="#m">M</a> - <a href="#n">N</a> - <a href="#o">O</a> - <a href="#p">P</a> - <a href="#q">Q</a> - <a href="#r">R</a> - <a href="#s">S</a> - <a href="#t">T</a> - <a href="#u">U</a> - <a href="#v">V</a> - <a href="#w">W</a> - <a href="#x">X</a> - <a href="#y">Y</a> - <a href="#z">Z</a></p>
+            <hr></div>
+        
+        
+        
+            <table class="nhsuk-table">
+              
+              <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                  <th role="columnheader" class="" scope="col">
+                    Product name
+                  </th>
+                  <th role="columnheader" class="" scope="col">
+                    Ingredient 
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="a" id="a" name="a">A</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="b" id="b" name="b">B</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Bedol</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 2mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Bijuve/Bijuva</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg; Micronised Progesterone 100mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Blissel</td>
+                  <td class="nhsuk-table__cell ">(Estriol 50mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="c" id="c" name="c">C</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Climanor</td>
+                  <td class="nhsuk-table__cell ">(Medroxyprogesterone 5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Clinorette </td>
+                  <td class="nhsuk-table__cell ">(Estradiol 2mg; Norethisterone 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="d" id="d" name="d">D</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="e" id="e" name="e">E</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Duet</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg and 2mg; Norethisterone 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Duet Conti</td>
+                  <td class="nhsuk-table__cell ">Elleste Duet Conti</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Solo</td>
+                  <td class="nhsuk-table__cell ">Elleste Solo</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estraderm MX</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 25mcg, 50mcg, 75mcg and 100mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estradot</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 25mcg, 37.5mcg, 50mcg, 75mcg and 100mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estring (90-day preparation)</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 7.5mcg/24 hours)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estriol</td>
+                  <td class="nhsuk-table__cell ">(Estriol 0.01%)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Ethinylestradiol 10mcg</td>
+                  <td class="nhsuk-table__cell ">(Ethinylestradiol 10mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 25mcg, 50mcg, 75mcg and 100mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel Conti</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg; Norethisterone 170mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel Sequi</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg; Norethisterone 170mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="f" id="f" name="f">F</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Femoston</td>
+                  <td class="nhsuk-table__cell ">Estradiol 1mg and 2mg; Dydrogesterone 10mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Femoston Conti</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 500mcg and 1mg; Dydrogesterone 2.5mg and 5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Femseven</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg, 75mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Femseven Conti</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg; Levonorgestrel 7mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">FemSeven Sequi</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg; Levonorgestrel 10mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="g" id="g" name="g">G</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Gina</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 10mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="h" id="h" name="h">H</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="i" id="i" name="i">I</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Imvaggis</td>
+                  <td class="nhsuk-table__cell ">(Estriol 30mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Indivina</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg and 2mg; Medroxyprogesterone 2.5mg and 5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="j" id="j" name="j">J</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="k" id="k" name="k">K</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Kliofem</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 2mg; Norethisterone 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Kliovance</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg; Norethisterone 500mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="l" id="l" name="l">L</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+        
+                
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Lenzetto</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1.53mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Livial</td>
+                  <td class="nhsuk-table__cell ">(Tibolone 2.5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="m" id="m" name="m">M</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Mirena</td>
+                  <td class="nhsuk-table__cell ">(Levonorgestrel 20mcg/24 hours)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="n" id="n" name="n">N</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr><tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Novofem</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg; Norethisterone 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="o" id="o" name="o">O</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Oestrogel/dose</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 0.06%)</td>
+                </tr><tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Ovestin</td>
+                  <td class="nhsuk-table__cell ">(Estriol 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="p" id="p" name="p">P</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Premarin</td>
+                  <td class="nhsuk-table__cell ">(Conjugated oestrogen 300mcg, 625mcg and 1.25mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Premique low dose</td>
+                  <td class="nhsuk-table__cell ">(Conjugated oestrogen 300mcg; Medroxyprogesterone 1.5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Progynova</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg and 2mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Progynova TS</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 50mcg and 100mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Provera</td>
+                  <td class="nhsuk-table__cell ">(Medroxyprogesterone 2.5mg and 5mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="q" id="q" name="q">Q</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="r" id="r" name="r">R</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="s" id="s" name="s">S</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Sandrena</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 500mcg and 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="t" id="t" name="t">T</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Tridestra</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 2mg; Medroxyprogesterone 20mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Trisequens</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 2mg/2mg/1mg; Norethisterone 1mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="u" id="u" name="u">U</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Utrogestan</td>
+                  <td class="nhsuk-table__cell ">(Micronised Progesterone 100mg and 200mg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="v" id="v" name="v">V</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Vagifem</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 10mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Vagirux</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 10mcg)</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="w" id="w" name="w">W</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="x" id="x" name="x">X</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="y" id="y" name="y">Y</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell"><h4 class="z" id="z" name="z">Z</h4></td>
+                  <td class="nhsuk-table__cell "></td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Zumenon</td>
+                  <td class="nhsuk-table__cell ">(Estradiol 1mg and 2mg)</td>
+                </tr>
+               
+              </tbody>
+            </table>
+            <form action="medicine-continue" method="get" class="form">
+              <div class="nhsuk-form-group">
+        
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                  <div class="nhsuk-radios nhsuk-radios--conditional">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                      <h2 class="nhsuk-fieldset__heading">
+                        
+                      </h2>
+                    </legend>
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                        Yes
+                      </label>
+                    </div>
+              
+                    <div class="nhsuk-radios__item">
+                      <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+                      <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                        No
+                      </label>
+                    </div>
+                 
+                  </div>
+        
+                </fieldset>
+              
+              </div>
+              
+                <button class="nhsuk-button" type="submit">
+                  Continue
+                </button>
+              </form>
+        
+        
+        
+            
+           
+            <!-- End of content -->
+             
+          
+        
+        </div>
+      </details>
+      
+
+      
+
+      
+
+        
+        
+
+    
+     
+     
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content 
+    
+
+      <details class="nhsuk-details nhsuk-expander">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Errors and flags
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h4>Kickout pages</h4>
+          <ul>
+            <li><a href="/v1/kickout/entitled">Age entered is >60 or <16</a></li>
+            <li><a href="/v1/kickout/59">Age entered is 59</a></li>
+        
+          </ul>
+          <h4>Error messages</h4>
+          <ul>
+            <li><a href="/v1/error-messages/error-dob">Empty fields error</a></li>
+            
+        
+          </ul>
+        </div>
+      </details>-->
+
+    </div>  
+
+  </div>
+{% endblock %}
