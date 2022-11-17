@@ -125,13 +125,13 @@ router.get(/copy2021-handler/, function (req, res) {
   });
 
 
-  router.get(/medicine-covered/, function (req, res) {
-    if (req.query.contact === "medicine")  {
-     res.redirect('where-you-collect');
-   } else {
-     res.redirect('email');
-   }
-  });
+  //router.get(/medicine-covered/, function (req, res) {
+    //if (req.query.contact === "medicine")  {
+     //res.redirect('where-you-collect');
+   //} else {
+    // res.redirect('email');
+   //}
+  //});
 
 
   router.get(/medicine-continue/, function (req, res) {
