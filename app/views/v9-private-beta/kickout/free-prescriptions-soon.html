@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,12 +8,13 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-You have chosen not to buy an HRT PPC - HRT PPC
+  You can get free prescriptions soon - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -42,35 +43,28 @@ You have chosen not to buy an HRT PPC - HRT PPC
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You have chosen not to buy an HRT PPC
+          You can get free prescriptions soon
         </h1>
-      </legend>
+      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
+      <p>
+        The information you gave us indicates you are 59 years old.<br><br>
+        You will be eligible for free prescriptions from the age of 60.<br><br>
+        Press continue to proceed or <a href="https://www.nhsbsa.nhs.uk/">go to NHS Business Services home</a> to cancel.
+      </p>
 
+      <form action="name">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
       
-        <p>
-           Check if you can get free NHS prescriptions, or other help with health costs using our<a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank"> eligibility checker.</a>
-        
-          </p>
-          <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>  
-            If you need further help, you can contact us:<br><br>
-          <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
-          <strong>Telephone:</strong> 0300 330 1341<br>
-          Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
-          <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
-        </p>
-        
-      </div>
-          
-          
-      <p><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificates-ppcs">
-       Go to NHS Business Services home
-        </a></p>
+      
+
+  
+
       <!-- End of content -->
 
     </div>  

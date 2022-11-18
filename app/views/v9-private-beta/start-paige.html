@@ -1,0 +1,197 @@
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS HRT prescription prepayment certificate
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Buy an NHS Hormone Replacement Therapy Prescription Prepayment Certificate (HRT PPC)
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information
+          </span>
+        </h3>
+        <p>This Prescription Prepayment Certificate (PPC) only covers <a href="/drugs">certain Hormone Replacement Therapy (HRT) medicines.</a> <br><br>If you need a prescription for something other than HRT, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank"> PPC</a> may be better for you.</a></p>
+        <p>You cannot get a certificate by post through this online service. If you want a postal certificate there are other ways to buy one.</p>
+      </div>
+
+
+      <h3>About your HRT PPC</h3>
+      <p>
+        You can save money on NHS HRT prescriptions by prepaying for them.<br><br>
+        
+        Each item on a NHS prescription usually costs £9.35.
+        You can buy an HRT PPC for a one-off debit or credit card payment of £18.70 (the cost of two prescriptions) <br><br>This covers you for an unlimited number of HRT medications for 12 months.  
+
+
+      
+      
+        
+
+      
+   
+
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>Once you have bought an HRT PPC you cannot claim a refund for this.<br><br> You may be able to <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/category/?articlecategory=Refund%20of%20prescription%20charges%20and%20FP57s&id=CAT-01105">claim a refund for medicines already purchased that your certificate now covers</a>.</p>
+
+</div>  
+      
+      
+      
+
+
+
+    
+        <!--<div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
+          They are also costly to the NHS and the environment.</p>
+        </div>-->
+
+        
+        
+
+        <p>We prevent fraud by matching certificate details on our database with prescriptions. If your details do not match you may be fined.
+
+        </p>
+<p>If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+       
+        
+        
+    
+      
+      
+     <!--<details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Other ways to buy
+          </span>
+        </summary>
+        
+        <div class="nhsuk-details__text">
+          <p>You can buy an HRT PPC:
+
+          </p>
+          
+            <p><strong>Telephone:</strong> 0300 330 1341<br>Monday to Friday, 8am to 6pm<br>
+              Saturday, 9am to 3pm.<br><br>
+            <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges</a></p>
+          
+
+
+          
+            
+            
+        
+          
+        </div>
+      </details>-->
+
+      
+
+      <!--<details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to use your HRT PPC
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>
+      
+            Show your certificate details to your pharmacist when you collect your HRT prescription. <br>
+            <br>Your HRT PPC will start on the day you buy it – so if you buy it today it will be valid from today's date. This means you can collect your HRT prescriptions straight away. <strong>TBC</strong>
+            
+            <br><br>You can use your HRT PPC in any pharmacy within the UK.
+          </p>
+      
+        </div>
+      </details>-->
+      
+      
+
+        <form action="before-you-start">
+        <button class="nhsuk-button" type="submit">
+          Buy now
+        </button>
+      </form>
+
+      <details class="nhsuk-details" >
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Other ways to buy an HRT PPC
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>You can purchase an HRT PPC through our contact centre: </p>
+                
+                  
+                <strong>Telephone:</strong> 0300 330 1341<br>
+                Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.<br><br>
+                <p><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a></p>
+      <p>You can also purchase an HRT PPC from any <a href="">registered pharmacy</a>.</p>
+        </div>
+      </details>
+
+        <!--<h3 class="heading-small">
+          Other ways to buy
+        </h3>
+        <p>The quickest way to buy a certificate is online. If you can't, </p>-->
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
