@@ -1,0 +1,78 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+We could not process your details - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      Private BETA
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Your application has timed out
+        </h1>
+      </legend>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    
+
+      
+        <p>
+          We have reset your application because you did not do anything for 30 minutes. We did this to keep your information secure.
+        
+          </p>
+          <a class="nhsuk-button" href="start">Start application again</a>
+          <div class="nhsuk-inset-text">
+            <span class="nhsuk-u-visually-hidden">Information: </span>
+            <p>  
+            If you need further help, you can contact us:<br><br>
+          <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
+          <strong>Telephone:</strong> 0300 330 1341<br>
+          Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
+          <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
+        </p>
+        
+      </div>
+          
+          
+      
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

@@ -1,0 +1,376 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block outerContent %}
+
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      PRIVATE beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+{% block pageTitle %}
+  Check your answers
+{% endblock %}
+
+{% block beforeContent %}
+
+
+
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Check your answers
+        </h1>
+      </legend>
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Before you continue
+          </span>
+        </h3>
+        <p>Not all Hormone Replacement Therapy (HRT) medicine is covered by an HRT Prescription Prepayment Certificate (HRT PPC). It's important to <a href="/drugs">check your HRT medicine is covered </a> before purchasing this certificate.<br><br>
+          
+          If your HRT medicine is not covered, or you need a prescription for something other than HRT, a different <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank">Prescription Prepayment Certificate (PPC)</a> may be better for you.</a></p>
+        
+      </div>
+
+      <h3 class="heading">
+        Your details
+      </h3>
+
+      {{ summaryList({
+        rows: [
+          
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Jane Doe"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/v1/experimental/user-journey/name",
+                  text: "Change",
+                  visuallyHiddenText: "name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date of birth"
+            },
+            value: {
+              html: "1 January 1999"
+            },
+            actions: {
+              items: [
+                {
+                  href: "/v1/experimental/user-journey/dob",
+                  text: "Change",
+                  visuallyHiddenText: "date of birth"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "NHS number"
+            },
+            value: {
+              text: "1111111111"
+            },
+            actions: {
+              items: [
+                {
+                  href: "nhs-number",
+                  text: "Change",
+                  visuallyHiddenText: "NHS number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: '1 Test Road<br>Town<br>NE1 0LD'
+            },
+            actions: {
+              items: [
+                {
+                  href: "postcode",
+                  text: "Change",
+                  visuallyHiddenText: "NHS number"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Receive certificate and reminder by email?"
+            },
+            value: {
+              text: "No"
+            },
+            actions: {
+              items: [
+                {
+                  href: "send-certificate",
+                  text: "Change",
+                  visuallyHiddenText: "NHS number"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3>
+        Your certificate
+      </h3>
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Length"
+            },
+            value: {
+              text: "12 months"
+            }
+            ,
+            actions: 
+            {
+              items: 
+              [
+                {
+                  
+                }
+              ]
+            }
+          },
+          {
+            key: 
+            {
+              text: "Starts on"
+            },
+            value: 
+            {
+              html: "1 January 2022 "
+            }
+            ,
+            actions: 
+            {
+              items: 
+              [
+                {
+                  href: "your-start-date",
+                  text: "Change",
+                  visuallyHiddenText: "home address"
+                }
+              ]
+            }
+          },{
+            key: {
+              text: "Ends on"
+            },
+            value: {
+              html: "1 January 2023"
+            }
+            ,
+            actions: 
+            {
+              items: 
+              [
+                {
+                 
+                }
+              ]
+            }
+          },{
+            key: {
+              text: "Total cost"
+            },
+            value: {
+              html: "£18.70"
+            }
+            ,
+            actions: 
+            {
+              items: 
+              [
+                {
+                  
+                }
+              ]
+            }
+          },{
+            key: {
+              text: "Payment method"
+            },
+            value: {
+              html: "Card payment"
+            }
+            ,
+            actions: 
+            {
+              items: 
+              [
+                {
+         
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h3>Important information</h3>
+      <p>You are not able to claim a refund for your HRT PPC in the future, even if your situation changes. </p>
+      <div class="payment-info-box" style="margin-top:20px;">
+        <div class="notice-margin notice form-group">
+            
+            <strong style="font-size: large;">
+                If you choose to continue, you will be transferred to our card payment provider, <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Pay (opens in a new tab)</a>.
+            </strong>
+        </div>
+        <ul class="accepted-cards field-empty">
+          <li class="visa" data-key="visa" data-credit="true" data-debit="true">
+            
+          </li>
+          <li class="master-card" data-key="master-card" data-credit="true" data-debit="true">
+            
+          </li>
+          <li class="jcb" data-key="jcb" data-credit="true" data-debit="false">
+            
+          </li>
+          <li class="diners-club" data-key="diners-club" data-credit="true" data-debit="false">
+            
+          </li>
+        </ul>
+        <span class="card-text">Accepted credit and debit card types</span>
+    </div>
+
+      
+    
+      
+
+      <style>
+        /* accepted cards styles */
+        .accepted-cards {
+          display: block;
+          width: 100%;
+          margin: 15px 0 5px;
+          padding: 0;
+          float: none;
+          overflow: hidden
+        }
+  
+        @media (min-width: 40.0625em) {
+          .accepted-cards {
+            width:66.666%
+          }
+        }
+
+        .icon-important {
+          background-image: url("/images/icon-white-important.png");
+
+        }
+  
+        .accepted-cards li {
+          display: block;
+          width: 44px;
+          height: 10px;
+          margin: 0 10px 5px 0;
+          padding-bottom: 2rem;
+          float: left;
+          background-image: url("/images/accepted-cards-sprite.png");
+          background-size: 900% 200%;
+          border: 1px solid #BFC1C3;
+          border-radius: 5px;
+        }
+  
+        .accepted-cards .visa {
+          background-position: 0% 100%;
+        }
+  
+        .accepted-cards.field-empty .visa,.accepted-cards .visa.selected {
+          background-position: 0% 0%;
+        }
+  
+        .accepted-cards .master-card {
+          background-position: 12.5% 100%;
+        }
+  
+        .accepted-cards.field-empty .master-card,.accepted-cards .master-card.selected {
+          background-position: 12.5% 0%;
+        }
+  
+        .accepted-cards .jcb {
+          background-position: 37.5% 100%;
+        }
+  
+        .accepted-cards.field-empty .jcb,.accepted-cards .jcb.selected {
+          background-position: 37.5% 0%;
+        }
+  
+        .accepted-cards .diners-club {
+          background-position: 50% 100%;
+        }
+  
+        .accepted-cards.field-empty .diners-club,.accepted-cards .diners-club.selected {
+          background-position: 50% 0%;
+        }
+  
+        .accepted-cards-hint {
+          color: #6f777b;
+        }
+  
+        /* Payment card info box */
+        .payment-info-box {
+          background-color: #DEE0E2;
+          padding: 20px; 
+          margin-bottom: 25px;
+          float: left; 
+        }
+  
+        ul.accepted-cards.field-empty {
+          margin-bottom: 10px;
+        }
+  
+        .notice-margin {
+          margin-bottom: 20px;
+        }
+        /* ./ */
+  
+      </style>
+
+     
+
+      <a href="payment-post" class="nhsuk-button">
+        Proceed to payment
+      </a>
+      <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
+
+    </div>
+  </div>
+{% endblock %}
