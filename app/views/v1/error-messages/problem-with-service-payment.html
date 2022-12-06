@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  We could not process your details - HRT PPC
+  There is a problem with the service - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -43,7 +43,7 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          We could not process your details
+          Sorry, there is a problem with the service
         </h1>
       </legend>
       <br>
@@ -51,24 +51,29 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       <p>
-        It is not your fault. Our system is having technical difficulties<br><br>
-        If you want to try again, <a href="">return to the start</a>
-        
-    
+        Your payment has been successful, but we're unable to show your certificate details due to a technical issue.<br><br>
+        You don't need to pay for prescriptions from today.<br><br>
+        You can still collect prescriptions from today without your certificate details, the pharmacist should tick 'Evidence not seen' on the back of your prescription.
+          
       </p>
 
       <div class="nhsuk-inset-text">
         <span class="nhsuk-u-visually-hidden">Information: </span>
         <p>  
-        If you need further help, you can contact us:<br><br>
-      <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
+          We'll be able to send your certificate details to you if you contact us:<br><br>
+        <strong>Online:</strong> using our <a href="https://faq.nhsbsa.nhs.uk/contact-us/" target="_blank">online form</a><br><br>
       <strong>Telephone:</strong> 0300 330 1341<br>
-      Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm.<br><br>
-      <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a>
+      Monday to Friday, 8am to 6pm <br> Saturday, 9am to 3pm.<br><br>
+      
+      <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a><br><br>
+      You'll need to wait 24 hours before contacting us.
+      
     </p>
     
   </div>
+      <p><a href="https://www.nhsbsa.nhs.uk/">Go to NHS Business Services home</a></p>
       <!-- End of content -->
-    </div>  
+    </div> 
+     
   </div>
 {% endblock %}
