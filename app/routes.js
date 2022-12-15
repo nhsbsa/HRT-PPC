@@ -41,7 +41,7 @@ router.get(/copy2021-handler/, function (req, res) {
     if (req.query.continue === "yes")  {
      res.redirect('dob');
    } else {
-     res.redirect('outside-england');
+     res.redirect('chosen-not-to-buy');
    }
   });
 
