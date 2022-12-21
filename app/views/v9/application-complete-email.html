@@ -122,11 +122,11 @@
         
         <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
           
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key" >
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black" >
               HRT PPC for
             </dt>
-            <dd class="nhsuk-summary-list__value">
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
               Jane Doe
             </dd>
         
@@ -134,39 +134,45 @@
         
           </div>
         
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
               Certificate number
             </dt>
-            <dd class="nhsuk-summary-list__value">
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
               1000000001234
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
               Starts on
             </dt>
-            <dd class="nhsuk-summary-list__value">
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
               1 April 2023
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
               Ends on
             </dt>
-            <dd class="nhsuk-summary-list__value">
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
               1 April 2024
             </dd>  
           </div>
           
         </dl>
         <div style="padding-top: -10px;">
-          <strong style="font-size:x-large; color:white; padding: 20px; padding-top: -20px;">Contact us if your name or address changes</strong>  
-          <p style="color: white; padding-left: 20px;">
-             If your details do not match you may be fined.</p>
-          <p style="color: white; padding-left: 20px; padding-bottom: 20px;">
+          <div class="color:white">
+          <strong class="nhsuk-print-black" style="font-size:x-large; padding: 20px; padding-top: -20px;">Contact us if your name or address changes</strong>  
+          </div>
+          
+          <div style="color:white">
+          <p class="nhsuk-print-black" style=" padding-left: 20px;">
+             If your details do not match you may be fined.</p></div>
+
+             <div style="color: white;">
+          <p class="nhsuk-print-black"style=" padding-left: 20px; padding-bottom: 20px;">
 
             
               
@@ -174,7 +180,7 @@
         <strong>Telephone:</strong> 0300 330 1341<br>
         Monday to Friday, 8am to 6pm<br> Saturday, 9am to 3pm
             
-            </p>
+            </p></div>
         </div>
         
         
@@ -186,7 +192,13 @@
   Print or save a copy</button></a>
 
 
+  <style>
+    @media print {
 
+      .nhsuk-print-black { color: black; }
+
+}
+  </style>
       
       
       
