@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-private-beta.html' %}
+{% extends 'layout-kickout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Your payment has been declined - HRT PPC
+  Your payment has been cancelled - HRT PPC
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -43,7 +43,7 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          Your payment has been declined
+          Your payment has been cancelled
         </h1>
       </legend>
       <br>
@@ -52,9 +52,8 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       <p>
         We have not taken any money out of your account.<br><br>
-        During this pilot, if you want to try again, you will have to <a href="">return to the start</a>.
-        <p>You may need to use a different debit or credit card.</p>
-        <p>In future, we ill allow you to try to make the payment again without having to restart the application.</p>
+        If you want to try again, you will have to <a href="">return to the start</a>.
+        
       </p>
       <p>Email us at HRTPPC-Support@nhs.net if you need further help.</p>
       
