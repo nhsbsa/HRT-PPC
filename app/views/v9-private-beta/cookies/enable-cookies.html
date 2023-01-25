@@ -1,0 +1,77 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+Enable cookies to continue - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          Enable cookies to continue
+        </h1>
+      </legend><br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>Our hormone replacement therapy prescription prepayment certificate (HRT PPC) service puts small files (known as 'cookies') onto your device.</p>
+      <p>To be able to use this service online, you need to enable cookies.</p>
+      
+
+       
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <h2 class="nhsuk-heading-m">Why we use cookies</h3>
+        <p>Cookies help us understand how you use our service and make improvements.</p>
+        <p>They allow us to temporarily store the information you enter so that we can process your application.</p>
+        <p>Find out <a href="https://www.nhsbsa.nhs.uk/our-policies/cookies" target="_blank">more about cookies (opens in a new tab)</a> and <a href="https://allaboutcookies.org/" target="_blank">how to manage them (opens in a new tab)</a>.</p>
+      </div>
+
+        
+      
+      
+
+        <p>If you've enabled cookies you can <a href="/v9-private-beta/start">start your application again</a>.</p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
