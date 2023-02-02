@@ -142,6 +142,26 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  router.get(/handler-2/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('where-you-collect');
+   } else {
+     res.redirect('medicine-not-covered-2');
+   }
+  });
+
+  router.get(/some-medicine-handler/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('where-you-collect');
+   } else if (req.query.continue === "no") {
+     res.redirect('medicine-not-covered-2');
+   }else if (req.query.continue === "some") {
+    res.redirect('some-medicine-covered');
+  }
+  });
+
+
+
 
 
   //router.get(/choose-ppc/, function (req, res) {
