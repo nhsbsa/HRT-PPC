@@ -39,7 +39,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/continue-v3/, function (req, res) {
     if (req.query.continue === "yes")  {
-     res.redirect('dob');
+     res.redirect('where-you-collect');
    } else {
      res.redirect('chosen-not-to-buy');
    }
