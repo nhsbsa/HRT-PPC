@@ -92,23 +92,6 @@
           },
           {
             key: {
-              text: "Do you know your NHS number?"
-            },
-            value: {
-              text: "Yes"
-            },
-            actions: {
-              items: [
-                {
-                  href: "nhs-number",
-                  text: "Change",
-                  visuallyHiddenText: "NHS number"
-                }
-              ]
-            }
-          },
-          {
-            key: {
               text: "NHS number"
             },
             value: {
@@ -146,38 +129,42 @@
               text: "Receive certificate and reminder by email?"
             },
             value: {
-              html: 'Yes'
+              text: "Yes"
             },
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "send-certificate",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "NHS number"
                 }
               ]
             }
           },
           {
-            key: {
+            key: 
+            {
               text: "Email address"
             },
-            value: {
-              html: ' Jane.doe@nhs.net'
+            value: 
+            {
+              html: 'Jane.doe@nhs.net'
             },
-            actions: {
-              items: [
+            actions: 
+            {
+              items: 
+              [
                 {
-                  href: "get-certificate-by-email",
+                  href: "email",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "home address"
                 }
               ]
             }
           }
-
         ]
       }) }}
+
       <h3>
         Your certificate
       </h3>
