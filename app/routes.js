@@ -44,7 +44,13 @@ router.get(/copy2021-handler/, function (req, res) {
      res.redirect('chosen-not-to-buy');
    }
   });
-
+  router.get(/address-continue/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('dob');
+   } else {
+     res.redirect('chosen-not-to-buy');
+   }
+  });
 
   router.get(/inside-england/, function (req, res) {
     if (req.query.country === "england")  {
