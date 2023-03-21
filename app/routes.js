@@ -169,6 +169,53 @@ router.get(/copy2021-handler/, function (req, res) {
 
 
 
+  router.post('/v9/checkbox', (req, res) => {
+
+    // This creates an array of the values checked from the checkbox options
+    const contact = req.session.data['contact'];
+  
+    if (contact == 'hrt') {
+      res.redirect('hrt-needed'); // Send user to email result
+    } else if (contact == 'all') {
+      res.redirect('all-needed'); // Send user to phone result
+    } else if (contact.includes('hrt', 'all')) {
+      res.redirect('both-needed'); // All items are checked
+    } 
+  });
+
+
+
+  
+
+  router.get(/ppc-or-hrt/, function (req, res) {
+    if (req.query.example === "yes")  {
+     res.redirect('start');
+   } else {
+     res.redirect('all-needed');
+   }
+  });
+
+
+  router.get(/prescription-number/, function (req, res) {
+    if (req.query.prescriptions === "1")  {
+     res.redirect('one');
+   } else if (req.query.prescriptions === "2") {
+     res.redirect('two');
+   }else if (req.query.prescriptions === "3") {
+    res.redirect('three');
+  }else if (req.query.prescriptions === "4") {
+    res.redirect('four');
+  }
+  });
+ 
+
+  router.get(/different-exemption/, function (req, res) {
+    if (req.query.exemption === "no")  {
+     res.redirect('cannot-confirm-entitlement');
+   } else {
+     res.redirect('check-personal-details');
+   }
+  });
 
   //router.get(/choose-ppc/, function (req, res) {
   //if (req.query.cert === "ppc")  {
