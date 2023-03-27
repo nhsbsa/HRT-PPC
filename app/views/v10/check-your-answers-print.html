@@ -40,13 +40,13 @@
         <h3 class="nhsuk-warning-callout__label">
           <span role="text">
             <span class="nhsuk-u-visually-hidden">Important: </span>
-            Important information
+            Before you continue
           </span>
         </h3>
-        <p>
+       
           
-         Your personal details must match what is printed on your prescriptions. Check your details below to avoid a penalty charge.</p>
-        
+          
+        <p>HRT PPCs are not refundable so make sure you need to buy one before doing so.</p>
       </div>
 
       <h3 class="heading">
@@ -146,24 +146,7 @@
               text: "Receive certificate and reminder by email?"
             },
             value: {
-              html: 'Yes'
-            },
-            actions: {
-              items: [
-                {
-                  href: "get-certificate-by-email",
-                  text: "Change",
-                  visuallyHiddenText: "email"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Email address"
-            },
-            value: {
-              html: ' Jane.doe@nhs.net'
+              html: 'No'
             },
             actions: {
               items: [
@@ -209,7 +192,7 @@
             },
             value: 
             {
-              html: "1 April 2023"
+              html: "1 April 2023 "
             }
             ,
             actions: 
@@ -245,7 +228,7 @@
               text: "Total cost"
             },
             value: {
-              html: "£19.30"
+              html: "£18.70"
             }
             ,
             actions: 
@@ -278,9 +261,8 @@
         ]
       }) }}
 
-     
-
-      <div class="payment-info-box" style="">
+      
+      <div class="payment-info-box" style="margin-top:20px;">
         <div class="notice-margin notice form-group">
             
             <strong style="font-size: large;">
@@ -302,10 +284,19 @@
           </li>
         </ul>
         <span class="card-text">Accepted credit and debit card types</span>
+        
+          <div class="govuk-warning-text" style="margin-bottom:-10px; margin-top: 10px;">
+            <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top:20px ;">!</span>
+            <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif;">
+              <span class="govuk-warning-text__assistive">Warning</span>
+              Make sure you enter your card details correctly. If your payment is declined you will need to restart your application.
+            </strong>
+          </div>
     </div>
 
       
     
+      
 
       <style>
         /* accepted cards styles */
@@ -397,16 +388,9 @@
   
       </style>
 
-     <br>
-<div class="govuk-warning-text" style="margin-bottom:px; margin-top: 180px;">
-  <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top:7px ;">!</span>
-  <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif;">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    HRT PPCs are not refundable so make sure you need to buy one before doing so.
-  </strong>
-</div>
+     
 
-      <a href="payment" class="nhsuk-button">
+      <a href="payment-post" class="nhsuk-button">
         Proceed to payment
       </a>
       <p class="navigation"><a class="cancel" href="start">Cancel</a></p>

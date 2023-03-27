@@ -1,0 +1,121 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Your medicine is not covered - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+       BETA
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <form action="continue-v3" method="get" class="form">
+        <div class="nhsuk-form-group">
+  
+          <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Some of your HRT medicines are not covered by the HRT PPC
+              </h1>
+            </legend>
+            <p>An HRT PPC could still save you money if you need to pay for an HRT medicine that is covered 3 or more times in a 12-month period.</p>
+            <p>But you may save more with a PPC that covers all NHS prescriptions. This includes all HRT medication as well as any other items you get prescribed.</p>
+              
+            
+           
+              <p>    
+                This type of PPC will save you more than an HRT PPC if you get:</p>
+                <ul>
+                  <li>4 or more items in a 3-month period and at least 2 are not for items covered by an HRT PPC</li>
+                  <li>12 or more items in a 12-month period and at least 10 are not for items covered by an HRT PPC</li>
+                </ul>
+              <p><a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc">Find out more about PPCs that cover all NHS prescriptions on our website (opens in new tab)</a>.</p>
+    
+           
+  
+            
+           
+  
+  
+  
+            <div class="nhsuk-radios nhsuk-radios--conditional">
+              <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+                <h2 class="nhsuk-fieldset__heading">
+                  Do you still want to buy an HRT PPC?
+                </h2>
+              </legend>
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                  Yes
+                </label>
+              </div>
+        
+              
+        
+              
+        
+              
+        
+              <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+             
+        
+            
+        
+            </div>
+  
+            
+      
+          
+          
+          </fieldset>
+        
+        </div>
+        
+          <button class="nhsuk-button" type="submit">
+            Continue
+          </button>
+        </form>
+  
+        <p><a href="start">Cancel</a></p>
+
+    </div>  
+
+  </div>
+{% endblock %}

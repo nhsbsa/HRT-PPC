@@ -1,6 +1,6 @@
 
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout.html' %}
+{% extends 'layout-kickout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -28,8 +28,7 @@
 <div class="govuk-phase-banner">
   <p class="govuk-phase-banner__content">
     <strong class="govuk-tag govuk-phase-banner__content__tag">
-      
-     BETA
+      beta
     </strong>
     <span class="govuk-phase-banner__text">
       This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
@@ -64,19 +63,17 @@
             Important information
           </span>
         </h3>
-        
-          
-          <p>If you get prescriptions for something other than HRT medicine, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">Prescription Prepayment Certificate (PPC) that covers all NHS prescriptions</a> may be better for you.</a></p>
-        
+        <p>This Prescription Prepayment Certificate (PPC) only covers <a href="/drugs">certain Hormone Replacement Therapy (HRT) medicines.</a> <br><br>If you need a prescription for something other than HRT, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank"> PPC</a> may be better for you.</a></p>
+        <p>You cannot get a certificate by post through this online service. If you want a postal certificate there are other ways to buy one.</p>
       </div>
 
 
-      <p>Use this service to buy an HRT PPC.</p>
+      <h3>About your HRT PPC</h3>
       <p>
-        If you pay for NHS prescribed HRT medicine 3 or more times in 12 months, an HRT PPC could save you money.<br><br>
+        You can save money on NHS HRT prescriptions by prepaying for them.<br><br>
         
-        Each item on an NHS prescription usually costs £9.35. You can buy an HRT PPC for a one-off payment of £18.70 (the cost of two items). <br><br>This covers you for an unlimited number of certain HRT prescriptions for 12 
-        months. 
+        Each item on a NHS prescription usually costs £9.35.
+        You can buy an HRT PPC for a one-off debit or credit card payment of £18.70 (the cost of two prescriptions) <br><br>This covers you for an unlimited number of HRT medications for 12 months.  
 
 
       
@@ -86,7 +83,11 @@
       
    
 
- 
+<div class="nhsuk-inset-text">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>Once you have bought an HRT PPC you cannot claim a refund for this.<br><br> You may be able to <a href="https://faq.nhsbsa.nhs.uk/knowledgebase/category/?articlecategory=Refund%20of%20prescription%20charges%20and%20FP57s&id=CAT-01105">claim a refund for medicines already purchased that your certificate now covers</a>.</p>
+
+</div>  
       
       
       
@@ -99,43 +100,19 @@
           <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
           They are also costly to the NHS and the environment.</p>
         </div>-->
-        
-        
-        <h3>Before you start</h3>
 
-        <p>You'll need:</P>
-
-        <ul>
-          
-          <li>the name of your HRT medicine to check if its covered – you can find this on your prescription or 
-            the medicine packaging</li>
-          <li>a valid credit or debit card to pay for the HRT PPC</li>
-          
-        </ul>
         
         
 
+        <p>We prevent fraud by matching certificate details on our database with prescriptions. If your details do not match you may be fined.
 
+        </p>
+<p>If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
        
-
-
-
-
-
         
         
-
-       
-
-        <div class="govuk-warning-text" style="margin-bottom:px; margin-top: px;">
-          <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top:7px ;">!</span>
-          <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif;">
-            <span class="govuk-warning-text__assistive">Warning</span>
-            HRT PPCs are not refundable so make sure you need to buy one before doing so.
-          </strong>
-        </div>
-        
-     
+    
+      
       
      <!--<details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -185,15 +162,12 @@
       
       
 
-        <form action="is-medicine-covered-3-radios">
+        <form action="before-you-start">
         <button class="nhsuk-button" type="submit">
           Buy now
         </button>
       </form>
-      
-      <p>If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
 
-      <p>You cannot get an HRT PPC by post through this online service. If you need it to be posted, there are other ways to buy one.</p>
       <details class="nhsuk-details" >
         <summary class="nhsuk-details__summary">
           <span class="nhsuk-details__summary-text">
@@ -201,13 +175,13 @@
           </span>
         </summary>
         <div class="nhsuk-details__text">
-          <p>You can also buy an HRT PPC from some <a href="">registered pharmacies</a> or over the phone with our contact centre: </p>
+          <p>You can purchase an HRT PPC through our contact centre: </p>
                 
                   
                 <strong>Telephone:</strong> 0300 330 1341<br>
                 Monday to Friday, 8am to 6pm and Saturday, 9am to 3pm.<br><br>
-                <p><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers">Find out about call charges</a>.</p>
-     
+                <p><a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges.</a></p>
+      <p>You can also purchase an HRT PPC from any <a href="">registered pharmacy</a>.</p>
         </div>
       </details>
 

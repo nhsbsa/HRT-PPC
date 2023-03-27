@@ -40,13 +40,13 @@
         <h3 class="nhsuk-warning-callout__label">
           <span role="text">
             <span class="nhsuk-u-visually-hidden">Important: </span>
-            Important information
+            Before you continue
           </span>
         </h3>
         <p>
           
-         Your personal details must match what is printed on your prescriptions. Check your details below to avoid a penalty charge.</p>
-        
+          If you need a prescription for something other than HRT, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank">Prescription Prepayment Certificate (PPC) that covers all NHS prescriptions (link opens in new tab)</a> may be better for you.</a></p>
+        <p>HRT PPCs are not refundable.</p>
       </div>
 
       <h3 class="heading">
@@ -92,23 +92,6 @@
           },
           {
             key: {
-              text: "Do you know your NHS number?"
-            },
-            value: {
-              text: "Yes"
-            },
-            actions: {
-              items: [
-                {
-                  href: "nhs-number",
-                  text: "Change",
-                  visuallyHiddenText: "NHS number"
-                }
-              ]
-            }
-          },
-          {
-            key: {
               text: "NHS number"
             },
             value: {
@@ -146,38 +129,42 @@
               text: "Receive certificate and reminder by email?"
             },
             value: {
-              html: 'Yes'
+              text: "Yes"
             },
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "send-certificate",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "NHS number"
                 }
               ]
             }
           },
           {
-            key: {
+            key: 
+            {
               text: "Email address"
             },
-            value: {
-              html: ' Jane.doe@nhs.net'
+            value: 
+            {
+              html: 'Jane.doe@nhs.net'
             },
-            actions: {
-              items: [
+            actions: 
+            {
+              items: 
+              [
                 {
-                  href: "get-certificate-by-email",
+                  href: "email",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "home address"
                 }
               ]
             }
           }
-
         ]
       }) }}
+
       <h3>
         Your certificate
       </h3>
@@ -245,7 +232,7 @@
               text: "Total cost"
             },
             value: {
-              html: "£19.30"
+              html: "£18.70"
             }
             ,
             actions: 
@@ -278,9 +265,9 @@
         ]
       }) }}
 
-     
+      
 
-      <div class="payment-info-box" style="">
+      <div class="payment-info-box" style="margin-top:20px;">
         <div class="notice-margin notice form-group">
             
             <strong style="font-size: large;">
@@ -306,6 +293,7 @@
 
       
     
+      
 
       <style>
         /* accepted cards styles */
@@ -397,14 +385,7 @@
   
       </style>
 
-     <br>
-<div class="govuk-warning-text" style="margin-bottom:px; margin-top: 180px;">
-  <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top:7px ;">!</span>
-  <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif;">
-    <span class="govuk-warning-text__assistive">Warning</span>
-    HRT PPCs are not refundable so make sure you need to buy one before doing so.
-  </strong>
-</div>
+     
 
       <a href="payment" class="nhsuk-button">
         Proceed to payment
