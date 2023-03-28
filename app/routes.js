@@ -189,7 +189,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
   router.get(/ppc-or-hrt/, function (req, res) {
     if (req.query.example === "yes")  {
-     res.redirect('start');
+     res.redirect('hrt-needed');
    } else {
      res.redirect('all-needed');
    }
