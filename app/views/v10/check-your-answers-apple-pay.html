@@ -136,7 +136,7 @@
                 {
                   href: "postcode",
                   text: "Change",
-                  visuallyHiddenText: "NHS number"
+                  visuallyHiddenText: "address"
                 }
               ]
             }
@@ -153,7 +153,7 @@
                 {
                   href: "get-certificate-by-email",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "certificate and reminder receipt method"
                 }
               ]
             }
@@ -219,7 +219,7 @@
                 {
                   href: "your-start-date",
                   text: "Change",
-                  visuallyHiddenText: "home address"
+                  visuallyHiddenText: "start date"
                 }
               ]
             }
@@ -257,23 +257,6 @@
                 }
               ]
             }
-          },{
-            key: {
-              text: "Payment method"
-            },
-            value: {
-              html: "Card payment"
-            }
-            ,
-            actions: 
-            {
-              items: 
-              [
-                {
-         
-                }
-              ]
-            }
           }
         ]
       }) }}
@@ -284,9 +267,21 @@
         <div class="notice-margin notice form-group">
             
             <strong style="font-size: large;">
-                If you choose to continue, you will be transferred to our card payment provider, <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Pay (opens in a new tab)</a>.
+                If you choose to continue, you will be transferred to our payment provider, <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Pay (opens in a new tab)</a>.
             </strong>
         </div>
+        <ul class="apple-pay field-empty">
+          <li class="apple-pay" title="Apple Pay logo" data-key="apple-pay" data-credit="true" data-debit="false">
+
+          </li>
+        </ul>
+        <ul class="google-pay field-empty">
+          <li class="google-pay" title="Google Pay logo" data-key="google-pay" data-credit="true" data-debit="false">
+
+          </li>
+        </ul>
+        <br><br>
+        <span class="card-text">Now accepting Apple Pay and Google Pay</span>
         <ul class="accepted-cards field-empty">
           <li class="visa" title="Visa card logo" data-key="visa" data-credit="true" data-debit="true">
             
@@ -294,7 +289,7 @@
           <li class="master-card" title="MasterCard logo" data-key="master-card" data-credit="true" data-debit="true">
             
           </li>
-          <li class="jcb" title="JCB credit card logo" data-key="jcb" data-credit="true" data-debit="false">
+          <li class="jcb" data-key="jcb" title="JCB credit card logo" data-credit="true" data-debit="false">
             
           </li>
           <li class="diners-club" title="Diners Club credit card logo" data-key="diners-club" data-credit="true" data-debit="false">
@@ -302,6 +297,7 @@
           </li>
         </ul>
         <span class="card-text">Accepted credit and debit card types</span>
+        <br>
     </div>
 
       
@@ -338,6 +334,8 @@
           float: left;
           background-image: url("/images/accepted-cards-sprite.png");
           background-size: 900% 200%;
+          border: 1px solid black;
+          border-radius: 5px;
           border: 1px solid #BFC1C3;
           border-radius: 5px;
         }
@@ -377,6 +375,56 @@
         .accepted-cards-hint {
           color: #6f777b;
         }
+
+        .apple-pay {
+          display: block;
+          margin: 15px 0 5px;
+          padding: 0;
+          float: none;
+        }
+  
+        @media (min-width: 40.0625em) {
+          .apple-pay {
+            width:66.666%
+          }
+        }
+
+        .apple-pay li {
+          display: block;
+          width: 50px;
+          height: 10px;
+          margin: 0 10px 5px 0;
+          padding-bottom: 2rem;
+          float: left;
+          background-image: url("/images/Apple_Pay_Mark_RGB_041619.svg");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+        }
+
+        .google-pay {
+          display: block;
+          margin: 15px 0 5px;
+          padding: 0;
+          float: none;
+        }
+  
+        @media (min-width: 40.0625em) {
+          .google-pay {
+            width:66.666%
+          }
+        }
+
+        .google-pay li {
+          display: block;
+          width: 60px;
+          height: 10px;
+          margin: 0 10px 5px 0;
+          padding-bottom: 2rem;
+          float: left;
+          background-image: url("/images/GPay_Acceptance_Mark_800.png");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+        }
   
         /* Payment card info box */
         .payment-info-box {
@@ -398,15 +446,16 @@
       </style>
 
      <br>
+     <br><br><br><br><br>
 <div class="govuk-warning-text" style="margin-bottom:px; margin-top: 180px;">
   <span class="govuk-warning-text__icon" aria-hidden="true" style="margin-top:7px ;">!</span>
-  <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif;">
+  <strong class="govuk-warning-text__text" style="font-family: Frutiger W01, Arial, Sans-serif; ">
     <span class="govuk-warning-text__assistive">Warning</span>
     HRT PPCs are not refundable so make sure you need to buy one before doing so.
   </strong>
 </div>
 
-      <a href="payment" class="nhsuk-button">
+      <a href="payment-apple-pay" class="nhsuk-button">
         Proceed to payment
       </a>
       <p class="navigation"><a class="cancel" href="start">Cancel</a></p>
