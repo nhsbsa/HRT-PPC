@@ -1,0 +1,1050 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Is your medicine covered by an HRT PPC? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+     BETA
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    
+    <!-- Change the page heading -->
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Is your medicine covered by an HRT PPC?
+      </h1>
+      
+    </legend>
+    <p>HRT PPCs do not cover all HRT medicines. If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+
+    <!-- Add content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    <!--<div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h3 class="nhsuk-card__heading">
+          Not all HRT medicines are covered by an HRT PPC
+    
+        </h3>
+        <p class="nhsuk-card__description">You must <a href="/drugs" target="_blank">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+      </div>
+    </div>-->
+
+    <!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="nhsuk-card__heading">
+          Not all medicine is covered by the HRT PPC
+    
+        </h3>
+        <p>You must <a href="drugs">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+      </div>
+    </div>-->
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Check if the medication you need is covered
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <div class="nhsuk-grid-column-full">
+
+          
+         </div>
+      
+         <p>The medicines are listed A to Z by the product name. This is the brand name the manufacturer gives their medicine.
+          <br><br>Generic versions of these medicines are also covered if the generic drug name shows on the prescription. The generic drug name is usually the name of the active ingredient in the medicine.
+          <br><br>This list is correct as of 1 November 2023 and is subject to change.
+          <br><br>You can find the name of your medicine on the prescription or the medicine packaging.
+         </p>
+
+          <nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">
+            <ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0" role="list">
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#A">A</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#B">B</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#C">C</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#D">D</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#E">E</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#F">F</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#G">G</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#H">H</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#I">I</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#J">J</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#K">K</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#L">L</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#M">M</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#N">N</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#O">O</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#P">P</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#Q">Q</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#R">R</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#S">S</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#T">T</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#U">U</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#V">V</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#W">W</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#X">X</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#Y">Y</a>
+              </li>
+              <li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">
+                <a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#Z">Z</a>
+              </li>
+            </ol>
+          </nav>
+
+          <hr style="margin-top: auto; margin-bottom: auto;">
+
+          <div class="nhsuk-form-group nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="search-field">
+            <label class="nhsuk-label" for="full">
+              Search product name or generic drug name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-full" id="full" name="full" type="text" role="search" aria-label="Search product name or generic drug name">
+            
+          </div>
+          <div class="nhsuk-form-group" style="display: flex; flex-direction: row; align-items: center;">
+            <a href="is-medicine-covered-3-radios-search-result" class="nhsuk-button" id="search-button" alt="Search button" data-module="nhsuk-button" role="search">
+            Search
+            </a>
+      
+        </div>
+
+          <style>
+            @media (max-width: 800px){
+              #search-button {
+                margin-top: 10px;
+              }
+            }
+          </style>
+
+  
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="A" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                A
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+  
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="B" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                B
+              </h2>
+              
+
+                <table class="nhsuk-table">
+                  
+                  <thead role="rowgroup" class="nhsuk-table__head">
+                    <tr role="row">
+                      <th role="columnheader" class="" scope="col">
+                        Product name
+                      </th>
+                      <th role="columnheader" class="" scope="col">
+                        Generic drug name
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody class="nhsuk-table__body">
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Bedol<br><br><p><strong>Important: </strong>From 1 August 2024 the HRT PPC will stop covering this item. This is because the item is discontinued.</p></td>
+                      <td class="nhsuk-table__cell">Estradiol 2mg tablets</td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Bijuve/Bijuva</td>
+                      <td class="nhsuk-table__cell ">Estradiol 1mg / Progesterone 100mg capsules</td>
+                    </tr>
+                    <tr role="row" class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell">Blissel</td>
+                      <td class="nhsuk-table__cell ">Estriol 50micrograms/g vaginal gel with applicator</td>
+                    </tr>
+                  </tbody>
+                </table>
+               
+                
+              
+            </div>
+          </div>
+  
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="C" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                C
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Climanor<br><br><p><strong>Important: </strong>From 1 August 2024 the HRT PPC will stop covering this item. This is because the item is discontinued.</p></td>
+                    <td class="nhsuk-table__cell ">Medroxyprogesterone 5mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Clinorette<br><br><p><strong>Important: </strong>From 1 August 2024 the HRT PPC will stop covering this item. This is because the item is discontinued.</p></td>
+                    <td class="nhsuk-table__cell ">Generic Clinorette tablets</td>
+                  </tr>
+                  
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+  
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="D" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                D
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="E" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                E
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+              <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Duet</td>
+                  <td class="nhsuk-table__cell ">Generic Elleste Duet 1mg tablets<br><br>Generic Elleste Duet 2mg tablets</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Duet Conti</td>
+                  <td class="nhsuk-table__cell ">Estradiol 2mg / Norethisterone acetate 1mg tablets</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Elleste Solo</td>
+                  <td class="nhsuk-table__cell ">Estradiol 1mg tablets<br><br>Estradiol 2mg tablets</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estraderm MX</td>
+                  <td class="nhsuk-table__cell ">Estradiol 25micrograms/24hours transdermal patches<br><br>Estradiol 50micrograms/24hours transdermal patches<br><br>Estradiol 75micrograms/24hours transdermal patches<br><br>Estradiol 100micrograms/24hours transdermal patches</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estradot</td>
+                  <td class="nhsuk-table__cell ">Estradiol 25micrograms/24hours transdermal patches<br><br>Estradiol 37.5micrograms/24hours transdermal patches<br><br>Estradiol 50micrograms/24hours transdermal patches<br><br>Estradiol 75micrograms/24hours transdermal patches<br><br>Estradiol 100micrograms/24hours transdermal patches</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estring (90-day preparation)</td>
+                  <td class="nhsuk-table__cell ">Estradiol 7.5micrograms/24hours vaginal delivery system</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Estriol</td>
+                  <td class="nhsuk-table__cell ">Estriol 0.01% cream with applicator</td>
+                </tr>
+                
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel</td>
+                  <td class="nhsuk-table__cell ">Estradiol 25micrograms/24hours transdermal patches<br><br>Estradiol 50micrograms/24hours transdermal patches<br><br>Estradiol 75micrograms/24hours transdermal patches<br><br>Estradiol 100micrograms/24hours transdermal patches</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel Conti</td>
+                  <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours / Norethisterone 170micrograms/24hours transdermal patches</td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell">Evorel Sequi</td>
+                  <td class="nhsuk-table__cell ">Generic Evorel Sequi transdermal patches</td>
+                </tr>
+               
+
+                
+              </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="F" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                F
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Femoston</td>
+                    <td class="nhsuk-table__cell ">Generic Femoston 1/10mg tablets<br><br>Generic Femoston 2/10mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Femoston Conti</td>
+                    <td class="nhsuk-table__cell ">Estradiol 500micrograms / Dydrogesterone 2.5mg tablets<br><br>Estradiol 1mg / Dydrogesterone 5mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Femseven</td>
+                    <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours transdermal patches<br><br>Estradiol 75micrograms/24hours transdermal patches<br><br>Estradiol 100micrograms/24hours transdermal patches</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Femseven Conti</td>
+                    <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours / Levonorgestrel 7micrograms/24hours transdermal patches</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">FemSeven Sequi Phase 1</td>
+                    <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours transdermal patches</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">FemSeven Sequi Phase 2</td>
+                    <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours / Levonorgestrel 10micrograms/24hours transdermal patches</td>
+                  </tr>
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="G" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                G
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Gepretix</td>
+                    <td class="nhsuk-table__cell ">Progesterone micronised 100mg capsules</td>
+                  </tr>
+
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Gina</td>
+                    <td class="nhsuk-table__cell ">Estradiol 10microgram pessaries</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="H" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                H
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="I" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                I
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Imvaggis</td>
+                    <td class="nhsuk-table__cell ">Estriol 30microgram pessaries</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Indivina</td>
+                    <td class="nhsuk-table__cell ">Estradiol valerate 1mg / Medroxyprogesterone 2.5mg tablets<br><br>Estradiol valerate 1mg / Medroxyprogesterone 5mg tablets<br><br>Estradiol valerate 2mg / Medroxyprogesterone 5mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Intrarosa</td>
+                    <td class="nhsuk-table__cell ">Prasterone 6.5mg pessaries</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="J" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                J
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="K" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                K
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Kliofem</td>
+                    <td class="nhsuk-table__cell ">Estradiol 2mg / Norethisterone acetate 1mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Kliovance</td>
+                    <td class="nhsuk-table__cell ">Estradiol 1mg / Norethisterone acetate 500microgram tablets</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="L" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                L
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Lenzetto</td>
+                    <td class="nhsuk-table__cell ">Estradiol 1.53mg/dose transdermal spray</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Livial</td>
+                    <td class="nhsuk-table__cell ">Tibolone 2.5mg tablets</td>
+                  </tr>
+                  
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="M" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                M
+              </h2>
+
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Mirena<br><br><p><strong>Note:</strong> This item is a free of charge contraceptive and no prescription charge is applicable even if prescribed to treat menopause</p></td>
+                    <td class="nhsuk-table__cell ">Levonorgestrel 20micrograms/24hours intrauterine device</td>
+                  </tr>
+                  
+                  
+                 
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="N" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                N
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Novofem</td>
+                    <td class="nhsuk-table__cell ">Generic Novofem tablets</td>
+                  </tr>
+                  
+                  
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="O" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                O
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Oestrogel/dose</td>
+                    <td class="nhsuk-table__cell ">Estradiol 0.06% gel (750microgram per actuation)</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Ovestin</td>
+                    <td class="nhsuk-table__cell ">Estriol 0.1% cream</td>
+                  </tr>
+                  
+                  
+                 
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="P" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                P
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Premarin</td>
+                    <td class="nhsuk-table__cell ">Conjugated oestrogens 300microgram tablets<br><br>Conjugated oestrogens 625microgram tablets<br><br>Conjugated oestrogens 1.25mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Premique low dose</td>
+                    <td class="nhsuk-table__cell ">Conjugated oestrogens 300microgram / Medroxyprogesterone 1.5mg modified-release tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Progynova</td>
+                    <td class="nhsuk-table__cell ">Estradiol valerate 1mg tablets<br><br>Estradiol valerate 2mg tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Progynova TS</td>
+                    <td class="nhsuk-table__cell ">Estradiol 50micrograms/24hours transdermal patches<br><br>Estradiol 100micrograms/24hours transdermal patches</td>
+                  </tr>
+                  
+                  
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="Q" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                Q
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="R" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                R
+              </h2>
+              
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="S" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                S
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Sandrena</td>
+                    <td class="nhsuk-table__cell ">Estradiol 500microgram gel sachets<br><br>Estradiol 1mg gel sachets</td>
+                  </tr>
+                 
+               
+                  
+                  
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="T" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                T
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Tridestra</td>
+                    <td class="nhsuk-table__cell ">Generic Tridestra tablets</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Trisequens</td>
+                    <td class="nhsuk-table__cell ">Generic Trisequens tablets</td>
+                  </tr>
+                 
+                 
+               
+                  
+                  
+                 
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="U" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                U
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Utrogestan</td>
+                    <td class="nhsuk-table__cell ">Progesterone micronised 100mg capsules</td>
+                  </tr>
+                </tbody>
+              </table>
+             
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="V" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                V
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Vagifem</td>
+                    <td class="nhsuk-table__cell ">Estradiol 10microgram pessaries</td>
+                  </tr>
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Vagirux</td>
+                    <td class="nhsuk-table__cell ">Estradiol 10microgram pessaries</td>
+                  </tr>
+                 
+                 
+               
+                  
+                  
+                 
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="W" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                W
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="X" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                X
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="Y" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                Y
+              </h2>
+              <ul class="nhsuk-list nhsuk-list--border">
+                <li>There are currently no HRT medicines covered</li>
+              </ul>
+            </div>
+          </div>
+          <div class="nhsuk-card nhsuk-card--feature">
+            <div class="nhsuk-card__content nhsuk-card__content--feature">
+              <h2 id="Z" class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">
+                Z
+              </h2>
+              <table class="nhsuk-table">
+                  
+                <thead role="rowgroup" class="nhsuk-table__head">
+                  <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                      Product name
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                      Generic drug name
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                  <tr role="row" class="nhsuk-table__row">
+                    <td class="nhsuk-table__cell">Zumenon</td>
+                    <td class="nhsuk-table__cell ">Estradiol 1mg tablets<br><br>Estradiol 2mg tablets</td>
+                  </tr>
+                 
+                
+                </tbody>
+              </table>
+              
+            </div>
+          </div>
+      
+          
+      
+      
+      
+          
+         
+          <!-- End of content -->
+           
+        
+      
+      </div>
+    </details>
+    
+
+    <form action="some-medicine-handler" method="get" class="form">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+         
+  
+         
+
+          
+         
+
+
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                
+              </h2>
+            </legend>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Yes, my HRT medicine is covered by an HRT PPC
+              </label>
+            </div>
+      
+            
+      
+            
+      
+            
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                No, my HRT medicine is not covered by an HRT PPC
+              </label>
+            </div>
+            <div class="nhsuk-radios__divider">or</div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="some" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                Some of my HRT medicine is covered by an HRT PPC
+              </label>
+            </div>
+           
+      
+          
+      
+          </div>
+
+          
+    
+        
+        
+        </fieldset>
+      
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Why some HRT medicines are not covered
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+          <p>HRT PPCs only cover HRT medicines that are also licensed to treat the menopause in the UK.</p>
+          <p>If your HRT medicine is covered but you take it for reasons other than the menopause, you can still use an HRT PPC.</p>
+      
+        </div>
+      </details>
+      
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+    
+
+      
+      
+
+  
+   
+   
+
+    <p><a href="start">Cancel</a></p>
+
+    <!-- End of content 
+  
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Errors and flags
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Kickout pages</h4>
+        <ul>
+          <li><a href="/v1/kickout/entitled">Age entered is >60 or <16</a></li>
+          <li><a href="/v1/kickout/59">Age entered is 59</a></li>
+      
+        </ul>
+        <h4>Error messages</h4>
+        <ul>
+          <li><a href="/v1/error-messages/error-dob">Empty fields error</a></li>
+          
+      
+        </ul>
+      </div>
+    </details>-->
+
+  </div>  
+
+</div>
+{% endblock %}

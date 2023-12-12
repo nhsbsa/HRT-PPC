@@ -1,0 +1,266 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Is your medicine covered by an HRT PPC? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+     BETA
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<div class="nhsuk-grid-row">
+
+  <div class="nhsuk-grid-column-two-thirds">
+    
+    <!-- Change the page heading -->
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Is your medicine covered by an HRT PPC?
+      </h1>
+      
+    </legend>
+    <p>HRT PPCs do not cover all HRT medicines. If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+
+    <!-- Add content here -->
+    <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+    <!--<div class="nhsuk-card">
+      <div class="nhsuk-card__content">
+        <h3 class="nhsuk-card__heading">
+          Not all HRT medicines are covered by an HRT PPC
+    
+        </h3>
+        <p class="nhsuk-card__description">You must <a href="/drugs" target="_blank">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+      </div>
+    </div>-->
+
+    <!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="nhsuk-card__heading">
+          Not all medicine is covered by the HRT PPC
+    
+        </h3>
+        <p>You must <a href="drugs">check if your required medicine is covered</a> before purchasing an HRT PPC.</p>
+      </div>
+    </div>-->
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Check if the medication you need is covered
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <div class="nhsuk-grid-column-full">
+
+          
+         </div>
+      
+         <p>The medicines are listed A to Z by the product name. This is the brand name the manufacturer gives their medicine.
+          <br><br>Generic versions of these medicines are also covered if the generic drug name shows on the prescription. The generic drug name is usually the name of the active ingredient in the medicine.
+          <br><br>This list is correct as of 1 November 2023 and is subject to change.
+          <br><br>You can find the name of your medicine on the prescription or the medicine packaging.
+         </p>
+
+          <hr style="margin-top: auto; margin-bottom: auto;">
+
+          <div class="nhsuk-form-group nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="search-field">
+            <label class="nhsuk-label" for="full">
+              Search product name or generic drug name
+            </label>
+            <input class="nhsuk-input nhsuk-u-width-full" id="full" name="full" type="text" role="search" aria-label="Search product name or generic drug name" value="Amoxicillin">
+          </div>
+
+          <div class="nhsuk-form-group" style="display: flex; flex-direction: row; align-items: center;">
+            <a href="" class="nhsuk-button" id="search-button" alt="Search button" data-module="nhsuk-button" role="search">
+            Search
+            </a>
+      
+          <p><a id="clear-search-results" alt="Clear search results link" href="is-medicine-covered-3-radios-search" style="visibility: visible; margin-left: 20px;">Clear search results</a></p>
+        </div>
+
+          <style>
+            @media (max-width: 800px){
+              #search-button {
+                margin-top: 10px;
+              }
+            }
+          </style>
+
+  
+        <div class="nhsuk-card">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              Nothing was found
+
+            </h2>
+            <p class="nhsuk-card__description">We couldn't find a match for "Amoxicillin". Please try another search.</p>
+
+          </div>
+        </div>
+      
+          
+      
+      
+      
+          
+         
+          <!-- End of content -->
+           
+        
+      
+      </div>
+    </details>
+    
+
+    <form action="some-medicine-handler" method="get" class="form">
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          
+         
+  
+         
+
+          
+         
+
+
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                
+              </h2>
+            </legend>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="contact-1" name="continue" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Yes, my HRT medicine is covered by an HRT PPC
+              </label>
+            </div>
+      
+            
+      
+            
+      
+            
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                No, my HRT medicine is not covered by an HRT PPC
+              </label>
+            </div>
+            <div class="nhsuk-radios__divider">or</div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="email" name="continue" type="radio" value="some" aria-controls="conditional-contact-2" aria-expanded="false">
+              <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                Some of my HRT medicine is covered by an HRT PPC
+              </label>
+            </div>
+           
+      
+          
+      
+          </div>
+
+          
+    
+        
+        
+        </fieldset>
+      
+      </div>
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Why some HRT medicines are not covered
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          
+          <p>HRT PPCs only cover HRT medicines that are also licensed to treat the menopause in the UK.</p>
+          <p>If your HRT medicine is covered but you take it for reasons other than the menopause, you can still use an HRT PPC.</p>
+      
+        </div>
+      </details>
+      
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+    
+
+      
+      
+
+  
+   
+   
+
+    <p><a href="start">Cancel</a></p>
+
+    <!-- End of content 
+  
+
+    <details class="nhsuk-details nhsuk-expander">
+      <summary class="nhsuk-details__summary">
+        <span class="nhsuk-details__summary-text">
+          Errors and flags
+        </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <h4>Kickout pages</h4>
+        <ul>
+          <li><a href="/v1/kickout/entitled">Age entered is >60 or <16</a></li>
+          <li><a href="/v1/kickout/59">Age entered is 59</a></li>
+      
+        </ul>
+        <h4>Error messages</h4>
+        <ul>
+          <li><a href="/v1/error-messages/error-dob">Empty fields error</a></li>
+          
+      
+        </ul>
+      </div>
+    </details>-->
+
+  </div>  
+
+</div>
+{% endblock %}
