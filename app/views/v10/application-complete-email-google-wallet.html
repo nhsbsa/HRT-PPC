@@ -188,20 +188,33 @@
       </div>
 
       <h3>Save your certificate</h3>
-<p>You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
+<p>You must save your certificate details. You can do this by saving it as a PDF, adding it to Google wallet, or taking a screenshot of this page.</p>
+      <button class="nhsuk-button" data-prevent-double-click="true" data-inline="true" type="submit">
+        Save as a PDF</button>
 
-<a href="javascript:window.print();"><button class="nhsuk-button" type="submit">
-  Save as a PDF</button></a>
+        <a href="add-to-google-wallet">
+        <button data-prevent-double-click="true" type="submit">
+          <img src="/images/enGB_add_to_google_wallet_wallet-button.png" style="height: 42px; width: 200px; margin-left: 5px; margin-top: 2px;" alt="Add to Google Wallet button" data-inline="true">
+        </button>
+        </a>
+       
 
-  <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 5px;" data-module="nhsuk-button" type="submit">
-    Print out a copy
-  </button>
+        <style>
+          button{
+            border: none;
+            cursor: pointer;
+            appearance: none;
+          }
+          @media (min-width:320px)  { /* smartphones, iPhone, portrait 480x320 phones */ }
+          img{
+            width: 100%;
+            height: 45px;
+          }
+        </style>
+
+<p>If you're taking a screenshot, make sure it shows your certificate details.</p>
 
 
-
-  <p>If you're taking a screenshot, make sure it shows your certificate details.</p>
-
-  
 <p>We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
   <style>
     @media print {
@@ -286,7 +299,7 @@
             <span style="">&nbsp;&nbsp;<a href="/images/PPC.pdf">Save as a PDF</a></span>-->
             
         
-
+           
 
 
             <h2 class="nhsuk-heading-m">Getting your HRT prescriptions</h2>
