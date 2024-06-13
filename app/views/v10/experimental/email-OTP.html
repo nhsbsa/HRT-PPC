@@ -49,10 +49,10 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <p>This will be the email address where you will receive your HRT PPC and your reminder 1 month before it expires.</p>
+      <p>We will send you a single-use, 8-digit One Time Password.</p>
       
-      <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="example">
+      <div class="nhsuk-form-group" data-validation="email">
+        <label class="nhsuk-label" for="email">
           Email address
         </label>
         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
@@ -68,9 +68,9 @@
         
         
 
-        <form action="check-your-answers">
+        <form action="enter-OTP">
         <button class="nhsuk-button" type="submit">
-          Continue
+          Send One Time Password
         </button>
       </form>
 
