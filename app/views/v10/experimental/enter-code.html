@@ -43,34 +43,39 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          What is your email address?
+          Enter code to confirm your email address
         </h1>
       </legend>
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <p>We will send you a single-use, 8-digit One Time Password.</p>
+      <p>Enter the code we have sent to: <strong>name@example.com</strong></p>
       
-      <div class="nhsuk-form-group" data-validation="email">
-        <label class="nhsuk-label" for="email">
-          Email address
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="code">
+          Code
         </label>
         <input class="nhsuk-input nhsuk-u-width-two-thirds" id="two-thirds" name="two-thirds" type="text">
       </div>
 
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            I have not received the email
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>The email may take a few minutes to arrive. Its subject line is: 'Care Identity Authentication One Time Password'.</p>
+          <p>Check your spam or junk folder - if it still has not arrived, you can request a new code or provide another email address.</p>      
+        </div>
+      </details>
       
-      
-
-      
-
-      
-
         
         
 
-        <form action="enter-OTP">
+        <form action="check-your-answers">
         <button class="nhsuk-button" type="submit">
-          Send One Time Password
+          Continue
         </button>
       </form>
 
