@@ -36,6 +36,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -108,7 +109,7 @@
       
 
       
-      <h3>Your HRT PPC</h3>
+      <h2 class="nhsuk-heading-m">Your HRT PPC</h2>
       <p>We have sent your certificate  to <strong>Jane.doe@nhs.net</strong>.</p>
      
       <p>If you cannot see the email, check your junk and spam mail folders.</p>
@@ -188,7 +189,7 @@
         
       </div>
 
-      <h3>Save your certificate</h3>
+      <h2 class="nhsuk-heading-m">Save your certificate</h2>
 <p>You must save your certificate details. You can do this by saving it as a PDF, adding it to Google wallet, or taking a screenshot of this page.</p>
       <button class="nhsuk-button" data-prevent-double-click="true" data-inline="true" type="submit">
         Save as a PDF</button>
@@ -347,4 +348,5 @@
     </div>  
 
   </div>
+</main>
 {% endblock %}

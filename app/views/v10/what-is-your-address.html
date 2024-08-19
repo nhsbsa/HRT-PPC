@@ -36,6 +36,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -61,7 +62,7 @@
       <label class="nhsuk-label" for="select-1">
         Postcode
       </label>
-      <p>NE1 OLD &nbsp; <a href="postcode">Change</a></p>
+      <p>NE1 OLD &nbsp; <a href="postcode">Change<span class="nhsuk-u-visually-hidden"> postcode</span></a></p>
       
 
       <label class="nhsuk-label" for="select-1">
@@ -117,4 +118,5 @@
     </div>  
 
   </div>
+</main>
 {% endblock %}

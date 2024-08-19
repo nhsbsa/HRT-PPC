@@ -36,6 +36,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -194,8 +195,7 @@
         <a href="javascript:window.print();"><button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 5px;" data-module="nhsuk-button" type="submit">
           Print out a copy
         </button>
-      </a>
-      
+        </a>      
       
       
         <p>If you're taking a screenshot, make sure it shows your certificate details.</p>
@@ -332,4 +332,5 @@
     </div>  
 
   </div>
+</main>
 {% endblock %}
