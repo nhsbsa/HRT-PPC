@@ -4,13 +4,27 @@
   GOV.UK prototype kit
 {% endblock %}
 
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
 {% block content %}
 
 <main id="content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
 <br>
-      <h2>Confirm your payment</h2>
+      <h1>Confirm your payment</h1>
       
       <div class="payment-summary-wrap">
         <div class="payment-summary">
