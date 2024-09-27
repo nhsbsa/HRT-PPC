@@ -1,0 +1,121 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your NHS number? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              What is your NHS number?
+            </h1>
+          </legend>
+
+          <p>Your NHS number can help us match your details correctly.</p>
+
+            <p>If you do not know your NHS number, <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/" target="_blank">use our online find your NHS number service</a>.</p>
+            </p>
+
+            
+          
+          
+      
+          
+            <div class="nhsuk-hint" id="contact-hint">
+              Your NHS number is a 10 digit number, like 485 777 3456.
+            </div>
+            <label class="nhsuk-label" for="example">
+              NHS number
+            </label>
+            <input class="nhsuk-input nhsuk-input--width-10" id="example-with-hint-text" name="example-with-hint-text" type="text" aria-describedby="example-with-hint-text-hint" inputmode="numeric">
+        </fieldset>
+      
+      </div>
+      
+        
+      
+        
+      
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Other ways to find your NHS number
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+          <p>It is usually on any letter or document you have received from the NHS, such as:</p>
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+            <li>maternity notes</li>
+            <li>the NHS app</li>
+          </ul>
+          
+      
+        </div>
+      </details>
+     
+
+        <form action="send-certificate-email">
+        <button class="nhsuk-button" type="submit" style="margin-right:5px;">
+          Continue
+        </button>
+        <button class="nhsuk-button nhsuk-button--secondary" type="submit">
+          I do not know my NHS number
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

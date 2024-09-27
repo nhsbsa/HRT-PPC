@@ -1,0 +1,129 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your name? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      PRIVATE beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+      <style>
+
+
+media (min-width: 40.0625em)
+.hmrc-timeout-dialog {
+    width: 435px;
+}
+        div {
+    display: block;
+}
+
+.hmrc-timeout-dialog {
+    background-color: #fff;
+    border: 5px solid #0b0c0c;
+    left: 50%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 30px;
+    position: fixed;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    z-index: 1002;
+}
+
+.hmrc-timeout-overlay {
+    background-color: #0b0c0c;
+    filter: alpha(opacity=80);
+    height: 100%;
+    left: 0;
+    opacity: .8;
+    -moz-opacity: .8;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
+}
+      </style>
+
+      <div id="hmrc-timeout-dialog" tabindex="-1" role="dialog" aria-modal="true" class="hmrc-timeout-dialog" aria-labelledby="hmrc-timeout-heading hmrc-timeout-message"><div><h1 id="hmrc-timeout-heading" class="nhsuk-heading-xl">Your application will time out soon</h1><p class="nhsuk-body hmrc-timeout-dialog__message" aria-hidden="true">We will reset your application if you do not respond in <span id="hmrc-timeout-countdown" class="hmrc-timeout-dialog__countdown"><strong>4 minutes 59 seconds</strong></span>. We do this to keep your information secure. <br>We will reset your application if you do not respond in five minutes. We do this to keep your information secure.</p><form action="name"><button id="hmrc-timeout-keep-signin-btn" class="nhsuk-button" href="name">Continue application</button></form> <div class="hmrc-timeout-dialog__link-wrapper"></div></div></div>
+      <div id="hmrc-timeout-overlay" class="hmrc-timeout-overlay"></div>
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          What is your name?
+        </h1>
+      </legend>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        Your first name and last name must match what is printed on your prescriptions.
+      </p>
+      
+      <div class="nhsuk-form-group" style="width: 300px;">
+        <label class="nhsuk-label" for="example">
+          First name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
+
+        <label class="nhsuk-label" for="example">
+          Last name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
+      </div>
+      
+
+      
+
+      
+
+        
+        
+
+        <form action="postcode">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
