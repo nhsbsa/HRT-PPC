@@ -8,7 +8,21 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  Do you still want to buy an HRT PPC? - HRT PPC
+  You may be entitled to free NHS prescriptions - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -61,27 +75,33 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <div class="nhsuk-warning-callout">
-        <h3 class="nhsuk-warning-callout__label">
-          <span role="text">
-            <span class="nhsuk-u-visually-hidden">Important: </span>
-            Eligibility for free NHS prescriptions
-          </span>
-        </h3>
-        <p>    
-          If you collect your prescriptions outside of England, you may be entitled to free prescriptions.<br><br>
-          Before buying an HRT PPC, check if you're entitled to free NHS prescriptions and other help with health costs using our<a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank"> eligibility checker.</a>
-         </p>
-      </div>
-      
       <form action="continue-v3" method="get" class="form">
       <div class="nhsuk-form-group nhsuk-form-group--error">
 
         <fieldset class="nhsuk-fieldset " aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
-              Do you still want to buy an HRT PPC?
+              You may be entitled to free NHS prescriptions
             </h1>
+          </legend>
+         
+            <p>    
+              If you collect your prescriptions outside of England, you may be entitled to free prescriptions.<br><br>
+              Before buying an HRT PPC, check if you're entitled to free NHS prescriptions and other help with health costs using our <a href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank">eligibility checker (opens in new tab)</a>.
+             </p>
+  
+         
+
+          
+         
+
+
+
+          <div class="nhsuk-radios nhsuk-radios--conditional">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+              <h2 class="nhsuk-fieldset__heading">
+                Do you still want to buy an HRT PPC?
+              </h2>
           </legend>
 
          
