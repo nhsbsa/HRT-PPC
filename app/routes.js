@@ -44,6 +44,7 @@ router.get(/copy2021-handler/, function (req, res) {
      res.redirect('chosen-not-to-buy');
    }
   });
+
   router.get(/address-continue/, function (req, res) {
     if (req.query.continue === "yes")  {
      res.redirect('dob');
@@ -166,7 +167,15 @@ router.get(/copy2021-handler/, function (req, res) {
   }
   });
 
-
+  router.get(/medicine-handler/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('filter-other-prescription');
+   } else if (req.query.continue === "no") {
+     res.redirect('medicine-not-covered-2');
+   }else if (req.query.continue === "some") {
+    res.redirect('some-medicine-covered');
+  }
+  });
 
 
   router.post('/v9/checkbox', (req, res) => {
@@ -214,6 +223,14 @@ router.get(/copy2021-handler/, function (req, res) {
      res.redirect('cannot-confirm-entitlement');
    } else {
      res.redirect('check-personal-details');
+   }
+  });
+
+  router.get(/get-a-ppc-instead/, function (req, res) {
+    if (req.query.continue === "yes")  {
+     res.redirect('filter-ppc');
+   } else {
+     res.redirect('where-you-collect');
    }
   });
 

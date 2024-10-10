@@ -1,0 +1,109 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your NHS number? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      
+      
+      
+        
+      
+      <form action="different-exemption" method="get" class="form">
+        <span class="nhsuk-caption-l">Confirm your entitlement</span>
+        <h1 class="nhsuk-heading-l">Were you claiming any of these benefits (or named on them) between 18 November 2019 and 30 November 2019?</h1>
+        <div class="nhsuk-form-group">
+          <div class="nhsuk-radios nhsuk-radios">
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="different-exemption" name="exemption" type="radio" value="income">
+                <label class="nhsuk-label nhsuk-radios__label" for="income">
+                  Income Support or income-related Employment and Support Allowance
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="different-exemption" name="exemption" type="radio" value="support">
+              <label class="nhsuk-label nhsuk-radios__label" for="support">
+                Income-based Jobseeker's Allowance
+              </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="different-exemption" name="exemption" type="radio" value="uc">
+            <label class="nhsuk-label nhsuk-radios__label" for="uc">
+              Universal Credit
+            </label>
+        </div>
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="different-exemption" name="exemption" type="radio" value="pension">
+          <label class="nhsuk-label nhsuk-radios__label" for="pension">
+            Your partner's Pension Credit Guarantee Credit award
+          </label>
+      </div>
+    <div class="nhsuk-form-group">
+      <p>or</p>
+    </div>
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="different-exemption" name="exemption" type="radio" value="no">
+      <label class="nhsuk-label nhsuk-radios__label" for="no">
+        No, none of these
+      </label>
+  </div>
+        </div>
+      
+      
+     
+
+      
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
