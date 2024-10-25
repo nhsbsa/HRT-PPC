@@ -6,11 +6,6 @@
     - add custom CSS and JavaScript
 -->
 
-<!-- Set the page title -->
-{% block pageTitle %}
-  Application complete - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
-{% endblock %}
-
 <!-- For the skip link -->
 {% block skipLink %}
 <a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
@@ -23,6 +18,11 @@
 }
 </style>
 
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Application complete - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -203,22 +203,40 @@
         
       </div>
 
-      <h2 class="nhsuk-heading-m">Save your certificate</h2>
-<p>You must save your certificate details. You can do this by saving it as a PDF, adding it to Apple wallet, or taking a screenshot of this page.</p>
-
-<a href="javascript:window.print();"><button class="nhsuk-button" type="submit">
-  Save as a PDF</button></a>
-
-  <a href="add-to-apple-wallet">
-    <img src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" style="height: 50px; width: 150px; margin-left: 10px;" alt="Add to Apple Wallet button" data-inline="true">
-  </a>
-
+<h2 class="nhsuk-heading-m">Save your certificate</h2>
+  <p>You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
 
   <p>If you're taking a screenshot, make sure it shows your certificate details.</p>
 
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+    <button class="nhsuk-button" type="submit">
+      Save as a PDF</button>
+
+    <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 10px;" data-module="nhsuk-button" type="submit">
+        Print out a copy
+      </button>
+    </div>
+  </div>
+
+
+  <p>You can also add your HRT PPC to an Apple Wallet.</p>
+
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
+          <a href="add-to-apple-wallet">
+            <img src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+            style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
+            data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
+          </a>
+      
+
+        </div>
+      </div>
+
   
 <p>We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
-  <style>
+  <!-- <style>
     @media print {
 
       .nhsuk-print-black { color: black; }
@@ -247,7 +265,7 @@
           height: 37px;
       
         }
-      </style>
+      </style> -->
 
      <!--<div class="noprint">
         <div class="notice">
@@ -275,6 +293,9 @@
           height: 37px;
           background-image: url(/images/pdf-icon.png);
         }
+
+
+
       </style>
 
       <!--<div class="noprint">
@@ -301,7 +322,7 @@
             <span style="">&nbsp;&nbsp;<a href="/images/PPC.pdf">Save as a PDF</a></span>-->
             
         
-            
+
 
 
             <h2 class="nhsuk-heading-m">Getting your HRT prescriptions</h2>
@@ -313,7 +334,7 @@
             <p>If you do not have your certificate details, the pharmacy will check the box 'Evidence not seen' on the back of your prescription. You'll not be charged.
               <br><br>Not all prescription forms have a tick box for HRT PPCs. If that is the case tick box 'F' for Prescription Prepayment Certificate.
             </p>
-            
+
             <h2 class="nhsuk-heading-m">Feedback</h2>
         <p><a href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">Tell us what you think of this service</a>.</p>
 
