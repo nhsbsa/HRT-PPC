@@ -1,7 +1,8 @@
 // External dependencies
 const express = require('express');
-
 const router = express.Router();
+
+const axios = require('axios');
 
 // Add your routes here - above the module.exports line
 
@@ -232,6 +233,76 @@ router.get(/copy2021-handler/, function (req, res) {
    } else {
      res.redirect('where-you-collect');
    }
+  });
+
+
+
+  router.get(/dwp-address-pattern-search/, function (req, res) {
+
+      // Clear the storage variable
+      req.session.data.addressSearchResults = [];
+
+      // Prep the variables
+      let addressSearchPostcode = req.session.data.addressSearchPostcode;
+      let addressSearchBuildingNumberOrName = req.session.data.addressSearchBuildingNumberOrName || '';
+      let apiKey = process.env.POSTCODEAPIKEY;
+
+      const regex = RegExp('^([A-PR-UWYZa-pr-uwyz](([0-9](([0-9]|[A-HJKSTUW])?)?)|([A-HK-Ya-hk-y][0-9]([0-9]|[ABEHMNPRVWXY])?)) ?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2})$', 'i');
+
+      if( !regex.test(addressSearchPostcode) ){
+          addressSearchPostcode = '';
+      }
+
+      let query = '';
+
+      if( addressSearchBuildingNumberOrName ){
+        query = addressSearchBuildingNumberOrName;
+      }
+
+      if( addressSearchPostcode ){
+        query = ( query ) ? query + ', ' + addressSearchPostcode : addressSearchPostcode;
+      }
+
+      // Make the call
+      if( query && apiKey ){
+
+        query = encodeURI(query);
+
+        let url = 'https://api.os.uk/search/places/v1/find?maxresults=10&query=' + query + '&key=' + apiKey;
+
+        axios.get( url )
+                .then(response => {
+                    // Extract and map the addresses from the API response
+                    var anotherAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+
+                    // Format the addresses in title case
+                    const titleCaseAddresses = anotherAddresses.map(anotherAddress => {
+                        const parts = anotherAddress.split(', ');
+                        const formattedParts = parts.map((part, index) => {
+                            if (index === parts.length - 1) {
+                                // Preserve postcode (SW1A 2AA) in uppercase
+                                return part.toUpperCase();
+                            }
+                            return part
+                                .split(' ')
+                                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+                                .join(' ');
+                        });
+                        return formattedParts.join(', ');
+                    });
+
+                    // Store the formatted addresses in the session data
+                    req.session.data.addressSearchResults = titleCaseAddresses;
+
+                })
+                .catch(error => {
+                    // Error
+                });
+
+      }
+
+      res.redirect('dwp-address-pattern-results');
+
   });
 
   //router.get(/choose-ppc/, function (req, res) {
