@@ -31,7 +31,10 @@
 
         <p>{{ data.addressSearchPostcode }}</p>
         <p>{{ data.addressSearchBuildingNumberOrName }}</p>
-        <textarea>{{ data.addressSearchResults | dump }}</textarea>
+
+        <p>{{ data.testVar }}</p>
+
+        <textarea>{{ data.addressSearchResults }}</textarea>
         <p>{{ data.addressSearchError | dump }}</p>
 
         <form action="check-your-answers" method="post" novalidate>

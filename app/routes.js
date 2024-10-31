@@ -272,10 +272,12 @@ router.get(/copy2021-handler/, function (req, res) {
 
         console.log( url );
 
+        req.session.data.testVar = process.env.TEST_VAR + '!!!';
+
         axios.get( url )
                 .then(response => {
 
-                    req.session.data.addressSearchResults = response;
+                    req.session.data.addressSearchResults = JSON.stringify(response);
 
                     /*
                     // Extract and map the addresses from the API response
