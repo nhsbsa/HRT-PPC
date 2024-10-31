@@ -272,12 +272,12 @@ router.get(/copy2021-handler/, function (req, res) {
 
         console.log( url );
 
-        req.session.data.testVar = process.env.TEST_VAR + '!!!';
+        req.session.data.testVar = process.env.TEST_VAR;
 
         axios.get( url )
                 .then(response => {
 
-                    req.session.data.addressSearchResults = JSON.stringify(response);
+                    req.session.data.addressSearchResults = 'SUCCESS: ' + JSON.stringify(response.data);
 
                     /*
                     // Extract and map the addresses from the API response
@@ -306,7 +306,7 @@ router.get(/copy2021-handler/, function (req, res) {
                 })
                 .catch(error => {
                     // Error
-                    req.session.data.addressSearchError = error;
+                    req.session.data.addressSearchError = JSON.stringify(error);
                 });
 
       }
