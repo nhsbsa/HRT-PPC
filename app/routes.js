@@ -270,6 +270,8 @@ router.get(/copy2021-handler/, function (req, res) {
 
         let url = 'https://api.os.uk/search/places/v1/find?query=' + query + '&key=' + apiKey;
 
+        console.log( url );
+
         axios.get( url )
                 .then(response => {
 
