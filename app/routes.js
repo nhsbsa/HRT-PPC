@@ -297,6 +297,7 @@ router.get(/copy2021-handler/, function (req, res) {
                 })
                 .catch(error => {
                     // Error
+                    req.session.data.addressSearchError = error;
                 });
 
       }

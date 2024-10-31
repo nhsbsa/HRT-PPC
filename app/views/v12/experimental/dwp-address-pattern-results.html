@@ -31,7 +31,8 @@
 
         <p>{{ data.addressSearchPostcode }}</p>
         <p>{{ data.addressSearchBuildingNumberOrName }}</p>
-        <p>{{ data.addressSearchAddresses | join(',') }}</p>
+       
+        <p>{{ data.addressSearchError | dump }}</p>
 
         <form action="check-your-answers" method="post" novalidate>
 
