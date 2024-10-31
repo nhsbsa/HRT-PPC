@@ -268,10 +268,14 @@ router.get(/copy2021-handler/, function (req, res) {
 
         query = encodeURI(query);
 
-        let url = 'https://api.os.uk/search/places/v1/find?maxresults=10&query=' + query + '&key=' + apiKey;
+        let url = 'https://api.os.uk/search/places/v1/find?query=' + query + '&key=' + apiKey;
 
         axios.get( url )
                 .then(response => {
+
+                    req.session.data.addressSearchResults = response;
+
+                    /*
                     // Extract and map the addresses from the API response
                     var anotherAddresses = response.data.results.map(result => result.DPA.ADDRESS);
 
@@ -293,6 +297,7 @@ router.get(/copy2021-handler/, function (req, res) {
 
                     // Store the formatted addresses in the session data
                     req.session.data.addressSearchResults = titleCaseAddresses;
+                    */
 
                 })
                 .catch(error => {
