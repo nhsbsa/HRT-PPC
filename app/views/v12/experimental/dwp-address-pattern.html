@@ -28,7 +28,23 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-        <form action="dwp-address-pattern-search" method="get" novalidate>
+        {% if data.showErrors === 'true' %}
+
+          {{ errorSummary({
+          titleText: 'There is a problem',
+          errorList: [
+            {
+              text: 'Enter either a postcode, or a building name or number',
+              href: '#mainForm'
+            }
+          ]
+        }) }}
+
+        {% endif %}
+
+        <form id="mainForm" action="dwp-address-pattern-search" method="get" novalidate>
+
+            <input type="hidden" name="showErrors" value="false" />
 
             {% call fieldset({
               legend: {
