@@ -42,7 +42,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
         }
         html += '. ' + finalLink + '</p>';
       } else {
-        html = '<p class="nhsuk-body">' + noOfResults + '</p> found for <strong>' + buildingNumberOrName + '</strong>. ' + finalLink + '</p>'
+        html = '<p class="nhsuk-body">' + noOfResults + ' found for <strong>' + buildingNumberOrName + '</strong>. ' + finalLink + '</p>'
       } 
 
     }
