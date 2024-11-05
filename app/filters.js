@@ -7,6 +7,51 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
    */
   const filters = {};
 
+  filters.dwpAddressPatternGetResultsStatus = function( results, postcode, buildingNumberOrName ){
+
+    let html = '';
+
+    postcode = postcode.trim();
+    buildingNumberOrName = buildingNumberOrName.trim();
+
+    const finalSentence = 'You can <a href="dwp-address-pattern">search again</a> or <a href="dwp-address-pattern-manual">enter the address manually</a>.';
+    const finalLink = '<a href="dwp-address-pattern">Search again</a>';
+
+    if( !Array.isArray(results) || results.length === 0  ){
+
+      // No results
+      if( postcode ){
+        html = '<p class="nhsuk-body">We could not find an address that matches <strong>' + postcode + '</strong>';
+        if( buildingNumberOrName ){
+          html += ' and <strong>' + buildingNumberOrName + '</strong>';
+        }
+        html += '. ' + finalSentence + '</p>';
+      } else {
+        html = '<p class="nhsuk-body">We could not find an address that matches <strong>' + buildingNumberOrName + '</strong>. ' + finalSentence + '</p>';
+      }      
+
+    } else if( Array.isArray(results) && results.length > 0 ) {
+
+      // More than one result
+      const noOfResults = ( results.length === 1 ) ? '<strong>1</strong> result' : '<strong>'+results.length+'</strong> results';
+
+      if( postcode ){
+        html = '<p class="nhsuk-body">' + noOfResults + ' found for <strong>' + postcode + '</strong>';
+        if( buildingNumberOrName ){
+          html += ' and <strong>' + buildingNumberOrName + '</strong>';
+        }
+        html += '. ' + finalLink + '</p>';
+      } else {
+        html = '<p class="nhsuk-body">' + noOfResults + '</p> found for <strong>' + buildingNumberOrName + '</strong>. ' + finalLink + '</p>'
+      } 
+
+    }
+
+
+    return html;
+
+  };
+
   /* ------------------------------------------------------------------
     add your methods to the filters obj below this comment block:
     @example:

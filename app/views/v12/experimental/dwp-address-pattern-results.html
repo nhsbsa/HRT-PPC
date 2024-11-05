@@ -29,26 +29,45 @@
     <div class="nhsuk-grid-column-two-thirds">
 
 
-        <p>{{ data.addressSearchPostcode }}</p>
-        <p>{{ data.addressSearchBuildingNumberOrName }}</p>
+        {% if data.addressSearchResults.length === 0 %}
 
-        <p>{{ data.testVar }}</p>
+          <!-- THE MESSAGE FUNCTION (i.e. dwpAddressPatternGetResultsStatus) FOR THESE PAGES IS SET IN THE FILTERS.JS FILE -->
 
-        <textarea>{{ data.addressSearchResults }}</textarea>
-        <p>{{ data.addressSearchError | dump }}</p>
+          <h1 class="nhsuk-heading-l">No address found</h1>
+          {{ data.addressSearchResults | dwpAddressPatternGetResultsStatus( data.addressSearchPostcode, data.addressSearchBuildingNumberOrName ) | safe }}
 
-        <form action="check-your-answers" method="post" novalidate>
+        {% else %}
 
-            <!-- RESULTS GO HERE -->
+          <h1 class="nhsuk-heading-l">Select your address</h1>
+          {{ data.addressSearchResults | dwpAddressPatternGetResultsStatus( data.addressSearchPostcode, data.addressSearchBuildingNumberOrName ) | safe }}
+
+          <form action="dwp-address-pattern-confirm" method="post" novalidate>
+
+                {{ radios({
+                name: 'addressSearchResult',
+                fieldset: {
+                  legend: {
+                    text: 'Select an address',
+                    isPageHeading: false,
+                    classes: 'govuk-visually-hidden'
+                  }
+                },
+                items: data.addressSearchResults
+                }) }}
 
 
-            {{ button({
-                text: 'Continue'
-            }) }}
+                {{ button({
+                    text: 'Use this address'
+                }) }}
 
-        </form>
+          </form>
 
-      <p><a href="start">Cancel</a></p>
+
+        {% endif %}
+
+      <p class="nhsuk-body"><a href="../manual-address">Enter address manually</a></p>
+
+      <p class="nhsuk-body"><a href="start">Cancel</a></p>
 
       <!-- End of content -->
 

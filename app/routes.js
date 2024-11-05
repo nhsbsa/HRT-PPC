@@ -236,82 +236,123 @@ router.get(/copy2021-handler/, function (req, res) {
   });
 
 
-
+//
+// DWP ADDRESS PATTERN SEARCH
+//
   router.get(/dwp-address-pattern-search/, function (req, res) {
 
-      // Clear the storage variable
-      req.session.data.addressSearchResults = [];
-
       // Prep the variables
-      let addressSearchPostcode = req.session.data.addressSearchPostcode;
-      let addressSearchBuildingNumberOrName = req.session.data.addressSearchBuildingNumberOrName || '';
-      let apiKey = process.env.POSTCODEAPIKEY;
-
+      let addressSearchPostcode = req.session.data.addressSearchPostcode.split(' ').join('').toUpperCase();
+      const addressSearchBuildingNumberOrName = req.session.data.addressSearchBuildingNumberOrName || '';
+      const apiKey = process.env.POSTCODEAPIKEY;
       const regex = RegExp('^([A-PR-UWYZa-pr-uwyz](([0-9](([0-9]|[A-HJKSTUW])?)?)|([A-HK-Ya-hk-y][0-9]([0-9]|[ABEHMNPRVWXY])?)) ?[0-9][ABD-HJLNP-UW-Zabd-hjlnp-uw-z]{2})$', 'i');
+      addressSearchPostcode = ( regex.test(addressSearchPostcode) ) ? addressSearchPostcode : '';
 
-      if( !regex.test(addressSearchPostcode) ){
-          addressSearchPostcode = '';
+      const updateResults = ( arr ) => {
+        req.session.data.addressSearchResults = arr;
+      };
+
+      const toTitleCase = ( str ) => {
+        return str.replace( /\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); } );
       }
 
-      let query = '';
+      const formatAddress = ( address ) => {
+
+        const formattedAddress = [];
+        const addressParts = address.split(', ');
+        addressParts.forEach( ( part, i ) => {
+          if( i !== (addressParts.length - 1) ){
+            formattedAddress.push( toTitleCase( part ) );
+          } else {
+            formattedAddress.push( part );
+          }
+        });
+
+        return formattedAddress.join(', ');
+
+      };
+
+      let baseURL = '';
 
       if( addressSearchBuildingNumberOrName ){
-        query = addressSearchBuildingNumberOrName;
+        baseURL = 'https://api.os.uk/search/places/v1/find?query=' + encodeURI(addressSearchBuildingNumberOrName);
       }
 
       if( addressSearchPostcode ){
-        query = ( query ) ? query + ', ' + addressSearchPostcode : addressSearchPostcode;
+        baseURL = 'https://api.os.uk/search/places/v1/postcode?postcode=' + encodeURI(addressSearchPostcode);
       }
 
       // Make the call
-      if( query && apiKey ){
+      if( baseURL && apiKey ){
 
-        query = encodeURI(query);
+        let url = baseURL + '&key=' + apiKey;
 
-        let url = 'https://api.os.uk/search/places/v1/find?query=' + query + '&key=' + apiKey;
+        axios.get( url ).then( response => {
 
-        console.log( url );
+          let filteredResults = [];
 
-        req.session.data.testVar = process.env.TEST_VAR;
+          if( Array.isArray( response.data.results ) ){
 
-        axios.get( url )
-                .then(response => {
+            response.data.results.forEach(function(result){
 
-                    req.session.data.addressSearchResults = 'SUCCESS: ' + JSON.stringify(response.data);
+              let resultPostcode = result.DPA.POSTCODE.split(' ').join('').toUpperCase();
 
-                    /*
-                    // Extract and map the addresses from the API response
-                    var anotherAddresses = response.data.results.map(result => result.DPA.ADDRESS);
+              let obj = { 
+                'text' : formatAddress( result.DPA.ADDRESS ),
+                'value' : formatAddress( result.DPA.ADDRESS )
+              };
 
-                    // Format the addresses in title case
-                    const titleCaseAddresses = anotherAddresses.map(anotherAddress => {
-                        const parts = anotherAddress.split(', ');
-                        const formattedParts = parts.map((part, index) => {
-                            if (index === parts.length - 1) {
-                                // Preserve postcode (SW1A 2AA) in uppercase
-                                return part.toUpperCase();
-                            }
-                            return part
-                                .split(' ')
-                                .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-                                .join(' ');
-                        });
-                        return formattedParts.join(', ');
-                    });
+              if( addressSearchPostcode ){
 
-                    // Store the formatted addresses in the session data
-                    req.session.data.addressSearchResults = titleCaseAddresses;
-                    */
+                if( addressSearchPostcode.indexOf(resultPostcode) === 0 ){
 
-                })
-                .catch(error => {
-                    // Error
-                    req.session.data.addressSearchError = JSON.stringify(error);
-                });
+                  let bnon = addressSearchBuildingNumberOrName.toUpperCase();
 
-      }
+                  // WE HAVE A POSTCODE
+                  if( result.DPA.BUILDING_NAME ){
 
-      res.redirect('dwp-address-pattern-results');
+                    if( result.DPA.SUB_BUILDING_NAME ){
+                      if( result.DPA.SUB_BUILDING_NAME.indexOf(bnon) > -1 ){
+                        filteredResults.push(obj);
+                      }
+                    } else {
+                      if( result.DPA.BUILDING_NAME.indexOf(bnon) > -1 ){
+                        filteredResults.push(obj);
+                      }
+                    }
+            
+                  } else if( result.DPA.BUILDING_NUMBER ) {
+                      if( result.DPA.BUILDING_NUMBER.indexOf(bnon) > -1 ){
+                        filteredResults.push(obj);
+                      }
+                  }
+                
+                }
+
+              } else {
+
+                // WE DON'T HAVE A POSTCODE, ALLOW ANYTHING 
+                filteredResults.push(obj);
+
+             }
+
+            });
+
+          }
+
+          updateResults( filteredResults );
+          res.redirect('dwp-address-pattern-results');
+
+
+        }).catch( (error) => { console.log( error ); });
+      
+
+    } else {
+
+      updateResults([]);
+      res.redirect('dwp-address-pattern?showErrors=true');
+
+    }
 
   });
 
