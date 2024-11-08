@@ -69,7 +69,7 @@
             </h1>
           </legend>
 
-          <p>You can choose to start your HRT PPC between 20 October 2023 and 20 December 2023.</p>
+          <p>You can choose to start your HRT PPC between {{ -1 | alterTodaysDateByNumberOfMonths }} and {{ 1 | alterTodaysDateByNumberOfMonths }}.</p>
           
 
 
@@ -96,7 +96,7 @@
                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                       
                       <div class="nhsuk-hint" id="example-hint">
-                        For example, 15 9 2023
+                        For example, {{ 7 | alterTodaysDateByNumberOfDays }}
                       </div>
                   
                       <div class="nhsuk-date-input" id="example">
@@ -142,9 +142,8 @@
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
           
                   <div class="nhsuk-form-group">
-
                    
-                    <p>  If you've collected an HRT prescription in the last month, you can claim a refund if you got an FP57 receipt when you paid. </p>
+                    <p>If you've collected an HRT prescription in the last month, you can claim a refund if you got an FP57 receipt when you paid. </p>
                     
                     <p>If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
                     <p>Choose the date you collected your prescription.</p>
@@ -152,7 +151,7 @@
                       <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                         
                         <div class="nhsuk-hint" id="example-hint">
-                          For example, 15 9 2023
+                          For example, {{ -7 | alterTodaysDateByNumberOfDays }}
                         </div>
                     
                         <div class="nhsuk-date-input" id="example">
@@ -209,7 +208,6 @@
 
       <p>If you already have a valid exemption certificate check when it expires. <a href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption"> Find details on how to check this on our website (opens in a new tab).</a></p>
       
-     
 
         <form action="get-certificate-by-email">
         <button class="nhsuk-button" type="submit">
