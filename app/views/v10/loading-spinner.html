@@ -1,0 +1,32 @@
+{% extends 'layout-kickout.html' %}
+
+{% block pageTitle %}
+  Loading spinner - Design system testing
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-m">Adding your HRT PPC</h1>
+      <div class="app-example app-example--tag">
+        <div class="nhsuk-loader">
+          <span class="nhsuk-loader__spinner"></span>
+          <span class="nhsuk-loader__text">Loading</span>
+        </div>
+      </div>
+
+    </div>  
+  </div>
+
+  <script>
+    var timer = setTimeout(function() {
+        window.location='add-to-apple-wallet'
+    }, 3000);
+</script>
+
+{% endblock %}
+
+ 

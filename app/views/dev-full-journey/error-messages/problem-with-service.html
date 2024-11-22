@@ -1,0 +1,65 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  There is a problem with the service - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+<div class="govuk-phase-banner">
+  <p class="govuk-phase-banner__content">
+    <strong class="govuk-tag govuk-phase-banner__content__tag">
+      beta
+    </strong>
+    <span class="govuk-phase-banner__text">
+      This is a new service – your <a class="govuk-link" href="#">feedback (opens in a new tab)</a> will help us to improve it.
+    </span>
+  </p>
+</div>
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading">
+          There is a problem with the service
+        </h1>
+      </legend>
+      <br>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      <p>
+        Try again later.<br><br>
+         When the service is available, you will have to start again.<br><br>
+        <a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you need further help.
+        
+    
+      </p>
+
+      
+      <!-- End of content -->
+    </div>  
+  </div>
+{% endblock %}
