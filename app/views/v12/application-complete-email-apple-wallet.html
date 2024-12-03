@@ -224,8 +224,10 @@
 
       <div class="nhsuk-grid-row">
         <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
-          <a href="add-to-apple-wallet">
-            <img src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+
+          <!-- TWEAKED VERSION -->
+          <a href="add-to-apple-wallet?appleWalletRoute={{ data.appleWalletRoute }}">
+            <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
             style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
             data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
           </a>
@@ -234,15 +236,31 @@
         </div>
       </div>
 
-  
-<p>We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
-  <!-- <style>
-    @media print {
 
-      .nhsuk-print-black { color: black; }
+  {% if data.appleWalletRoute === 'inPage' and data.showInPage === 'true' %}
 
-}
-  </style>
+    <!--
+    <style>
+      .govuk-panel--confirmation .nhsuk-link { color: #FFF }
+      .govuk-panel--confirmation .nhsuk-link:active,
+      .govuk-panel--confirmation .nhsuk-link:focus { color: #000 }
+    </style>
+
+    <div class="govuk-panel govuk-panel--confirmation nhsuk-u-margin-bottom-6">
+        <h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3>
+        <p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>
+    </div>
+    -->
+
+    {{ insetText({
+      classes: 'nhsuk-u-margin-top-2',
+      HTML: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
+    }) }}
+
+
+
+
+  {% endif %}
       
       
       
