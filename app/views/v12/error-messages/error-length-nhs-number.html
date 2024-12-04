@@ -61,7 +61,7 @@
         
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#email">Enter your NHS number</a>
+              <a href="#email">NHS number must be 10 characters long</a>
             </li>
           </ul>
         </div>
@@ -76,16 +76,14 @@
             </h1>
           </legend>
 
-          <p>You do not need to provide your NHS number but it can help us match your details correctly.</p>
+          <p>You do not need to provide your NHS number, but it can help us match your details correctly.</p>
 
-            
-          
-          
       
           
             <div class="nhsuk-hint" id="contact-hint">
               This is a 10 digit number, like 485 777 3456.
             </div>
+            
           <div class="nhsuk-radios nhsuk-radios--conditional">
       
             <div class="nhsuk-radios__item">
@@ -101,10 +99,10 @@
                 <label class="nhsuk-label" for="email">
                   NHS number
                 </label>
-                <span class="nhsuk-error-message" id="example-error">
-                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your NHS number
+                <span class="nhsuk-error-message" id="example-error-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> NHS number must be 10 characters long
                 </span>
-                <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text">
+                <input class="nhsuk-input nhsuk-u-width-two-thirds nhsuk-input--error" id="email" name="email" type="text" value="123456789012">
               </div>
       
             </div>
@@ -138,8 +136,10 @@
         </summary>
         <div class="nhsuk-details__text">
           <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
-          <p> You can find it on the NHS app or <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/" target="_blank">use our online NHS number finder (opens in a new tab)</a>.</p>
-          <p>It is also on letters or documents you have received from the NHS, such as:</p>
+
+          <p>You can find it on the NHS app or <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/" target="_blank">use our online NHS number finder (opens in a new tab)</a>.</p>
+            </p>
+          <p>It is also on any letters or documents you receive from the NHS, such as:</p>
           <ul>
             <li>prescriptions</li>
             <li>test results</li>
