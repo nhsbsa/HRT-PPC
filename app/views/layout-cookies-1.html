@@ -54,11 +54,13 @@
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
+  
   <div class="nhsuk-success-banner" id="nhsuk-cookie-confirmation-banner" style="display: block;">
     <div class="nhsuk-width-container">
       <p id="nhsuk-success-banner__message">You can change your cookie settings at any time using our <a href="choose-cookies" style="color:#ffffff;">cookies page</a>.</p>
     </div>
   </div>
+
   {{ header({
     "service": {
         "name": "Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)",
@@ -68,19 +70,21 @@
       "showSearch": "false"
     })
   }}
+
+  <!-- PHASE BANNER -->
+  <div class="nhsuk-width-container">
+    <div class="nhsuk-phase-banner">
+      <p class="nhsuk-phase-banner__content">
+        <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">{{ data.phaseBannerTagText }}</strong>
+        <span class="nhsuk-phase-banner__text">This is a new service – your <a class="nhsuk-link" href="{{ data.phaseBannerFeedbackLink }}">feedback (opens in a new tab)</a> will help us to improve it.</span>
+      </p>
+    </div>
+  </div>
+
+
 {% endblock %}
 
 {% block outerContent %}
-<!--<div class="govuk-phase-banner">
-  <p class="govuk-phase-banner__content">
-    <strong class="govuk-tag govuk-phase-banner__content__tag">
-      beta
-    </strong>
-    <span class="govuk-phase-banner__text">
-      This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
-    </span>
-  </p>
-</div>-->
 {% endblock %}
 
 
@@ -98,23 +102,33 @@
     {% include "includes/scripts.html" %}
     <!-- For adding page specific JavsScript -->
     {% block pageScripts %}{% endblock %}
-    <footer role="contentinfo">
-      <div class="nhsuk-footer" id="nhsuk-footer">
-        <div class="nhsuk-width-container">
-          <h2 class="nhsuk-u-visually-hidden">Support links</h2>
-          <ul class="nhsuk-footer__list">
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/accessibility-statement-buy-nhs-prescription-prepayment-certificate">Accessibility statement</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="/v3/cookies/nhsbsa-cookies">Cookies</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/privacy/prescription-prepayment-certificate-privacy-notice">Privacy policy</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions">Terms and conditions</a></li>
-          </ul>
-    
-          <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
-        </div>
-      </div>
-    </footer>
-    <div class="app-ogl-footer" style="background-color: #d8dde0;">
+
+    {{ footer({
+      links: [
+        {
+          URL: 'https://www.nhsbsa.nhs.uk/accessibility-statement-buy-nhs-prescription-prepayment-certificate',
+          label: 'Accessibility'
+        },
+        {
+          URL: 'https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs',
+          label: 'Contact us'
+        },
+        {
+          URL: '/v3/cookies/nhsbsa-cookies',
+          label: 'Cookies'
+        },
+        {
+          URL: 'https://www.nhsbsa.nhs.uk/our-policies/privacy/prescription-prepayment-certificate-privacy-notice',
+          label: 'Privacy policy'
+        },
+        {
+          URL: 'https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions',
+          label: 'Terms and conditions'
+        }
+      ]
+    })}}
+
+    <div class="app-ogl-footer">
       <div class="nhsuk-width-container">
         <p class="app-ogl-footer--text" style="color:#4c6272;">
           <svg xmlns="http://www.w3.org/2000/svg" height="17" width="41" role="presentation" focusable="false" viewBox="0 0 483.2 195.7">
@@ -124,5 +138,6 @@
         </p>
       </div>
     </div>
+    
   {% endblock %}
 {% endblock %}

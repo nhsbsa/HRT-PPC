@@ -1,4 +1,129 @@
-# NHS.UK prototype kit Changelog
+# NHS prototype kit Changelog
+
+## Unreleased
+
+- Updated start page template to use the `serviceName` variable in the h1 and title tag ([PR 414](https://github.com/nhsuk/nhsuk-prototype-kit/pull/414))
+- Update Header to use the `serviceName` variable ([PR 417](https://github.com/nhsuk/nhsuk-prototype-kit/pull/417))
+- Remove example page template with lots of content examples on it ([PR 420](https://github.com/nhsuk/nhsuk-prototype-kit/pull/420))
+- Update default service name ([PR 419](https://github.com/nhsuk/nhsuk-prototype-kit/pull/419))
+- Changed all references from 'NHS.UK prototype kit' to 'NHS prototype kit'
+- Update default index page ([PR 423](https://github.com/nhsuk/nhsuk-prototype-kit/pull/423))
+- Import task list component ([PR 437](https://github.com/nhsuk/nhsuk-prototype-kit/pull/437))
+- The example page templates have moved from the `docs` folder to `lib/example-templates` - ([PR 409](https://github.com/nhsuk/nhsuk-prototype-kit/pull/409))
+- Added a devcontainer.json file to configure Github Codespaces for use of the kit ([PR 428])(https://github.com/nhsuk/nhsuk-prototype-kit/pull/428))
+
+
+## 5.1.0 - 12 November 2024
+
+- Remove guidance and tutorials - these can now be found online on the [NHS Prototype Kit website](https://prototype-kit.service-manual.nhs.uk) - ([PR 385](https://github.com/nhsuk/nhsuk-prototype-kit/pull/385))
+- Update NHS frontend to 9.1.0
+- Show errors when session data defaults crashes ([PR 402](https://github.com/nhsuk/nhsuk-prototype-kit/pull/402))
+
+## 5.0.0 - 15 October 2024
+
+:new: **New features**
+
+- Update to NHS.UK frontend v9.0.1 - see [version 9.0.0 release notes](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v9.0.0) for details on the breaking changes
+- Drop `outerContent` block and use `beforeContent` block for both breadcrumbs and back links
+
+:wrench: **Fixes**
+
+- Updates to dependencies
+
+## 4.12.0 - 15 August 2024
+
+:wrench:
+
+- Enable console logging for nodemon
+- Replace basic auth with a custom authentication process
+- Update NHS.UK frontend to [v8.3.0](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v8.3.0)
+- Fix setting PORT via the command line ([PR 347](https://github.com/nhsuk/nhsuk-prototype-kit/pull/347))
+
+## 4.11.0 - 27 June 2024
+
+:wrench: **Fixes**
+
+- Disable nunjucks caching so changes to templates show immediately
+- Stop watching .html and .scss files and restarting the server whenever they are changed
+- Ignore eslint warnings
+
+:pencil2: **Content**
+
+- Update README with start script
+- Fix a typo in setup docs
+- Update NHS website page template to be closer to live
+- Remove Covid banner from 'Health A-Z', 'Live Well', 'Mental Health' and 'Pregnancy' templates
+
+## 4.10.0 - 22 February 2024
+
+:wrench: Fixes
+
+- Add aria-labels to coronavirus hub page and mental health pagenavigation links
+- Removed the duplicate selector in '\_related-nav.scss'
+- Removed Covid banner from 'Social care and support guide' and 'NHS Services' templates
+- Use 'String#startsWith' method instead of getting the index of a substring in utils.js
+- Change unexpected var for const in gulpfile.js
+- Update 'Social care and support guide' template to use primary cards with chevrons
+- Upgrade node version to v20
+- Update NHS.UK frontend to [v8.1.0](https://github.com/nhsuk/nhsuk-frontend/releases/tag/v8.1.0), includes updates to header and footer components
+
+## 4.9.0 - 1 June 2023
+
+:pencil2: **Content**
+
+- Fix styling on confirmation page
+- Add character count and tab components
+- Update guidance on setting a password in 'Publish your prototype online'
+- Change references to NHS Digital to NHS England
+- Enhance deployment instructions and test note in README
+- Fix link in README
+
+:wrench: **Maintenance**
+
+- Install NHS.UK frontend v7.0.0
+
+## 4.8.6 - 24 January 2023
+
+:pencil2: **Content**
+
+- Add new 'Publish your prototype online' guidance
+- Replace Atom with Visual Studio Code on HTML text editor page
+
+:wrench: **Maintenance**
+
+- Install NHS.UK frontend v6.2.0
+
+## 4.8.5 - 12 December 2022
+
+:wrench: Fixes
+
+- Update package dependencies `decode-uri-component`and `engine.io`.
+
+:pencil2: **Content**
+
+- Added deployment instructions and test note to readme.
+
+## 4.8.4 - 12 October 2022
+
+:pencil2: **Content**
+
+- Fixed typo in readme
+
+## 4.8.3 - 5 September 2022
+
+:arrow_up: **Version bump**
+
+- Release issues
+
+## 4.8.2 - 5 September 2022
+
+:arrow_up: **Version bump**
+
+## 4.8.1 - 31 August 2022
+
+:pencil2: **Content**
+
+- Removed the 'deploy to Heroku' guidance page in response to [Heroku's upcoming removal of its free tier](https://blog.heroku.com/next-chapter#focus-on-mission-critical)
 
 ## 4.8.0 - 2 February 2022
 
@@ -49,6 +174,7 @@ Node 16.x recently became the long term supported version of Nodejs. The `gulp-s
 
 - Use the correct name for the NHS digital service manual Slack instance
 - Fix GitHub actions/Azure DevOps release pipelines [Issue 180](https://github.com/nhsuk/nhsuk-prototype-kit/issues/180)
+
 ## 4.6.2 - 24 August 2021
 
 :wrench: **Fixes**
@@ -134,6 +260,7 @@ Node 16.x recently became the long term supported version of Nodejs. The `gulp-s
 :wrench: **Fixes**
 
 - Update package dependencies to latest versions
+
 ## 4.0.0 - 27th October 2020
 
 :boom: **Breaking changes**
@@ -279,13 +406,13 @@ Node 16.x recently became the long term supported version of Nodejs. The `gulp-s
 
 :new: **New features**
 
--  [Installation guides update for Windows and Mac following testing with users](https://github.com/nhsuk/nhsuk-prototype-kit/pull/68)
+- [Installation guides update for Windows and Mac following testing with users](https://github.com/nhsuk/nhsuk-prototype-kit/pull/68)
 - The prototype kit now is properly versioned and is the version is indicated in `package.json` `version` field and also on the index page of the docs.
 
 :wrench: **Fixes**
 
--  [Header and footer inconsistency on the branching examples](https://github.com/nhsuk/nhsuk-prototype-kit/issues/71)
--  Fix inconsistencies with page titles, should be `Page name - NHS.UK prototype kit`
+- [Header and footer inconsistency on the branching examples](https://github.com/nhsuk/nhsuk-prototype-kit/issues/71)
+- Fix inconsistencies with page titles, should be `Page name - NHS.UK prototype kit`
 
 ## 1.0.0 - Feb 5, 2019
 

@@ -4,6 +4,7 @@ const fs = require('fs');
 
 // External dependencies
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 const dotenv = require('dotenv');
 const express = require('express');
 const nunjucks = require('nunjucks');
@@ -20,17 +21,17 @@ const automaticRouting = require('./middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
-const documentationRoutes = require('./docs/documentation_routes');
 const utils = require('./lib/utils');
 
+const prototypeAdminRoutes = require('./middleware/prototype-admin-routes');
+const exampleTemplatesRoutes = require('./lib/example_templates_routes');
+
 // Set configuration variables
-const port = process.env.PORT || config.port;
-const useDocumentation = process.env.SHOW_DOCS || config.useDocumentation;
-const onlyDocumentation = process.env.DOCS_ONLY;
+const port = parseInt(process.env.PORT, 10) || config.port;
 
 // Initialise applications
 const app = express();
-const documentationApp = express();
+const exampleTemplatesApp = express();
 
 // Set up configuration variables
 const useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData;
@@ -42,15 +43,21 @@ app.locals.useAutoStoreData = (useAutoStoreData === 'true');
 app.locals.useCookieSessionStore = (useCookieSessionStore === 'true');
 app.locals.serviceName = config.serviceName;
 
+// Use cookie middleware to parse cookies
+app.use(cookieParser());
+
 // Nunjucks configuration for application
 const appViews = [
   path.join(__dirname, 'app/views/'),
+  path.join(__dirname, 'lib/example-templates/'),
+  path.join(__dirname, 'lib/prototype-admin/'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-  path.join(__dirname, 'docs/views/'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
 ];
 
 const nunjucksConfig = {
   autoescape: true,
+  noCache: true,
 };
 
 nunjucksConfig.express = app;
@@ -70,8 +77,11 @@ const sessionOptions = {
   },
 };
 
+// Authentication
+app.use(authentication);
+
 // Support session data in cookie or memory
-if (useCookieSessionStore === 'true' && !onlyDocumentation) {
+if (useCookieSessionStore === 'true') {
   app.use(sessionInCookie(Object.assign(sessionOptions, {
     cookieName: sessionName,
     proxy: true,
@@ -101,7 +111,7 @@ if (useAutoStoreData === 'true') {
 function checkFiles() {
   const nodeModulesExists = fs.existsSync(path.join(__dirname, '/node_modules'));
   if (!nodeModulesExists) {
-    console.error('ERROR: Node module folder missing. Try running `npm install`');
+    console.error('ERROR: Node module folder missing. Try running `npm install`'); // eslint-disable-line no-console
     process.exit(0);
   }
 
@@ -122,7 +132,7 @@ const sessionDataDefaultsFile = path.join(dataDirectory, '/session-data-defaults
 const sessionDataDefaultsFileExists = fs.existsSync(sessionDataDefaultsFile);
 
 if (!sessionDataDefaultsFileExists) {
-  console.log('Creating session data defaults file');
+  console.log('Creating session data defaults file'); // eslint-disable-line no-console
   if (!fs.existsSync(dataDirectory)) {
     fs.mkdirSync(dataDirectory);
   }
@@ -131,31 +141,17 @@ if (!sessionDataDefaultsFileExists) {
     .pipe(fs.createWriteStream(sessionDataDefaultsFile));
 }
 
-// Check if the app is documentation only
-if (onlyDocumentation !== 'true') {
-  // Require authentication if not
-  app.use(authentication);
-}
-
 // Local variables
 app.use(locals(config));
 
 // View engine
 app.set('view engine', 'html');
-documentationApp.set('view engine', 'html');
+exampleTemplatesApp.set('view engine', 'html');
 
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
-
-// Check if the app is documentation only
-if (onlyDocumentation === 'true') {
-  app.get('/', (req, res) => {
-    // Redirect to the documentation pages if it is
-    res.redirect('/docs');
-  });
-}
 
 // Use custom application routes
 app.use('/', routes);
@@ -165,52 +161,33 @@ app.get(/^([^.]+)$/, (req, res, next) => {
   automaticRouting.matchRoutes(req, res, next);
 });
 
-// Check if the app is using documentation
-if (useDocumentation || onlyDocumentation === 'true') {
-  // Documentation routes
-  app.use('/docs', documentationApp);
+// Example template routes
+app.use('/example-templates', exampleTemplatesApp);
 
-  // Nunjucks configuration for documentation
-  const docViews = [
-    path.join(__dirname, 'docs/views/'),
-    path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-  ];
+// Nunjucks configuration for example templates
+const exampleTemplateViews = [
+  path.join(__dirname, 'lib/example-templates/'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
+];
 
-  nunjucksAppEnv = nunjucks.configure(docViews, {
-    autoescape: true,
-    express: documentationApp,
-  });
-  nunjucksAppEnv.addGlobal('version', packageInfo.version);
-
-  // Add Nunjucks filters
-  utils.addNunjucksFilters(nunjucksAppEnv);
-
-  // Automatically store all data users enter
-  if (useAutoStoreData === 'true') {
-    documentationApp.use(utils.autoStoreData);
-    utils.addCheckedFunction(nunjucksAppEnv);
-  }
-
-  // Support for parsing data in POSTs
-  documentationApp.use(bodyParser.json());
-  documentationApp.use(bodyParser.urlencoded({
-    extended: true,
-  }));
-
-  // Custom documentation routes
-  documentationApp.use('/', documentationRoutes);
-
-  // Automatically route documentation pages
-  documentationApp.get(/^([^.]+)$/, (req, res, next) => {
-    automaticRouting.matchRoutes(req, res, next);
-  });
-}
-
-// Clear all data in session if you open /examples/passing-data/clear-data
-app.post('/examples/passing-data/clear-data', (req, res) => {
-  req.session.data = {};
-  res.render('examples/passing-data/clear-data-success');
+nunjucksAppEnv = nunjucks.configure(exampleTemplateViews, {
+  autoescape: true,
+  express: exampleTemplatesApp,
 });
+nunjucksAppEnv.addGlobal('version', packageInfo.version);
+
+// Add Nunjucks filters
+utils.addNunjucksFilters(nunjucksAppEnv);
+
+exampleTemplatesApp.use('/', exampleTemplatesRoutes);
+
+// Automatically route example template pages
+exampleTemplatesApp.get(/^([^.]+)$/, (req, res, next) => {
+  automaticRouting.matchRoutes(req, res, next);
+});
+
+app.use('/prototype-admin', prototypeAdminRoutes);
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, (req, res) => {
@@ -219,14 +196,14 @@ app.post(/^\/([^.]+)$/, (req, res) => {
 
 // Catch 404 and forward to error handler
 app.use((req, res, next) => {
-  const err = new Error(`Page not found: ${req.path}`);
+  const err = new Error(`Page not found: ${req.path}`); // eslint-disable-line no-console
   err.status = 404;
   next(err);
 });
 
 // Display error
 app.use((err, req, res) => {
-  console.error(err.message);
+  console.error(err.message); // eslint-disable-line no-console
   res.status(err.status || 500);
   res.send(err.message);
 });

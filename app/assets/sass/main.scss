@@ -1,18 +1,24 @@
 // Import NHS.UK frontend library
 @import 'node_modules/nhsuk-frontend/packages/nhsuk';
-@import "node_modules/govuk-frontend/govuk/all";
-@import "govuk-frontend-4.1.0.min.css";
+@import "node_modules/govuk-frontend/dist/govuk/all";
 
 
 // Components that are not in the NHS.UK frontend library
 @import 'components/list-border';
 @import 'components/related-nav';
+@import 'components/phase-banner';
 
 
 
 ///////////////////////////////////////////
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
+
+
+
+.app-ogl-footer {
+    background-color: #d8dde0;
+}
 
 .govuk-panel {
     font-family: Frutiger W01, Arial, sans-serif;

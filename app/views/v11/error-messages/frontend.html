@@ -82,19 +82,14 @@ There is a problem with the service - HRT PPC
 
 
       
-        <div class="nhsuk-width-container ">
-          
-          
-            <div class="govuk-phase-banner">
-            <p class="govuk-phase-banner__content">
-                <strong class="govuk-tag govuk-phase-banner__content__tag">
-                beta
-                </strong>
-                <span class="govuk-phase-banner__text">
-                This is a new service – your feedback will help us to improve it.
-                </span>
+        <!-- PHASE BANNER -->
+        <div class="nhsuk-width-container">
+          <div class="nhsuk-phase-banner">
+            <p class="nhsuk-phase-banner__content">
+              <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">{{ data.phaseBannerTagText }}</strong>
+              <span class="nhsuk-phase-banner__text">This is a new service – your <a class="nhsuk-link" href="{{ data.phaseBannerFeedbackLink }}">feedback (opens in a new tab)</a> will help us to improve it.</span>
             </p>
-            </div>
+          </div>
 
           <br>
           
@@ -166,7 +161,7 @@ There is a problem with the service - HRT PPC
           <p class="nhsuk-footer__copyright">© Crown copyright</p>
         </div>
       </div>
-      <div class="app-ogl-footer" style="background-color: #d8dde0;">
+      <div class="app-ogl-footer">
         <div class="nhsuk-width-container">
           <p class="app-ogl-footer--text" style="color:#4c6272;">
             <svg xmlns="http://www.w3.org/2000/svg" height="17" width="41" role="presentation" focusable="false" viewBox="0 0 483.2 195.7">
