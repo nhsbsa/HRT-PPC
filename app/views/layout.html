@@ -46,6 +46,10 @@
 
 
 {% block outerContent %}
+  {{ backLink({
+    href: 'javascript:history.go(-1);',
+    text: 'Go back'
+  }) }}
 {% endblock %}
 
 
