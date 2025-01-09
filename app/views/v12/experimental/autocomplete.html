@@ -1,0 +1,199 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Autocomplete experiment - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+     <h1 class="govuk-label--l">Check whether your medications are covered by an HRT PPC</h1>
+     
+     <form action="check-medication" method="post" novalidate>
+
+      {% if data.medicationList %}
+
+        {{ table({
+          panel: false,
+          caption: 'Your medications',
+          firstCellIsHeader: false,
+          head: [
+            {
+              text: 'Drug'
+            },
+            {
+              text: 'Dose(s)'
+            },
+            {
+              text: 'Status'
+            }
+          ],
+          rows: data.medicationList | generateMedicationListRows
+        }) }}
+
+      {% else %}
+
+        <p class="nhsuk-body">Type the name of a medication that you take.</p>
+
+      {% endif %}
+
+
+      {% from "autocomplete/macro.njk" import xGovukAutocomplete %}
+      {% from "govuk/components/select/macro.njk" import govukSelect %}
+
+        {{ govukSelect({
+          id: 'medicationChoice',
+          name: 'medicationChoice',
+          value: '',
+          label: {
+            classes: 'govuk-label--m',
+            isPageHeading: true,
+            text: 'What is the name of your medication?'
+          },
+          items: data.medications
+        }) }}
+
+        {% if data.medicationList %}
+          <input type="hidden" name="medicationList" value="{{ data.medicationList }}" />
+        {% endif %}
+
+        <input type="hidden" id="medicationChoiceNotFound" name="medicationChoiceNotFound" />
+
+        {{ button ({
+            classes: 'nhsuk-button--secondary',
+            text: 'Check medication'
+        }) }}
+
+     </form>
+
+
+      <!-- DIRECT VERSION -->
+
+      <script src="/js/accessible-autocomplete.min.js"></script>
+      <script type="text/javascript">
+
+        const enhancedAccessibleAutocomplete = (function(){
+
+          //
+          // INIT FUNCTION
+          //
+          function _init( el ){
+            
+            const selectElement = el;
+
+            if( selectElement ){
+
+              accessibleAutocomplete.enhanceSelectElement({
+                'selectElement': selectElement,
+                'minLength': 2,
+                'defaultValue': '',
+                'showNoOptionsFound': false,
+                'templates': {
+                  suggestion: function( txt ){
+
+                    const option = _getOptionFromText( selectElement, txt );
+                    if( option && option.hasAttribute( 'data-extra' ) ){
+                      txt += option.getAttribute( 'data-extra' );
+                    }
+                    
+                    return txt;
+                  }
+                },
+                'onConfirm': function( val ){
+
+                  // Have to store not covered meds elsewhere...
+                  const notFoundHiddenField = document.querySelector( '#medicationChoiceNotFound' );
+                  const notFoundVal = document.querySelector( '#medicationChoice' ).value;
+
+                  if( !val ){
+                    notFoundHiddenField.setAttribute( 'value', notFoundVal );
+                  } else {
+                    notFoundHiddenField.removeAttribute( 'value' );
+                  }
+
+                }
+              })
+
+            }
+
+          }
+
+          //
+          // GET OPTION FROM TEXT FUNCTION
+          //
+          function _getOptionFromText( selectElement, txt ){
+
+              const loop = selectElement.length;
+              let option;
+
+              if( loop ){
+                for( let i = 0; i<loop; i++ ){
+                  if( selectElement.options[i].text === txt ){
+                    option = selectElement.options[i];
+                    break;
+                  }
+                }
+              }
+
+              return option;
+
+          }
+          
+          //
+          //  RETURN
+          //
+          return {
+            init: _init
+          }
+
+        })();
+
+        window.addEventListener('DOMContentLoaded',function(){
+            enhancedAccessibleAutocomplete.init( document.querySelector('#medicationChoice') );
+        });
+
+      </script>
+      
+
+      <!--<script src="/all.js"></script>
+      <script>
+        
+        // xGovukAutocomplete version...
+        window.GOVUKPrototypeComponents.initAll();
+
+      </script>-->
+
+
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+
+  {{ data | debugData | safe }}
+
+{% endblock %}

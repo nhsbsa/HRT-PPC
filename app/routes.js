@@ -235,6 +235,50 @@ router.get(/copy2021-handler/, function (req, res) {
    }
   });
 
+  //
+  // CLEAR DATA
+  // 
+  router.post(/clear-data/,function( req, res ){
+    req.session.data = {};
+    res.redirect('clear-data?success=true');
+  });
+
+
+  //
+  // MEDICATION LIST
+  //
+  router.post(/check-medication/, function( req, res ){
+
+    let medicationList = req.session.data.medicationList || '';
+    let medicationChoice = req.session.data.medicationChoice || '';
+    let medicationChoiceNotFound = req.session.data.medicationChoiceNotFound || '';
+
+    if( !medicationChoice && medicationChoiceNotFound ){
+        medicationChoice = medicationChoiceNotFound;
+    }
+
+    if( medicationChoice ){
+
+      if( medicationList ){
+        medicationList = medicationList.split('|');
+        if( medicationList.indexOf( medicationChoice ) === -1 ){
+          medicationList.push( medicationChoice );
+        }
+      } else {
+        medicationList = [ medicationChoice ];
+      }
+
+      // Update and reset
+      req.session.data.medicationList = medicationList.join('|');
+      req.session.data.medicationChoice = '';
+
+    }
+
+    res.redirect('autocomplete');
+
+
+  });
+
 
 //
 // DWP ADDRESS PATTERN SEARCH

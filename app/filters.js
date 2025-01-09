@@ -8,6 +8,69 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   const filters = {};
 
   //
+  // DEBUG DATA FUNCTION
+  //
+  filters.debugData = function( data ){
+
+    let debug = ( data.debug === true || data.debug === 'true' ) ? true : false;
+    let html = '';
+
+    if( debug ){
+      html = '<div class="nhsuk-grid-row"><div class="nhsuk-grid-column-two-thirds">';
+      html += '<div class="nhsuk-form-group"><textarea class="nhsuk-textarea" rows="5" disabled>' + JSON.stringify(data) + '</textarea></div>';
+      html += '</div></div>';
+    }
+
+    return html;
+
+  };
+
+  //
+  // GENERATE MEDICATION LIST ROWS FUNCTION
+  //
+  filters.generateMedicationListRows = function( medicationList ){
+
+    const rows = [];
+
+    let medications = this.ctx.data.medications;
+
+    const noOfMedications = medications.length;
+
+    medicationList = medicationList.split('|');
+    medicationList.forEach(function( medication ){
+
+      const arr = [];
+      arr.push( { 'text': medication } );
+
+      let tag = '<strong class="nhsuk-tag nhsuk-tag--red">Not covered</strong>';
+
+      for( let i = 0; i < noOfMedications; i++ ){
+        if( medications[i].text === medication ){
+
+          tag = '<strong class="nhsuk-tag nhsuk-tag--green">Covered</strong>';
+          if( medications[i].attributes ){
+            arr.push( { 'html' : medications[i].attributes['data-extra'].substr(6) } );
+          }
+          
+        }
+        
+      }
+
+      if( arr.length === 1 ){
+        arr.push( { 'text': '' } );
+      }
+
+      arr.push( { 'html': tag} );
+
+      rows.push( arr );
+
+    });
+
+    return rows;
+
+  };
+
+  //
   // ALTER DATE BY NUMBER OF MONTHS FUNCTION
   //
   filters.alterTodaysDateByNumberOfMonths = function( monthOffset ){

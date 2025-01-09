@@ -1,0 +1,43 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+
+{% block pageTitle %}
+  Clear data
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+    <h1 class="govuk-label--l">Clear data</h1>
+
+    {% if data.success === 'true' %}
+        <p class="nhsuk-body"><strong>Data successfully cleared.</strong></p>
+    {% endif %}
+
+
+    <p class="nhsuk-body">Click the button below to clear the prototype data.</p>
+     
+     <form method="post" novalidate>
+
+        {{ button ({
+            text: 'Clear data'
+        }) }}
+
+     </form>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+
+  {{ data | debugData | safe }}
+
+{% endblock %}
