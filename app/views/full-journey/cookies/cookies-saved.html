@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,38 +8,24 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  You have chosen not to buy an HRT PPC - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
-{% endblock %}
-
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
+  Cookies on the NHSBSA website - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
-{# block outerContent #}
-{# endblock #}
+{% block outerContent %}
+{% endblock %}
 
 <!-- For adding page content -->
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -47,28 +33,31 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You have chosen not to buy an HRT PPC
+          Your cookie settings have been saved
         </h1>
       </legend>
+      <br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
+     
+      <p>We'll save your settings for three months<br> <br>
+      We'll ask you if you're still OK with us using cookings when either:<br>
+    <ul>
+      <li>it's been three months since you last saved your settings</li>
+      <li>we add any new cookies or change the cookies we use</li>
+    </ul>
+    <p>You can also <a href="choose-cookies">choose which cookies we use</a> at any time.<br><br>
+    Select continue to go back to the page you were looking at.
+    </p>
+   
+  <form action="javascript:history.go(-2)"> 
+  <button class="nhsuk-button" type="submit">
+    Continue
+  </button>
+  </form> 
 
-      
-        <p>
-          <a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs">Find out more information about help with health costs on our website</a>.
-        
-          </p>
-          
-          
-          
-      
-      <!-- End of content -->
-
+    <!-- End of content -->
     </div>  
-
   </div>
-
-</main>
 {% endblock %}

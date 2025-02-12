@@ -1,0 +1,338 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-confirm.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Application complete - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<main id="content" role="main">
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+      
+
+<br>
+      
+          
+       
+
+      <!-- Change the page heading -->
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
+          
+            Application complete
+        </h1>
+        <p class="nhsuk-u-font-size-24">
+          You have prepaid for 12 months of HRT prescriptions.
+        </p>
+
+       
+        
+        
+      </div>
+      
+
+
+
+
+
+
+          
+          
+      
+        
+      
+      
+      
+
+      <!--<div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        
+        <p>As part of this pilot we would be grateful if you could help us improve this service by answering our short survey.</p>
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/minor-injuries-unit/locationsearch/551">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Give us your feedback</span>
+          </a>
+        </div>
+      </div>-->
+
+
+      
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+
+      <!--<div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p><strong>You requested your HRT Prescription Prepayment Certificate (HRT PPC) to be emailed, so you wont receive a certificate in the post.</strong><br><br>
+        If a pharmacist asks for evidence that you have prepaid, you must show them your HRT prepayment certificate details.</p>
+      </div>-->
+      
+
+      
+      <h3>Your HRT PPC</h3>
+  
+     
+      
+      <div style="background-color: #005EB8; border-radius: 20px;">
+        
+
+        <div style="padding-top: 15px;">
+          
+          
+        </div>
+        
+        <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
+          
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black" >
+              HRT PPC for
+            </dt>
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+              Jane Doe
+            </dd>
+        
+            
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+              Certificate reference
+            </dt>
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+              HRTCF4R477W
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+              Starts on
+            </dt>
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+              1 April 2023
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row nhsuk-print-black">
+            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+              Ends on
+            </dt>
+            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+              31 March 2024
+            </dd>  
+          </div>
+          
+        </dl>
+        <div style="padding-top: -10px;">
+          <div style="color:white">
+          <strong class="nhsuk-print-black" style="font-size:x-large; padding: 20px; padding-top: -20px;">Contact us if your name or address changes</strong>  
+          </div>
+          
+          <div style="color:white">
+            <p class="nhsuk-print-black" style=" padding-left: 20px;">
+               If your details do not match you may receive a penalty charge.</p></div>
+  
+               <div style="color: white;">
+            <p class="nhsuk-print-black"style=" padding-left: 20px; padding-bottom: 20px;">
+  
+              
+                
+              Ways to contact us can be found on our website:<br> <strong>https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</strong>
+              
+              </p>
+            </div>
+          </div>
+          
+          
+        </div>
+
+      <h3>Save your certificate</h3>
+      <p>You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
+
+      <p>If you're taking a screenshot, make sure it shows your certificate details.</p>
+
+      <button class="nhsuk-button" type="submit">
+        Save as a PDF</button>
+      
+        <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 5px;" data-module="nhsuk-button" type="submit">
+          Print out a copy
+        </button>      
+            
+        
+      <p>We'll send you a postal reminder one month before your HRT PPC is due to expire.</p>
+        <style>
+          @media print {
+      
+            .nhsuk-print-black { color: black; }
+      
+      }
+        </style>
+            
+            
+            
+      
+          
+      
+            <style>
+              .notice {
+                position: relative;
+                font-size: large;
+              }
+              .notice .icon {
+                position: absolute;
+                left: 20;
+                top: 50%;
+                margin-top: -17px;
+              }
+              .printer-icon {
+                width: 40px;
+                height: 37px;
+            
+              }
+            </style>
+      
+           <!--<div class="noprint">
+              <div class="notice">
+                <i class="icon printer-icon">
+                    <span class="visually-hidden"></span>
+                </i>
+                <span style="margin-left:60px;"><a href="javascript:window.print();">Print a copy</a></span>
+              </div>
+            </div>-->
+      
+      
+            <style>
+              .notice {
+                position: relative;
+                font-size: large;
+              }
+              .notice .image {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                margin-top: -17px;
+              }
+              .pdf-icon {
+                width: 40px;
+                height: 37px;
+                background-image: url(/images/pdf-icon.png);
+              }
+            </style>
+      
+            <!--<div class="noprint">
+              <div class="notice">
+                <i class="icon pdf-icon">
+                   <img src="/images/pdf-icon.png" style="width: 35px;">
+                </i>
+                <span style="margin-left:60px;"><a href="javascript:window.print();">Save as a PDF</a></span>
+              </div>
+            </div>-->
+            
+            
+      
+      
+      
+      
+      
+      
+      
+            <!--<img id="organ-donation__img" class="od-image"
+                  src="/images/pdf.png" style="height: 40px"
+                  alt="Organ Donation" />
+          
+                  <span style="">&nbsp;&nbsp;<a href="/images/PPC.pdf">Save as a PDF</a></span>-->
+                  
+              
+      
+      
+      
+                  <h2 class="nhsuk-heading-m">Getting your HRT prescriptions</h2>
+                  <ol>
+                    <li>Ask your GP to list medicines covered by the HRT PPC on a separate prescription to any other items you get. Your pharmacy needs this to dispense your medication.</li>
+                    <li>Before collecting your medicine, check that it is on the <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc/medicines-covered-hrt-ppc"> list of medicines covered by the HRT PPC</a>.</li>
+                    <li>When collecting your HRT prescription, show your HRT PPC and tick box 'W' for HRT PPCs on the back of your prescription.</li>
+                  </ol>
+                  <p>If you do not have your certificate details, the pharmacy will check the box 'Evidence not seen' on the back of your prescription. You'll not be charged.
+                    <br><br>Not all prescription forms have a tick box for HRT PPCs. If that is the case tick box 'F' for Prescription Prepayment Certificate.
+                  </p>
+      
+            <h2 class="nhsuk-heading-m">Feedback</h2>
+        <p><a href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">Tell us what you think of this service</a>.</p>
+
+     <div class="noprint">
+        
+        <h2 class="nhsuk-heading-m">Contact us</h2>
+        
+       <p><a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you have any queries about your HRT PPC.</p>
+      
+      </div>
+      <!--<hr>
+      <h3>Please join the NHS Organ Donation Register</h3>
+      <p>Organ donation is the act of giving an organ to save or improve the life of someone who needs a transplant.</p>
+      <p>Organ donation laws have changed - <a href="https://www.organdonation.nhs.uk/uk-laws/?campaign=2499&utm_source=prescription_ppc&utm_medium=referral&utm_content=web&utm_campaign=partner">find out how the laws affect the country you live in and what your choices are on the Organ Donation website (opens in a new tab).</a></p>
+      <p>If you needed an organ transplant, would you have one? If so, please help others.</p>
+      <p>Tell your family about your organ donation decision.</p>
+
+      <form action="https://www.organdonation.nhs.uk/register-your-decision/">
+      <button class="nhsuk-button" type="submit" href="https://www.organdonation.nhs.uk/register-your-decision/">
+        Register to donate
+      </button>
+</form>
+<p>(Opens on the NHS Organ Donor website in a new tab)</p>
+
+<img id="organ-donation__img" class="od-image"
+            src="/images/organ-donation.png"
+            alt="Organ Donation" />
+            <br><br>
+
+      End of content -->
+
+    </div>  
+
+  </div>
+</main>
+{% endblock %}

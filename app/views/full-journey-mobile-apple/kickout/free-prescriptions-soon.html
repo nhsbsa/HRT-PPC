@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,26 +8,13 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  You have chosen not to buy an HRT PPC - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
-{% endblock %}
-
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
+  You can get free prescriptions soon - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -39,7 +26,6 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -47,28 +33,31 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You have chosen not to buy an HRT PPC
+          You can get free prescriptions soon
         </h1>
-      </legend>
+      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
+      <p>
+        The information you gave us indicates you are 59 years old.<br><br>
+        You will be eligible for free prescriptions from the age of 60.<br><br>
+        Press continue to proceed or <a href="https://www.nhsbsa.nhs.uk/">go to NHS Business Services home</a> to cancel.
+      </p>
 
+      <form action="name">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
       
-        <p>
-          <a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs">Find out more information about help with health costs on our website</a>.
-        
-          </p>
-          
-          
-          
       
+
+  
+
       <!-- End of content -->
 
     </div>  
 
   </div>
-
-</main>
 {% endblock %}

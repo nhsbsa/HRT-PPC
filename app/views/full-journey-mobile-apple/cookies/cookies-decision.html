@@ -1,0 +1,191 @@
+
+<style>
+
+#nhsuk-cookie-banner .nhsuk-success-banner {
+    background-color: #007f3b;
+    color: #fff;
+    padding: 8px 0 8px 0;
+    position: relative;
+}
+
+#nhsuk-cookie-banner .nhsuk-success-banner p {
+    margin: 0;
+}
+
+#nhsuk-cookie-banner {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: Frutiger W01,Arial,Sans-serif;
+    color: azure;
+}
+
+
+
+#nhsuk-cookie-banner p {
+    padding: 0px;
+    font-size: 16px;
+}
+
+#nhsuk-cookie-banner p {
+    margin-bottom: 16px;
+    display: block;
+    margin-top: 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+</style>
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-cookies-1.html' %}
+
+
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+
+
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+
+
+{% endblock %}
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+
+
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      <h1>
+        Buy an NHS Hormone Replacement Therapy Prescription Prepayment Certificate (HRT PPC)
+      </h1>
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+
+      <div class="nhsuk-warning-callout">
+        <h3 class="nhsuk-warning-callout__label">
+          <span role="text">
+            <span class="nhsuk-u-visually-hidden">Important: </span>
+            Important information
+          </span>
+        </h3>
+        <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br>If you require prescription medication for something other than HRT, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank"> Prescription Prepayment Certificate (PPC)</a> may be better for you.</a></p>
+        <div class="nhsuk-action-link">
+          <a class="nhsuk-action-link__link" href="/drugs" target="_blank">
+            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+              <path d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+            </svg>
+            <span class="nhsuk-action-link__text">Find out if your HRT medication is covered by the HRT PPC before you continue</span>
+          </a>
+        </div>
+      </div>
+
+
+      
+      <p>
+        You can save money on NHS HRT prescriptions by prepaying for them.<br><br>
+        
+        Each item on a NHS prescription usually costs {{ data.NHSPrescriptionCost }}.
+You can buy an HRT PPC for {{ data.HRTPPCCost }} (the cost of two prescriptions). <br><br>This covers you for an unlimited number of HRT medications for a full 12 months.  
+      </p>
+
+      
+      
+
+
+      <p></p>
+   
+
+      
+      
+      
+      
+
+      
+
+    
+        <!--<div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
+          They are also costly to the NHS and the environment.</p>
+        </div>-->
+
+        
+        
+
+        <h3 class="heading-medium">Ways to get your certificate</h3>
+        <P>You can get your certificate by:</P>
+      <ul class="list list-bullet">
+        <li>email</li>
+        <li>printing a copy</li>
+        <li>saving a PDF copy to your device</li>
+        <li>taking a screenshot of the certificate</li>
+      </ul>  
+
+      <p>You cannot get a certificate by post through this online service. If you require a postal certificate there are other ways to buy one <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank" >here</a>. </p>
+
+      <!--<details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to use your HRT PPC
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>
+      
+            Show your certificate details to your pharmacist when you collect your HRT prescription. <br>
+            <br>Your HRT PPC will start on the day you buy it – so if you buy it today it will be valid from today's date. This means you can collect your HRT prescriptions straight away. <strong>TBC</strong>
+            
+            <br><br>You can use your HRT PPC in any pharmacy within the UK.
+          </p>
+      
+        </div>
+      </details>-->
+      <h3>Important information</h3>
+      <p>Once you have bought an HRT PPC you cannot claim a refund.</p>
+
+        <form action="/v3/where-you-collect">
+        <button class="nhsuk-button" type="submit">
+          Buy now
+        </button>
+      </form>
+
+        <!--<h3 class="heading-small">
+          Other ways to buy
+        </h3>
+        <p>The quickest way to buy a certificate is online. If you can't, </p>-->
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

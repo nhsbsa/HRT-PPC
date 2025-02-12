@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-kickout.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -8,7 +8,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  You have chosen not to buy an HRT PPC - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+  What is your name? - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For the skip link -->
@@ -28,6 +28,7 @@
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -47,23 +48,44 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You have chosen not to buy an HRT PPC
+          What is your name?
         </h1>
       </legend>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
+      <p>
+        Your first name and last name must match what is printed on your prescriptions. Do not include any middle names.
+      </p>
+      
+      <div class="nhsuk-form-group" style="width: 300px;">
+        <label class="nhsuk-label" for="example">
+          First name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
+
+        <label class="nhsuk-label" for="example">
+          Last name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
+      </div>
+      
 
       
-        <p>
-          <a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs">Find out more information about help with health costs on our website</a>.
-        
-          </p>
-          
-          
-          
+
       
+
+        
+        
+
+        <form action="postcode">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
       <!-- End of content -->
 
     </div>  

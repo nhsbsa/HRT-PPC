@@ -1,0 +1,89 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  What is your name? - HRT PPC
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+      
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      
+
+      
+
+      
+
+        
+        
+
+      <form action="/v9/checkbox" method="post">
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+              <h1 class="nhsuk-fieldset__heading">
+                Which items do you typically need in your prescription?
+              </h1>
+            </legend>
+            <div class="nhsuk-hint" id="example-hint">
+              Select all options that are relevant to you.
+            </div>
+            <div class="nhsuk-checkboxes">
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-1" name="contact" type="checkbox" value="hrt">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-1">
+                  Hormone Replacement Therapy (HRT) medicine
+                </label>
+              </div>
+      
+              <div class="nhsuk-checkboxes__item">
+                <input class="nhsuk-checkboxes__input" id="example-2" name="contact" type="checkbox" value="all">
+                <label class="nhsuk-label nhsuk-checkboxes__label" for="example-2">
+                  Medicine that is not HRT
+                </label>
+              </div>
+      
+
+      
+            </div>
+          </fieldset>
+        </div>
+        <button class="nhsuk-button" data-module="nhsuk-button" type="submit">Continue</button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

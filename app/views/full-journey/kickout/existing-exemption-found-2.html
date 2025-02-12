@@ -8,26 +8,14 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  You have chosen not to buy an HRT PPC - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
-{% endblock %}
-
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
+  Existing NHS exemption certificate found - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
 <!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
 {% block beforeContent %}
+
+
 {% endblock %}
 
 <!-- For adding a back link -->
@@ -39,7 +27,6 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
-<main id="content" role="main">
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
@@ -47,28 +34,28 @@
       <!-- Change the page heading -->
       <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
         <h1 class="nhsuk-fieldset__heading">
-          You have chosen not to buy an HRT PPC
+          Existing NHS exemption certificate found
         </h1>
-      </legend>
+      </legend><br>
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-    
+      <p>
+        Our records show you currently hold an NHS exemption certificate. This means you are currently exempt from paying for your HRT medicine so do not need an HRT PPC.<br><br> Depending on the type of certificate you have you may be able to use our <a href="https://services.nhsbsa.nhs.uk/check-my-nhs-exemption/start">Check if you have an NHS exemption service (opens in a new tab)</a> to find out when it expires.
+
+        
+        <br><br>If you have an HRT PPC, you can find out when it expires by <a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">contacting us (opens in a new tab)</a>.
+        
+        
+      </p>
+      
+      
 
       
-        <p>
-          <a href="https://www.nhsbsa.nhs.uk/nhs-help-health-costs">Find out more information about help with health costs on our website</a>.
-        
-          </p>
-          
-          
-          
-      
+
       <!-- End of content -->
 
     </div>  
 
   </div>
-
-</main>
 {% endblock %}

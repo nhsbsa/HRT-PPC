@@ -1,0 +1,34 @@
+
+{% if data.appleWalletRoute === 'inPage' %}{% set appleWalletLink = 'application-complete-email-apple-wallet?showInPage=true#appleWalletButton' %}{% endif %}
+{% if data.appleWalletRoute === 'newPage' %}{% set appleWalletLink = 'experimental/apple-wallet-pass-downloaded?showInPage=false' %}{% endif %}
+
+<a href="{{ appleWalletLink or 'cert-in-apple-wallet?showInPage=false' }}">
+    <img src="/images/add-cert-to-apple-wallet.png" data-inline="true">
+</a>
+
+<style>
+
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #EEE;
+    }
+
+    img{
+        display: block;
+        height: auto;
+        width: 100%;
+        margin: 0;
+    }
+
+    @media all and ( min-width: 460px ){
+ 
+        img{
+            margin: 10px auto;
+            height: 100%;
+            width: auto;
+        }
+
+    }
+
+  </style>
