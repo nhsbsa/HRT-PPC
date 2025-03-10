@@ -16,14 +16,15 @@ dotenv.config();
 
 // Local dependencies
 const packageInfo = require('./package.json');
-const authentication = require('./middleware/authentication');
-const automaticRouting = require('./middleware/auto-routing');
+const authentication = require('./lib/middleware/authentication');
+const production = require('./lib/middleware/production');
+const automaticRouting = require('./lib/middleware/auto-routing');
 const config = require('./app/config');
 const locals = require('./app/locals');
 const routes = require('./app/routes');
 const utils = require('./lib/utils');
 
-const prototypeAdminRoutes = require('./middleware/prototype-admin-routes');
+const prototypeAdminRoutes = require('./lib/middleware/prototype-admin-routes');
 const exampleTemplatesRoutes = require('./lib/example_templates_routes');
 
 // Set configuration variables
@@ -79,8 +80,10 @@ const sessionOptions = {
   },
 };
 
-// Authentication
-app.use(authentication);
+if (process.env.NODE_ENV === 'production') {
+  app.use(production);
+  app.use(authentication);
+}
 
 // Support session data in cookie or memory
 if (useCookieSessionStore === 'true') {
@@ -150,11 +153,16 @@ app.use(locals(config));
 app.set('view engine', 'html');
 exampleTemplatesApp.set('view engine', 'html');
 
+// This setting trusts the X-Forwarded headers set by
+// a proxy and uses them to set the standard header in
+// req. This is needed for hosts like Heroku.
+// See https://expressjs.com/en/guide/behind-proxies.html
+app.set('trust proxy', 1);
+
 // Middleware to serve static assets
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/packages')));
 app.use('/nhsuk-frontend', express.static(path.join(__dirname, 'node_modules/nhsuk-frontend/dist')));
-app.use(express.static(path.join(__dirname, 'node_modules/@x-govuk/govuk-prototype-components/x-govuk')));
 
 // Use custom application routes
 app.use('/', routes);
@@ -213,5 +221,17 @@ app.use((err, req, res) => {
 
 // Run the application
 app.listen(port);
+
+if (
+  process.env.WATCH !== 'true' // If the user isn’t running watch
+  && process.env.NODE_ENV !== 'production' // and it’s not in production mode
+) {
+  /* eslint-disable no-console */
+  console.info(`Running at http://localhost:${port}/`);
+  console.info('');
+  console.warn('Warning: It looks like you may have run the command `npm start` locally.');
+  console.warn('Press `Ctrl+C` and then run `npm run watch` instead');
+  /* eslint-enable no-console */
+}
 
 module.exports = app;

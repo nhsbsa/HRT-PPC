@@ -1,6 +1,6 @@
 {
   "name": "nhsuk-prototype-kit",
-  "version": "5.1.0",
+  "version": "5.3.0",
   "description": "Rapidly create HTML prototypes of NHS websites and services.",
   "main": "app.js",
   "scripts": {
@@ -11,24 +11,26 @@
     "test:ci": "jest --ci",
     "prewatch": "gulp build",
     "watch": "gulp",
-    "lint:js": "eslint -c ./linters/.eslintrc.js app.js middleware/**/*.js lib/**/*.js app/*.js"
+    "lint:js": "eslint -c ./linters/.eslintrc.js app.js lib/**/*.js app/*.js"
   },
   "author": "https://github.com/nhsuk/",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/preset-env": "^7.26.0",
+
+    "govuk-frontend": "^5.7.1",
     "@x-govuk/govuk-prototype-components": "^3.0.9",
     "axios": "^1.7.9",
+    "convert-excel-to-json": "^1.7.0",
+
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.7",
     "body-parser": "^1.20.3",
     "browser-sync": "^3.0.3",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.7",
-    "convert-excel-to-json": "^1.7.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-session": "^1.18.1",
-    "govuk-frontend": "^5.7.1",
     "gulp": "^5.0.0",
     "gulp-babel": "^8.0.0",
     "gulp-clean": "^0.4.0",
@@ -37,7 +39,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "lodash": "^4.17.21",
-    "nhsuk-frontend": "^9.1.0",
+    "nhsuk-frontend": "^9.3.0",
     "nunjucks": "^3.2.4",
     "path": "^0.12.7",
     "sass": "^1.79.5"
