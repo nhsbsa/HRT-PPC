@@ -31,6 +31,7 @@
 {%- from 'summary-list/macro.njk' import summaryList %}
 {%- from 'tag/macro.njk' import tag %}
 {%- from 'textarea/macro.njk' import textarea %}
+{%- from 'panel/macro.njk' import panel %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -103,9 +104,25 @@
           <main class="nhsuk-main-wrapper {{ mainClasses }}" id="maincontent" role="main">
             {% block content %}{% endblock %}
           </main>
+
+          {% block afterContent %}
+            {% if data.debug === 'true' %}
+
+              {{ textarea({
+                name: 'debug',
+                id: 'debug',
+                label: {
+                  text: 'Session data'
+                },
+                value: data | dump
+              }) }}
+
+            {% endif %}
+          {% endblock %}
         
         </div>
       {% endblock %}
+
 
       {% block footer %}
         {{ footer() }}

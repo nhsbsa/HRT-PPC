@@ -31,7 +31,7 @@
 
      <h1 class="govuk-label--l">Check whether your medications are covered by an HRT PPC</h1>
      
-     <form action="check-medication" method="post" novalidate>
+     <form action="check-medication-list" method="post" novalidate>
 
       {% if data.medicationList %}
 
@@ -197,7 +197,5 @@
 
     </div>  
   </div>
-
-  {{ data | debugData | safe }}
 
 {% endblock %}
