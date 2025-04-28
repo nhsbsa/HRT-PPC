@@ -50,7 +50,7 @@
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
-      <form action="handler-email" method="get" class="form">
+      <form action="get-certificate-by-email-new" method="post" novalidate class="form">
       <div class="nhsuk-form-group">
         
 
@@ -154,11 +154,11 @@
       </div>
       
       
+      {{ button({
+        text: 'Continue'
+      }) }}
       
-      
-        <a href="check-your-answers" class="nhsuk-button">
-          Continue
-        </a>
+    
       </form>
 
       <p><a href="start">Cancel</a></p>

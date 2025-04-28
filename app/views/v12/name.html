@@ -49,9 +49,9 @@
 
 
 
-      <form action="postcode" method="post" novalidate>
+      <form action="name-new" method="post" novalidate>
 
-      {% call fieldset({
+        {% call fieldset({
           legend: {
             text: 'What is your name?',
             classes: 'nhsuk-fieldset__legend--l',
@@ -59,32 +59,31 @@
           }
         }) %}
 
-       <p>Your first name and last name must match what is printed on your prescriptions. Do not include any middle names.</p>
+        <p class="nhsuk-hint">Your first name and last name must match what is printed on your prescriptions. Do not include any middle names.</p>
 
+        <!-- FIRST NAME -->
+        {{ input({
+          label: {
+            text: "First name"
+          },
+          classes: 'nhsuk-input--width-20',
+          attributes: { 'autocomplete' : 'off' },
+          id: 'firstName',
+          name: 'firstName',
+          value: data.firstName
+        }) }}
 
-          <!-- MOTHER'S FIRST NAME -->
-          {{ input({
-            label: {
-              text: "First name"
-            },
-            classes: 'nhsuk-input--width-20',
-            attributes: { 'autocomplete' : 'off' },
-            id: 'firstName',
-            name: 'firstName',
-            value: data.firstName
-          }) }}
-
-          <!-- MOTHER'S LAST NAME -->
-          {{ input({
-            label: {
-              text: "Last name"
-            },
-            classes: 'nhsuk-input--width-20',
-            attributes: { 'autocomplete' : 'off' },
-            id: 'lastName',
-            name: 'lastName',
-            value: data.lastName
-          }) }}
+        <!-- LAST NAME -->
+        {{ input({
+          label: {
+            text: "Last name"
+          },
+          classes: 'nhsuk-input--width-20',
+          attributes: { 'autocomplete' : 'off' },
+          id: 'lastName',
+          name: 'lastName',
+          value: data.lastName
+        }) }}
 
         {% endcall %}
 

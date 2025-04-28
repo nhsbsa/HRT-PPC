@@ -3,6 +3,16 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
+router.post(/name-new/, function( req, res ){
+  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'postcode';
+  res.redirect( redirect );
+});
+
+router.post(/get-certificate-by-email-new/, function( req, res ){
+  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'get-certificate-by-email';
+  res.redirect( redirect );
+})
+
 //
 // MEDICATION LIST
 //
