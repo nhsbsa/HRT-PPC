@@ -3,13 +3,18 @@ const express = require('express');
 const axios = require('axios');
 const router = express.Router();
 
+router.post(/is-medicine-covered-3-radios-new/, function( req, res ){
+  req.session.data = {};
+  res.redirect('is-medicine-covered-3-radios');
+});
+
 router.post(/name-new/, function( req, res ){
   const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'postcode';
   res.redirect( redirect );
 });
 
 router.post(/get-certificate-by-email-new/, function( req, res ){
-  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'get-certificate-by-email';
+  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'check-your-answers';
   res.redirect( redirect );
 })
 

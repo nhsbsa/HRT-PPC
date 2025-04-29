@@ -51,8 +51,71 @@
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
       
       <form action="get-certificate-by-email-new" method="post" novalidate class="form">
+      
+    
+        <!-- YES -->
+        {% set yesHTML %}
+          {{ input({
+            id: 'emailAddress',
+            name: 'emailAddress',
+            value: data.emailAddress,
+            classes: 'nhsuk-u-width-two-thirds',
+            attributes: { 'autocomplete' : 'off' },
+            label: {
+              text: "Email address"
+            }
+          }) }}
+        {% endset -%}
+
+        <!-- NO -->
+        {% set noHTML %}
+          <p class="nhsuk-body">You must print or save your certificate at the end of the service.</p>
+          <p class="nhsuk-body">We'll send you a reminder by post one month before your certificate expires.  </p>
+        {% endset -%}
+
+
+        <!-- RADIOS -->
+        {{ radios({
+          name: 'certificateByEmailOrPost',
+          value: data.certificateByEmailOrPost,
+          fieldset: {
+            legend: {
+              text: 'Do you want to get your HRT PPC by email?',
+              classes: 'nhsuk-fieldset__legend--l',
+              isPageHeading: true
+            }
+          },
+          hint: {
+            html: '<p> At the end of the application you can also print or save a copy of your certificate.</p>
+<p>If you give your email address we\'ll send you an email reminder one month before your certificate expires.</p>'
+          },
+          items: [
+            {
+              value: 'yes',
+              text: 'Yes',
+              conditional : {
+                html : yesHTML
+              }
+            },
+            {
+              value: 'no',
+              text: 'No',
+              conditional : {
+                html : noHTML
+              }
+            }
+          ]
+        }) }}
+
+      
+      
+      
+      
+      <!-- START 
       <div class="nhsuk-form-group">
         
+
+
 
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
             <h1 class="nhsuk-fieldset__heading">
@@ -63,40 +126,10 @@
             At the end of the application you can also print or save a copy of your certificate.
           </p>
 
-          
-
-
-       
-
-          <!--<div class="nhsuk-warning-callout">
-            <h3 class="nhsuk-warning-callout__label">
-              <span role="text">
-                <span class="nhsuk-u-visually-hidden">Important: </span>
-                Reminder:
-              </span>
-            </h3>
-            <p>This is an HRT PPC which only covers <a href="">certain drugs.</a> If you require drugs outside of HRT then a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">standard PPC</a> may be more beneficial for you.</p>
-          </div>-->
-
-          
-          <!--<p>The most convenient way to receive your HRT certificate details is by email.</p>-->
-          
-            
-          
-          
-
 
             <p>If you give your email address we'll send you an email reminder one month before your certificate expires. </p>
               
           
-            
-            
-            
-          
-          
-
-            
-            
 
           <div class="nhsuk-radios nhsuk-radios--conditional">
           
@@ -151,7 +184,7 @@
         
         </fieldset>
       
-      </div>
+      </div> END -->
       
       
       {{ button({

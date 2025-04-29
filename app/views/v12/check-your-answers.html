@@ -170,12 +170,12 @@
               text: "Email address"
             },
             value: {
-              html: ' Jane.doe@nhs.net'
+              html: data.emailAddress or 'jane.smith@outlook.com'
             },
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "get-certificate-by-email?returnToCYA=true",
                   text: "Change",
                   visuallyHiddenText: "email"
                 }
