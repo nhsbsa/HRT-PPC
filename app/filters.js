@@ -8,25 +8,20 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   const filters = {};
 
   //
-  // DEBUG DATA FUNCTION
+  // PROCESS FULL NAME FILTER
   //
-  filters.debugData = function( data ){
+  filters.processFullName = function( monthOffset ){
+  
+    const firstName = ( this.ctx.data.firstName ) ? this.ctx.data.firstName.trim() : 'Jane';
+    const lastName = ( this.ctx.data.lastName ) ? this.ctx.data.lastName.trim() : 'Smith';
 
-    let debug = ( data.debug === true || data.debug === 'true' ) ? true : false;
-    let html = '';
-
-    if( debug ){
-      html = '<div class="nhsuk-grid-row"><div class="nhsuk-grid-column-two-thirds">';
-      html += '<div class="nhsuk-form-group"><textarea class="nhsuk-textarea" rows="5" disabled>' + JSON.stringify(data) + '</textarea></div>';
-      html += '</div></div>';
-    }
-
-    return html;
-
+    return firstName + ' ' + lastName;
+    
   };
 
+
   //
-  // GENERATE MEDICATION LIST ROWS FUNCTION
+  // GENERATE MEDICATION LIST ROWS FILTER
   //
   filters.generateMedicationListRows = function( medicationList ){
 
@@ -71,7 +66,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   };
 
   //
-  // ALTER DATE BY NUMBER OF MONTHS FUNCTION
+  // ALTER DATE BY NUMBER OF MONTHS FILTER
   //
   filters.alterTodaysDateByNumberOfMonths = function( monthOffset ){
 
@@ -91,7 +86,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   };
 
   //
-  // ALTER DATE BY NUMBER OF DAYS FUNCTION
+  // ALTER DATE BY NUMBER OF DAYS FILTER
   //
   filters.alterTodaysDateByNumberOfDays = function( dayOffset ){
 
@@ -104,7 +99,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   };
 
   //
-  // DWP ADDRESS PATTERN GET RESULTS STATUS FUNCTION
+  // DWP ADDRESS PATTERN GET RESULTS STATUS FILTER
   //
   filters.dwpAddressPatternGetResultsStatus = function( results, postcode, buildingNumberOrName ){
 

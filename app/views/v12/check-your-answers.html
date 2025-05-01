@@ -68,12 +68,12 @@
               text: "Name"
             },
             value: {
-              text: "Jane Doe"
+              text: '' | processFullName
             },
             actions: {
               items: [
                 {
-                  href: "name",
+                  href: "name?returnToCYA=true",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -158,7 +158,7 @@
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "get-certificate-by-email?returnToCYA=true",
                   text: "Change",
                   visuallyHiddenText: "email"
                 }
@@ -170,12 +170,12 @@
               text: "Email address"
             },
             value: {
-              html: ' Jane.doe@nhs.net'
+              html: data.emailAddress or 'jane.smith@outlook.com'
             },
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "get-certificate-by-email?returnToCYA=true",
                   text: "Change",
                   visuallyHiddenText: "email"
                 }
