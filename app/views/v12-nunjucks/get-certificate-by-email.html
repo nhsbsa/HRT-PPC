@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="get-certificate-by-email" method="post" novalidate>
+
+                {% set yesHTML %}
+
+                    <!-- YES HTML -->
+                    {{ input({
+                        id: 'email',
+                        name: 'email',
+                        value: data.email,
+                        classes: 'nhsuk-u-width-two-thirds',
+                        attributes: { 'autocomplete' : 'off', 'inputmode' : 'email' },
+                        label: {
+                            text: 'Email address'
+                        }
+                    }) }}
+
+                {% endset %}
+
+
+                {% set noHTML %}
+
+                    <!-- NO HTML -->
+                    <p class="nhsuk-body">You must print or save your certificate at the end of the service.</p>
+                    <p class="nhsuk-body">We'll send you a reminder by post one month before your certificate expires.</p>
+
+                {% endset %}
+
+
+                {{ radios({
+                    name: 'certificateByEmail',
+                    value: data.certificateByEmail,
+                    fieldset: {
+                        legend: {
+                        text: 'Do you want to get your HRT PPC by email?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                        }
+                    },
+                    hint: {
+                        html: "<p>At the end of the application you can also print or save a copy of your certificate.</p>
+                            <p>If you give your email address we'll send you an email reminder one month before your certificate expires.</p>"
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes',
+                            conditional : {
+                                html : yesHTML
+                            }
+                        },
+                        {
+                            value: 'no',
+                            text: 'No',
+                            conditional : {
+                                html : noHTML
+                            }
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body">
+                <a class="nhsuk-link" href="start">Cancel</a>
+            </p>
+
+        </div>
+    </div>
+{% endblock %}

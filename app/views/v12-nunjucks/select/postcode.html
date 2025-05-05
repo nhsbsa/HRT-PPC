@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="postcode-select-handler" method="get" novalidate>
+
+                 {% if data.showErrors === 'true' %}
+
+                    {{ errorSummary({
+                    titleText: 'There is a problem',
+                    errorList: [
+                        {
+                            text: 'Enter a postcode',
+                            href: '#postcode'
+                        }
+                    ]
+                    }) }}
+
+                 {% endif %}
+
+
+
+                {% call fieldset({
+                    legend: {
+                        text: 'What is your postcode?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                    }
+                }) %}
+
+                    <p class="nhsuk-hint">The postcode you give must match what is printed on your prescriptions.</p>
+
+                    {% if data.showErrors === 'true' %}
+
+                        <!-- POSTCODE w/ ERROR -->
+                        {{ input({
+                            label: {
+                                text: 'Postcode'
+                            },
+                            classes: 'nhsuk-input--width-10',
+                            attributes: { 'autocomplete' : 'off' },
+                            id: 'postcode',
+                            name: 'postcode',
+                            value: data.postcode,
+                            errorMessage: {
+                                text: 'Enter a postcode'
+                            }
+                        }) }}
+
+                    {% else %}
+
+                        <!-- POSTCODE -->
+                        {{ input({
+                            label: {
+                                text: 'Postcode'
+                            },
+                            classes: 'nhsuk-input--width-10',
+                            attributes: { 'autocomplete' : 'off' },
+                            id: 'postcode',
+                            name: 'postcode',
+                            value: data.postcode
+                        }) }}
+
+                    {% endif %}
+
+
+                {% endcall %}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="../manual-address">Enter address manually</a></p>
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

@@ -13,7 +13,7 @@ router.use((req, res, next) => {
   console.log(req.originalUrl);
 
   // Versions
-  const versions = ['v12'];
+  const versions = ['v12','v12-nunjucks'];
 
   // Clear current routes 
   router.stack = router.stack.filter(layer => layer.name !== 'router');
@@ -27,7 +27,7 @@ router.use((req, res, next) => {
   });
 
   res.locals.version = version;
-
+  
   // Load the required routes
   if (version) {
     console.log('Loading routes for ' + version);

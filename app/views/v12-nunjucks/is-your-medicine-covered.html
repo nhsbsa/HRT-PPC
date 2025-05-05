@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="is-your-medicine-covered" method="post" novalidate>
+                
+                <!-- FIELDSET -->
+                {% call fieldset({
+                    legend: {
+                        text: 'Is your medicine covered by an HRT PPC?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                    }
+                }) %}
+
+                <p class="nhsuk-body">HRT PPCs do not cover all HRT medicines. If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+                
+                <!-- A TO Z -->
+                {% set aToZHTML %}
+                    
+                    <p class="nhsuk-body">The medicines are listed A to Z by the product name. This is the brand name the manufacturer gives their medicine.</p>
+                    <p class="nhsuk-body">Generic versions of these medicines are also covered if the generic drug name shows on the prescription. The generic drug name is usually the name of the active ingredient in the medicine.</p>
+                    <p class="nhsuk-body">This list is correct as of 28 March 2025 and is subject to change.</p>
+                    <p class="nhsuk-body">You can find the name of your medicine on the prescription or the medicine packaging.</p>
+
+                    {{ data.medications | generateMedicationListAToZ | safe }}
+
+                {% endset %}
+
+                {{ details({
+                    classes: 'nhsuk-expander',
+                    text: 'Check if the medication you need is covered',
+                    html: aToZHTML
+                }) }}
+
+                <!-- RADIO BUTTONS -->
+                {{ radios({
+                    idPrefix: 'medicinesCovered',
+                    name: 'medicinesCovered',
+                    value: data.medicinesCovered,
+                    fieldset: {
+                        legend: {
+                            text: 'Is your medicine covered by an HRT PPC?',
+                            classes: 'nhsuk-u-visually-hidden',
+                            isPageHeading: false
+                        }
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes, my HRT medicine is covered by an HRT PPC'
+                        },
+                        {
+                            value: 'no',
+                            text: 'No, my HRT medicine is not covered by an HRT PPC'
+                        },
+                        { divider: 'or' },
+                        {
+                            value: 'some',
+                            text: 'Some of my HRT medicine is covered by an HRT PPC'
+                        }
+                    ]
+                }) }}
+
+                <!-- DETAILS -->
+                {{ details({
+                    text: 'Why some HRT medicines are not covered',
+                    html: '<p class="nhsuk-body">HRT PPCs only cover HRT medicines that are also licensed to treat the menopause in the UK.</p>
+                           <p class="nhsuk-body">If your HRT medicine is covered but you take it for reasons other than the menopause, you can still use an HRT PPC.</p>'
+                }) }}
+
+                {% endcall %}
+            
+                <!-- CONTINUE BUTTON -->
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+                
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+            
+        </div>
+    </div>
+{% endblock %}

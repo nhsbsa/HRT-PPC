@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1 class="nhsuk-heading-l">Some of your HRT medicines are not covered by the HRT PPC</h1>
+
+            <p class="nhsuk-body">An HRT PPC could still save you money if you need to pay for an HRT medicine that is covered 3 or more times in a 12-month period.</p>
+            <p class="nhsuk-body">But you may save more with a PPC that covers all NHS prescriptions. This includes all HRT medication as well as any other items you get prescribed.</p>
+            <p class="nhsuk-body">This type of PPC will save you more than an HRT PPC if you get:</p>
+            
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li>4 or more items in a 3-month period and at least 2 are not for items covered by an HRT PPC</li>
+                <li>12 or more items in a 12-month period and at least 10 are not for items covered by an HRT PPC</li>
+            </ul>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" target="_blank" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc">Find out more about PPCs that cover all NHS prescriptions on our website (opens in new tab)</a></p>
+
+            <form action="some-medicines-covered" method="post" novalidate>
+
+                {{ radios({
+                    idPrefix: 'stillBuyHRTPPC',
+                    name: 'stillBuyHRTPPC',
+                    value: data.stillBuyHRTPPC,
+                    fieldset: {
+                        legend: {
+                            text: 'Do you still want to buy an HRT PPC?',
+                            classes: 'nhsuk-fieldset__legend--m',
+                            isPageHeading: false
+                        }
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes'
+                        },
+                        {
+                            value: 'no',
+                            text: 'No'
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

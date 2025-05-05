@@ -19,6 +19,118 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
     
   };
 
+  //
+  // PROCESS DATE FILTER
+  //
+  filters.processDate = function( date, daysOffset ){
+
+    daysOffset = ( !Number.isNaN( parseInt( daysOffset ) ) ) ? parseInt( daysOffset ) : 0;
+
+    let today = new Date();
+
+    if( date && date.day && date.month && date.year ){
+      today = new Date( parseInt(date.year), parseInt(date.month) - 1, parseInt(date.day) );
+      if( Number.isNaN( today.getTime() ) ){
+        today = new Date();
+      }
+    }
+
+    today.setDate(today.getDate() + daysOffset);
+
+    return today.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });
+
+  };
+
+  //
+  // PROCESS ADDRESS FILTER
+  //
+  filters.processAddress = function(){
+
+    let address = ( this.ctx.data.address ) ? this.ctx.data.address : '152 Pilgrim Street, Newcastle Upon Tyne, NE1 6SN';
+    return address.split(', ').join('<br />');
+
+  };
+
+
+  //
+  // GENERATE MEDICATION LIST A TO Z FILTER
+  // This code doesn't sort alphabetically, you'll have to do that yourself in the Excel spreadsheet
+  //
+  filters.generateMedicationListAToZ = function( medications ){
+
+    medications = ( Array.isArray( medications ) ) ? medications : [];
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    let html = '';
+
+    // Generate A-Z list
+    html += '<nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">';
+    html += '<ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0" role="list">';
+
+    letters.forEach(function( letter ){
+      html += '<li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">';
+      html += '<a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#'+letter+'">'+letter+'</a>';
+      html += '</li>';
+    });
+
+    html += '</ol>';
+    html += '</nav>';
+
+    // Generate cards
+    letters.forEach(function( letter ){
+
+      // Card
+      html += '<div class="nhsuk-card nhsuk-card--feature" id="'+letter+'">';
+      html += '<div class="nhsuk-card__content nhsuk-card__content--feature">';
+      html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">'+letter+'</h2>';
+
+      const items = [];
+      medications.forEach(function( medication ){
+        if( medication.text.charAt(0).toLowerCase() === letter.toLowerCase() ){
+          const extras = ( medication.attributes && medication.attributes['data-extra'] ) ? medication.attributes['data-extra'] : '';
+          if( medication.text !== 'Please select' ){
+            let innerHTML = '<tr><td>'+medication.text+'</td>';
+            if( extras ){
+              innerHTML += '<td>'+extras.substring(6)+'</td>';
+            }
+            innerHTML += '</tr>';
+            innerHTML = innerHTML.split('<span class="nhsuk-body-s">').join('').split('</span>').join('').split('<br />').join('<br />');
+
+            items.push( innerHTML );
+          }
+        }
+      });
+
+      if( items.length === 0 ){
+        html += '<ul class="nhsuk-list nhsuk-list--border"><li>There are currently no HRT medicines covered</li></ul>';
+      } else {
+        html += '<table class="nhsuk-table">';
+        html += '<thead role="rowgroup" class="nhsuk-table__head"><tr role="row"><th role="columnheader" class="" scope="col">Product name</th><th role="columnheader" class="" scope="col">Generic drug name</th></tr></thead>';
+        html += '<tbody>';
+        html += items.join('');
+        html += '</tbody>';
+        html += '</table>';
+      }
+
+     
+      html += '</div>';
+      html += '</div>';
+
+      // Back to top
+      html += '<div class="nhsuk-back-to-top">';
+      html += '<a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">Back to top</a>';
+      html += '</div>';
+  
+    });
+
+    return html;
+
+  }
+
 
   //
   // GENERATE MEDICATION LIST ROWS FILTER
@@ -146,39 +258,31 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
 
   };
 
-  /* ------------------------------------------------------------------
-    add your methods to the filters obj below this comment block:
-    @example:
+  //
+  // GET ADDRESS SELECT RESULTS FILTER
+  //
+  filters.getAddressSelectResults = function(){
 
-    filters.sayHi = function(name) {
-        return 'Hi ' + name + '!'
+    let results = ( Array.isArray( this.ctx.data.addressSearchResults ) ) ? this.ctx.data.addressSearchResults : [];
+    if ( results.length > 0 ){
+      if( results[0].text !== 'Please select' ){
+        results.unshift({ text: 'Please select', value: '' });
+      }
     }
+    return results;
 
-    Which in your templates would be used as:
+  };
 
-    {{ 'Paul' | sayHi }} => 'Hi Paul'
 
-    Notice the first argument of your filters method is whatever
-    gets 'piped' via '|' to the filter.
+  //
+  // GET START DATE FILTER
+  //
+  
 
-    Filters can take additional arguments, for example:
 
-    filters.sayHi = function(name,tone) {
-      return (tone == 'formal' ? 'Greetings' : 'Hi') + ' ' + name + '!'
-    }
 
-    Which would be used like this:
-
-    {{ 'Joel' | sayHi('formal') }} => 'Greetings Joel!'
-    {{ 'Gemma' | sayHi }} => 'Hi Gemma!'
-
-    For more on filters and how to write them see the Nunjucks
-    documentation.
-
-  ------------------------------------------------------------------ */
-
-  /* ------------------------------------------------------------------
-    keep the following line to return your filters to the app
-  ------------------------------------------------------------------ */
   return filters;
+
 };
+
+

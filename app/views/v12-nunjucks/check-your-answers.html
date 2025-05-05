@@ -1,0 +1,319 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block outerContent %}{% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1 class="nhsuk-heading-l">Check your answers</h1>
+
+            {{ warningCallout({
+                heading: 'Important information',
+                HTML: '<p>Your personal details must match what is printed on your prescriptions. Check your details below to avoid a penalty charge.</p>'
+            }) }}
+
+            <!-- YOUR DETAILS -->
+            <h2 class="nhsuk-heading-m">Your details</h2>
+            
+            <!-- NAME -->
+            {% set rows = [{
+                key: { text: 'Name' },
+                value: { text: '' | processFullName },
+                actions: { items: [ { href: 'name?returnToCYA=true', text: 'Change', visuallyHiddenText: 'name' } ]}
+            }] %}
+
+            <!-- DATE OF BIRTH -->
+            {% set rows = ( rows.push({
+                key: { text: 'Date of birth' },
+                value: { text: data.dateOfBirth | processDate },
+                actions: { items: [ { href: 'date-of-birth?returnToCYA=true', text: 'Change', visuallyHiddenText: 'date of birth' } ]}
+            }), rows ) %}
+
+             <!-- NHS NUMBER KNOWN? -->
+            {% set rows = ( rows.push({
+                key: { text: 'Do you know your NHS number?' },
+                value: { text: ( data.knowNHSNumber | capitalize ) or 'No' },
+                 actions: { items: [ { href: 'nhs-number?returnToCYA=true', text: 'Change', visuallyHiddenText: 'whether you know your NHS number' } ]}
+            }), rows ) %}
+
+            {% if data.knowNHSNumber === 'yes' %}
+                <!-- NHS NUMBER -->
+                {% set rows = ( rows.push({
+                    key: { text: 'NHS number' },
+                    value: { text: data.NHSNumber },
+                    actions: { items: [ { href: 'nhs-number?returnToCYA=true', text: 'Change', visuallyHiddenText: 'NHS number' } ]}
+                }), rows ) %}
+            {% endif %}
+
+            <!-- ADDRESS -->
+            {% if data.addressMethod === 'select' %}
+                {% set addressLink = 'select/postcode?returnToCYA=true' %}
+            {% else %}
+                {% set addressLink = 'manual-address?returnToCYA=true' %}
+            {% endif %}
+
+            {% set rows = ( rows.push({
+                key: { text: 'Address' },
+                value: { html: '' | processAddress | safe },
+                actions: { items: [ { href: addressLink, text: 'Change', visuallyHiddenText: 'address' } ]}
+            }), rows ) %}
+
+
+            <!-- CERTIFICATE BY EMAIL? -->
+            {% set rows = ( rows.push({
+                key: { text: 'Receive certificate and reminder by email?' },
+                value: { text: ( data.certificateByEmail | capitalize ) or 'No' },
+                 actions: { items: [ { href: 'get-certificate-by-email', text: 'Change', visuallyHiddenText: 'whether you want to get your certificate by email' } ]}
+            }), rows ) %}
+
+            {% if data.certificateByEmail === 'yes' %}
+                <!--EMAIL -->
+                {% set rows = ( rows.push({
+                    key: { text: 'Email' },
+                    value: { text: data.email or 'jane.smith@outlook.com' },
+                    actions: { items: [ { href: 'get-certificate-by-email', text: 'Change', visuallyHiddenText: 'email address' } ]}
+                }), rows ) %}
+            {% endif %}
+
+
+            <!-- YOUR DETAILS SUMMARY LIST -->
+            {{ summaryList({
+                rows: rows
+            }) }}
+
+
+
+            <!-- YOUR CERTIFICATE -->
+            <h2 class="nhsuk-heading-m">Your certificate</h2>
+
+            {% if data.startWhen === 'todayOrLater' %}
+                {% set date = data.todayOrLaterDate %}
+            {% else %}
+                {% set date = data.beforeTodayDate %}
+            {% endif %}
+
+            {{ summaryList({
+                rows: [
+                {
+                    key: { text: 'Length' },
+                    value: { text: '12 months' },
+                    actions: { items: [ { text: '' } ] }
+                },
+                {
+                    key: { text: 'Start date' },
+                    value: { text: date | processDate },
+                    actions: { items: [ { href: 'your-start-date?returnToCYA=true', text: 'Change', visuallyHiddenText: 'your start date' } ]}
+                },
+                {
+                    key: { text: 'End date' },
+                    value: { text: date | processDate( 365 ) },
+                    actions: { items: [ { text: '' } ] }
+                },
+                {
+                    key: { text: 'Total cost' },
+                    value: { text: data.HRTPPCCost },
+                    actions: { items: [ { text: '' } ] }
+                }
+                ]
+            }) }}
+
+
+
+
+
+            <!-- GREY BOX -->
+            <div class="payment-info-box">
+
+                <div class="notice-margin notice form-group">
+                    <strong style="font-size: large;">If you choose to continue, you will be transferred to our card payment provider, <a id="pay-link" href="https://www.payments.service.gov.uk/" target="_blank" rel="noopener">GOV.UK Pay (opens in a new tab)</a>.</strong>
+                </div>
+
+                <ul class="apple-pay field-empty">
+                    <li class="apple-pay" title="Apple Pay logo" data-key="apple-pay" data-credit="true" data-debit="false"></li>
+                </ul>
+                <ul class="google-pay field-empty">
+                    <li class="google-pay" title="Google Pay logo" data-key="google-pay" data-credit="true" data-debit="false"></li>
+                </ul>
+                <br><br>
+                <span class="card-text">Now accepting Apple Pay and Google Pay</span>
+
+                <ul class="accepted-cards field-empty">
+                    <li class="visa" title="Visa card logo" data-key="visa" data-credit="true" data-debit="true"></li>
+                    <li class="master-card" title="MasterCard logo" data-key="master-card" data-credit="true" data-debit="true"></li>
+                    <li class="jcb" title="JCB credit card logo" data-key="jcb" data-credit="true" data-debit="false"></li>
+                    <li class="diners-club" title="Diners Club credit card logo" data-key="diners-club" data-credit="true" data-debit="false"></li>
+                </ul>
+                <span class="card-text">Accepted credit and debit card types</span>
+            </div>
+
+            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+            {{ govukWarningText({
+                text: 'HRT PPCs are not refundable so make sure you need to buy one before doing so.',
+                iconFallbackText: 'Warning'
+            }) }}
+
+
+            <form action="check-your-answers" method="post" novalidate>
+                {{ button({
+                    text: 'Proceed to payment'
+                }) }}
+            </form>
+
+        </div>
+    </div>
+
+    <style>
+
+
+        .govuk-warning-text {
+            overflow: hidden;
+            border: 1px solid transparent;
+            font-family: "Frutiger W01", arial, sans-serif;
+        }
+
+        /* accepted cards styles */
+        .accepted-cards {
+            display: block;
+            width: 100%;
+            margin: 15px 0 5px;
+            padding: 0;
+            float: none;
+            overflow: hidden;
+        }
+
+        @media (min-width: 40.0625em) {
+            .accepted-cards {
+                width: 66.666%;
+            }
+        }
+
+        .icon-important {
+            background-image: url("/images/icon-white-important.png");
+
+        }
+
+        .accepted-cards li {
+            display: block;
+            width: 44px;
+            height: 10px;
+            margin: 0 10px 5px 0;
+            padding-bottom: 2rem;
+            float: left;
+            background-image: url("/images/accepted-cards-sprite.png");
+            background-size: 900% 200%;
+            border: 1px solid #BFC1C3;
+            border-radius: 5px;
+        }
+
+        .accepted-cards .visa {
+            background-position: 0 100%;
+        }
+
+        .accepted-cards .visa.selected,
+        .accepted-cards.field-empty .visa {
+            background-position: 0 0;
+        }
+
+        .accepted-cards .master-card {
+            background-position: 12.5% 100%;
+        }
+
+        .accepted-cards .master-card.selected,
+        .accepted-cards.field-empty .master-card {
+            background-position: 12.5% 0;
+        }
+
+        .accepted-cards .jcb {
+            background-position: 37.5% 100%;
+        }
+
+        .accepted-cards .jcb.selected,
+        .accepted-cards.field-empty .jcb {
+            background-position: 37.5% 0;
+        }
+
+        .accepted-cards .diners-club {
+            background-position: 50% 100%;
+        }
+
+        .accepted-cards .diners-club.selected,
+        .accepted-cards.field-empty .diners-club {
+            background-position: 50% 0;
+        }
+
+        .accepted-cards-hint {
+            color: #6f777b;
+        }
+
+        .apple-pay {
+            display: block;
+            margin: 15px 0 5px;
+            padding: 0;
+            float: none;
+        }
+
+        @media (min-width: 40.0625em) {
+            .apple-pay {
+                width: 66.666%;
+            }
+        }
+
+        .apple-pay li {
+            display: block;
+            width: 50px;
+            height: 10px;
+            margin: 0 10px 5px 0;
+            padding-bottom: 2rem;
+            float: left;
+            background-image: url("/images/Apple_Pay_Mark_RGB_041619.svg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        .google-pay {
+            display: block;
+            margin: 15px 0 5px;
+            padding: 0;
+            float: none;
+        }
+
+        @media (min-width: 40.0625em) {
+            .google-pay {
+                width: 66.666%;
+            }
+        }
+
+        .google-pay li {
+            display: block;
+            width: 60px;
+            height: 10px;
+            margin: 0 10px 5px 0;
+            padding-bottom: 2rem;
+            float: left;
+            background-image: url("/images/GPay_Acceptance_Mark_800.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+
+        /* Payment card info box */
+        .payment-info-box {
+            background-color: #DEE0E2;
+            padding: 20px;
+            margin-bottom: 25px;
+            float: left;
+        }
+
+        ul.accepted-cards.field-empty {
+            margin-bottom: 10px;
+        }
+
+        .notice-margin {
+            margin-bottom: 20px;
+        }
+        /* ./ */
+    </style>
+{% endblock %}
