@@ -53,6 +53,7 @@ router.post(/date-of-birth/, function( req, res ){
 
 router.post(/name/, function( req, res ){
   let redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'select/postcode';
+  req.session.data.showErrors = false;
   res.redirect( redirect );
 });
 
