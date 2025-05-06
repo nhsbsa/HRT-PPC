@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-router.post(/start\b$/, function (req, res) {
+router.post(/start-redirect/, function (req, res) {
   req.session.data = {};
   res.redirect('is-your-medicine-covered');
 });
