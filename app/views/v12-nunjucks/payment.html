@@ -60,6 +60,16 @@
             margin: 0;
         }
     }
+
+    .pay-buttons a {
+      box-shadow: none;
+      outline: none;
+    }
+
+    .pay-buttons a img {
+      display: block;
+      overflow: hidden;
+    }
     
   </style>
 
@@ -69,7 +79,7 @@
 
         <h2 class="nhsuk-heading-s">Pay with Google Pay</h2>
 
-        <a href="payment-google-pay">
+        <a href="payment?paymentMethod=google">
             <img alt="Pay with Google Pay button" src="/images/pay-with-google-pay-button.png" width="360" height="44" data-inline="true">
         </a>
 
@@ -79,7 +89,7 @@
 
         <h2 class="nhsuk-heading-s">Pay with Apple Pay</h2>
 
-        <a href="payment-apple-pay">
+        <a href="payment?paymentMethod=apple">
             <img alt="Pay with Apple Pay button" src="/images/pay-with-apple-pay-button.png" width="360" height="44" data-inline="true">
         </a>
 
@@ -607,6 +617,160 @@
     </div>
   </div>
 </main>
+
+
+
+
+{% if data.paymentMethod === 'google' %}
+
+  <!-- GOOGLE WALLET OVERLAY -->
+  <div class="wallet-overlay">
+      <div class="inner">
+        <div>
+          <a href="confirmation">
+              <img src="/images/google-pay-overlay.png" alt="" />
+          </a>
+          <a href="payment?paymentMethod="></a>
+        </div>
+      </div>
+  </div>
+
+  <style>
+    
+    .wallet-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: rgba( 0,0,0, 0.5);
+    }
+
+    .inner{
+      position: absolute;
+      top: 10rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: block;
+      overflow: hidden;
+      padding: 0.625rem;
+      background-color: #E9EAE9;
+      border-radius: 0.625rem;
+      height: auto;
+      box-shadow: 0 0 1rem rgba( 0,0,0, 1);
+    }
+
+    a[href="confirmation"] {
+      box-shadow: none;
+      outline: none;
+    }
+
+    a[href="confirmation"] img {
+      width: 400px;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+
+    .inner > div {
+      position: relative;
+    }
+
+     a[href="payment?paymentMethod="] {
+      display: block;
+      height: 40px;
+      width: 40px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      right: 0;
+      opacity: 0;
+    }
+
+  </style>
+
+{% endif%}
+
+
+{% if data.paymentMethod === 'apple' %}
+
+  <!-- APPLE WALLET OVERLAY -->
+  <div class="wallet-overlay">
+      <div class="inner">
+        <div>
+          <a href="confirmation">
+              <img src="/images/apple-pay-overlay.png" alt="" />
+          </a>
+          <a href="payment?paymentMethod="></a>
+        </div>
+      </div>
+  </div>
+
+  <style>
+    
+    .wallet-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      background-color: rgba( 0,0,0, 0.5);
+    }
+
+    .inner{
+      position: absolute;
+      top: 10rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+      display: block;
+      overflow: hidden;
+      padding: 0.625rem;
+      background-color: #E9EAE9;
+      border-radius: 0.625rem;
+      height: auto;
+      box-shadow: 0 0 1rem rgba( 0,0,0, 1);
+    }
+
+    a[href="confirmation"] {
+      box-shadow: none;
+      outline: none;
+    }
+
+    a[href="confirmation"] img {
+      width: 400px;
+      height: auto;
+      display: block;
+      margin: 0;
+    }
+
+    .inner > div {
+      position: relative;
+    }
+
+    a[href="payment?paymentMethod="] {
+          display: block;
+          height: 30px;
+          width: 55px;
+          background-color: black;
+          position: absolute;
+          top: 10px;
+          right: 5px;
+          opacity: 0;
+    }
+
+
+  </style>
+
+{% endif%}
+
+
+
+
+
+
+
 <style>
 
 
