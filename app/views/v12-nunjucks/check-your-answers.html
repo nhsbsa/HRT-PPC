@@ -49,7 +49,7 @@
                 <!-- NHS NUMBER -->
                 {% set rows = ( rows.push({
                     key: { text: 'NHS number' },
-                    value: { text: data.NHSNumber },
+                    value: { text: data.NHSNumber or '485 777 3456' },
                     actions: { items: [ { href: 'nhs-number?returnToCYA=true', text: 'Change', visuallyHiddenText: 'NHS number' } ]}
                 }), rows ) %}
             {% endif %}
