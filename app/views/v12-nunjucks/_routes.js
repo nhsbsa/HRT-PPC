@@ -4,7 +4,11 @@ const router = express.Router();
 const axios = require('axios');
 
 router.post(/start-redirect/, function (req, res) {
+  const addressMethod = req.session.data.addressMethod;
+  const debug = req.session.data.debug;
   req.session.data = {};
+  req.session.data.addressMethod = addressMethod;
+  req.session.data.debug = debug;
   res.redirect('is-your-medicine-covered');
 });
 
