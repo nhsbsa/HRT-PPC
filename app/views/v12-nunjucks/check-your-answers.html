@@ -55,8 +55,8 @@
             {% endif %}
 
             <!-- ADDRESS -->
-            {% if data.addressMethod === 'select' %}
-                {% set addressLink = 'select/postcode?returnToCYA=true' %}
+            {% if data.addressMethod === 'select' or data.addressMethod === 'radios' %}
+                {% set addressLink = data.addressMethod + '/postcode?returnToCYA=true' %}
             {% else %}
                 {% set addressLink = 'manual-address?returnToCYA=true' %}
             {% endif %}

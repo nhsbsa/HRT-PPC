@@ -8,75 +8,76 @@
 
             <form action="manual-address" method="post" novalidate>
 
-        {% call fieldset({
-            legend: {
-                text: 'What is your address?',
-                classes: 'nhsuk-fieldset__legend--l',
-                isPageHeading: true
-            }
-            }) %}
+                {% call fieldset({
+                    legend: {
+                        text: 'What is your address?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                    }
+                    }) %}
 
-            <p class="nhsuk-hint">The postcode you give must match what is printed on your prescriptions.</p>
+                    <p class="nhsuk-hint">The postcode you give must match what is printed on your prescriptions.</p>
 
-            {{ input({
-                label: {
-                text: "Address line 1"
-                },
-                id: "addressLine1",
-                name: "addressLine1",
-                value: data.addressLine1
-            }) }}
+                    {{ input({
+                        label: {
+                        text: "Address line 1"
+                        },
+                        id: "addressLine1",
+                        name: "addressLine1",
+                        value: data.addressLine1
+                    }) }}
 
-            {{ input({
-                label: {
-                text: "Address line 2 (optional)"
-                },
-                id: "addressLine2",
-                name: "addressLine2",
-                value: data.addressLine2
-            }) }}
+                    {{ input({
+                        label: {
+                        text: "Address line 2 (optional)"
+                        },
+                        id: "addressLine2",
+                        name: "addressLine2",
+                        value: data.addressLine2
+                    }) }}
 
-            {{ input({
-                label: {
-                text: "Town or city"
-                },
-                classes: "govuk-!-width-two-thirds",
-                id: "addressTown",
-                name: "addressTown",
-                value: data.addressTown
-            }) }}
+                    {{ input({
+                        label: {
+                        text: "Town or city"
+                        },
+                        classes: "govuk-!-width-two-thirds",
+                        id: "addressTown",
+                        name: "addressTown",
+                        value: data.addressTown
+                    }) }}
 
-            {{ input({
-                label: {
-                    text: 'County (optional)'
-                },
-                classes: 'nhsuk-input--width-20',
-                id: 'addressCounty',
-                name: 'addressCounty',
-                value: data.addressCounty
-            }) }}
+                    {{ input({
+                        label: {
+                            text: 'County (optional)'
+                        },
+                        classes: 'nhsuk-input--width-20',
+                        id: 'addressCounty',
+                        name: 'addressCounty',
+                        value: data.addressCounty
+                    }) }}
 
-            {{ input({
-                label: {
-                    text: 'Postcode'
-                },
-                classes: 'nhsuk-input--width-10',
-                id: 'addressPostcode',
-                name: 'addressPostcode',
-                value: data.addressPostcode
-            }) }}
+                    {{ input({
+                        label: {
+                            text: 'Postcode'
+                        },
+                        classes: 'nhsuk-input--width-10',
+                        id: 'addressPostcode',
+                        name: 'addressPostcode',
+                        value: data.addressPostcode
+                    }) }}
 
-            {% endcall %}
+                    {% endcall %}
 
 
 
-        {{ button({
-          text: 'Continue'
-        }) }}
+                {{ button({
+                text: 'Continue'
+                }) }}
 
-      </form>
+            </form>
 
-            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+    
+        <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
 
         </div>
     </div>
