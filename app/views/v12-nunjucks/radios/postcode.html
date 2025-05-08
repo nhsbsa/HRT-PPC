@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+
+             {% if data.showErrors === 'true' %}
+
+                    {{ errorSummary({
+                    titleText: 'There is a problem',
+                    errorList: [
+                    {
+                        text: 'Enter either a postcode, or a building name or number',
+                        href: '#mainForm'
+                    }
+                    ]
+                    }) }}
+
+            {% endif %}
+
+            <form id="mainForm" action="postcode-radios-handler" method="get" novalidate>
+
+                {% call fieldset({
+                    legend: {
+                        text: 'What is your postcode?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                    }
+                }) %}
+
+                    <p class="nhsuk-hint">The postcode you give must match what is printed on your prescriptions.</p>
+
+                    <!-- POSTCODE -->
+                    {{ input({
+                        label: {
+                            text: 'Postcode'
+                        },
+                        classes: 'nhsuk-input--width-10',
+                        hint: {
+                            text: 'For example, AA3 1AB'
+                        },
+                        attributes: { 'autocomplete' : 'off' },
+                        id: 'postcode',
+                        name: 'postcode',
+                        value: data.postcode
+                    }) }}
+
+                    <!-- BUILDING NUMBER OR NAME -->
+                    {{ input({
+                        label: {
+                            html: 'Building number or name'
+                        },
+                        classes: 'nhsuk-input nhsuk-input--width-20',
+                        hint: {
+                            text: 'For example, 15 or Prospect Cottage'
+                        },
+                        id: 'buildingNumberOrName',
+                        name: 'buildingNumberOrName',
+                        value: data.buildingNumberOrName
+                    }) }}
+
+
+                {% endcall %}
+
+
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="../manual-address">Enter address manually</a></p>
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

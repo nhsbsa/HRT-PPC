@@ -26,9 +26,15 @@
             }] %}
 
             <!-- DATE OF BIRTH -->
+            {% if data.dateOfBirth.day %}
+                {% set dob = data.dateOfBirth | processDate %}
+            {% else %}
+                {% set dob = data.dateOfBirth | processDate( -16432 ) %}
+            {% endif %}
+
             {% set rows = ( rows.push({
                 key: { text: 'Date of birth' },
-                value: { text: data.dateOfBirth | processDate },
+                value: { text: dob },
                 actions: { items: [ { href: 'date-of-birth?returnToCYA=true', text: 'Change', visuallyHiddenText: 'date of birth' } ]}
             }), rows ) %}
 

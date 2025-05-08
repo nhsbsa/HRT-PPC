@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+        <form action="postcode-confirm" method="post" novalidate>
+
+            <h1 class="nhsuk-heading-l">Confirm your address</h1>
+            {{ data.addressSearchResults | getResultsStatus( data.postcode, data.buildingNumberOrName ) | safe }}
+
+            {{ insetText({
+                html: '<p class="nhsuk-link">' + ( data.address | processAddress )  + '</p>'
+            }) }}
+
+            {{ button({
+                text: 'Use this address'
+            }) }}
+
+        </form>
+
+      <p class="nhsuk-body"><a href="../manual-address">Enter address manually</a></p>
+      <p class="nhsuk-body"><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+
+  
+{% endblock %}
