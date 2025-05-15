@@ -66,12 +66,12 @@
               text: "Name"
             },
             value: {
-              text: "Jane Doe"
+              text: '' | processFullName
             },
             actions: {
               items: [
                 {
-                  href: "name",
+                  href: "name?returnToCYA=true",
                   text: "Change",
                   visuallyHiddenText: "name"
                 }
@@ -156,13 +156,13 @@
             actions: {
               items: [
                 {
-                  href: "get-certificate-by-email",
+                  href: "get-certificate-by-email?returnToCYA=true",
                   text: "Change",
-                  visuallyHiddenText: "email"
+                  visuallyHiddenText: "whether you receive your certificate and reminder by email"
                 }
               ]
             }
-          }
+          },
 
         ]
       }) }}

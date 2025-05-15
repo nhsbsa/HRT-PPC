@@ -14,9 +14,10 @@ router.post(/name-new/, function( req, res ){
 });
 
 router.post(/get-certificate-by-email-new/, function( req, res ){
-  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'check-your-answers';
+  const extra = ( req.session.data.certificateByEmailOrPost === 'no' ) ? '-print' : '';
+  const redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers'+extra+'?returnToCYA=false' : 'check-your-answers'+extra;
   res.redirect( redirect );
-})
+});
 
 //
 // MEDICATION LIST
