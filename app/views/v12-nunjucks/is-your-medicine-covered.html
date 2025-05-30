@@ -27,7 +27,7 @@
                     <p class="nhsuk-body">This list is correct as of 28 March 2025 and is subject to change.</p>
                     <p class="nhsuk-body">You can find the name of your medicine on the prescription or the medicine packaging.</p>
 
-                    {{ data.medications | generateMedicationListAToZ | safe }}
+                    {{ data.medications | generateMedicationListAToZ( data.aToZMethod ) | safe }}
 
                 {% endset %}
 

@@ -60,11 +60,14 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
   // GENERATE MEDICATION LIST A TO Z FILTER
   // This code doesn't sort alphabetically, you'll have to do that yourself in the Excel spreadsheet
   //
-  filters.generateMedicationListAToZ = function( medications ){
+  filters.generateMedicationListAToZ = function( medications, type ){
 
     medications = ( Array.isArray( medications ) ) ? medications : [];
+    type = ( ['standard','single' ].indexOf(type) > -1 ) ? type : 'standard';
 
     const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const aToZ = this.ctx.data.aToZ;
+
     let html = '';
 
     // Generate A-Z list
@@ -72,9 +75,14 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
     html += '<ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0" role="list">';
 
     letters.forEach(function( letter ){
-      html += '<li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">';
-      html += '<a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block" href="#'+letter+'">'+letter+'</a>';
-      html += '</li>';
+
+        const href = ( type === 'single' ) ? '?aToZ=' + letter + '&aToZOpen=true#nhsuk-nav-a-z' : '#' + letter;
+        const selected = ( type === 'single' && aToZ === letter ) ? ' selected' : '';
+
+        html += '<li class="nhsuk-u-margin-bottom-0 nhsuk-u-float-left nhsuk-u-margin-right-1">';
+        html += '<a class="nhsuk-u-font-size-22 nhsuk-u-padding-2 nhsuk-u-display-block' + selected + '" href="' + href + '">' + letter + '</a>';
+        html += '</li>';
+
     });
 
     html += '</ol>';
@@ -83,47 +91,69 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
     // Generate cards
     letters.forEach(function( letter ){
 
-      // Card
-      html += '<div class="nhsuk-card nhsuk-card--feature" id="'+letter+'">';
-      html += '<div class="nhsuk-card__content nhsuk-card__content--feature">';
-      html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">'+letter+'</h2>';
+      if( type === 'standard' || aToZ === 'all' || aToZ === letter ){
 
-      const items = [];
-      medications.forEach(function( medication ){
-        if( medication.text.charAt(0).toLowerCase() === letter.toLowerCase() ){
-          const extras = ( medication.attributes && medication.attributes['data-extra'] ) ? medication.attributes['data-extra'] : '';
-          if( medication.text !== 'Please select' ){
-            let innerHTML = '<tr><td>'+medication.text+'</td>';
-            if( extras ){
-              innerHTML += '<td>'+extras.substring(6)+'</td>';
+        // Card
+        html += '<div class="nhsuk-card nhsuk-card--feature" id="'+letter+'">';
+        html += '<div class="nhsuk-card__content nhsuk-card__content--feature">';
+        html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">'+letter+'</h2>';
+
+        const items = [];
+        medications.forEach(function( medication ){
+          if( medication.text.charAt(0).toLowerCase() === letter.toLowerCase() ){
+            const extras = ( medication.attributes && medication.attributes['data-extra'] ) ? medication.attributes['data-extra'] : '';
+            if( medication.text !== 'Please select' ){
+              let innerHTML = '<tr><td>'+medication.text+'</td>';
+              if( extras ){
+                if( type === 'single' ){
+                  innerHTML += '<td><p class="nhsuk-body-s">'+extras.substring(6)+'</p></td>';
+                } else {
+                  innerHTML += '<td>'+extras.substring(6)+'</td>';
+                }
+              }
+              innerHTML += '</tr>';
+              innerHTML = innerHTML.split('<span class="nhsuk-body-s">').join('').split('</span>').join('').split('<br />').join('<br />');
+
+              items.push( innerHTML );
             }
-            innerHTML += '</tr>';
-            innerHTML = innerHTML.split('<span class="nhsuk-body-s">').join('').split('</span>').join('').split('<br />').join('<br />');
-
-            items.push( innerHTML );
           }
+        });
+
+        if( items.length === 0 ){
+          html += '<ul class="nhsuk-list nhsuk-list--border"><li>There are currently no HRT medicines covered</li></ul>';
+        } else {
+          html += '<table class="nhsuk-table">';
+          html += '<thead role="rowgroup" class="nhsuk-table__head"><tr role="row"><th role="columnheader" class="" scope="col">Product name</th><th role="columnheader" class="" scope="col">Generic drug name</th></tr></thead>';
+          html += '<tbody>';
+          html += items.join('');
+          html += '</tbody>';
+          html += '</table>';
         }
-      });
 
-      if( items.length === 0 ){
-        html += '<ul class="nhsuk-list nhsuk-list--border"><li>There are currently no HRT medicines covered</li></ul>';
-      } else {
-        html += '<table class="nhsuk-table">';
-        html += '<thead role="rowgroup" class="nhsuk-table__head"><tr role="row"><th role="columnheader" class="" scope="col">Product name</th><th role="columnheader" class="" scope="col">Generic drug name</th></tr></thead>';
-        html += '<tbody>';
-        html += items.join('');
-        html += '</tbody>';
-        html += '</table>';
+      
+        html += '</div>';
+        html += '</div>';
+
+        
+        
+        if( type === 'single' && aToZ !== 'all' ){
+          
+          // Show all medicines
+          html += '<div class="nhsuk-back-to-top">';
+          html += '<a class="nhsuk-back-to-top__link" href="?aToZ=all&aToZOpen=true#nhsuk-nav-a-z">Show all medicines</a>';
+          html += '</div>';
+
+        } else {
+
+          // Back to top
+          html += '<div class="nhsuk-back-to-top">';
+          html += '<a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">Back to top</a>';
+          html += '</div>';
+          
+        }
+        
+
       }
-
-     
-      html += '</div>';
-      html += '</div>';
-
-      // Back to top
-      html += '<div class="nhsuk-back-to-top">';
-      html += '<a class="nhsuk-back-to-top__link" href="#nhsuk-nav-a-z">Back to top</a>';
-      html += '</div>';
   
     });
 
