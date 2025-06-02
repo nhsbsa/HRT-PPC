@@ -55,6 +55,33 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
 
   };
 
+  //
+  // GENERATE A TO Z TABS FILTER
+  //
+  filters.generateAToZTabs = function(){
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+    const items = [];
+
+    letters.forEach( function( letter ){
+
+      const obj = {};
+
+      obj.label = letter;
+      obj.id = letter;
+      obj.panel = {
+        html : 'Content for letter ' + letter
+      }
+
+      items.push( obj );
+
+
+    });
+
+    return items;
+
+  }
 
   //
   // GENERATE MEDICATION LIST A TO Z FILTER
