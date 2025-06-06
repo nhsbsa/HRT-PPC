@@ -76,6 +76,7 @@
 <!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
 {% block content %}
 
+<main id="content" role="main">
   <div class="nhsuk-grid-row">
     
 
@@ -88,7 +89,6 @@
 
       <!-- Add content here -->
       <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      
 
       <div class="nhsuk-warning-callout">
         <h3 class="nhsuk-warning-callout__label">
@@ -97,40 +97,33 @@
             Important information
           </span>
         </h3>
-        <p>This PPC only covers certain Hormone Replacement Therapy (HRT) medication. <br><br>If you require prescription medication for something other than HRT, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank"> Prescription Prepayment Certificate (PPC)</a> may be better for you.</a></p>
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="/drugs" target="_blank">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-            <span class="nhsuk-action-link__text">Find out if your HRT medication is covered by the HRT PPC before you continue</span>
-          </a>
-        </div>
+        
+          
+          <p>If you get prescriptions for something other than HRT medicine, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">Prescription Prepayment Certificate (PPC) that covers all NHS prescriptions</a> may be better for you.</a></p>
+        
       </div>
 
-
-      
+      <p>Use this service to buy an HRT PPC.</p>
       <p>
-        You can save money on NHS HRT prescriptions by prepaying for them.<br><br>
+        If you pay for NHS prescribed HRT medicine 3 or more times in 12 months, an HRT PPC could save you money.<br><br>
         
-        Each item on a NHS prescription usually costs {{ data.NHSPrescriptionCost }}.
-You can buy an HRT PPC for {{ data.HRTPPCCost }} (the cost of two prescriptions). <br><br>This covers you for an unlimited number of HRT medications for a full 12 months.  
-      </p>
+        Each item on an NHS prescription usually costs {{ data.NHSPrescriptionCost }}. You can buy an HRT PPC for a one-off payment of {{ data.HRTPPCCost }} (the cost of two items). <br><br>This covers you for an unlimited number of certain HRT prescriptions for 12 
+        months.
+
 
       
       
+        
 
-
-      <p></p>
+      
    
 
-      
+ 
       
       
       
 
-      
+
 
     
         <!--<div class="nhsuk-inset-text">
@@ -138,20 +131,69 @@ You can buy an HRT PPC for {{ data.HRTPPCCost }} (the cost of two prescriptions)
           <strong><p>We do not send out plastic cards any more because they take time to reach you.</strong>
           They are also costly to the NHS and the environment.</p>
         </div>-->
+        
+        
+        <h3>Before you start</h3>
+
+        <p>You'll need:</P>
+
+        <ul>
+          
+          <li>the name of your HRT medicine to check if it's covered – you can find this on your prescription or 
+            the medicine packaging</li>
+          <li>a valid credit or debit card to pay for the HRT PPC</li>
+          
+        </ul>
+        
+        <p>If you already have an HRT PPC, check when it expires. You can buy a new one if there is less than one month remaining on your existing certificate.</p>
+
+
+
+       
+
+
+
+
 
         
         
 
-        <h3 class="heading-medium">Ways to get your certificate</h3>
-        <P>You can get your certificate by:</P>
-      <ul class="list list-bullet">
-        <li>email</li>
-        <li>printing a copy</li>
-        <li>saving a PDF copy to your device</li>
-        <li>taking a screenshot of the certificate</li>
-      </ul>  
+        <div class="nhsuk-inset-text">
+          <span class="nhsuk-u-visually-hidden">Information: </span>
+          <p>HRT PPCs are not refundable so make sure you need to buy one before doing so.</p>
+        </div>
 
-      <p>You cannot get a certificate by post through this online service. If you require a postal certificate there are other ways to buy one <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs" target="_blank" >here</a>. </p>
+       
+        
+     
+      
+     <!--<details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Other ways to buy
+          </span>
+        </summary>
+        
+        <div class="nhsuk-details__text">
+          <p>You can buy an HRT PPC:
+
+          </p>
+          
+            <p><strong>Telephone:</strong> 0300 330 1341<br>Monday to Friday, 8am to 6pm<br>
+              Saturday, 9am to 3pm.<br><br>
+            <a href="https://www.nhsbsa.nhs.uk/contact-us/call-charges-and-phone-numbers" target="_blank">Find out about call charges</a></p>
+          
+
+
+          
+            
+            
+        
+          
+        </div>
+      </details>-->
+
+      
 
       <!--<details class="nhsuk-details">
         <summary class="nhsuk-details__summary">
@@ -170,14 +212,19 @@ You can buy an HRT PPC for {{ data.HRTPPCCost }} (the cost of two prescriptions)
       
         </div>
       </details>-->
-      <h3>Important information</h3>
-      <p>Once you have bought an HRT PPC you cannot claim a refund.</p>
+      
+      
 
-        <form action="/v3/where-you-collect">
-        <button class="nhsuk-button" type="submit">
-          Buy now
-        </button>
+      <form action="" method="post" novalidate>
+       {{ button({
+        text: 'Buy now'
+       }) }}
       </form>
+      
+      <p>If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+
+      <p>You cannot get an HRT PPC by post using this online service. If you need it by post, you can buy one from some pharmacies. </p>
+      
 
         <!--<h3 class="heading-small">
           Other ways to buy
@@ -188,4 +235,5 @@ You can buy an HRT PPC for {{ data.HRTPPCCost }} (the cost of two prescriptions)
     </div>  
 
   </div>
+</main>
 {% endblock %}
