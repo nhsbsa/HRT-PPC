@@ -77,18 +77,18 @@
                 }) %}
 
                 <p class="nhsuk-body">You can choose to start your certificate today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
-                <p class="nhsuk-body">You can also choose to backdate your certificate to any date from one month in the past (since {{ ( -1 | alterTodaysDateByNumberOfMonths ) }}).</p>
+                <p class="nhsuk-body">Choose the date you will collect your next HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
 
 
                 <!-- DETAILS COMPONENT -->
                 {% set backDateHTML %}
-                    <p classs="nhsuk-body">If you've collected an HRT prescription in the last month, you can claim a refund if you got an FP57 receipt when you paid.</p>
-                    <p classs="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
-                    <p classs="nhsuk-body">Choose the date you collected your prescription.</p>
+                    <p class="nhsuk-body">If you've collected an HRT prescription in the last month (since {{ ( -1 | alterTodaysDateByNumberOfMonths ) }}), you can claim a refund if you got an FP57 receipt when you paid.</p>
+                    <p class="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
+                    <p class="nhsuk-body">Choose the date you collected your prescription.</p>
                 {% endset %}
 
                 {{ details({
-                    text: 'When to backdate your certificate',
+                    text: 'Need to backdate your certificate?',
                     html: backDateHTML
                 }) }}
 
