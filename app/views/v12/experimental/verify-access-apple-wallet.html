@@ -1,0 +1,99 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-kickout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Verify to access your Apple Wallet Pass on this device - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+
+
+      <form action="/verify-access-apple-wallet" method="get">
+
+      
+      {{ radios({
+        name: "verifyByNHSNumberOrEmail",
+        fieldset: {
+          legend: {
+            text: "Verify to access your Apple Wallet Pass on this device",
+              classes: "nhsuk-fieldset__legend--l",
+            isPageHeading: true
+          }
+        },
+        items: [
+          {
+            value: "nhs-number",
+            text: "Verify with NHS number",
+            hint: {
+              html: "This is a 10 digit number, like 485 777 3456."
+            }
+          },
+          {
+            value: "email-address",
+            text: "Verify via email",
+            hint: {
+              html: "We will send a 6-digit security code to your email address."
+            }
+          }
+        ]
+      }) }}
+
+      {{ details({
+        text: "I cannot use any of these options",
+        html: "
+          <p>Use the other save options on the device you used to buy your HRT PPC if you:</p>
+          <ul>
+              <li>didn't provide an email address or NHS number when you bought your HRT PPC</li>
+              <li>cannot access your email</li>
+              <li>do not remember your NHS number</li>
+          </ul>
+
+          <p><a href=''>Contact us</a> if you need further help.</p>
+        "
+      }) }}
+      
+        
+      <button class="nhsuk-button" type="submit">
+        Continue
+      </button>
+      
+    
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+     
+    </div>  
+
+  </div>
+{% endblock %}

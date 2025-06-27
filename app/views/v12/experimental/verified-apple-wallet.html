@@ -1,0 +1,87 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-confirm.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Verification complete - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<main id="content" role="main">
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+          
+       
+
+      <!-- Change the page heading -->
+      <div class="nhsuk-panel">
+        <h1 class="nhsuk-panel__title">
+          
+            Device verified
+        </h1>
+        <p class="nhsuk-panel-body">
+          Your HRT PPC is ready to add to your Apple Wallet.
+        </p>
+
+       
+        
+        
+      </div>
+
+
+  <h2 class="nhsuk-heading-m">Save your HRT PPC to your Apple Wallet</h2>
+  <p>Tap the button below to add to your Apple Wallet.</p>
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
+
+      <!-- TWEAKED VERSION -->
+      <a href="add-to-apple-wallet?appleWalletRoute={{ data.appleWalletRoute }}">
+        <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+        style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
+        data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
+      </a>
+  
+
+    </div>
+  </div>
+
+
+    </div>  
+
+  </div>
+</main>
+{% endblock %}

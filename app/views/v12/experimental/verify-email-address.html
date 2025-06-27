@@ -1,0 +1,105 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Enter code to confirm your email address - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Enter code to confirm your email address
+            </h1>
+          </legend>
+
+          <p>Enter the code we have sent to: <strong>j******@example.com</strong></p>
+
+            
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="input-width-20">
+                Code
+              </label> <input class="nhsuk-input nhsuk-input--width-20" id="input-width-10" name="test-width-10" type="text">
+            </div>
+
+        </fieldset>
+      
+      </div>
+      
+        
+      
+        
+      
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            I have not received the email
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>The email may take a few minutes to arrive. Its subject line is: 'Care Identity Authentication One Time Password'.</p>
+          <p>Check your spam or junk folder - if it still has not arrived, you can <a href="">request a new code</a>.</p>      
+        </div>
+      </details>
+     
+
+        <form action="add-to-apple-wallet">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}

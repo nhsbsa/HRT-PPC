@@ -271,6 +271,17 @@ router.get(/get-a-ppc-instead/, function (req, res) {
 });
 
 
+router.get('/verify-access-apple-wallet', function(req, res) {
+  if (req.query.verifyByNHSNumberOrEmail === 'nhs-number') {
+    res.redirect('/v12/experimental/verify-nhs-number');
+  } else if (req.query.verifyByNHSNumberOrEmail === 'email-address') {
+    res.redirect('/v12/experimental/verify-email-address');
+  } else {
+    res.redirect('/v12/experimental/verify-access-apple-wallet');
+  }
+});
+
+
 //router.get(/choose-ppc/, function (req, res) {
 //if (req.query.cert === "ppc")  {
 //res.redirect('https://services.nhsbsa.nhs.uk/buy-prescription-prepayment-certificate/start');

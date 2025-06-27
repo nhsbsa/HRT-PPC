@@ -44,16 +44,23 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
+
+
+
+      
+
+<br>
+      
           
        
 
       <!-- Change the page heading -->
-      <div class="nhsuk-panel">
-        <h1 class="nhsuk-panel__title">
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">
           
             Application complete
         </h1>
-        <p class="nhsuk-panel-body">
+        <p class="nhsuk-u-font-size-24">
           You have prepaid for 12 months of HRT prescriptions.
         </p>
 
@@ -107,12 +114,9 @@
 
       
       <h2 class="nhsuk-heading-m">Your HRT PPC</h2>
-      <p>We have sent your certificate  to <strong>{{ data.emailAddress or 'jane.smith@outlook.com' }}</strong>.</p>
+      <p>We have sent your certificate  to <strong>Jane.doe@nhs.net</strong>.</p>
      
       <p>If you cannot see the email, check your junk and spam mail folders.</p>
-
-      <p>We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
-
       
       <div style="background-color: #005EB8; border-radius: 20px;">
         
@@ -129,7 +133,7 @@
               HRT PPC for
             </dt>
             <dd class="nhsuk-summary-list__value nhsuk-print-black">
-              {{ '' | processFullName }}
+              Jane Doe
             </dd>
         
             
@@ -190,46 +194,70 @@
       </div>
 
 <h2 class="nhsuk-heading-m">Save your certificate</h2>
-  <p>You must save your certificate details. You can:</p>
-  <ul>
-    <li><a href="save-pdf">Save as a PDF</a></li>
-    <li><a href="print-copy">Print out a copy</a></li>
-    <li>Take a screenshot of this page</li>
-  </ul>
+  <p>You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
 
   <p>If you're taking a screenshot, make sure it shows your certificate details.</p>
 
-  <h3 class="nhsuk-heading-s">Save your HRT PPC to your Apple Wallet</h3>
-  <p>Scan the QR code with your iPhone to add your HRT PPC to Apple Wallet. You'll be asked to verify your identity before continuing.</p>
-  <img class="qr-code" src="/images/qr-code.png" alt="QR Code" />
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+    <button class="nhsuk-button" type="submit">
+      Save as a PDF</button>
 
-  <p>You can <a href="https://your-apple-wallet">download your HRT PPC</a> and send it to your iPhone. For example, by emailing the file to yourself and opening it to your iPhone.</p>
+    <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 10px;" data-module="nhsuk-button" type="submit">
+        Print out a copy
+      </button>
+    </div>
+  </div>
 
 
-  
-<style>
-  .qr-code {
-    width: 150px;     /* size of QR code */
-    height: 150px;
-    display: block;
-    margin: 24px;
-  }
-</style>
+  <p>You can also add your HRT PPC to an Apple Wallet.</p>
 
-  <!-- <style>
-    @media print {
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
 
-      .nhsuk-print-black { color: black; }
+          <!-- TWEAKED VERSION -->
+          <a href="add-to-apple-wallet?appleWalletRoute={{ data.appleWalletRoute }}">
+            <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+            style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
+            data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
+          </a>
+      
 
-}
-  </style>
+        </div>
+      </div>
+
+
+  {% if data.appleWalletRoute === 'inPage' and data.showInPage === 'true' %}
+
+    <!--
+    <style>
+      .govuk-panel--confirmation .nhsuk-link { color: #FFF }
+      .govuk-panel--confirmation .nhsuk-link:active,
+      .govuk-panel--confirmation .nhsuk-link:focus { color: #000 }
+    </style>
+
+    <div class="govuk-panel govuk-panel--confirmation nhsuk-u-margin-bottom-6">
+        <h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3>
+        <p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>
+    </div>
+    -->
+
+    {{ insetText({
+      classes: 'nhsuk-u-margin-top-2',
+      HTML: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
+    }) }}
+
+
+
+
+  {% endif %}
       
       
       
 
     
 
-      <style>
+      <!--<style>
         .notice {
           position: relative;
           font-size: large;
@@ -245,9 +273,9 @@
           height: 37px;
       
         }
-      </style> -->
+      </style>
 
-     <!--<div class="noprint">
+     <div class="noprint">
         <div class="notice">
           <i class="icon printer-icon">
               <span class="visually-hidden"></span>
@@ -256,7 +284,7 @@
         </div>
       </div>-->
 
-<!-- 
+
       <style>
         .notice {
           position: relative;
@@ -276,7 +304,7 @@
 
 
 
-      </style> -->
+      </style>
 
       <!--<div class="noprint">
         <div class="notice">

@@ -1,0 +1,127 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Enter your NHS number - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For the skip link -->
+{% block skipLink %}
+<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
+
+<style>
+  /* new skip link format*/
+.nhsuk-skip-link:focus {
+  display: block;
+  position: static;
+}
+</style>
+
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <!-- Change the page heading -->
+
+      <!-- Add content here -->
+      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
+      
+      
+      <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+          <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+              Enter your NHS number
+            </h1>
+          </legend>
+
+          <p>Enter your NHS number to access your HRT PPC Apple Pass on this device.</p>
+
+            
+
+            
+          
+          
+      
+          
+            <div class="nhsuk-hint" id="contact-hint">
+              This is a 10 digit number, like 485 777 3456.
+            </div>
+            
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="input-width-20">
+                NHS number
+              </label> <input class="nhsuk-input nhsuk-input--width-20" id="input-width-10" name="test-width-10" type="text">
+            </div>
+
+        </fieldset>
+      
+      </div>
+      
+        
+      
+        
+      
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            Where to find your NHS number
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <p>If you're registered with a GP, you will have a 10 digit NHS number unique to you.</p>
+
+          <p>You can find it on the NHS app or <a href="https://www.nhs.uk/nhs-services/online-services/find-nhs-number/" target="_blank">use our online NHS number finder (opens in a new tab)</a>.</p>
+            </p>
+          <p>It is also on any letters or documents you receive from the NHS, such as:</p>
+          <ul>
+            <li>prescriptions</li>
+            <li>test results</li>
+            <li>appointment letters</li>
+            <li>maternity notes</li>
+            
+          </ul>
+          
+      
+        </div>
+      </details>
+     
+
+        <form action="add-to-apple-wallet">
+        <button class="nhsuk-button" type="submit">
+          Continue
+        </button>
+      </form>
+
+      <p><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+
+  </div>
+{% endblock %}
