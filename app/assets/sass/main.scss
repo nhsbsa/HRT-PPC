@@ -122,3 +122,17 @@
     background-color: #005eb8;
     color: white;
 }
+
+/* FILTER PPC TABLE */
+
+.nhsuk-table__cell .nhsuk-u-has-icon {
+   display: inline-block;
+   white-space: nowrap;
+}
+
+.nhsuk-table__cell .nhsuk-icon {
+    position: relative;
+    top: 0.6rem;
+    margin-top: -0.6rem;
+    margin-right: 0.25rem;
+}
