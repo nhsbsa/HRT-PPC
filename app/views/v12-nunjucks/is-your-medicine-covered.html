@@ -17,8 +17,15 @@
                     }
                 }) %}
 
-                <p class="nhsuk-body">HRT PPCs do not cover all HRT medicines. If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
-                
+
+                {% if data.aToZMethod === 'single' %}
+                    <p class="nhsuk-body">HRT PPCs do not cover all HRT medicines. For example, testosterone is not currently covered.</p>
+                    <p class="nhsuk-body">If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+                {% else %}
+                    <p class="nhsuk-body">HRT PPCs do not cover all HRT medicines. If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+                {% endif %}
+
+
                 <!-- A TO Z -->
                 {% set aToZHTML %}
                     
