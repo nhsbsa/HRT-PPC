@@ -155,11 +155,10 @@
                 <span class="card-text">Accepted credit and debit card types</span>
             </div>
 
-            {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+           
 
-            {{ govukWarningText({
-                text: 'HRT PPCs are not refundable so make sure you need to buy one before doing so.',
-                iconFallbackText: 'Warning'
+            {{ insetText({
+                html: '<p><strong>HRT PPCs are not refundable so make sure you need to buy one before doing so.</strong></p>'
             }) }}
 
 
@@ -310,7 +309,6 @@
             background-color: #DEE0E2;
             padding: 20px;
             margin-bottom: 25px;
-            float: left;
         }
 
         ul.accepted-cards.field-empty {
