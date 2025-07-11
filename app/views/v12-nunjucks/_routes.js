@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-router.post(/start-redirect/, function (req, res) {
+router.get(/start-redirect/, function (req, res) {
   const addressMethod = req.session.data.addressMethod || 'select';
   const debug = req.session.data.debug || 'false';
   req.session.data = {};
@@ -212,10 +212,6 @@ router.post(/your-start-date/, function( req, res ){
 
 router.post(/get-certificate-by-email/, function (req, res) {
   res.redirect('check-your-answers');
-});
-
-router.post(/check-your-answers/, function (req, res) {
-  res.redirect('payment');
 });
 
 

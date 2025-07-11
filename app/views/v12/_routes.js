@@ -22,7 +22,7 @@ router.post(/get-certificate-by-email-new/, function( req, res ){
 //
 // MEDICATION LIST
 //
-router.post(/check-medication-list/, function( req, res ){
+router.get(/check-medicine-list/, function( req, res ){
 
   let medicationList = req.session.data.medicationList || '';
   let medicationChoice = req.session.data.medicationChoice || '';

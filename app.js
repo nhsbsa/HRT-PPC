@@ -57,6 +57,9 @@ const appViews = [
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages'),
+  path.join(__dirname, 'node_modules/govuk-frontend/dist/'),
+  path.join(__dirname, 'node_modules/@x-govuk/govuk-prototype-components/x-govuk/components')
+
 ];
 
 const nunjucksConfig = {
