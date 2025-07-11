@@ -27,32 +27,17 @@
         }) }}
 
 
-        {% if data.alt === 'true' %}
-
-            <h2 class="nshuk-heading-m">Before you start</h2>
-            <p class="nhsuk-body">You'll need:</p>
-
-            
-            <ul class="nhsuk-list nhsuk-list--bullet">
-                <li>the name of your HRT medicine to check if it's covered - you can find this on your prescription or the medicine packaging</li>
-                <li class="nhsuk-u-margin-bottom-3">a valid a credit or debit card to pay for the HRT PPC (or you can use Apple Pay or Google Pay)</li>
-            </ul>
-            
-            <p class="nhsuk-body">If you already have an HRT PPC, check when it expires. You can buy a new one if there is less than one month remaining on your existing certificate.</p>
-            <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
-            <p class="nhsuk-body">You cannot get an HRT PPC by post using this online service. If you need it by post, you can buy one from some pharmacies. </p>
-
-        {% else %}
-
-            <h2 class="nshuk-heading-m">Before you start</h2>
-            <p class="nhsuk-body">You'll need the name of your HRT medicine to check if it's covered – you can find this on your prescription or the medicine packaging.</p>
-            <p class="nhsuk-body">If you already have an HRT PPC, check when it expires. You can buy a new one if there is less than one month remaining on your existing certificate.</p>
-            <p class="nhsuk-body">You'll need a valid a credit or debit card to pay for the HRT PPC, or you can use Apple Pay or Google Pay.</p>
-            <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
-            <p class="nhsuk-body">You cannot get an HRT PPC by post using this online service. If you need it by post, you can buy one from some pharmacies. </p>
-        
-        {% endif %}
+       <h2 class="nshuk-heading-m">Before you start</h2>
+       <p class="nhsuk-body">You'll need:</p>
+       <ul class="nhsuk-list nhsuk-list--bullet">
+           <li>the name of your HRT medicine to check if it's covered - you can find this on your prescription or the medicine packaging</li>
+           <li class="nhsuk-u-margin-bottom-3">a valid a credit or debit card to pay for the HRT PPC (or you can use Apple Pay or Google Pay)</li>
+       </ul>
        
+       <p class="nhsuk-body">If you already have an HRT PPC, check when it expires. You can buy a new one if there is less than one month remaining on your existing certificate.</p>
+       <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+       <p class="nhsuk-body">You cannot get an HRT PPC by post using this online service. If you need it by post, you can buy one from some pharmacies. </p>
+  
         <form action="start-redirect" method="post" novalidate>
             {{ button({
                 text: 'Buy now'
