@@ -1,6 +1,7 @@
 // Core dependencies
 const path = require('path');
 const fs = require('fs');
+const url = require('url');
 
 // External dependencies
 const bodyParser = require('body-parser');
@@ -52,10 +53,10 @@ const appViews = [
   path.join(__dirname, 'app/views/'),
   path.join(__dirname, 'lib/example-templates/'),
   path.join(__dirname, 'lib/prototype-admin/'),
+  path.join(__dirname, 'lib/templates/'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
   path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
-  path.join(__dirname, 'node_modules/govuk-frontend/dist/'),
-  path.join(__dirname, 'node_modules/@x-govuk/govuk-prototype-components/x-govuk/components'),
+  path.join(__dirname, 'node_modules/nhsuk-frontend/packages'),
 ];
 
 const nunjucksConfig = {
@@ -111,6 +112,8 @@ if (useAutoStoreData === 'true') {
   app.use(utils.autoStoreData);
   utils.addCheckedFunction(nunjucksAppEnv);
 }
+
+app.use(utils.setLocals);
 
 // Warn if node_modules folder doesn't exist
 function checkFiles() {
@@ -175,14 +178,7 @@ app.get(/^([^.]+)$/, (req, res, next) => {
 // Example template routes
 app.use('/example-templates', exampleTemplatesApp);
 
-// Nunjucks configuration for example templates
-const exampleTemplateViews = [
-  path.join(__dirname, 'lib/example-templates/'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/components'),
-  path.join(__dirname, 'node_modules/nhsuk-frontend/packages/macros'),
-];
-
-nunjucksAppEnv = nunjucks.configure(exampleTemplateViews, {
+nunjucksAppEnv = nunjucks.configure(appViews, {
   autoescape: true,
   express: exampleTemplatesApp,
 });
@@ -202,7 +198,10 @@ app.use('/prototype-admin', prototypeAdminRoutes);
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, (req, res) => {
-  res.redirect(`/${req.params[0]}`);
+  res.redirect(url.format({
+    pathname: `/${req.params[0]}`,
+    query: req.query,
+  }));
 });
 
 // Catch 404 and forward to error handler
