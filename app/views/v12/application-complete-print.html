@@ -44,151 +44,103 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-
-
-
-      
-
-<br>
-      
-          
+  
        
 
       <!-- Change the page heading -->
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">
-          
-            Application complete
+ 
+      <div class="nhsuk-panel">
+        <h1 class="nhsuk-panel__title">
+          Application complete
         </h1>
-        <p class="nhsuk-u-font-size-24">
+        <div class="nhsuk-panel__body">
           You have prepaid for 12 months of HRT prescriptions.
-        </p>
-
-       
-        
-        
-      </div>
-      
-
-
-
-
-
-
-          
-          
-      
-        
-      
-      
-      
-
-      <!--<div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        
-        <p>As part of this pilot we would be grateful if you could help us improve this service by answering our short survey.</p>
-        <div class="nhsuk-action-link">
-          <a class="nhsuk-action-link__link" href="https://www.nhs.uk/service-search/minor-injuries-unit/locationsearch/551">
-            <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-              <path d="M0 0h24v24H0z" fill="none"></path>
-              <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-            </svg>
-            <span class="nhsuk-action-link__text">Give us your feedback</span>
-          </a>
         </div>
-      </div>-->
+      </div>
 
-
-      
-
-      <!-- Add content here -->
-      <!-- Styles and components can be found at https://service-manual.nhs.uk/design-system -->
-      
-
-      <!--<div class="nhsuk-inset-text">
-        <span class="nhsuk-u-visually-hidden">Information: </span>
-        <p><strong>You requested your HRT Prescription Prepayment Certificate (HRT PPC) to be emailed, so you wont receive a certificate in the post.</strong><br><br>
-        If a pharmacist asks for evidence that you have prepaid, you must show them your HRT prepayment certificate details.</p>
-      </div>-->
-      
 
       
       <h3>Your HRT PPC</h3>
   
      
       
-      <div style="background-color: #005EB8; border-radius: 20px;">
-        
+      <style>
 
-        <div style="padding-top: 15px;">
-          
-          
-        </div>
+        .panel-hrtppc {
+            display: block;
+            overflow: hidden;
+            background-color: #005EB8;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            margin: 1.66666rem 0;
+        }
+
+        .panel-hrtppc > *:first-child {
+            margin-top: 0;
+        }
+
+        .panel-hrtppc *,
+        .panel-hrtppc a,
+        .panel-hrtppc a:visited {
+            color: white;
+        }
+
+        .panel-hrtppc a:focus {
+            color: black;
+        }
+
+    </style>
+
+    <div class="panel-hrtppc">
         
-        <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
+        <dl class="nhsuk-summary-list">
           
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black" >
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key" >
               HRT PPC for
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
-              Jane Doe
+            <dd class="nhsuk-summary-list__value">
+              {{ '' | processFullName }}
             </dd>
         
             
         
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Certificate reference
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
-              HRTCF4R477W
+            <dd class="nhsuk-summary-list__value">
+              HRTAF4A488E
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Starts on
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               1 April 2023
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Ends on
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               31 March 2024
             </dd>  
           </div>
           
         </dl>
-        <div style="padding-top: -10px;">
-          <div style="color:white">
-          <strong class="nhsuk-print-black" style="font-size:x-large; padding: 20px; padding-top: -20px;">Contact us if your name or address changes</strong>  
-          </div>
-          
-          <div style="color:white">
-            <p class="nhsuk-print-black" style=" padding-left: 20px;">
-               If your details do not match you may receive a penalty charge.</p></div>
-  
-               <div style="color: white;">
-            <p class="nhsuk-print-black"style=" padding-left: 20px; padding-bottom: 20px;">
-  
-              
-                
-              Ways to contact us can be found on our website:<br> <strong>https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</strong>
-              
-              </p>
-            </div>
-          </div>
-          
-          
-        </div>
+
+        <h3 class="nhsuk-heading-m">Contact us if your name or address changes</h3>
+        <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
+        <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
+        
+      </div>
 
       <h3>Save your certificate</h3>
       <p>You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>

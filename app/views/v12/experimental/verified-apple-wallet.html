@@ -22,7 +22,7 @@
 
 <!-- Set the page title -->
 {% block pageTitle %}
-  NHS number verified - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+  Identity confirmed - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
 {% endblock %}
 
 <!-- For adding a breadcrumb -->
@@ -44,41 +44,183 @@
   <div class="nhsuk-grid-row">
 
     <div class="nhsuk-grid-column-two-thirds">
-          
+
+
        
 
-      <!-- Change the page heading -->
+      <!-- Change the page heading -->      
       <div class="nhsuk-panel">
         <h1 class="nhsuk-panel__title">
-          
-            NHS number verified
+          Identity confirmed
         </h1>
-        <p class="nhsuk-panel-body">
-          Your HRT PPC is ready to add to your Apple Wallet.
-        </p>
+        <div class="nhsuk-panel__body">
+          You can now add your HRT PPC to Apple Wallet.
+        </div>
+      </div>
+      
 
-       
+      
+      <h2 class="nhsuk-heading-m">Your HRT PPC</h2>
+      
+      <style>
+
+        .panel-hrtppc {
+            display: block;
+            overflow: hidden;
+            background-color: #005EB8;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            margin: 1.66666rem 0;
+        }
+
+        .panel-hrtppc > *:first-child {
+            margin-top: 0;
+        }
+
+        .panel-hrtppc *,
+        .panel-hrtppc a,
+        .panel-hrtppc a:visited {
+            color: white;
+        }
+
+        .panel-hrtppc a:focus {
+            color: black;
+        }
+
+    </style>
+
+    <div class="panel-hrtppc">
         
+        <dl class="nhsuk-summary-list">
+          
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key" >
+              HRT PPC for
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              {{ '' | processFullName }}
+            </dd>
+        
+            
+        
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Certificate reference
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              HRTAF4A488E
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Starts on
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              1 April 2023
+            </dd>
+          </div>
+        
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
+              Ends on
+            </dt>
+            <dd class="nhsuk-summary-list__value">
+              31 March 2024
+            </dd>  
+          </div>
+          
+        </dl>
+
+        <h3 class="nhsuk-heading-m">Contact us if your name or address changes</h3>
+        <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
+        <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
         
       </div>
 
+      <p>You can take a screenshot or add to Apple Wallet.</p>
 
-  <h2 class="nhsuk-heading-m">Save your HRT PPC to your Apple Wallet</h2>
-  <p>Tap the button below to add to your Apple Wallet.</p>
-  <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
+<p>If you're taking a screenshot, make sure it shows your certificate details.</p>
 
-      <!-- TWEAKED VERSION -->
-      <a href="add-to-apple-wallet?appleWalletRoute={{ data.appleWalletRoute }}">
-        <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
-        style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
-        data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
-      </a>
-  
+<h2 class="nhsuk-heading-m">Save your HRT PPC to your Apple Wallet</h2>
 
-    </div>
-  </div>
+<p>Tap the button below to add your HRT PPC to your Apple Wallet.</p>
 
+      <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
+
+          <!-- TWEAKED VERSION -->
+          <a href="add-to-apple-wallet?appleWalletRoute={{ data.appleWalletRoute }}">
+            <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+            style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
+            data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
+          </a>
+      
+
+        </div>
+      </div>
+
+
+  {% if data.appleWalletRoute === 'inPage' and data.showInPage === 'true' %}
+
+
+    {{ insetText({
+      classes: 'nhsuk-u-margin-top-2',
+      HTML: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
+    }) }}
+
+
+
+
+  {% endif %}
+
+
+      <style>
+        .notice {
+          position: relative;
+          font-size: large;
+        }
+        .notice .image {
+          position: absolute;
+          left: 0;
+          top: 50%;
+          margin-top: -17px;
+        }
+        .pdf-icon {
+          width: 40px;
+          height: 37px;
+          background-image: url(/images/pdf-icon.png);
+        }
+
+
+
+      </style>
+        
+
+
+
+            <!-- <h2 class="nhsuk-heading-m">Getting your HRT prescriptions</h2>
+            <ol>
+              <li>Ask your GP to list medicines covered by the HRT PPC on a separate prescription to any other items you get. Your pharmacy needs this to dispense your medication.</li>
+              <li>Before collecting your medicine, check that it is on the <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc/medicines-covered-hrt-ppc"> list of medicines covered by the HRT PPC</a>.</li>
+              <li>When collecting your HRT prescription, show your HRT PPC and tick box 'W' for HRT PPCs on the back of your prescription.</li>
+            </ol>
+            <p>If you do not have your certificate details, the pharmacy will check the box 'Evidence not seen' on the back of your prescription. You'll not be charged.
+              <br><br>Not all prescription forms have a tick box for HRT PPCs. If that is the case tick box 'F' for Prescription Prepayment Certificate.
+            </p> -->
+
+            <h2 class="nhsuk-heading-m">Feedback</h2>
+        <p><a href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">Tell us what you think of this service</a>.</p>
+
+     <div class="noprint">
+        
+        <h2 class="nhsuk-heading-m">Contact us</h2>
+        
+       <p><a href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you have any queries about your HRT PPC.</p>
+      
+      </div>
 
     </div>  
 

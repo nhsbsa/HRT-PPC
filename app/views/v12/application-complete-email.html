@@ -45,28 +45,14 @@
 
     <div class="nhsuk-grid-column-two-thirds">
 
-
-
-      
-
-<br>
-      
-          
-       
-
       <!-- Change the page heading -->
-      <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">
-          
-            Application complete
+      <div class="nhsuk-panel">
+        <h1 class="nhsuk-panel__title">
+          Application complete
         </h1>
-        <p class="nhsuk-u-font-size-24">
+        <div class="nhsuk-panel__body">
           You have prepaid for 12 months of HRT prescriptions.
-        </p>
-
-       
-        
-        
+        </div>
       </div>
       
 
@@ -117,22 +103,44 @@
       <p>We have sent your certificate  to <strong>{{ data.emailAddress or 'jane.smith@outlook.com' }}</strong>.</p>
      
       <p>If you cannot see the email, check your junk and spam mail folders.</p>
-      
-      <div style="background-color: #005EB8; border-radius: 20px;">
-        
 
-        <div style="padding-top: 15px;">
-          
-          
-        </div>
+
+      <style>
+
+        .panel-hrtppc {
+            display: block;
+            overflow: hidden;
+            background-color: #005EB8;
+            padding: 1.25rem;
+            border-radius: 1.25rem;
+            margin: 1.66666rem 0;
+        }
+
+        .panel-hrtppc > *:first-child {
+            margin-top: 0;
+        }
+
+        .panel-hrtppc *,
+        .panel-hrtppc a,
+        .panel-hrtppc a:visited {
+            color: white;
+        }
+
+        .panel-hrtppc a:focus {
+            color: black;
+        }
+
+    </style>
+
+    <div class="panel-hrtppc">
         
-        <dl class="nhsuk-summary-list" style="color: white; padding: 20px ; margin-bottom: 5px; margin-top: -25px;">
+        <dl class="nhsuk-summary-list">
           
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black" >
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key" >
               HRT PPC for
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               {{ '' | processFullName }}
             </dd>
         
@@ -140,56 +148,38 @@
         
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Certificate reference
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               HRTAF4A488E
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Starts on
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               1 April 2023
             </dd>
           </div>
         
-          <div class="nhsuk-summary-list__row nhsuk-print-black">
-            <dt class="nhsuk-summary-list__key nhsuk-print-black">
+          <div class="nhsuk-summary-list__row">
+            <dt class="nhsuk-summary-list__key">
               Ends on
             </dt>
-            <dd class="nhsuk-summary-list__value nhsuk-print-black">
+            <dd class="nhsuk-summary-list__value">
               31 March 2024
             </dd>  
           </div>
           
         </dl>
-        <div style="padding-top: -10px;">
-          <div style="color:white">
-          <strong class="nhsuk-print-black" style="font-size:x-large; padding: 20px; padding-top: -20px;">Contact us if your name or address changes</strong>  
-          </div>
-          
-          <div style="color:white">
-          <p class="nhsuk-print-black" style=" padding-left: 20px;">
-             If your details do not match you may receive a penalty charge.</p></div>
 
-             <div style="color: white;">
-          <p class="nhsuk-print-black"style=" padding-left: 20px; padding-bottom: 20px;">
-
-            
-              
-            
-       
- Ways you can contact us can be found on our website:<br> <strong>https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</strong>
-            
-            </p>
-          </div>
-        </div>
-        
+        <h3 class="nhsuk-heading-m">Contact us if your name or address changes</h3>
+        <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
+        <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
         
       </div>
 
