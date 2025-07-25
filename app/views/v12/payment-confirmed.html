@@ -4,42 +4,30 @@
   GOV.UK prototype kit
 {% endblock %}
 
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
-{% endblock %}
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="main-content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-<br>
-      <h1>Confirm your payment</h1>
+
+      <h1 class="govuk-heading-xl">Confirm your payment</h1>
       
       <div class="payment-summary-wrap">
         <div class="payment-summary">
-          <h2 class="nhsuk-heading-l">Payment summary</h2>
-            <p id="payment-description" class="nhsk-body" style="font-size:19px;">
+          <h2 class="govuk-heading-l">Payment summary</h2>
+            <p id="payment-description" class="govuk-body">
               12 months single payment
             </p>
             
-            <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="govuk-body govuk-!-margin-bottom-0">
               Total amount:
               
             </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">{{ data.HRTPPCCost }}</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">{{ data.HRTPPCCost }}</span>
         </div>
+
+        <br>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -83,26 +71,8 @@
               </a>
               
             
-              <p class="navigation"><a class="cancel" href="/v1/error-messages/payment-cancelled">Cancel payment</a></p>
-              <!--<details class="nhsuk-details nhsuk-expander">
-                <summary class="nhsuk-details__summary">
-                  <span class="nhsuk-details__summary-text">
-                    Errors and flags
-                  </span>
-                </summary>
-                <div class="nhsuk-details__text">
-                  <h4>Kickout pages</h4>
-                  <ul>
-                    <li><a href="error-messages/payment-provider-error">NHS - Our payment provider is temporarily unavailable</a></li>
-                    
-                
-                  </ul>
-                  
-                    
-                
-                  </ul>
-                </div>
-              </details>-->
+              <p class="govuk-body"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
+
             </div>
         </form>
       </div>

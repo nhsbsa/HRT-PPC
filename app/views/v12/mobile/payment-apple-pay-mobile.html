@@ -4,44 +4,30 @@
   GOV.UK prototype kit
 {% endblock %}
 
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
-{% endblock %}
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="main-content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
 
 <div class="payment-summary-wrap">
   <div class="payment-summary">
-    <h1 class="nhsuk-heading-l">Payment summary</h1>
-      <p id="payment-description" class="nhsk-body" style="font-size:19px;">
+    <h1 class="govuk-heading-l">Payment summary</h1>
+      <p id="payment-description" class="govuk-body">
         12 months single payment
       </p>
       
-      <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
+      <p class="govuk-body govuk-!-margin-bottom-0">
         Total amount:
         
       </p>
-      <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">{{ data.HRTPPCCost }}</span>
+      <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">{{ data.HRTPPCCost }}</span>
   </div>
 
   <br>
 
-  <h2 class="nhsuk-heading-s">
+  <h2 class="govuk-heading-s">
     Pay with Apple Pay
   </h2>
 
@@ -56,7 +42,7 @@
 </p>
 
 </div>
-      <h2>Enter card details</h2>
+      <h2 class="govuk-heading-l">Enter card details</h2>
 
         <form id="card-details" style="margin-top:20px;">
           <div class="govuk-form-group card-no-group" data-validation="cardNo">
@@ -65,7 +51,7 @@
                 Card number
               </h3>
             </label>
-            <p class="accepted-cards-hint withdrawal-text govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="govuk-hint">
               Accepted credit and debit card types
             </p>
 
@@ -207,10 +193,10 @@
                     <h3>Billing address</h3>
                   </legend>
 
-                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6" style="font-size:19px;">This is the address associated with the card</div>
+                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6">This is the address associated with the card</div>
 
                   <div class="govuk-form-group " data-validation="addressCountry">
-                    <label id="address-country-lbl" for="address-country" class="govuk-label" style="font-size:19px;">
+                    <label id="address-country-lbl" for="address-country" class="govuk-label">
                       <span
                         class="address-country-label"
                         data-label-replace="addressCountry"
@@ -475,7 +461,7 @@
                       <span
                         class="address-line-1-label"
                         data-label-replace="addressLine1"
-                        data-original-label="Building number or name and street" style="font-size:19px;">
+                        data-original-label="Building number or name and street">
                             Building number or name and street
                       </span>
 
@@ -502,7 +488,7 @@
                       <span
                     class="address-city-label"
                     data-label-replace="addressCity"
-                    data-original-label="Town or city" style="font-size:19px;">
+                    data-original-label="Town or city">
                         Town or city
                       </span>
                     </label>
@@ -515,7 +501,7 @@
                       autocomplete="billing address-level2"/>
                   </div>
                   <div class="govuk-form-group govuk-!-margin-bottom-0" data-validation="addressPostcode">
-                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label" style="font-size:19px;">
+                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label">
                       <span
                         class="address-postcode-label"
                         data-label-replace="addressPostcode"
@@ -541,31 +527,9 @@
               </a>
               <br>
             
-              <p class="navigation"><a class="cancel" href="/v1/error-messages/payment-cancelled">Cancel payment</a></p>
+              <p class="govuk-body"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
             </div>
 
-
-            <!--<details class="nhsuk-details nhsuk-expander">
-              <summary class="nhsuk-details__summary">
-                <span class="nhsuk-details__summary-text">
-                  Errors and flags
-                </span>
-              </summary>
-              <div class="nhsuk-details__text">
-                <h4>Kickout pages</h4>
-                <ul>
-                  <li><a href="error-messages/retry/payment-declined-gov">Payment has been declined</a></li>
-                  
-              
-                </ul>
-                <h4>Error messages</h4>
-                <ul>
-                  <li><a href="error-messages/error-payment">Empty fields error</a></li>
-                  
-              
-                </ul>
-              </div>
-            </details>-->
         </form>
       </div>
     </div>

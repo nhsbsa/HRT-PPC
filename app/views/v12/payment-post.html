@@ -4,41 +4,27 @@
   GOV.UK prototype kit
 {% endblock %}
 
-<!-- For the skip link -->
-{% block skipLink %}
-<a class="nhsuk-skip-link" href="#maincontent">Skip to main content</a>
-
-<style>
-  
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
-
-{% endblock %}
 
 {% block content %}
 
-<main id="content" role="main">
+<main id="main-content" role="main">
   <div class="grid-row">
     <div class="column-two-thirds">
-<br>
-      <h1>Enter card details</h1>
+
+      <h1 class="govuk-heading-xl">Enter card details</h1>
       
       <div class="payment-summary-wrap">
         <div class="payment-summary">
-          <h2 class="nhsuk-heading-l">Payment summary</h2>
-            <p id="payment-description" class="nhsk-body" style="font-size:19px;">
+          <h2 class="govuk-heading-l">Payment summary</h2>
+            <p id="payment-description" class="govuk-body">
               12 months single payment
             </p>
             
-            <p class="govuk-body govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="govuk-body govuk-!-margin-bottom-0">
               Total amount:
               
             </p>
-            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold" style="font-size:36px !important;">{{ data.HRTPPCCost }}</span>
+            <span id="amount" class="amount govuk-!-font-size-36 govuk-!-font-weight-bold">{{ data.HRTPPCCost }}</span>
         </div>
 
         <form id="card-details" style="margin-top:20px;">
@@ -48,7 +34,7 @@
                 Card number
               </h3>
             </label>
-            <p class="accepted-cards-hint withdrawal-text govuk-!-margin-bottom-0" style="font-size:19px;">
+            <p class="govuk-hint">
               Accepted credit and debit card types
             </p>
 
@@ -108,10 +94,10 @@
                   <h3>Expiry date</h3>
                 </div>
               </legend>
-              <span class="govuk-hint" id="expiry-date-hint" style="font-size:19px !important;">
+              <span class="govuk-hint" id="expiry-date-hint">
                 For example, 10/23</span>
               <div class="govuk-date-input__item govuk-date-input__item--month govuk-date-input__item--with-separator">
-                <label class="govuk-label govuk-date-input__label" for="expiry-month" style="font-size: 19px;">Month</label>
+                <label class="govuk-label govuk-date-input__label" for="expiry-month">Month</label>
                 <input
                   id="expiry-month"
                   type="text"
@@ -126,7 +112,7 @@
               </div>
               
               <div class="govuk-date-input__item govuk-date-input__item--year">
-                <label for="expiry-year" class="govuk-label govuk-date-input__label" style="font-size: 19px;">Year</label>
+                <label for="expiry-year" class="govuk-label govuk-date-input__label">Year</label>
                 <input
                   id="expiry-year"
                   type="text"
@@ -161,7 +147,7 @@
                 
               
               <span class="govuk-hint govuk-!-margin-bottom-2">
-                <span class="generic-cvc" style="font-size: 19px;">
+                <span class="generic-cvc">
                   The last 3 digits on the back of the card
                 </span>
               </span>
@@ -190,10 +176,10 @@
                     <h3>Billing address</h3>
                   </legend>
 
-                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6" style="font-size:19px;">This is the address associated with the card</div>
+                  <div id="address-hint" class="govuk-hint govuk-!-margin-bottom-6">This is the address associated with the card</div>
 
                   <div class="govuk-form-group " data-validation="addressCountry">
-                    <label id="address-country-lbl" for="address-country" class="govuk-label" style="font-size:19px;">
+                    <label id="address-country-lbl" for="address-country" class="govuk-label">
                       <span
                         class="address-country-label"
                         data-label-replace="addressCountry"
@@ -458,7 +444,7 @@
                       <span
                         class="address-line-1-label"
                         data-label-replace="addressLine1"
-                        data-original-label="Building number or name and street" style="font-size:19px;">
+                        data-original-label="Building number or name and street">
                             Building number or name and street
                       </span>
 
@@ -485,7 +471,7 @@
                       <span
                     class="address-city-label"
                     data-label-replace="addressCity"
-                    data-original-label="Town or city" style="font-size:19px;">
+                    data-original-label="Town or city">
                         Town or city
                       </span>
                     </label>
@@ -498,7 +484,7 @@
                       autocomplete="billing address-level2"/>
                   </div>
                   <div class="govuk-form-group govuk-!-margin-bottom-0" data-validation="addressPostcode">
-                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label" style="font-size:19px;">
+                    <label id="address-postcode-lbl" for="address-postcode" class="govuk-label">
                       <span
                         class="address-postcode-label"
                         data-label-replace="addressPostcode"
@@ -524,7 +510,7 @@
               </a>
               <br>
             
-              <p class="navigation"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
+              <p class="govuk-body"><a class="cancel" href="error-messages/payment-cancelled">Cancel payment</a></p>
             </div>
 
 
