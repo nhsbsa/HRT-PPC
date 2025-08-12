@@ -32,6 +32,32 @@
     font-display: fallback;
   }
 
+
+    .apple-wallet-section--ios {
+        display: block;
+    }
+
+    .apple-wallet-section--desktop {
+        display: none;
+    }
+
+  @media all and ( min-width: 640px ){
+
+    .apple-wallet-section--ios {
+        display: none;
+    }
+
+    .apple-wallet-section--desktop {
+        display: block;
+    }
+
+
+  }
+
+
+
+
+
   .govuk-footer__copyright-logo {
     background-image: url("/images/govuk-crest.svg");
   }

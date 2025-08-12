@@ -10,7 +10,7 @@
 
            {{ panel({
                 titleText: 'Application complete',
-                html: 'You have prepaid for 12 months of HRT prescriptions.'
+                html: 'You have prepaid for 12 months of HRT prescriptions'
             }) }}
 
             <h2 class="nhsuk-heading-m">Your HRT PPC</h2>
@@ -89,6 +89,16 @@
             <p class="nhsuk-body">You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
             <p class="nhsuk-body">If you're taking a screenshot, make sure it shows your certificate details.</p>
 
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="#">Save as a PDF</a></li>
+                <li><a href="#">Print out a copy</a></li>
+            </ul>
+
+            
+
+
+
+            <!--
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-full">
                     <button class="nhsuk-button" type="submit">
@@ -108,19 +118,28 @@
                     }
                 }
                 
-            </style>
+            </style>-->
 
-            <!-- APPLE WALLET SECTION -->
-            <div class="apple-wallet-section">
 
-                <p>You can also add your HRT PPC to an Apple Wallet.</p>
+            <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
+
+            <div class="apple-wallet-section--desktop">
+                
+                <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
+
+            </div>
+
+            <!-- APPLE WALLET SECTION ON IOS  -->
+            <div class="apple-wallet-section--ios">
+
+                <p>If you use Apple Wallet, you can click the button below to add your certificate.</p>
 
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
 
                     <a href="apple-wallet-add">
                         <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
-                        style="width: 160px; " alt="Add to Apple Wallet button" data-inline="true"
+                        style="width: 200px; " alt="Add to Apple Wallet button" data-inline="true"
                         data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
                     </a>
                 
@@ -139,10 +158,18 @@
 
             </div>
 
+
+
+
+
+
+
+            <h2 class="nhsuk-heading-m">Certificate reminder</h2>
+
             {% if data.certificateByEmail === 'yes' %}
-                <p class="nhsuk-body">We'll send you an email reminder one month before your HRT PPC is due to expire</p>
+                <p class="nhsuk-body">We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
             {% else %}
-                <p class="nhsuk-body">We'll send you a postal reminder one month before your HRT PPC is due to expire</p>
+                <p class="nhsuk-body">We'll send you a postal reminder one month before your HRT PPC is due to expire.</p>
             {% endif %}
 
 
