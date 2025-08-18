@@ -43,13 +43,13 @@
           
           <ul class="nhsuk-list nhsuk-error-summary__list">
             <li>
-              <a href="#example-error-1">Start date must include a day and month</a>
+              <a href="#example-month">Start date must include a month</a>
             </li>
             
           </ul>
         </div>
       </div>
-      <div class="nhsuk-form-group nhsuk-form-group--error">
+      <div class="nhsuk-form-group">
 
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
           <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -82,14 +82,14 @@
           
                 <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
                   <p>If you collected an HRT prescription today, enter today's date. If not, enter the next date you will collect an HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
-                  <div class="nhsuk-form-group">
+                  <div class="nhsuk-form-group nhsuk-form-group--error">
                     <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                       
                       <div class="nhsuk-hint" id="example-hint">
                         For example, 15 9 2023
                       </div>
-                      <span class="nhsuk-error-message" id="dob-day-error-error">
-                        <span class="nhsuk-u-visually-hidden">Error:</span> Start date must include a day and month
+                      <span class="nhsuk-error-message">
+                        <span class="nhsuk-u-visually-hidden">Error:</span> Start date must include a month
                       </span>
                       
                       
@@ -101,7 +101,7 @@
                             <label class="nhsuk-label nhsuk-date-input__label" for="example-day">
                               Day
                             </label>
-                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2 nhsuk-input--error" id="example-error-1" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="example-error-1" name="example-day" type="text" pattern="[0-9]*" inputmode="numeric" value="12">
                           </div>
                         </div>
                         <div class="nhsuk-date-input__item">
