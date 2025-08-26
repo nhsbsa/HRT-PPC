@@ -123,11 +123,22 @@
 
             <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
 
-            <div class="apple-wallet-section--desktop">
-                
-               <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
-    <p class="nhsuk-body">For security, only do this on a device and Internet connection that you trust, as your information may be intercepted.</p>
+            {% if data.showDownloadLinkOnDesktop !== 'true' %}
+                <style>
+                    .apple-wallet-section--desktop {
+                        display: none !important;
+                    }
 
+                    .apple-wallet-section--ios {
+                        display: block !important;
+                    }
+                </style>
+            {% endif %}
+
+            <!-- APPLE WALLET SECTION ON DESKTOP -->
+            <div class="apple-wallet-section--desktop">
+                <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
+                <p class="nhsuk-body">For security, only do this on a device and Internet connection that you trust, as your information may be intercepted.</p>
             </div>
 
             <!-- APPLE WALLET SECTION ON IOS  -->
