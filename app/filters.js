@@ -133,13 +133,13 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
               let innerHTML = '<tr><td>'+medication.text+'</td>';
               if( extras ){
                 if( type === 'single' ){
-                  innerHTML += '<td><p class="nhsuk-body-s">'+extras.substring(6)+'</p></td>';
+                  innerHTML += '<td><p class="nhsuk-body-s nhsuk-u-margin-bottom-0">'+extras.substring(6)+'</p></td>';
                 } else {
                   innerHTML += '<td>'+extras.substring(6)+'</td>';
                 }
               }
               innerHTML += '</tr>';
-              innerHTML = innerHTML.split('<span class="nhsuk-body-s">').join('').split('</span>').join('').split('<br />').join('<br />');
+              innerHTML = innerHTML.split('<span class="nhsuk-body-s">').join('').split('</span>').join('').split('<br />').join('<br /><br />');
 
               items.push( innerHTML );
             }
