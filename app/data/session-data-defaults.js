@@ -75,7 +75,7 @@ module.exports = {
     phaseBannerFeedbackLink: 'https://online1.snapsurveys.com/Interview/77e67933-70d0-410f-b972-c748a95fa0cc',
 
     addressMethod: 'select', // Either 'radios' or 'select'
-    aToZMethod: 'standard', // Either 'standard' or 'single' 
+    aToZMethod: 'single', // Either 'standard' or 'single' 
 
     aToZ: 'all', // Used in aToZMethod 'single' mode
 
