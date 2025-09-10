@@ -8,18 +8,27 @@
 
             <form action="your-start-date" method="post" novalidate>
 
-                {% set todayOrLaterHTML %}
 
-                    <!-- TODAY OR LATER HTML -->
-                    <p class="nhsuk-body">Choose the date you will collect your next HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
+
+
+
+
+
+
+                {% set differentDateHTML %}
+
+                    <!-- DIFFERENT DATE  -->
+                    <p class="nhsuk-body"></p>
+                    
+
                     {{ dateInput({
-                    id: 'todayOrLaterDate',
-                    namePrefix: 'todayOrLaterDate',
+                    id: 'startDate',
+                    namePrefix: 'startDate',
                     fieldset: {
                         legend: {
-                            text: 'Certificate start date (today or later)',
+                            text: 'Certificate start date',
                             classes: 'nhsuk-u-visually-hidden',
-                            isPageHeading: true
+                            isPageHeading: false
                         }
                     },
                     hint: {
@@ -28,62 +37,19 @@
                     items: [
                         {
                             name: 'day',
-                            value: data.todayOrLaterDate.day,
+                            value: data.startDate.day,
                             classes: 'nhsuk-input--width-2',
                             attributes: { 'autocomplete' : 'off' }
                         },
                         {
                             name: 'month',
-                            value: data.todayOrLaterDate.month,
+                            value: data.startDate.month,
                             classes: 'nhsuk-input--width-2',
                             attributes: { 'autocomplete' : 'off' }
                         },
                         {
                             name: 'year',
-                            value: data.todayOrLaterDate.year,
-                            classes: 'nhsuk-input--width-4',
-                            attributes: { 'autocomplete' : 'off' }
-                        }
-                    ]
-                }) }}          
-                {% endset %}
-
-                {% set beforeTodayHTML %}
-
-                    <!-- BEFORE TODAY HTML -->
-                    <p class="nhsuk-body">If you've collected an HRT prescription in the last month, you can claim a refund if you got an FP57 receipt when you paid.</p>
-                    <p class="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
-                    <p class="nhsuk-body">Choose the date you collected your prescription.</p>
-
-                    {{ dateInput({
-                    id: 'beforeTodayDate',
-                    namePrefix: 'beforeTodayDate',
-                    fieldset: {
-                        legend: {
-                            text: 'Certificate start date (before today)',
-                            classes: 'nhsuk-u-visually-hidden',
-                            isPageHeading: true
-                        }
-                    },
-                    hint: {
-                        text: 'For example, ' + (-7 | alterTodaysDateByNumberOfDays)
-                    },
-                    items: [
-                        {
-                            name: 'day',
-                            value: data.beforeTodayDate.day,
-                            classes: 'nhsuk-input--width-2',
-                            attributes: { 'autocomplete' : 'off' }
-                        },
-                        {
-                            name: 'month',
-                            value: data.beforeTodayDate.month,
-                            classes: 'nhsuk-input--width-2',
-                            attributes: { 'autocomplete' : 'off' }
-                        },
-                        {
-                            name: 'year',
-                            value: data.beforeTodayDate.year,
+                            value: data.startDate.year,
                             classes: 'nhsuk-input--width-4',
                             attributes: { 'autocomplete' : 'off' }
                         }
@@ -100,33 +66,54 @@
                 </style>
 
 
-                {{ radios({
-                    idPrefix: 'startWhen',
-                    name: 'startWhen',
-                    value: data.startWhen,
-                    fieldset: {
-                        legend: {
+
+
+                {% call fieldset({
+                     legend: {
                             text: 'When do you want your HRT PPC to start?',
                             classes: 'nhsuk-fieldset__legend--l',
                             isPageHeading: false
                         }
-                    },
-                    hint: {
-                        text : 'You can choose to start your HRT PPC between ' + ( -1 | alterTodaysDateByNumberOfMonths ) + ' and ' + ( 1 | alterTodaysDateByNumberOfMonths ) + '.'
-                    },
+                }) %}
+
+                <p class="nhsuk-body">You can choose to start your certificate today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
+                <p class="nhsuk-body">Choose the date you will collect your next HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
+
+
+                <!-- DETAILS COMPONENT -->
+                {% set backDateHTML %}
+                    <p class="nhsuk-body">If you've collected an HRT prescription in the last month (since {{ ( -1 | alterTodaysDateByNumberOfMonths ) }}), you can claim a refund if you got an FP57 receipt when you paid.</p>
+                    <p class="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
+                    <p class="nhsuk-body">Choose the date you collected your prescription.</p>
+                {% endset %}
+
+                {{ details({
+                    text: 'Need to backdate your certificate?',
+                    html: backDateHTML
+                }) }}
+
+
+                <!-- RADIO BUTTONS -->
+                {{ radios({
+                    idPrefix: 'startWhen',
+                    name: 'startWhen',
+                    value: data.startWhen,
                     items: [
                         {
-                            value: 'todayOrLater',
-                            text: 'To start today or later',
-                            conditional: { html: todayOrLaterHTML }
+                            value: 'today',
+                            text: 'To start today'
                         },
                         {
-                            value: 'beforeToday',
-                            text: 'I want to backdate my certificate - I have collected my prescription before today',
-                            conditional: { html: beforeTodayHTML }
+                            value: 'differentDate',
+                            text: 'To start on a different date',
+                            conditional: { html: differentDateHTML }
                         }
                     ]
                 }) }}
+
+                {% endcall %}
+
+                <!-- END BUTTON -->
 
                 {{ button({
                     text: 'Continue'

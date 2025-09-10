@@ -79,6 +79,8 @@ module.exports = {
 
     aToZ: 'all', // Used in aToZMethod 'single' mode
 
+    showDownloadLinkOnDesktop: 'true', // Shows the "download your HRT PPC and email it to yourself" message on confirmation
+
     medications: _getMedications()
 
 }
