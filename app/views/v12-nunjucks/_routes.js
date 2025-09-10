@@ -3,18 +3,13 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-router.get(/start-redirect/, function (req, res) {
+router.post(/is-your-medicine-covered/, function (req, res) {
 
-  console.log('HELLO');
   const addressMethod = req.session.data.addressMethod || 'select';
   const debug = req.session.data.debug || 'false';
   req.session.data = {};
   req.session.data.addressMethod = addressMethod;
   req.session.data.debug = debug;
-  res.redirect('is-your-medicine-covered');
-});
-
-router.post(/is-your-medicine-covered/, function (req, res) {
 
     let redirect = 'other-prescription-items';
 
