@@ -7,12 +7,13 @@ router.post(/is-your-medicine-covered/, function (req, res) {
 
   const addressMethod = req.session.data.addressMethod || 'select';
   const debug = req.session.data.debug || 'false';
-  const medicineCovered = req.session.data.medicinesCovered || 'yes';
+  const medicinesCovered = req.session.data.medicinesCovered || 'yes';
 
   req.session.data = {};
   req.session.data.addressMethod = addressMethod;
   req.session.data.debug = debug;
-  req.session.data.medicineCovered = medicineCovered;
+  req.session.data.medicinesCovered = medicinesCovered;
+
 
     let redirect = 'other-prescription-items';
 
