@@ -4,6 +4,8 @@ const router = express.Router();
 const axios = require('axios');
 
 router.get(/start-redirect/, function (req, res) {
+
+  console.log('HELLO');
   const addressMethod = req.session.data.addressMethod || 'select';
   const debug = req.session.data.debug || 'false';
   req.session.data = {};
