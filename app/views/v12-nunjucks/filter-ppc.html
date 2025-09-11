@@ -8,7 +8,7 @@
 
             <h1 class="nhsuk-heading-l">You may save more with a PPC that covers all NHS prescriptions</h1>
 
-            <p>If you already have a PPC you do not need to buy an HRT PPC.</p>
+             <p class="nhsuk-body">Depending on how many of your prescriptions are for items not covered by an HRT PPC, you may save more buying a 3 or 12 month PPC that covers all NHS prescriptions. This includes all HRT medication as well as any other items you get prescribed.</p>
 
             <!-- TICK ICON -->
             {% set tickIcon %}
@@ -25,6 +25,7 @@
             {% endset %}
 
             {{ table({
+                tableClasses: 'comparison-table',
                 responsive: false,
                 panel: false,
                 caption: 'Comparison of PPC and HRT PPC',
@@ -70,6 +71,8 @@
               <li>4 or more items in a 3-month period and at least 2 are for items not covered by an HRT PPC</li>
               <li>12 or more items in a 12-month period and at least 10 are for items not covered by an HRT PPC</li>
             </ul>
+
+            <p class="nhsuk-body">If you have a PPC that covers all NHS prescriptions you do not need to buy an HRT PPC.</p>
 
             <p class="nhsuk-body"><a target="_blank" class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-prescription-prepayment-certificate-ppc">Find out more about PPCs that cover all NHS prescriptions on our website (opens in new tab)</a>.</p>
 

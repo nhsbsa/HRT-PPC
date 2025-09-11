@@ -17,6 +17,15 @@
 // Add your custom CSS/Sass styles below...
 ///////////////////////////////////////////
 
+
+.comparison-table td:not(:first-child){
+    white-space: nowrap;
+}
+
+.comparison-table td:not(:first-child) svg{
+    margin-right: 0;
+}
+
 @font-face {
     font-family: "GDS Transport";
     font-style: normal;

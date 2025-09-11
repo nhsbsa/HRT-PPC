@@ -29,6 +29,7 @@
             {% set detailsHTML %}
 
                 {{ table({
+                    tableClasses: 'comparison-table',
                     responsive: false,
                     panel: false,
                     caption: 'Comparison of PPC and HRT PPC',
@@ -66,7 +67,7 @@
             {% endset %}
 
             {{ details({
-                text: 'Compare HRT PPC with PPC',
+                text: 'Compare the HRT PPC with a PPC that covers all NHS prescriptions',
                 html: detailsHTML
             }) }}
 
