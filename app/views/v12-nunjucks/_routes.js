@@ -3,17 +3,31 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
+router.get(/start/,function(req, res){
+
+  // The regex finds all pages with 'start' in it, so we need to check for 'your-start-date'...
+  if( req.originalUrl.indexOf('your-start-date') === -1 ){
+
+    console.log( '*** DATA RESET ***' );
+
+    const addressMethod = req.session.data.addressMethod || 'select';
+    const debug = req.session.data.debug || 'false';
+    const route = req.session.data.route;
+
+    req.session.data = {};
+    req.session.data.addressMethod = addressMethod;
+    req.session.data.debug = debug;
+    if( route ){
+      req.session.data.route = route;
+    }
+
+  }
+
+  res.render( req.originalUrl.split('?')[0].substring(1) );
+
+});
+
 router.post(/is-your-medicine-covered/, function (req, res) {
-
-  const addressMethod = req.session.data.addressMethod || 'select';
-  const debug = req.session.data.debug || 'false';
-  const medicinesCovered = req.session.data.medicinesCovered || 'yes';
-
-  req.session.data = {};
-  req.session.data.addressMethod = addressMethod;
-  req.session.data.debug = debug;
-  req.session.data.medicinesCovered = medicinesCovered;
-
 
     let redirect = 'other-prescription-items';
 
@@ -37,7 +51,21 @@ router.post([/some-medicines-covered/,/filter-ppc/], function( req, res ){
 });
 
 router.post(/other-prescription-items/, function( req, res ){
-    let redirect = ( req.session.data.otherPrescriptionItems === 'yes' ) ? 'filter-ppc' : 'where-you-collect';
+
+    let nextFilterPage = 'filter-ppc'
+    switch( req.session.data.route ){
+      case 'a':
+        nextFilterPage = 'filter-ppc--text';
+        break;
+      case 'b':
+        nextFilterPage = 'filter-ppc--details';
+        break;
+      case 'c':
+        nextFilterPage = 'filter-ppc--table';
+        break;
+    }
+  
+    let redirect = ( req.session.data.otherPrescriptionItems === 'yes' ) ? nextFilterPage : 'where-you-collect';
     res.redirect( redirect );
 });
 
