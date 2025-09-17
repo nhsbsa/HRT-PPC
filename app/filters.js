@@ -263,7 +263,24 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
     today.setDate(today.getDate() + dayOffset);
 
     // Manually format the date to avoid leading zeros (day, month, year)
-    return [ today.getDate(), today.getMonth() + 1, today.getFullYear()].join(' '); 
+    return [ today.getDate(), today.getMonth() + 1, today.getFullYear()].join(' ')
+
+  };
+
+    //
+  // ALTER DATE BY NUMBER OF DAYS (NUMBERS + WORDS) FILTER
+  //
+  filters.alterTodaysDateByNumberOfDays2 = function( dayOffset ){
+
+    let today = new Date();
+    today.setDate(today.getDate() + dayOffset);
+
+    // Manually format the date to avoid leading zeros (day, month, year)
+    return [ today.getDate(), today.getMonth() + 1, today.getFullYear()].join(' '), today.toLocaleDateString('en-GB', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    });; 
 
   };
 
