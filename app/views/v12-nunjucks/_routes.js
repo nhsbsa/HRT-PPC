@@ -32,18 +32,22 @@ router.post(/is-your-medicine-covered/, function (req, res) {
     let redirect = 'other-prescription-items';
 
     switch( req.session.data.medicinesCovered ){
+
         case 'no':
             redirect = 'medicine-not-covered';
             break;
 
         case 'some':
-            redirect = 'some-medicines-covered';
+            // some-medicines-covered is currently showing some-medicines-covered--table
+            redirect = ( req.session.data.route === 'live' ) ? 'some-medicines-covered--text' : 'some-medicines-covered--table';
             break;
+
     }
 
     res.redirect(redirect);
 
 });
+
 
 router.post([/some-medicines-covered/,/filter-ppc/], function( req, res ){
     let redirect = ( req.session.data.stillBuyHRTPPC === 'yes' ) ? 'where-you-collect' : 'chosen-not-to-buy';
@@ -51,21 +55,8 @@ router.post([/some-medicines-covered/,/filter-ppc/], function( req, res ){
 });
 
 router.post(/other-prescription-items/, function( req, res ){
-
-    let nextFilterPage = 'filter-ppc'
-    switch( req.session.data.route ){
-      case 'a':
-        nextFilterPage = 'filter-ppc--text';
-        break;
-      case 'b':
-        nextFilterPage = 'filter-ppc--details';
-        break;
-      case 'c':
-        nextFilterPage = 'filter-ppc--table';
-        break;
-    }
-  
-    let redirect = ( req.session.data.otherPrescriptionItems === 'yes' ) ? nextFilterPage : 'where-you-collect';
+    let filterPageVersion = ( req.session.data.route === 'live' ) ? 'filter-ppc--text' : 'filter-ppc--table';
+    let redirect = ( req.session.data.otherPrescriptionItems === 'yes' ) ? filterPageVersion : 'where-you-collect';
     res.redirect( redirect );
 });
 
@@ -230,7 +221,8 @@ router.post(/manual-address/, function( req, res ){
 });
 
 router.post(/nhs-number/, function( req, res ){
-  let redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : 'your-start-date';
+  let startDateVersion = ( req.session.data.route === 'live' ) ? 'your-start-date--existing' : 'your-start-date--single-date-field';
+  let redirect = ( req.session.data.returnToCYA === 'true' ) ? 'check-your-answers?returnToCYA=false' : startDateVersion;
   res.redirect( redirect );
 });
 

@@ -1,5 +1,12 @@
 
 //
+// GET ATOZMETHOD
+//
+function _getAToZMethod( route ){
+  return ( route === 'dev' ) ? 'single' : 'standard';
+}
+
+//
 // GET MEDICATIONS
 //
 function _getMedications(){
@@ -62,6 +69,11 @@ function _getMedications(){
 }
 
 //
+// FIXED VARIABLES
+//
+const route = 'live'; // Only applies to v12-nunjucks, shows live or dev route 
+
+//
 // DATA
 //
 module.exports = {
@@ -74,12 +86,14 @@ module.exports = {
     phaseBannerTagText: 'BETA',
     phaseBannerFeedbackLink: 'https://online1.snapsurveys.com/Interview/77e67933-70d0-410f-b972-c748a95fa0cc',
 
+    route: route, // See above
+
+    aToZMethod: _getAToZMethod( route ), // Either 'standard' or 'single'
     addressMethod: 'select', // Either 'radios' or 'select'
-    aToZMethod: 'single', // Either 'standard' or 'single' 
 
     aToZ: 'all', // Used in aToZMethod 'single' mode
 
-    showDownloadLinkOnDesktop: 'true', // Shows the "download your HRT PPC and email it to yourself" message on confirmation
+    showDownloadLinkOnDesktop: 'false', // Shows the "download your HRT PPC and email it to yourself" message on confirmation
 
     medications: _getMedications()
 
