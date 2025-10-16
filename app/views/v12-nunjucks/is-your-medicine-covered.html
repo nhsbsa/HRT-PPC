@@ -38,10 +38,15 @@
 
                 {% endset %}
 
+                {% if data.aToZOpen === 'true' %}
+                    {% set attribute = { 'open' : 'open' } %}
+                {% endif %}
+
                 {{ details({
                     classes: 'nhsuk-expander',
                     text: 'Check if the medication you need is covered',
-                    html: aToZHTML
+                    html: aToZHTML,
+                    attributes: attribute
                 }) }}
 
                 <!-- RADIO BUTTONS -->
