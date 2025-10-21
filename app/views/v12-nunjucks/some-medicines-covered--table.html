@@ -25,9 +25,6 @@
                 </svg>
             {% endset %}
 
-
-            {% set detailsHTML %}
-
                 {{ table({
                     tableClasses: 'comparison-table',
                     responsive: false,
@@ -63,13 +60,6 @@
                         ]
                     ]
                 }) }}
-
-            {% endset %}
-
-            {{ details({
-                text: 'Compare the HRT PPC with a PPC that covers all NHS prescriptions',
-                html: detailsHTML
-            }) }}
 
             <h2 class="nhsuk-heading-m">Deciding whether to buy a PPC</h2>
             <p class="nhsuk-body">A PPC will save you more than an HRT PPC if you get either:</p>

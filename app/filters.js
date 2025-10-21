@@ -99,6 +99,15 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
 
     // Generate A-Z list
     html += '<nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">';
+    
+    if( type === 'single' ){
+      if( aToZ === 'all' ){
+        html += '<p class="nhsuk-u-visually-hidden">Select a letter from this navigation for medications whose brand names begin with that letter.</p>';
+      } else {
+        html += '<p class="nhsuk-u-visually-hidden">These medications begin with the letter "' + aToZ + '". You can either select another letter, or <a href="?aToZ=all&aToZOpen=true#nhsuk-nav-a-z">return to the full medication list</a>.</p>';
+      }
+    }
+    
     html += '<ol class="nhsuk-list nhsuk-u-clear nhsuk-u-margin-0" role="list">';
 
     letters.forEach(function( letter ){

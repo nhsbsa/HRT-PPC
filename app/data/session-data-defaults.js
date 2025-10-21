@@ -71,7 +71,7 @@ function _getMedications(){
 //
 // FIXED VARIABLES
 //
-const route = 'live'; // Only applies to v12-nunjucks, shows live or dev route 
+const route = 'dev'; // Only applies to v12-nunjucks, shows live or dev route 
 
 //
 // DATA
@@ -93,7 +93,7 @@ module.exports = {
 
     aToZ: 'all', // Used in aToZMethod 'single' mode
 
-    showDownloadLinkOnDesktop: 'false', // Shows the "download your HRT PPC and email it to yourself" message on confirmation
+    showDownloadLinkOnDesktop: 'true', // Shows the "download your HRT PPC and email it to yourself" message on confirmation
 
     medications: _getMedications()
 
