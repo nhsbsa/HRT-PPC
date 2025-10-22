@@ -130,9 +130,9 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
       if( type === 'standard' || aToZ === 'all' || aToZ === letter ){
 
         // Card
-        html += '<div class="nhsuk-card nhsuk-card--feature" id="'+letter+'">';
+        html += '<div class="nhsuk-card nhsuk-card--feature">';
         html += '<div class="nhsuk-card__content nhsuk-card__content--feature">';
-        html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24">'+letter+'</h2>';
+        html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24" id="'+letter+'">'+letter+'</h2>';
 
         const items = [];
         medications.forEach(function( medication ){
