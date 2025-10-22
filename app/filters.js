@@ -98,7 +98,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
     let html = '';
 
     // Generate A-Z list
-    html += '<nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation">';
+    html += '<nav class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-4" id="nhsuk-nav-a-z" role="navigation" aria-label="A to Z Navigation" tabindex="-1">';
     
     if( type === 'single' ){
       if( aToZ === 'all' ){
@@ -132,7 +132,7 @@ module.exports = function (env) { /* eslint-disable-line no-unused-vars */
         // Card
         html += '<div class="nhsuk-card nhsuk-card--feature">';
         html += '<div class="nhsuk-card__content nhsuk-card__content--feature">';
-        html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24" id="'+letter+'">'+letter+'</h2>';
+        html += '<h2 class="nhsuk-card__heading nhsuk-card__heading--feature nhsuk-u-font-size-24" id="'+letter+'" tabindex="-1">'+letter+'</h2>';
 
         const items = [];
         medications.forEach(function( medication ){
