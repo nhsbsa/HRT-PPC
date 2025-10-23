@@ -94,6 +94,12 @@
           label: 'Terms and conditions'
         }
     ] %}
+
+      {% if version === 'v12-nunjucks' %}
+        {% set links = ( links.push({ URL: 'filter-ppc--text', label: 'Filter page: Text' }), links ) %}
+        {% set links = ( links.push({ URL: 'filter-ppc--table', label: 'Filter page: Table' }), links ) %}
+      {% endif %}
+
    
     {{ footer({
       links: links
