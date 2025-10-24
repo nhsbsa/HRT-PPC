@@ -124,7 +124,6 @@
                             // Initialise links
                             document.querySelectorAll('#nhsuk-nav-a-z .nhsuk-list a').forEach(function( link ){
 
-                                link.setAttribute('role','button');
                                 link.setAttribute('aria-pressed', 'false');
 
                                 link.addEventListener('click', function(e){
@@ -155,7 +154,6 @@
                             showAllMedicinesButton.classList.add('nhsuk-show-all-medicines');
                             showAllMedicinesButton.innerHTML = 'Show all medicines';
                             showAllMedicinesButton.setAttribute( 'href', '#nhsuk-nav-a-z' );
-                            showAllMedicinesButton.setAttribute( 'role', 'button' );
                             showAllMedicinesButton.setAttribute( 'tabindex', '0' );
 
                             document.querySelector('#nhsuk-expander-a-z .nhsuk-details__text').insertAdjacentElement( 'beforeEnd', showAllMedicinesButton );
@@ -217,10 +215,11 @@
                                 aToZExpander.classList.add('letter-selected');
                                 aToZAria.innerHTML = selectedAriaHTML.split('[LETTER]').join(letter);
 
+                                document.querySelector('#'+letter).focus();
+                                document.querySelector('#'+letter).scrollIntoView();
+
 
                             } else {
-
-                                console.log(aToZAria);
 
                                 // Deselect all letters
                                 document.querySelectorAll(linksSelector).forEach(function( link ){
@@ -236,10 +235,13 @@
                                 aToZExpander.classList.remove('letter-selected');
                                 aToZAria.innerHTML = initialAriaHTML;
 
+                                // Scroll to A-Z list
+                                aToZNav.focus();
+                                aToZNav.scrollIntoView();
+
                             }
 
-                            // Scroll to A-Z list
-                            aToZNav.scrollIntoView();
+                            
 
                         }
 
