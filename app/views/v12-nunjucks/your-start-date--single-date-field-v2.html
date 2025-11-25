@@ -1,0 +1,129 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="your-start-date" method="post" novalidate>
+
+
+
+
+
+
+
+
+                {% set differentDateHTML %}
+
+                    <!-- DIFFERENT DATE  -->
+                    <p class="nhsuk-body"></p>
+                    
+
+                    {{ dateInput({
+                        id: 'startDate',
+                        namePrefix: 'startDate',
+                        fieldset: {
+                            legend: {
+                                text: 'Certificate start date',
+                                classes: 'nhsuk-u-visually-hidden',
+                                isPageHeading: false
+                            }
+                        },
+                        hint: {
+                            html: 'For example, ' + (7 | alterTodaysDateByNumberOfDays) + '. If you already have a valid exemption certificate <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption">check when it expires (opens in a new tab)</a>.'
+                        },
+                        items: [
+                            {
+                                name: 'day',
+                                value: data.startDate.day,
+                                classes: 'nhsuk-input--width-2',
+                                attributes: { 'autocomplete' : 'off' }
+                            },
+                            {
+                                name: 'month',
+                                value: data.startDate.month,
+                                classes: 'nhsuk-input--width-2',
+                                attributes: { 'autocomplete' : 'off' }
+                            },
+                            {
+                                name: 'year',
+                                value: data.startDate.year,
+                                classes: 'nhsuk-input--width-4',
+                                attributes: { 'autocomplete' : 'off' }
+                            }
+                        ]
+                    }) }}
+
+                {% endset %}
+
+                <style> 
+                    label[for="startWhen-1"],
+                    label[for="startWhen-2"]{
+                        font-weight: 600 !important;
+                    }  
+                </style>
+
+
+
+
+                {% call fieldset({
+                     legend: {
+                            text: 'When do you want your HRT PPC to start?',
+                            classes: 'nhsuk-fieldset__legend--l',
+                            isPageHeading: true
+                        }
+                }) %}
+
+                <p class="nhsuk-body">You can choose to start your HRT PPC today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
+                <p class="nhsuk-body">If you collected a prescription today, select today’s date. If not, choose the next date you will collect your HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
+
+
+                <!-- DETAILS COMPONENT -->
+                {% set backDateHTML %}
+                    <p class="nhsuk-body">If you've collected an HRT prescription in the last month (since {{ ( -1 | alterTodaysDateByNumberOfMonths ) }}), you can claim a refund if you got an FP57 receipt when you paid.</p>
+                    <p class="nhsuk-body">Choose the date you collected your prescription.</p>
+                    <p class="nhsuk-body">If you did not get an FP57 receipt you cannot get a refund and should start your HRT PPC today or later.</p>
+                    
+                {% endset %}
+
+                {{ details({
+                    text: 'Need to backdate your certificate?',
+                    html: backDateHTML
+                }) }}
+
+
+                <!-- RADIO BUTTONS -->
+                {{ radios({
+                    idPrefix: 'startWhen',
+                    name: 'startWhen',
+                    value: data.startWhen,
+                    items: [
+                        {
+                            value: 'today',
+                            text: 'To start today'
+                        },
+                        {
+                            value: 'differentDate',
+                            text: 'To start on a different date',
+                            conditional: { html: differentDateHTML }
+                        }
+                    ]
+                }) }}
+
+                {% endcall %}
+
+                <!-- END BUTTON -->
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}
