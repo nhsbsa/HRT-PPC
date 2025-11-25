@@ -1,0 +1,317 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="is-your-medicine-covered" method="post" novalidate>
+                
+                <!-- FIELDSET -->
+                {% call fieldset({
+                    legend: {
+                        text: 'Check your HRT medications',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                    }
+                }) %}
+                
+                <p class="nhsuk-body">HRT PPCs do not cover all HRT medicines. For example, testosterone is not currently covered.</p>
+                <p class="nhsuk-body">If you use an HRT PPC to collect a medicine that is not covered, you may receive a penalty charge.</p>
+               
+
+                <!-- A TO Z -->
+                {% set aToZHTML %}
+                    
+                    <p class="nhsuk-body">Eligible HRT medicines are listed A to Z by the product name below. This is the brand name the manufacturer gives their medicine.</p>
+                    <p class="nhsuk-body">Generic versions of these medicines are also covered if the generic drug name shows on the prescription. The generic drug name is usually the name of the active ingredient in the medicine.</p>
+                    <p class="nhsuk-body">This list is correct as of 1 November 2025 and is subject to change.</p>
+                    <p class="nhsuk-body">You can find the name of your medicine on the prescription or the medicine packaging.</p>
+
+                    {{ data.medications | generateMedicationListAToZ( 'standard' ) | safe }}
+
+                {% endset %}
+
+                {{ details({
+                    classes: 'nhsuk-expander',
+                    text: 'Check if the medication you need is covered',
+                    html: aToZHTML,
+                    id: 'nhsuk-expander-a-z',
+                    attributes: attribute
+                }) }}
+
+
+
+                <!-- STYLES -->
+                <style>
+
+                    .nhsuk-u-hidden,
+                    .letter-selected .nhsuk-back-to-top {
+                        display: none;
+                    }
+
+                    .nhsuk-show-all-medicines {
+                        display: none;
+                    }
+
+                    .letter-selected .nhsuk-show-all-medicines {
+                        display: inline;
+                    }
+
+
+                </style>
+
+
+                <!-- JS -->
+                <script>
+
+                    //'use strict';
+
+                    const AToZ = (function(){
+
+                        //
+                        // VARIABLES
+                        //
+                        const _debug = true;
+                        
+                        const initialAriaHTML = '<p class="nhsuk-u-visually-hidden">Select a letter from this navigation for medications whose brand names begin with that letter.</p>';
+                        const selectedAriaHTML = '<p class="nhsuk-u-visually-hidden">These medications begin with the letter "[LETTER]". You can either select another letter, or return to the full medication list.</p>';
+
+                        //
+                        // INIT FUNCTION
+                        //
+                        function _init(){
+
+                            if( _debug ){
+                                console.log('_init();');
+                            }
+
+                            _initLinks();
+                            _initAriaRegion();
+
+                        }
+
+                        //
+                        // INIT ARIA REGION FUNCTION
+                        //
+                        function _initAriaRegion(){
+
+                            if( _debug ){
+                                console.log('_initAriaRegion();');
+                            }
+
+                            const ariaRegion = document.createElement('div');
+                            ariaRegion.id = 'nhsuk-nav-status';
+                            ariaRegion.setAttribute('role','status');
+                            ariaRegion.setAttribute('aria-live','polite');
+                            ariaRegion.innerHTML = initialAriaHTML;
+
+                            document.querySelector('#nhsuk-nav-a-z').insertAdjacentElement('afterBegin', ariaRegion );
+
+
+                        }
+
+                        //
+                        // INIT LINKS FUNCTION
+                        //
+                        function _initLinks(){
+
+                            if( _debug ){
+                                console.log('_initLinks();');
+                            }
+
+                            // Initialise links
+                            document.querySelectorAll('#nhsuk-nav-a-z .nhsuk-list a').forEach(function( link ){
+
+                                link.setAttribute('aria-pressed', 'false');
+
+                                link.addEventListener('click', function(e){
+                                    
+                                    const href = e.target.getAttribute('href');
+
+                                    if( href ){
+
+                                        const letter = href.split('#').join('');
+
+                                        if( e.target.classList.contains('selected') ){
+                                            // Already selected, toggle it...
+                                            _selectLetter();
+                                        } else {
+                                            _selectLetter( letter );
+                                        }
+
+                                        e.preventDefault();
+                                        e.stopPropagation();
+
+                                    }
+
+                                });
+                            });
+
+                            // Add a "Show all medicines link"
+                            const showAllMedicinesButton = document.createElement('a');
+                            showAllMedicinesButton.classList.add('nhsuk-show-all-medicines');
+                            showAllMedicinesButton.innerHTML = 'Show all medicines';
+                            showAllMedicinesButton.setAttribute( 'href', '#nhsuk-nav-a-z' );
+                            showAllMedicinesButton.setAttribute( 'tabindex', '0' );
+
+                            document.querySelector('#nhsuk-expander-a-z .nhsuk-details__text').insertAdjacentElement( 'beforeEnd', showAllMedicinesButton );
+
+                            showAllMedicinesButton.addEventListener('click', function(e){
+
+                                _selectLetter();
+
+                                e.preventDefault();
+                                e.stopPropagation();
+
+                            });
+
+                        }
+
+                        //
+                        // SELECT LETTER FUNCTION
+                        //
+                        function _selectLetter( letter ){
+
+                            if( _debug ){
+                                console.log('_selectLetter( '+letter+' );');
+                            }
+
+                            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+                            const aToZNav = document.querySelector('#nhsuk-nav-a-z');
+                            const aToZExpander = document.querySelector('#nhsuk-expander-a-z');
+                            const aToZAria = document.querySelector('#nhsuk-nav-status');
+                            
+                            const linksSelector = '#nhsuk-nav-a-z .nhsuk-list a';
+                            const cardsSelector = '#nhsuk-expander-a-z .nhsuk-card';
+
+                            if( letters.indexOf( letter ) > -1 ){
+
+                                // Select a letter
+                                document.querySelectorAll(linksSelector).forEach(function( link ){
+                                    
+                                    if( link.getAttribute('href') === '#'+letter ){
+                                        link.classList.add('selected');
+                                        link.setAttribute('aria-pressed','true');
+                                    } else {
+                                        link.classList.remove('selected');
+                                    }
+
+                                });
+
+                                // Show a single card
+                                document.querySelectorAll(cardsSelector).forEach(function( card ){
+
+                                    if( card.id === 'holder-'+letter ){
+                                        card.classList.remove('nhsuk-u-hidden');
+                                    } else {
+                                       card.classList.add('nhsuk-u-hidden');
+                                    }
+
+                                });
+
+                                aToZExpander.classList.add('letter-selected');
+                                aToZAria.innerHTML = selectedAriaHTML.split('[LETTER]').join(letter);
+
+                                document.querySelector('#'+letter).focus();
+                                document.querySelector('#'+letter).scrollIntoView();
+
+
+                            } else {
+
+                                // Deselect all letters
+                                document.querySelectorAll(linksSelector).forEach(function( link ){
+                                    link.classList.remove('selected');
+                                    link.setAttribute('aria-pressed','false');
+                                });
+
+                                // Show all cards
+                                document.querySelectorAll(cardsSelector).forEach(function( card ){
+                                    card.classList.remove('nhsuk-u-hidden');
+                                });
+
+                                aToZExpander.classList.remove('letter-selected');
+                                aToZAria.innerHTML = initialAriaHTML;
+
+                                // Scroll to A-Z list
+                                aToZNav.focus();
+                                aToZNav.scrollIntoView();
+
+                            }
+
+                            
+
+                        }
+
+
+                        return {
+                            init: _init
+                        }
+
+                    })();        
+
+                    //
+                    // AND OFF WE GO...
+                    //
+                    document.addEventListener('DOMContentLoaded',function(){
+                        AToZ.init();
+                    });
+
+                </script>
+
+
+
+                <!-- RADIO BUTTONS -->
+                {{ radios({
+                    idPrefix: 'medicinesCovered',
+                    name: 'medicinesCovered',
+                    value: data.medicinesCovered,
+                    fieldset: {
+                        legend: {
+                            text: 'Is your medicine covered by an HRT PPC?',
+                            isPageHeading: false,
+                            classes: 'nhsuk-fieldset__legend--m'
+                        }
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes, my HRT medicine is covered by an HRT PPC'
+                        },
+                        {
+                            value: 'no',
+                            text: 'No, my HRT medicine is not covered by an HRT PPC'
+                        },
+                        { divider: 'or' },
+                        {
+                            value: 'some',
+                            text: 'Some of my HRT medicine is covered by an HRT PPC'
+                        }
+                    ]
+                }) }}
+
+                <!-- DETAILS -->
+                {{ details({
+                    text: 'Why some HRT medicines are not covered',
+                    html: '<p class="nhsuk-body">HRT PPCs only cover HRT medicines that are also licensed to treat the menopause in the UK.</p>
+                           <p class="nhsuk-body">If your HRT medicine is covered but you take it for reasons other than the menopause, you can still use an HRT PPC.</p>'
+                }) }}
+
+                {% endcall %}
+            
+                <!-- CONTINUE BUTTON -->
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+                
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+            
+        </div>
+    </div>
+{% endblock %}
