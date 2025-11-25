@@ -18,12 +18,14 @@
                 {% set differentDateHTML %}
 
                     <!-- DIFFERENT DATE  -->
-                    <p class="nhsuk-body"></p>
                     
 
                     {{ dateInput({
                         id: 'startDate',
                         namePrefix: 'startDate',
+                        formGroup: {
+                            classes: 'nhsuk-u-margin-bottom-4'
+                        },
                         fieldset: {
                             legend: {
                                 text: 'Certificate start date',
@@ -32,7 +34,7 @@
                             }
                         },
                         hint: {
-                            html: 'For example, ' + (7 | alterTodaysDateByNumberOfDays) + '. If you already have a valid exemption certificate <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption">check when it expires (opens in a new tab)</a>.'
+                            html: 'For example, ' + (7 | alterTodaysDateByNumberOfDays)
                         },
                         items: [
                             {
@@ -56,6 +58,8 @@
                         ]
                     }) }}
 
+                    <p class="nhsuk-body">If you already have a valid exemption certificate <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption">you can check when it expires (opens in a new tab)</a>.</p>
+
                 {% endset %}
 
                 <style> 
@@ -78,7 +82,6 @@
 
                 <p class="nhsuk-body">You can choose to start your HRT PPC today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
                 <p class="nhsuk-body">If you collected a prescription today, select today’s date. If not, choose the next date you will collect your HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
-
 
                 <!-- DETAILS COMPONENT -->
                 {% set backDateHTML %}

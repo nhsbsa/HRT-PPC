@@ -11,7 +11,7 @@
                 <!-- FIELDSET -->
                 {% call fieldset({
                     legend: {
-                        text: 'Check your HRT medications',
+                        text: 'Check if your HRT medicine is covered',
                         classes: 'nhsuk-fieldset__legend--l',
                         isPageHeading: true
                     }
@@ -24,7 +24,7 @@
                 <!-- A TO Z -->
                 {% set aToZHTML %}
                     
-                    <p class="nhsuk-body">Eligible HRT medicines are listed A to Z by the product name below. This is the brand name the manufacturer gives their medicine.</p>
+                    <p class="nhsuk-body">The HRT medicines covered are listed A to Z by the product name below. This is the brand name the manufacturer gives their medicine.</p>
                     <p class="nhsuk-body">Generic versions of these medicines are also covered if the generic drug name shows on the prescription. The generic drug name is usually the name of the active ingredient in the medicine.</p>
                     <p class="nhsuk-body">This list is correct as of 1 November 2025 and is subject to change.</p>
                     <p class="nhsuk-body">You can find the name of your medicine on the prescription or the medicine packaging.</p>
@@ -34,8 +34,8 @@
                 {% endset %}
 
                 {{ details({
-                    classes: 'nhsuk-expander',
-                    text: 'Check if the medication you need is covered',
+                    classes: 'nhsuk-expander nhsuk-u-margin-bottom-6',
+                    text: 'View the list of medications covered by the HRT PPC',
                     html: aToZHTML,
                     id: 'nhsuk-expander-a-z',
                     attributes: attribute
