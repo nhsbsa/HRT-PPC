@@ -103,38 +103,39 @@
 
             <style>
 
+                .apple-wallet-section--ios {
+                        display: block;
+                }
+
+                .apple-wallet-section--desktop {
+                    display: none;
+                }
+
                 @media all and ( min-width: 40.0625rem ) {
-                    .apple-wallet-section {
+                    .apple-wallet-section--ios {
                         display: none;
+                    }
+
+                     .apple-wallet-section--desktop {
+                        display: block;
                     }
                 }
                 
             </style>
 
-
-            <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
-
-            {% if data.showDownloadLinkOnDesktop !== 'true' %}
-                <style>
-                    .apple-wallet-section--desktop {
-                        display: none !important;
-                    }
-
-                    .apple-wallet-section--ios {
-                        display: block !important;
-                    }
-                </style>
+            {% if data.showDownloadLinkOnDesktop === 'true' %}
+                <!-- APPLE WALLET SECTION ON DESKTOP -->
+                <div class="apple-wallet-section--desktop">
+                    <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
+                    <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
+                    <p class="nhsuk-body">For security, only do this on a device and Internet connection that you trust, as your information may be intercepted.</p>
+                </div>
             {% endif %}
-
-            <!-- APPLE WALLET SECTION ON DESKTOP -->
-            <div class="apple-wallet-section--desktop">
-                <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
-                <p class="nhsuk-body">For security, only do this on a device and Internet connection that you trust, as your information may be intercepted.</p>
-            </div>
 
             <!-- APPLE WALLET SECTION ON IOS  -->
             <div class="apple-wallet-section--ios">
 
+                <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
                 <p>If you use Apple Wallet, you can click the button below to add your certificate.</p>
 
                 <div class="nhsuk-grid-row">
@@ -167,7 +168,7 @@
 
 
 
-            <h2 class="nhsuk-heading-m">Certificate reminder</h2>
+            <!--<h2 class="nhsuk-heading-m">Certificate reminder</h2>-->
 
             {% if data.certificateByEmail === 'yes' %}
                 <p class="nhsuk-body">We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
