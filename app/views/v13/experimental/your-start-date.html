@@ -1,0 +1,59 @@
+{% extends 'layout-private-beta.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="your-start-date" method="post" novalidate>
+
+
+                {% call fieldset({
+                     legend: {
+                            text: 'When do you want your HRT PPC to start?',
+                            classes: 'nhsuk-fieldset__legend--l',
+                            isPageHeading: false
+                        }
+                }) %}
+
+                <!-- Current certificate ends in 2 days. New certificate should start from 3 to a month from today -->
+                <p class="nhsuk-body">The last date you can use your current certificate is {{ 2 | alterTodaysDateByNumberOfDays2 }}.</p>
+                <p class="nhsuk-body">You can choose any day to start your HRT PPC between {{ 3 | alterTodaysDateByNumberOfDays2 }} and {{ 1 | alterTodaysDateByNumberOfMonths }}.</p>
+
+
+
+                {{ dateInput({
+                    hint: {
+                        text: 'For example, ' + (2 | alterTodaysDateByNumberOfDays)
+                    },
+                  items: [
+                    {
+                      name: "day",
+                      classes: "nhsuk-input--width-2"
+                    },
+                    {
+                      name: "month",
+                      classes: "nhsuk-input--width-2"
+                    },
+                    {
+                      name: "year",
+                      classes: "nhsuk-input--width-4"
+                    }
+                  ]
+                }) }}
+                {% endcall %}
+
+                <!-- END BUTTON -->
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

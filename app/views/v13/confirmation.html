@@ -1,0 +1,201 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+           {{ panel({
+                titleText: 'Application complete',
+                html: 'You have prepaid for 12 months of HRT prescriptions'
+            }) }}
+
+            <h2 class="nhsuk-heading-m">Your HRT PPC</h2>
+
+            {% if ( data.certificateByEmail === 'yes' )  %}
+                <p class="nhsuk-body">We have sent your certificate to <strong>{{ data.email or 'jane.smith@outlook.com' }}</strong>.</p>
+                <p class="nhsuk-body">If you cannot see the email, check your junk and spam mail folders.</p>
+            {% endif %}
+
+            <style>
+
+                .panel-hrtppc {
+                    display: block;
+                    overflow: hidden;
+                    background-color: #005EB8;
+                    padding: 1.25rem;
+                    border-radius: 1.25rem;
+                    margin: 1.66666rem 0;
+                }
+
+                .panel-hrtppc > *:first-child {
+                    margin-top: 0;
+                }
+
+                .panel-hrtppc *,
+                .panel-hrtppc a,
+                .panel-hrtppc a:visited {
+                    color: white;
+                }
+
+                .panel-hrtppc a:focus {
+                    color: black;
+                }
+
+            </style>
+
+            <div class="panel-hrtppc">
+
+                {% if data.startWhen === 'todayOrLater' %}
+                    {% set date = data.todayOrLaterDate %}
+                {% else %}
+                    {% set date = data.beforeTodayDate %}
+                {% endif %}
+
+                {{ summaryList({
+                    rows: [
+                        {
+                            key: { text: 'HRT PPC for' },
+                            value: { text: '' | processFullName }
+                        },
+                        {
+                            key: { text: 'Certificate reference' },
+                            value: { text: 'HRTCF4R477W' }
+                        },
+                        {
+                            key: { text: 'Starts on' },
+                            value: { text: date | processDate( 0 ) }
+                        },
+                        {
+                            key: { text: 'Ends on' },
+                            value: { text: date | processDate( 365 ) }
+                        }
+                    ]
+                }) }}
+
+                <h3 class="nhsuk-heading-m">Contact us if your name or address changes</h3>
+                <p class="nhsuk-body">If your details do not match you may receive a penalty charge.</p>
+                <p class="nhsuk-body">Ways to contact us can be found on our website:<br /><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs</a></p>
+                
+            </div>
+
+
+
+            <!-- SAVE YOUR CERTIFICATE -->
+            <h2 class="nhsuk-heading-m">Save your certificate</h2>
+            <p class="nhsuk-body">You must save your certificate details. You can do this by saving it as a PDF, printing a copy, or taking a screenshot of this page.</p>
+            <p class="nhsuk-body">If you're taking a screenshot, make sure it shows your certificate details.</p>
+
+            
+            <ul class="nhsuk-list nhsuk-list--bullet">
+                <li><a href="#">Save as a PDF</a></li>
+                <li><a href="#">Print out a copy</a></li>
+            </ul>
+
+            
+
+
+
+            <!--
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                    <button class="nhsuk-button" type="submit">
+                    Save as a PDF</button>
+
+                    <button class="nhsuk-button nhsuk-button--secondary" style="margin-left: 0.625rem;" data-module="nhsuk-button" type="submit">
+                        Print out a copy
+                    </button>
+                </div>
+            </div>
+
+            <style>
+
+                @media all and ( min-width: 40.0625rem ) {
+                    .apple-wallet-section {
+                        display: none;
+                    }
+                }
+                
+            </style>-->
+
+
+            <h3 class="nhsuk-heading-s">Add your certificate to an Apple Wallet</h2>
+
+            <!-- APPLE WALLET SECTION ON DESKTOP -->
+            <div class="apple-wallet-section--desktop">
+                <p class="nhsuk-body">If you use Apple Wallet, you can <a href="#">download your certificate</a> and then send it to your iPhone - for example, by emailing the file to yourself and opening it on your phone.</p>
+                <p class="nhsuk-body">For security, only do this on a device and Internet connection that you trust, as your information may be intercepted.</p>
+            </div>
+
+            <!-- APPLE WALLET SECTION ON IOS  -->
+            <div class="apple-wallet-section--ios">
+
+                <p>If you use Apple Wallet, you can click the button below to add your certificate.</p>
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-full" style="margin-bottom: 20px;">
+
+                    <a href="apple-wallet-add">
+                        <img id="appleWalletButton" src="/images/US-UK_Add_to_Apple_Wallet_RGB_101421.svg" 
+                        style="width: 200px; " alt="Add to Apple Wallet button" data-inline="true"
+                        data-module="nhsuk-button" data-prevent-double-click="true" type="submit">
+                    </a>
+                
+
+                    </div>
+                </div>
+
+                {% if data.certDownloaded === 'true' %}
+
+                    {{ insetText({
+                        classes: 'nhsuk-u-margin-top-2',
+                        HTML: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
+                    }) }}
+
+                {% endif %}
+
+            </div>
+
+
+
+
+
+
+
+            <h2 class="nhsuk-heading-m">Certificate reminder</h2>
+
+            {% if data.certificateByEmail === 'yes' %}
+                <p class="nhsuk-body">We'll send you an email reminder one month before your HRT PPC is due to expire.</p>
+            {% else %}
+                <p class="nhsuk-body">We'll send you a postal reminder one month before your HRT PPC is due to expire.</p>
+            {% endif %}
+
+
+            <!-- GETTING YOUR PRESCRIPTIONS -->
+            <h2 class="nhsuk-heading-m">Getting your HRT prescriptions</h2>
+
+            <ol class="nhsuk-list nhsuk-list--number">
+                <li>Ask your GP to list medicines covered by the HRT PPC on a separate prescription to any other items you get. Your pharmacy needs this to dispense your medication.</li>
+                <li>Before collecting your medicine, check that it is on the <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc/medicines-covered-hrt-ppc">list of medicines covered by the HRT PPC</a>.</li>
+                <li>When collecting your HRT prescription, show your HRT PPC and tick box 'W' for HRT PPCs on the back of your prescription.</li>
+            </ol>
+
+            <p>If you do not have your certificate details, the pharmacy will check the box 'Evidence not seen' on the back of your prescription. You'll not be charged.</p>
+            <p>Not all prescription forms have a tick box for HRT PPCs. If that is the case tick box 'F' for Prescription Prepayment Certificate.</p>
+
+
+            <!-- FEEDBACK -->
+            <h2 class="nhsuk-heading-m">Feedback</h2>
+            <p class="nhsuk-body"><a class="nhsuk-link" href="https://www.snapsurveys.com/wh/s.asp?k=155170167061&amp;pid=Done" target="_blank" rel="noopener" id="finished-button">Tell us what you think of this service</a>.</p>
+
+
+            <!-- CONTACT US -->
+            <h2 class="nhsuk-heading-m">Contact us</h2>
+            <p class="nhsuk-body"><a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs">Contact us</a> if you have any queries about your HRT PPC.</p>
+            
+        </div>
+    </div>
+{% endblock %}

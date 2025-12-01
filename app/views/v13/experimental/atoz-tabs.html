@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block outerContent %}{% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1>A to Z - tabbed version</h1>
+
+            <p class="nhsuk-body">As you can clearly see, the tabs component is no use whatsoever for A to Z lists.</p>
+
+            {{ tabs({ 
+                items: '' | generateAToZTabs
+            }) }}
+          
+        </div>
+    </div>
+{% endblock %}

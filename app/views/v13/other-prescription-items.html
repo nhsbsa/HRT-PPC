@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="other-prescription-items" method="post" novalidate>
+
+                {{ radios({
+                    idPrefix: 'otherPrescriptionItems',
+                    name: 'otherPrescriptionItems',
+                    value: data.otherPrescriptionItems,
+                    fieldset: {
+                        legend: {
+                            text: 'Do you get prescriptions for any items other than HRT medication?',
+                            classes: 'nhsuk-fieldset__legend--l',
+                            isPageHeading: true
+                        }
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes'
+                        },
+                        {
+                            value: 'no',
+                            text: 'No'
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

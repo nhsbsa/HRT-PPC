@@ -8,17 +8,8 @@
 
             <form action="your-start-date" method="post" novalidate>
 
-
-
-
-
-
-
-
                 {% set differentDateHTML %}
-
-                    <!-- DIFFERENT DATE  -->
-                    <p class="nhsuk-body">If you already have a valid exemption certificate <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption">you can check when it expires (opens in a new tab)</a>.</p>
+                    
 
                     {{ dateInput({
                         id: 'startDate',
@@ -78,7 +69,7 @@
                         }
                 }) %}
 
-                 <p class="nhsuk-body">You can choose to start your HRT PPC today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
+                <p class="nhsuk-body">You can choose to start your HRT PPC today, or on any date up to one month in the future (until {{ ( 1 | alterTodaysDateByNumberOfMonths ) }}).</p>
                 <p class="nhsuk-body">If you have an existing exemption certificate, start your HRT PPC after it expires. <a class="nhsuk-link" href="https://www.nhsbsa.nhs.uk/check-if-you-have-nhs-exemption">Our website tells you how to check existing certificates (opens in a new tab)</a>.</p>
                 <p class="nhsuk-body">If you collected a prescription today, select today’s date. If not, choose the next date you will collect your HRT prescription. If this is over a month away, you should wait and buy your HRT PPC later.</p>
 

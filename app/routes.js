@@ -13,7 +13,7 @@ router.use((req, res, next) => {
   console.log(req.originalUrl);
 
   // Versions
-  const versions = ['v12','v12-nunjucks'];
+  const versions = ['v12','v12-nunjucks','v13'];
 
   // Clear current routes 
   router.stack = router.stack.filter(layer => layer.name !== 'router');

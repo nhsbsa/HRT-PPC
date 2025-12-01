@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+        {% if data.addressSearchResults.length > 0 %}
+
+          <h1 class="nhsuk-heading-l">Select your address</h1>
+          {{ data.addressSearchResults | getResultsStatus( data.postcode, data.buildingNumberOrName ) | safe }}
+
+          <form action="postcode-address" method="post" novalidate>
+
+                {{ radios({
+                name: 'address',
+                fieldset: {
+                  legend: {
+                    text: 'Select an address',
+                    isPageHeading: false,
+                    classes: 'govuk-visually-hidden'
+                  }
+                },
+                items: data.addressSearchResults
+                }) }}
+
+
+                {{ button({
+                    text: 'Use this address'
+                }) }}
+
+          </form>
+
+        <p class="nhsuk-body"><a href="../manual-address">Enter address manually</a></p>
+
+        {% else %}
+
+        <!-- THE MESSAGE FUNCTION (i.e. getResultsStatus) FOR THESE PAGES IS SET IN THE FILTERS.JS FILE -->
+
+          <h1 class="nhsuk-heading-l">No address found</h1>
+          {{ data.addressSearchResults | getResultsStatus( data.postcode, data.buildingNumberOrName ) | safe }}
+
+          <p class="nhsuk-body"><a href="postcode">Search again</a></p>
+          <p class="nhsuk-body"><a href="../manual-address">Enter address manually</a></p>
+
+
+        {% endif %}
+
+
+      <p class="nhsuk-body"><a href="start">Cancel</a></p>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+
+  
+{% endblock %}

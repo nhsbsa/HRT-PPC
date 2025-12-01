@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1 class="nhsuk-heading-l">You may be entitled to free NHS prescriptions</h1>
+
+            <p class="nhsuk-body">If you collect your prescriptions outside of England, you may be entitled to free prescriptions.</p>
+            <p class="nhsuk-body">Before buying an HRT PPC, check if you're entitled to free NHS prescriptions and other help with health costs using our <a class="nhsuk-link" href="https://services.nhsbsa.nhs.uk/check-for-help-paying-nhs-costs/start" target="_blank">eligibility checker (opens in new tab)</a>.</p>
+
+            <form action="may-be-entitled" method="post" novalidate>
+
+                {{ radios({
+                    idPrefix: 'reallyStillBuyHRTPPC',
+                    name: 'reallyStillBuyHRTPPC',
+                    value: data.reallyStillBuyHRTPPC,
+                    fieldset: {
+                        legend: {
+                            text: 'Do you still want to buy an HRT PPC?',
+                            classes: 'nhsuk-fieldset__legend--m',
+                            isPageHeading: false
+                        }
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes'
+                        },
+                        {
+                            value: 'no',
+                            text: 'No'
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body"><a class="nhsuk-link" href="start">Cancel</a></p>
+
+        </div>
+    </div>
+{% endblock %}

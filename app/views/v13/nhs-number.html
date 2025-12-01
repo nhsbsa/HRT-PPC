@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <form action="nhs-number" method="post" novalidate>
+
+                {% set NHSNumberHTML %}
+
+                    {{ input({
+                        id: 'NHSNumber',
+                        name: 'NHSNumber',
+                        value: data.NHSNumber,
+                        classes: 'nhsuk-u-width-two-thirds',
+                        attributes: { 'autocomplete' : 'off', 'inputmode' : 'numeric' },
+                        label: {
+                            text: 'NHS number'
+                        }
+                    }) }}
+
+                {% endset -%}
+
+                {{ radios({
+                    name: 'knowNHSNumber',
+                    value: data.knowNHSNumber,
+                    fieldset: {
+                        legend: {
+                        text: 'Do you know your NHS number?',
+                        classes: 'nhsuk-fieldset__legend--l',
+                        isPageHeading: true
+                        }
+                    },
+                    hint: {
+                        html: '<p>You do not need to provide your NHS number, but it can help us match your details correctly.</p>
+                            <p>This is a 10 digit number, like 485 777 3456.</p>'
+                    },
+                    items: [
+                        {
+                            value: 'yes',
+                            text: 'Yes, I know my NHS number',
+                            conditional : {
+                                html : NHSNumberHTML
+                            }
+                        },
+                        {
+                            value: 'no',
+                            text: 'No, I do not know my NHS number'
+                        }
+                    ]
+                }) }}
+
+                {{ button({
+                    text: 'Continue'
+                }) }}
+
+            </form>
+
+            <p class="nhsuk-body">
+                <a class="nhsuk-link" href="start">Cancel</a>
+            </p>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block pageTitle %}Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC){% endblock %}
+
+{% block beforeContent %}{% endblock %}
+
+{% block content %}
+    <div class="nhsuk-grid-row">
+        <div class="nhsuk-grid-column-two-thirds">
+
+            <h1>Buy an NHS Hormone Replacement Therapy Prescription Prepayment Certificate (HRT PPC)</h1>
+
+            {{ warningCallout({
+                heading: 'Important information',
+                HTML: '<p>If you get prescriptions for something other than HRT medicine, a <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs">Prescription Prepayment Certificate (PPC) that covers all NHS prescriptions</a> may be better for you.</a>'
+            }) }}
+
+        <h2 class="nshuk-heading-m">About the HRT PPC</h2>
+
+        <p class="nhsuk-body">Use this service to buy an HRT PPC.</p>
+        <p class="nhsuk-body">If you pay for NHS prescribed HRT medicine 3 or more times in 12 months, an HRT PPC could save you money.</p>
+        <p class="nhsuk-body">Each item on an NHS prescription usually costs {{ data.NHSPrescriptionCost }}. You can buy an HRT PPC for a one-off payment of {{ data.HRTPPCCost }} (the cost of two items).</p>
+        <p class="nhsuk-body">This covers you for an unlimited number of certain HRT prescriptions for 12 months.</p>
+
+        {{ insetText({
+            html: '<p><strong>HRT PPCs are not refundable so make sure you need to buy one before doing so.</strong></p>'
+        }) }}
+
+
+       <h2 class="nshuk-heading-m">Before you start</h2>
+       <p class="nhsuk-body">You'll need:</p>
+       <ul class="nhsuk-list nhsuk-list--bullet">
+           <li>the name of your HRT medicine to check if it's covered - you can find this on your prescription or the medicine packaging</li>
+           <li class="nhsuk-u-margin-bottom-3">a valid a credit or debit card to pay for the HRT PPC (or you can use Apple Pay or Google Pay)</li>
+       </ul>
+       
+       <p class="nhsuk-body">If you already have an HRT PPC, check when it expires. You can buy a new one if there is less than one month remaining on your existing certificate.</p>
+       <p class="nhsuk-body">If you are applying on behalf of someone else, fill in the application using their details rather than your own.</p>
+       <p class="nhsuk-body">You cannot get an HRT PPC by post using this online service. If you need it by post, you can buy one from some pharmacies. </p>
+  
+       {{ button({
+            text: 'Buy now',
+            href: 'is-your-medicine-covered'
+        }) }}
+        
+
+        </div>
+    </div>
+{% endblock %}
