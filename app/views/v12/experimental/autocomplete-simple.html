@@ -1,0 +1,191 @@
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - edit the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  Autocomplete experiment - Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{# block outerContent #}
+{# endblock #}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+
+     <h1 class="govuk-label--l">Simple autocomplete example</h1>
+     
+     <form method="post" novalidate>
+
+        {{ select({
+          id: 'universityChoice',
+          name: 'universityChoice',
+          value: '',
+          label: {
+            classes: 'govuk-label--m',
+            isPageHeading: true,
+            text: 'What is the name of your university?'
+          },
+          items: [
+            { value: '', text: 'Please select' },
+            { value: 'ANGLIA RUSKIN UNIVERSITY', text: 'ANGLIA RUSKIN UNIVERSITY' },
+            { value: 'AUTOMATION TEST UNIVERSITY', text: 'AUTOMATION TEST UNIVERSITY' },
+            { value: 'BIRMINGHAM CITY UNIVERSITY', text: 'BIRMINGHAM CITY UNIVERSITY' },
+            { value: 'BIRMINGHAM METROPOLITAN COLLEGE', text: 'BIRMINGHAM METROPOLITAN COLLEGE' },
+            { value: 'BOURNEMOUTH UNIVERSITY', text: 'BOURNEMOUTH UNIVERSITY' },
+            { value: 'BPP UNIVERSITY LTD', text: 'BPP UNIVERSITY LTD' },
+            { value: 'BRUNEL UNIVERSITY LONDON', text: 'BRUNEL UNIVERSITY LONDON' },
+            { value: 'BUCKS NEW UNIVERSITY', text: 'BUCKS NEW UNIVERSITY' },
+            { value: 'CANTERBURY CHRIST CHURCH UNIVERSITY', text: 'CANTERBURY CHRIST CHURCH UNIVERSITY' },
+            { value: 'CITY UNIVERSITY LONDON', text: 'CITY UNIVERSITY LONDON' },
+            { value: 'COLCHESTER INSTITUTE', text: 'COLCHESTER INSTITUTE' },
+            { value: 'COVENTRY UNIVERSITY', text: 'COVENTRY UNIVERSITY' },
+            { value: 'DE MONTFORT UNIVERSITY', text: 'DE MONTFORT UNIVERSITY' },
+            { value: 'EDGE HILL UNIVERSITY', text: 'EDGE HILL UNIVERSITY' },
+            { value: 'KEELE UNIVERSITY', text: 'KEELE UNIVERSITY' },
+            { value: 'KINGS COLLEGE LONDON', text: 'KINGS COLLEGE LONDON' },
+            { value: 'KINGSTON UNIVERSITY', text: 'KINGSTON UNIVERSITY' },
+            { value: 'LEEDS BECKETT UNIVERSITY', text: 'LEEDS BECKETT UNIVERSITY' },
+            { value: 'LIVERPOOL JOHN MOORES UNIVERSITY', text: 'LIVERPOOL JOHN MOORES UNIVERSITY' },
+            { value: 'LONDON METROPOLITAN UNIVERSITY', text: 'LONDON METROPOLITAN UNIVERSITY' },
+            { value: 'LONDON SOUTH BANK UNIVERSITY', text: 'LONDON SOUTH BANK UNIVERSITY' },
+            { value: 'MANCHESTER METROPOLITAN UNIVERSITY', text: 'MANCHESTER METROPOLITAN UNIVERSITY' },
+            { value: 'MIDDLESEX UNIVERSITY', text: 'MIDDLESEX UNIVERSITY' },
+            { value: 'NEW COLLEGE DURHAM', text: 'NEW COLLEGE DURHAM' },
+            { value: 'NORTHUMBRIA UNIVERSITY', text: 'NORTHUMBRIA UNIVERSITY' },
+            { value: 'OXFORD BROOKES UNIVERSITY', text: 'OXFORD BROOKES UNIVERSITY' },
+            { value: 'OXFORD BROOKES UNIVERSITY', text: 'OPEN UNIVERSITY' },
+            { value: 'SHEFFIELD HALLAM UNIVERSITY', text: 'SHEFFIELD HALLAM UNIVERSITY' },
+            { value: 'SOLENT UNIVERSITY', text: 'SOLENT UNIVERSITY' },
+            { value: "ST GEORGE'S - UNIVERSITY OF LONDON", text: "ST GEORGE'S - UNIVERSITY OF LONDON" },
+            { value: 'STAFFORDSHIRE UNIVERSITY', text: 'STAFFORDSHIRE UNIVERSITY' },
+            { value: 'TEST', text: 'TEST' },
+            { value: 'TEST UNIVERSITY', text: 'TEST UNIVERSITY' },
+            { value: 'UNIVERSITY COLLEGE LONDON', text: 'UNIVERSITY COLLEGE LONDON' },
+            { value: 'UNIVERSITY OF BEDFORDSHIRE', text: 'UNIVERSITY OF BEDFORDSHIRE' },
+            { value: 'UNIVERSITY OF BIRMINGHAM', text: 'UNIVERSITY OF BIRMINGHAM' },
+            { value: 'UNIVERSITY OF BOLTON', text: 'UNIVERSITY OF BOLTON' },
+            { value: 'UNIVERSITY OF BRADFORD', text: 'UNIVERSITY OF BRADFORD' },
+            { value: 'UNIVERSITY OF BRIGHTON', text: 'UNIVERSITY OF BRIGHTON' },
+            { value: 'UNIVERSITY OF BRISTOL', text: 'UNIVERSITY OF BRISTOL' },
+            { value: 'UNIVERSITY OF CENTRAL LANCASHIRE', text: 'UNIVERSITY OF CENTRAL LANCASHIRE' },
+            { value: 'UNIVERSITY OF CHESTER', text: 'UNIVERSITY OF CHESTER' },
+            { value: 'UNIVERSITY OF CUMBRIA', text: 'UNIVERSITY OF CUMBRIA' },
+            { value: 'UNIVERSITY OF DERBY', text: 'UNIVERSITY OF DERBY' },
+            { value: 'UNIVERSITY OF EAST ANGLIA', text: 'UNIVERSITY OF EAST ANGLIA' },
+            { value: 'UNIVERSITY OF EAST LONDON', text: 'UNIVERSITY OF EAST LONDON' },
+            { value: 'UNIVERSITY OF ESSEX', text: 'UNIVERSITY OF ESSEX' },
+            { value: 'UNIVERSITY OF EXETER', text: 'UNIVERSITY OF EXETER' },
+            { value: 'UNIVERSITY OF GLOUCESTERSHIRE', text: 'UNIVERSITY OF GLOUCESTERSHIRE' },
+            { value: 'UNIVERSITY OF GREENWICH', text: 'UNIVERSITY OF GREENWICH' },
+            { value: 'UNIVERSITY OF HERTFORDSHIRE', text: 'UNIVERSITY OF HERTFORDSHIRE' },
+            { value: 'UNIVERSITY OF HUDDERSFIELD', text: 'UNIVERSITY OF HUDDERSFIELD' },
+            { value: 'UNIVERSITY OF HULL', text: 'UNIVERSITY OF HULL' },
+            { value: 'UNIVERSITY OF LEEDS', text: 'UNIVERSITY OF LEEDS' },
+            { value: 'UNIVERSITY OF LEICESTER', text: 'UNIVERSITY OF LEICESTER' },
+            { value: 'UNIVERSITY OF LINCOLN', text: 'UNIVERSITY OF LINCOLN' },
+            { value: 'UNIVERSITY OF LIVERPOOL', text: 'UNIVERSITY OF LIVERPOOL' },
+            { value: 'UNIVERSITY OF MANCHESTER', text: 'UNIVERSITY OF MANCHESTER' },
+            { value: 'UNIVERSITY OF NEWCASTLE', text: 'UNIVERSITY OF NEWCASTLE' },
+            { value: 'UNIVERSITY OF NORTHAMPTON', text: 'UNIVERSITY OF NORTHAMPTON' },
+            { value: 'UNIVERSITY OF NOTTINGHAM', text: 'UNIVERSITY OF NOTTINGHAM' },
+            { value: 'UNIVERSITY OF PLYMOUTH', text: 'UNIVERSITY OF PLYMOUTH' },
+            { value: 'UNIVERSITY OF PORTSMOUTH', text: 'UNIVERSITY OF PORTSMOUTH' },
+            { value: 'UNIVERSITY OF READING', text: 'UNIVERSITY OF READING' },
+            { value: 'UNIVERSITY OF ROEHAMPTON', text: 'UNIVERSITY OF ROEHAMPTON' },
+            { value: 'UNIVERSITY OF SALFORD', text: 'UNIVERSITY OF SALFORD' },
+            { value: 'UNIVERSITY OF SHEFFIELD', text: 'UNIVERSITY OF SHEFFIELD' },
+            { value: 'UNIVERSITY OF SOUTHAMPTON', text: 'UNIVERSITY OF SOUTHAMPTON' },
+            { value: 'UNIVERSITY OF ST MARK AND ST JOHN', text: 'UNIVERSITY OF ST MARK AND ST JOHN' },
+            { value: 'UNIVERSITY OF SUFFOLK', text: 'UNIVERSITY OF SUFFOLK' },
+            { value: 'UNIVERSITY OF SUNDERLAND', text: 'UNIVERSITY OF SUNDERLAND' },
+            { value: 'UNIVERSITY OF SURREY', text: 'UNIVERSITY OF SURREY' },
+            { value: 'UNIVERSITY OF TEESSIDE', text: 'UNIVERSITY OF TEESSIDE' },
+            { value: 'UNIVERSITY OF THE WEST OF ENGLAND', text: 'UNIVERSITY OF THE WEST OF ENGLAND' },
+            { value: 'UNIVERSITY OF WEST LONDON', text: 'UNIVERSITY OF WEST LONDON' },
+            { value: 'UNIVERSITY OF WINCHESTER', text: 'UNIVERSITY OF WINCHESTER' },
+            { value: 'UNIVERSITY OF WOLVERHAMPTON', text: 'UNIVERSITY OF WOLVERHAMPTON' },
+            { value: 'UNIVERSITY OF WORCESTER', text: 'UNIVERSITY OF WORCESTER' },
+            { value: 'UNIVERSITY OF YORK', text: 'UNIVERSITY OF YORK' },
+            { value: 'UNIVERSIYT OF PLYMOUTH', text: 'UNIVERSIYT OF PLYMOUTH' },
+            { value: 'YORK ST JOHN UNIVERSITY', text: 'YORK ST JOHN UNIVERSITY' }
+          ]
+        }) }}
+
+        {{ button ({
+            text: 'Continue'
+        }) }}
+
+     </form>
+
+     <style>
+        .autocomplete__input { background-color: #FFF; }
+     </style>
+
+
+      <!-- DIRECT VERSION -->
+
+      <script src="/js/accessible-autocomplete.min.js"></script>
+      <script type="text/javascript">
+
+        const enhancedAccessibleAutocomplete = (function(){
+
+          //
+          // INIT FUNCTION
+          //
+          function _init( el ){
+            
+            const selectElement = el;
+            let currentValue;
+
+            if( selectElement ){
+
+              accessibleAutocomplete.enhanceSelectElement({
+                'selectElement': selectElement,
+                'minLength': 2,
+                'defaultValue': '',
+                'showNoOptionsFound': false,
+                'confirmOnBlur': false
+              })
+
+            }
+
+          }
+          
+          //
+          //  RETURN
+          //
+          return {
+            init: _init
+          }
+
+        })();
+
+        window.addEventListener('DOMContentLoaded',function(){
+            enhancedAccessibleAutocomplete.init( document.querySelector('#universityChoice') );
+        });
+
+      </script>
+
+      <!-- End of content -->
+
+    </div>  
+  </div>
+
+{% endblock %}
