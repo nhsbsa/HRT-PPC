@@ -29,7 +29,7 @@ router.get(/start/,function(req, res){
 
 router.post(/is-your-medicine-covered/, function (req, res) {
 
-    let redirect = 'other-prescription-items';
+    let redirect = 'third-party';
 
     switch( req.session.data.medicinesCovered ){
 
@@ -56,6 +56,10 @@ router.post(/filter-ppc/, function( req, res ){
 router.post(/other-prescription-items/, function( req, res ){
     let redirect = ( req.session.data.otherPrescriptionItems === 'yes' ) ? 'filter-ppc' : 'where-you-collect';
     res.redirect( redirect );
+});
+
+router.post(/third-party/, function (req, res) {
+  res.redirect('other-prescription-items');
 });
 
 router.post(/where-you-collect/, function( req, res ){

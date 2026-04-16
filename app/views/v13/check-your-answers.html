@@ -10,9 +10,8 @@
 
             <h1 class="nhsuk-heading-l">Check your answers</h1>
 
-            {{ warningCallout({
-                heading: 'Important information',
-                HTML: '<p>Your personal details must match what is printed on your prescriptions. Check your details below to avoid a penalty charge.</p>'
+            {{ insetText({
+                html: '<p><strong>Check your details to avoid a penalty charge. The details here must match those on your prescriptions.</strong></p>'
             }) }}
 
             <!-- YOUR DETAILS -->
@@ -127,7 +126,11 @@
             }) }}
 
 
-
+            {{ warningCallout({
+                heading: 'Terms and conditions',
+                HTML: '<p>You cannot get a refund once you have paid for an HRT PPC.</p>
+                <p>Before you pay, make sure you need to by an HRT PPC. Read the full <a href="https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt-ppc/terms-and-conditions-buying-nhs-hormone-replacement-therapy-prescription-prepayment-certificate-hrt" target="_blank" rel="noopener noreferrer">Hormone Replacement Therapy Prescription Prepayment Certificate terms and conditions (opens in a new tab)</a>.</p>'
+            }) }}
 
 
             <!-- GREY BOX -->
@@ -150,11 +153,6 @@
                 <span class="card-text">We also accept Apple Pay and Google Pay</span>
             </div>
 
-           
-
-            {{ insetText({
-                html: '<p><strong>HRT PPCs are not refundable so make sure you need to buy one before doing so.</strong></p>'
-            }) }}
 
 
             {{ button({
