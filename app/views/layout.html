@@ -9,119 +9,46 @@
 
 {% block head %}
   <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-  <link href="/css/main.css" rel="stylesheet">
-  <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
+  <link href="/assets/sass/main.css" rel="stylesheet">
 {% endblock %}
 
 <!-- Edit the header -->
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
-
   {{ header({
-    "service": {
-        "name": "Buy an NHS HRT Prescription Prepayment Certificate (HRT PPC)",
-        "href": "/"
-      },
-      "showNav": "false",
-      "showSearch": "false"
-    })
-  }}
-
-  <!-- PHASE BANNER -->
-  <div class="nhsuk-width-container">
-    <div class="nhsuk-phase-banner">
-      <p class="nhsuk-phase-banner__content">
-        <strong class="nhsuk-tag nhsuk-phase-banner__content__tag">{{ data.phaseBannerTagText }}</strong>
-        <span class="nhsuk-phase-banner__text">This is a new service – your <a class="nhsuk-link" href="{{ data.phaseBannerFeedbackLink }}" target="_blank" rel="noopener">feedback (opens in a new tab)</a> will help us to improve it.</span>
-      </p>
-    </div>
-  </div>
-
-{% endblock %}
-
-
-{% block beforeContent %}
- {{ backLink({
-    href: 'javascript:history.go(-1)',
-    text: 'Back'
+    service: {
+      text: serviceName,
+      href: "/"
+    }
   }) }}
 {% endblock %}
 
-
+<!-- Edit the footer -->
+<!-- Footer code examples can be found at https://service-manual.nhs.uk/design-system/components/footer -->
 {% block footer %}
+  {% set metaAboutHtml %}
+    <p class="nhsuk-body-s">Built on <a class="nhsuk-footer__list-item-link" href="https://prototype-kit.service-manual.nhs.uk/updates/">NHS prototype kit {{ prototypeKitVersion }}</a> and <a class="nhsuk-footer__list-item-link" href="https://github.com/nhsuk/nhsuk-frontend/releases/">NHS.UK frontend {{ nhsukFrontendVersion }}</a></p>
+  {% endset %}
 
-  {% if data.debug === 'true' %}
-    <!-- DEBUGGING INFORMATION -->
-    <div class="nhsuk-width-container">
-      <div class="nhsuk-grid-row">
-        {{ textarea({
-          name: 'debug',
-          id: 'debug',
-          label: {
-            text: 'Session data'
-          },
-          value: data | dump
-        }) }}
-      </div>
-    </div>
-  {% endif %}
-
-
-
-  {% set links =[
+  {{ footer({
+    meta: {
+      items: [
         {
-          URL: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
-          label: "Reset data"
+          href: "/",
+          text: "Home"
         },
         {
-          URL: 'https://www.nhsbsa.nhs.uk/accessibility-statement-buy-nhs-prescription-prepayment-certificate',
-          label: 'Accessibility'
-        },
-        {
-          URL: 'https://www.nhsbsa.nhs.uk/contact-nhs-help-health-costs',
-          label: 'Contact us'
-        },
-        {
-          URL: '/v3/cookies/nhsbsa-cookies',
-          label: 'Cookies'
-        },
-        {
-          URL: 'https://www.nhsbsa.nhs.uk/our-policies/privacy/prescription-prepayment-certificate-privacy-notice',
-          label: 'Privacy policy'
-        },
-        {
-          URL: 'https://www.nhsbsa.nhs.uk/help-nhs-prescription-costs/prescription-prepayment-certificates-ppcs/terms-and-conditions',
-          label: 'Terms and conditions'
+          href: "/prototype-admin/reset?returnPage=" + (currentPage | urlencode),
+          text: "Reset data"
         }
-    ] %}
-
-      {% if version === 'v12-nunjucks' %}
-        {% set links = ( links.push({ URL: 'filter-ppc--text', label: 'Filter page: Text' }), links ) %}
-        {% set links = ( links.push({ URL: 'filter-ppc--table', label: 'Filter page: Table' }), links ) %}
-      {% endif %}
-
-   
-    {{ footer({
-      links: links
-    })}}
-
-    <div class="app-ogl-footer">
-      <div class="nhsuk-width-container">
-        <p class="app-ogl-footer--text">
-          <svg xmlns="http://www.w3.org/2000/svg" height="17" width="41" role="presentation" focusable="false" viewBox="0 0 483.2 195.7">
-            <path fill="currentColor" d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145"></path>
-          </svg>
-          All content is available under the <a id="ogl-link" class="nhsuk-footer__list-item-link" target="_blank" rel="license noopener" href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3.0<span class="nhsuk-u-visually-hidden"> (opens in new window)</span></a>, except where otherwise stated.
-        </p>
-      </div>
-    </div>
+      ],
+      html: metaAboutHtml
+    }
+  }) }}
 {% endblock %}
 
 {% block bodyEnd %}
-  {% block scripts %}
-    <!-- Custom JavaScript files can be added to this file -->
-    {% include "includes/scripts.html" %}
-    <!-- For adding page specific JavaScript -->
-    {% block pageScripts %}{% endblock %}
-  {% endblock %}
+  {{ super() }}
+  <script type="module" src="/assets/javascript/main.js"></script>
+  {% block pageScripts %}{% endblock %}
 {% endblock %}

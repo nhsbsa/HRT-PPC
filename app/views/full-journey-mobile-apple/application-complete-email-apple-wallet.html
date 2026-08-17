@@ -1,5 +1,5 @@
 <!-- Extends the layout from /views/layout.html -->
-{% extends 'layout-confirm.html' %}
+{% extends 'layout.html' %}
 <!-- 
   In /views/layout.html you can:
     - edit the header and footer 
@@ -244,7 +244,7 @@
 
     {{ insetText({
       classes: 'nhsuk-u-margin-top-2',
-      HTML: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
+      html: '<h3 class="nhsuk-heading-m">Your HRT PPC certificate has been downloaded to your phone</h3><p class="nhsuk-body nhsuk-u-margin-bottom-0">Check that your pass has been successfully added to <a class="nhsuk-link nhsuk-link--no-visited-state" href="wallet://">your Apple Wallet</a> before you close this page.</p>'
     }) }}
 
 
@@ -309,7 +309,7 @@
       <!--<div class="noprint">
         <div class="notice">
           <i class="icon pdf-icon">
-             <img src="/images/pdf-icon.png" style="width: 35px;">
+             <img src="/assets/images/pdf-icon.png" style="width: 35px;">
           </i>
           <span style="margin-left:60px;"><a href="javascript:window.print();">Save as a PDF</a></span>
         </div>

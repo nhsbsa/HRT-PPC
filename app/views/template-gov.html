@@ -42,15 +42,15 @@
 
     <title>{% block pageTitle %}NHS.UK prototype kit{% endblock %}</title>
 
-    <link href="https://www.nhs.uk/" rel="preconnect">
-    <link href="https://assets.nhs.uk/" rel="preconnect" crossorigin>
-
-    <link type="font/woff2" href="https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2" rel="preload" as="font" crossorigin>
-    <link type="font/woff2" href="https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2" rel="preload" as="font" crossorigin>
-
     {% block headCSS %}
       <link href="/css/main.css" rel="stylesheet">
+      <link rel="stylesheet" href="/sass/govuk-frontend-4.1.0.min.css">
+      <style>* {
+        font-family:"GDS Transport" !important;
+      }
+      </style>
     {% endblock %}
+    
 
     {% block customStyles %}
     {% endblock %}
@@ -58,23 +58,17 @@
     <script src="/nhsuk-frontend/nhsuk.min.js" defer></script>
 
     {% block headIcons %}
-    <link rel="shortcut icon" href="/nhsuk-frontend/assets/favicons/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="/nhsuk-frontend/assets/favicons/apple-touch-icon-180x180.png">
-    <link rel="mask-icon" href="/nhsuk-frontend/assets/favicons/favicon.svg" color="#005eb8">
-    <link rel="icon" sizes="192x192" href="/nhsuk-frontend/assets/favicons/favicon-192x192.png">
-    <meta name="msapplication-TileImage" content="/nhsuk-frontend/assets/favicons/mediumtile-144x144.png">
-    <meta name="msapplication-TileColor" content="#005eb8">
-    <meta name="msapplication-square70x70logo" content="/nhsuk-frontend/assets/favicons/smalltile-70x70.png">
-    <meta name="msapplication-square150x150logo" content="/nhsuk-frontend/assets/favicons/mediumtile-150x150.png">
-    <meta name="msapplication-wide310x150logo" content="/nhsuk-frontend/assets/favicons/widetile-310x150.png">
-    <meta name="msapplication-square310x310logo" content="/nhsuk-frontend/assets/favicons/largetile-310x310.png">
+    <link rel="shortcut icon" href="/images/gov-favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/images/gov-icon-180.png">
+    <link rel="mask-icon" href="/images/gov-favicon.svg" color="#005eb8">
+    <link rel="icon" sizes="192x192" href="/images/gov-icon-192.png">
     {% endblock %}
 
     {% block head %}{% endblock %}
     
   </head>
 
-  <body class="{{ bodyClasses }}">
+  <body class="gov-body">
 
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
     {% block bodyStart %}{% endblock %}
@@ -85,32 +79,6 @@
           text: 'Skip to main content'
         }) }}
       {% endblock %}
-
-      <style>
-
-
-
-  html,
-  .govuk-header__logotype-text {
-    font-family: 'GDS Transport', sans-serif;
-  }
-
-  body {
-    background-color: white;
-  }
-
-  .govuk-header__logotype-text {
-    font-weight: bold;
-  }
-
-  
-
-  /* new skip link format*/
-.nhsuk-skip-link:focus {
-  display: block;
-  position: static;
-}
-</style>
 
       {% block header %}
         {{ header({}) }}
