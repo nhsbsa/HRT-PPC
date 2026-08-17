@@ -1,23 +1,17 @@
 const NHSPrototypeKit = require('nhsuk-prototype-kit')
 
-// External dependencies
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const dotenv = require('dotenv');
-const express = require('express');
-const nunjucks = require('nunjucks');
-const sessionInCookie = require('client-sessions');
-const sessionInMemory = require('express-session');
-
-// Run before other code to make sure variables from .env are available
-dotenv.config();
-
 // Local dependencies
 const config = require('./app/config')
 const sessionDataDefaults = require('./app/data/session-data-defaults')
 const filters = require('./app/filters')
 const locals = require('./app/locals')
 const routes = require('./app/routes')
+
+// Add dotenv
+const dotenv = require('dotenv');
+dotenv.config({
+ quiet: true
+})
 
 const viewsPath = [
   'app/views/'
