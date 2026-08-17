@@ -59,6 +59,7 @@ jspm_packages/
 # System Files
 .DS_Store
 Thumbs.db
+osvscan.md
 
 # SonarQube
 .scannerwork
